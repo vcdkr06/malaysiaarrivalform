@@ -66,7 +66,7 @@ const WhyChooseUsSection = () => {
             return (
               <div
                 key={i}
-                className="group p-5 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-blue-400/50 transition-all duration-300 backdrop-blur-sm"
+                className="group p-5 rounded-xl bg-white/[0.08] border border-white/15 hover:bg-white/[0.14] hover:border-blue-400/50 transition-all duration-300 backdrop-blur-md shadow-lg shadow-black/20"
               >
                 <div className="flex items-start gap-4 lg:flex-col lg:gap-0">
                   {/* Icon Wrapper */}
