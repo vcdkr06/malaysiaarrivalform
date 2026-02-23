@@ -1,3 +1,5 @@
+import logo from "@/assets/mdac-logo.png";
+
 const Footer = () => {
   return (
     <footer className="bg-primary py-12">
@@ -5,8 +7,8 @@ const Footer = () => {
         <div className="grid md:grid-cols-3 gap-8">
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-7 h-7 bg-accent rounded-lg flex items-center justify-center font-bold text-accent-foreground text-xs">M</div>
-              <span className="text-primary-foreground font-semibold text-sm">MalaysiaArrival</span>
+              <img src={logo} alt="MDAC Logo" className="w-8 h-8 object-contain" />
+              <span className="text-primary-foreground font-semibold text-sm">Malaysia Digital Arrival Card</span>
             </div>
             <p className="text-primary-foreground/40 text-sm leading-relaxed">Your data is securely encrypted with SSL technology.</p>
           </div>
