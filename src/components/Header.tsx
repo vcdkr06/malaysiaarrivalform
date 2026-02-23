@@ -25,7 +25,7 @@ const Header = () => {
                 <span className="sm:hidden">Apply Now</span>
 
                 {/* Desktop Text */}
-                <span className="hidden sm:inline">Apply for MDAC Now</span>
+                <span className="hidden sm:inline">Apply for Malaysia Digital Arrival Card</span>
               </Button>
             </Link>
           </div>
