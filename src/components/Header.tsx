@@ -11,8 +11,8 @@ const Header = () => {
         <div className="flex items-center justify-between h-16 sm:h-20">
           <div className="flex items-center gap-3">
             <img src={logo} alt="MDAC Logo" className="h-12 sm:h-14 object-contain" />
-            <span className="text-foreground font-bold text-sm sm:text-base leading-tight">
-              Malay Digital<br />Arrival Card
+            <span className="text-foreground font-bold text-sm sm:text-base leading-tight uppercase tracking-wide">
+              Malaysia Digital<br />Arrival Card
             </span>
           </div>
           <div className="flex items-center gap-3">

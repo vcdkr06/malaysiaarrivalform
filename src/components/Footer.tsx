@@ -1,4 +1,4 @@
-import logo from "@/assets/mdac-logo-new.jpg";
+
 
 const Footer = () => {
   return (
@@ -6,9 +6,8 @@ const Footer = () => {
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-3 gap-8">
           <div>
-            <div className="flex items-center gap-2 mb-4">
-              <img src={logo} alt="MDAC Logo" className="h-8 object-contain" />
-              <span className="text-primary-foreground font-semibold text-sm">Malaysia Digital Arrival Card</span>
+            <div className="mb-4">
+              <span className="text-primary-foreground font-bold text-sm uppercase tracking-wide">Malaysia Digital Arrival Card</span>
             </div>
             <p className="text-primary-foreground/50 text-sm leading-relaxed">
               Your data is securely encrypted with SSL technology.
