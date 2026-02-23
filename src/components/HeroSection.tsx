@@ -175,10 +175,10 @@ const HeroSection = () => {
             </p>
           </div>
 
-          {/* ——— RIGHT: Steps card ——— */}
+          {/* ——— RIGHT: Steps card (COMPACT TIMELINE VERSION) ——— */}
           <div className="w-full">
             <div
-              className="rounded-3xl p-5 md:p-7"
+              className="rounded-3xl p-6 md:p-8"
               style={{
                 background: "#FFFFFF",
                 border: "1px solid #E5EDF6",
@@ -186,12 +186,12 @@ const HeroSection = () => {
               }}
             >
               {/* Card header */}
-              <div className="flex items-center justify-between mb-6">
-                <h3 className="font-bold text-[14px]" style={{ color: "#3D5A80" }}>
+              <div className="flex items-center justify-between mb-7">
+                <h3 className="font-bold text-[15px]" style={{ color: "#3D5A80" }}>
                   Application Process
                 </h3>
                 <span
-                  className="text-[10px] px-2.5 py-1 rounded-full font-bold"
+                  className="text-[10px] px-2.5 py-1 rounded-full font-bold tracking-wide"
                   style={{
                     background: "#EFF6FF",
                     color: "#4B7BE5",
@@ -202,53 +202,37 @@ const HeroSection = () => {
                 </span>
               </div>
 
-              {/* Steps */}
-              <div className="space-y-3">
+              {/* Compact Timeline Steps */}
+              <div className="relative space-y-5">
+                {/* Continuous background line */}
+                <div className="absolute top-2 bottom-2 left-[19px] w-0.5" style={{ background: "#F1F5F9" }} />
+
                 {steps.map((step, index) => (
-                  <div
-                    key={index}
-                    className="flex gap-4 p-3.5 rounded-2xl transition-all duration-200 hover:shadow-sm group cursor-default"
-                    style={{
-                      background: step.bg,
-                      border: `1px solid ${step.border}`,
-                    }}
-                  >
-                    {/* Number circle */}
-                    <div className="flex-shrink-0 relative">
-                      <div
-                        className="w-10 h-10 rounded-xl flex items-center justify-center transition-transform duration-200 group-hover:scale-105"
-                        style={{
-                          background: "#FFFFFF",
-                          border: `1.5px solid ${step.border}`,
-                          color: step.color,
-                          boxShadow: `0 2px 8px ${step.color}10`,
-                        }}
-                      >
-                        {step.icon}
-                      </div>
-                      {/* Connector */}
-                      {index < steps.length - 1 && (
-                        <div
-                          className="absolute top-full left-1/2 -translate-x-1/2 w-px h-3"
-                          style={{
-                            background: `linear-gradient(to bottom, ${step.color}25, transparent)`,
-                          }}
-                        />
-                      )}
+                  <div key={index} className="relative z-10 flex gap-4 items-start group cursor-default">
+                    {/* Number circle (Smaller & Cleaner) */}
+                    <div
+                      className="w-10 h-10 rounded-full flex-shrink-0 flex items-center justify-center transition-transform duration-200 group-hover:scale-105"
+                      style={{
+                        background: step.bg,
+                        color: step.color,
+                        border: "3px solid #FFFFFF", // Cuts into the vertical line behind it
+                        boxShadow: `0 0 0 1px ${step.border}, 0 2px 8px ${step.color}15`,
+                      }}
+                    >
+                      {step.icon}
                     </div>
 
                     {/* Content */}
-                    <div className="flex-1 min-w-0">
-                      <div className="flex items-center gap-2 mb-0.5">
-                        <span className="text-[9px] font-extrabold tracking-[0.12em]" style={{ color: step.color }}>
-                          {/* FIX APPLIED HERE: Replaced step.num with index + 1 */}
+                    <div className="flex-1 min-w-0 pt-0.5">
+                      <div className="flex items-baseline gap-2 mb-0.5">
+                        <span className="text-[10px] font-bold tracking-wider" style={{ color: step.color }}>
                           STEP {index + 1}
                         </span>
+                        <h4 className="font-bold text-[13px] truncate" style={{ color: "#3D5A80" }}>
+                          {step.title}
+                        </h4>
                       </div>
-                      <h4 className="font-bold text-[13px] mb-0.5 truncate" style={{ color: "#3D5A80" }}>
-                        {step.title}
-                      </h4>
-                      <p className="text-[11px] leading-relaxed" style={{ color: "#8DA2B8" }}>
+                      <p className="text-[12px] leading-snug" style={{ color: "#8DA2B8" }}>
                         {step.desc}
                       </p>
                     </div>
@@ -258,14 +242,14 @@ const HeroSection = () => {
 
               {/* Pro Tip */}
               <div
-                className="flex items-center gap-3 mt-5 px-4 py-3 rounded-xl"
+                className="flex items-start gap-3 mt-6 px-4 py-3 rounded-xl"
                 style={{
                   background: "linear-gradient(135deg, #FFFBEB, #FFF9F0)",
                   border: "1px solid #FEF3C7",
                 }}
               >
-                <Lightbulb className="w-4 h-4 flex-shrink-0" style={{ color: "#F59E0B" }} />
-                <p className="text-[11px] leading-relaxed" style={{ color: "#8DA2B8" }}>
+                <Lightbulb className="w-4 h-4 flex-shrink-0 mt-0.5" style={{ color: "#F59E0B" }} />
+                <p className="text-[11.5px] leading-relaxed" style={{ color: "#8DA2B8" }}>
                   <span style={{ color: "#B27D10", fontWeight: 700 }}>Pro Tip:</span> Apply at least{" "}
                   <span style={{ color: "#4B6A8F", fontWeight: 700 }}>3 days before</span> your travel date.
                 </p>
