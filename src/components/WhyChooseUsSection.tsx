@@ -44,9 +44,9 @@ const WhyChooseUsSection = () => {
         <img
           src={petronasTowers}
           alt="Petronas Twin Towers Malaysia"
-          className="w-full h-full object-cover opacity-[0.12]"
+          className="w-full h-full object-cover opacity-[0.25]"
         />
-        <div className="absolute inset-0 bg-[#0a192f]/90" />
+        <div className="absolute inset-0 bg-[#0B1D3A]/85" />
       </div>
 
       <div className="container mx-auto px-6 max-w-6xl relative z-10">
