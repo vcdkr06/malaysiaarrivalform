@@ -6,67 +6,65 @@ const InfoCardsSection = () => {
   const cards = [
     {
       icon: FileText,
-      title: "What Is the MDAC?",
-      text: "The Malaysia Digital Arrival Card is a mandatory electronic requirement replacing paper forms.",
+      title: "What is MDAC?",
+      text: "The mandatory digital arrival card required for all foreign visitors entering Malaysia.",
     },
     {
       icon: Users,
-      title: "Who Must Apply?",
-      text: "All foreign nationals entering Malaysia by land, air, or sea must submit prior to arrival.",
+      title: "Who needs it?",
+      text: "All foreign nationals entering via air, land, or sea, with very few exceptions.",
     },
     {
       icon: AlertTriangle,
-      title: "Critical Deadline",
-      text: "Submit within 72 hours of arrival. Early filing ensures a smooth immigration process.",
+      title: "The Deadline",
+      text: "Must be submitted within 3 days prior to your arrival for seamless entry.",
     },
   ];
 
   return (
-    <section className="py-8 md:py-16 bg-white">
-      <div className="container mx-auto px-6 max-w-6xl">
-        {/* Section Header - Tight Spacing */}
-        <div className="mb-6 md:mb-10">
-          <h2 className="text-2xl md:text-3xl font-black text-[#0a192f] mb-1 tracking-tight">
-            Essential Entry Information
+    <section className="py-10 md:py-20 bg-white border-t border-slate-100">
+      <div className="container mx-auto px-6 max-w-5xl">
+        {/* Lean Header */}
+        <div className="mb-10 md:mb-16">
+          <p className="text-[10px] uppercase tracking-[0.2em] text-slate-400 font-bold mb-2">Requirement Guide</p>
+          <h2 className="text-2xl md:text-3xl font-light text-[#0a192f] tracking-tight">
+            Essential <span className="font-semibold">Entry Information</span>
           </h2>
-          <div className="w-12 h-1 bg-[#0a192f]" />
         </div>
 
-        {/* Info Grid - Minimal gaps on mobile */}
-        <div className="grid md:grid-cols-3 gap-3 md:gap-6 mb-8 md:mb-12">
+        {/* Info Grid - Ultra Lean */}
+        <div className="grid md:grid-cols-3 gap-8 md:gap-12 mb-16 md:mb-24">
           {cards.map((card, i) => {
             const Icon = card.icon;
             return (
-              <div
-                key={i}
-                className="flex md:flex-col gap-4 md:gap-0 p-5 rounded-xl bg-slate-50 border border-slate-100 hover:border-[#0a192f]/20 transition-all"
-              >
-                <div className="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 bg-[#0a192f] rounded-lg flex items-center justify-center md:mb-4">
-                  <Icon className="w-5 h-5 md:w-6 md:h-6 text-white" />
+              <div key={i} className="flex flex-row md:flex-col gap-5 md:gap-0">
+                <div className="flex-shrink-0 md:mb-6">
+                  <Icon className="w-5 h-5 text-[#0a192f]/40" strokeWidth={1.5} />
                 </div>
                 <div>
-                  <h3 className="text-[15px] md:text-lg font-bold text-[#0a192f] mb-1 md:mb-2">{card.title}</h3>
-                  <p className="text-[13px] md:text-sm text-slate-600 leading-snug md:leading-relaxed">{card.text}</p>
+                  <h3 className="text-sm font-bold text-[#0a192f] uppercase tracking-wider mb-2">{card.title}</h3>
+                  <p className="text-[13px] md:text-sm text-slate-500 leading-relaxed font-medium">{card.text}</p>
                 </div>
               </div>
             );
           })}
         </div>
 
-        {/* Ready to Apply / CTA Block - Compressed */}
-        <div className="p-6 md:p-10 rounded-2xl bg-[#0a192f] text-white flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl">
+        {/* Footer CTA - Minimalist & Focused */}
+        <div className="flex flex-col md:flex-row items-center justify-between border-t border-slate-100 pt-10 gap-6">
           <div className="text-center md:text-left">
-            <h4 className="text-xl md:text-2xl font-black mb-1">Ready to apply?</h4>
-            <p className="text-slate-300 text-sm md:text-base">Start your MDAC registration in minutes.</p>
+            <h4 className="text-lg font-semibold text-[#0a192f]">Ready to begin?</h4>
+            <p className="text-slate-400 text-sm">Our concierge handles your MDAC filing instantly.</p>
           </div>
 
           <Button
             asChild
-            className="w-full md:w-auto bg-white text-[#0a192f] hover:bg-slate-100 font-bold px-8 h-12 md:h-14 rounded-lg transition-transform active:scale-95"
+            variant="ghost"
+            className="group text-[#0a192f] hover:bg-slate-50 font-bold text-base px-0 md:px-6 transition-all"
           >
             <Link to="/apply" className="flex items-center gap-2">
               Apply Now
-              <ArrowRight className="w-5 h-5" />
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Link>
           </Button>
         </div>
