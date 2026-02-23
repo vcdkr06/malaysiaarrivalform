@@ -15,15 +15,14 @@ const Index = () => {
       <Header />
       <HeroSection />
       <InfoCardsSection />
-      
-      
+
       <CountryFlagsSection />
       <WhyChooseUsSection />
       <VisaGuideSection />
       <FAQSection />
       <Footer />
-    </div>);
-
+    </div>
+  );
 };
 
 export default Index;
