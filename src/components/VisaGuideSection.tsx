@@ -2,27 +2,22 @@ import malaysiaCoupleNew from "@/assets/malaysia-couple-new.webp";
 
 const VisaGuideSection = () => {
   return (
-    <section className="py-20 bg-card/30 border-y border-border font-quicksand">
-      <div className="container mx-auto px-4">
-        <div className="flex flex-col md:flex-row items-center gap-10 md:gap-14 max-w-6xl mx-auto">
-          <div className="w-full md:w-3/5 flex flex-col justify-center space-y-5 order-2 md:order-1">
-            <h2 className="text-3xl lg:text-4xl font-bold text-foreground leading-tight">
-              Your MDAC, Handled <span className="text-accent">Professionally</span>
+    <section className="py-20 bg-background">
+      <div className="container mx-auto px-4 max-w-5xl">
+        <div className="flex flex-col md:flex-row items-center gap-12">
+          <div className="w-full md:w-1/2 order-2 md:order-1 space-y-5">
+            <p className="text-xs uppercase tracking-widest text-accent font-semibold">How It Works</p>
+            <h2 className="text-3xl font-bold text-foreground leading-tight">
+              We Handle the Paperwork,<br />You Enjoy the Trip
             </h2>
-            <div className="space-y-4 text-muted-foreground">
-              <p className="text-base leading-relaxed">
-                Our service removes the complexity from the MDAC process. We guide you through a simplified application, then our specialists verify every detail before submission.
-              </p>
-              <p className="text-base leading-relaxed">
-                From document verification to secure submission — we manage the entire workflow so you can focus on your journey.
-              </p>
-              <p className="text-base leading-relaxed">
-                Whether for leisure, business, or family travel, our multilingual team provides end-to-end support.
-              </p>
+            <div className="space-y-4 text-muted-foreground text-sm leading-relaxed">
+              <p>Our MDAC concierge service simplifies the entire application. Fill in a guided form, and our team takes over — reviewing your details, correcting potential errors, and ensuring full compliance before submission.</p>
+              <p>We verify document formats, handle secure submission to the appropriate authority, and deliver your approved MDAC confirmation directly to your inbox.</p>
+              <p>Whether you're visiting for business, leisure, or family — our multilingual specialists are with you from start to finish.</p>
             </div>
           </div>
-          <div className="w-full md:w-2/5 flex-shrink-0 order-1 md:order-2">
-            <img alt="Travelers enjoying Malaysia" className="w-full h-full object-cover rounded-2xl border border-border" src={malaysiaCoupleNew} />
+          <div className="w-full md:w-1/2 order-1 md:order-2">
+            <img alt="Travelers in Malaysia" className="w-full rounded-2xl shadow-elegant object-cover aspect-[4/3]" src={malaysiaCoupleNew} />
           </div>
         </div>
       </div>
