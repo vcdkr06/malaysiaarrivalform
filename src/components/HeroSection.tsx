@@ -56,7 +56,7 @@ const HeroSection = () => {
             </h1>
 
             <p className="text-sm md:text-lg text-slate-400 mb-4 md:mb-8 max-w-xl leading-snug">
-              Every foreign visitor must submit an MDAC 72 hours before arrival. We handle the filing to ensure your
+              <span className="text-red-500 font-semibold">Required for all foreign visitors</span> — submit an MDAC 72 hours before arrival. We handle the filing to ensure your
               entry is seamless.
             </p>
 
