@@ -77,7 +77,11 @@ const HeroSection = () => {
               Mandatory Travel Requirement
             </div>
 
-            <p className="text-xs md:text-sm font-bold uppercase tracking-[0.15em] mb-2" style={{ color: "#7C9FE8" }}>
+            {/* Desktop Only Pre-heading */}
+            <p
+              className="hidden md:block text-sm font-bold uppercase tracking-[0.15em] mb-2"
+              style={{ color: "#7C9FE8" }}
+            >
               MDAC Registration Portal
             </p>
 
@@ -100,12 +104,18 @@ const HeroSection = () => {
               </span>
             </h1>
 
-            <p className="text-[14px] md:text-[15px] leading-[1.7] mb-8 max-w-lg" style={{ color: "#8196AE" }}>
+            {/* Desktop Description */}
+            <p className="hidden md:block text-[15px] leading-[1.7] mb-8 max-w-lg" style={{ color: "#8196AE" }}>
               Skip the paperwork at immigration. All foreign visitors are now required to submit their digital arrival
               profile prior to reaching the border to ensure a smooth, hassle-free entry.
             </p>
 
-            <div className="mb-8">
+            {/* Mobile Description (Shorter) */}
+            <p className="block md:hidden text-[14px] leading-[1.6] mb-7 max-w-lg" style={{ color: "#8196AE" }}>
+              Submit your digital arrival profile before reaching the border to ensure a smooth, hassle-free entry.
+            </p>
+
+            <div className="mb-2 md:mb-8">
               <Button
                 asChild
                 size="lg"
@@ -123,8 +133,9 @@ const HeroSection = () => {
               </Button>
             </div>
 
+            {/* Disclaimer - Desktop Only (Hidden on Mobile) */}
             <p
-              className="text-[10px] leading-relaxed max-w-md pl-3"
+              className="hidden md:block text-[10px] leading-relaxed max-w-md pl-3"
               style={{
                 color: "#B8C7D8",
                 borderLeft: "2px solid #DCE6F2",
@@ -135,7 +146,7 @@ const HeroSection = () => {
             </p>
           </div>
 
-          {/* ——— RIGHT COLUMN: Unique Minimal Stepper ——— */}
+          {/* ——— RIGHT COLUMN: Stepper ——— */}
           <div className="w-full">
             <div
               className="rounded-[2rem] p-6 md:p-9"
@@ -216,6 +227,15 @@ const HeroSection = () => {
                 </p>
               </div>
             </div>
+
+            {/* Disclaimer - Mobile Only (Visible at bottom under the card) */}
+            <p
+              className="block md:hidden mt-6 text-[10px] leading-relaxed text-center px-4"
+              style={{ color: "#94A3B8" }}
+            >
+              Disclaimer: We are an independent agency assisting travelers with their documentation. We are not legally
+              affiliated with the Malaysian government.
+            </p>
           </div>
         </div>
       </div>
