@@ -43,7 +43,7 @@ const VisaGuideSection = () => {
             <div
               className="absolute -top-3 -right-3 w-full h-full rounded-[20px]"
               style={{
-                background: "linear-gradient(135deg, #EEF4FF, #F3F0FF)",
+                background: "#EEF4FF",
                 border: "1px solid #E8EFF8",
               }}
             />
@@ -64,7 +64,7 @@ const VisaGuideSection = () => {
               <div
                 className="absolute inset-0"
                 style={{
-                  background: "linear-gradient(to top, rgba(29,78,216,0.12) 0%, transparent 50%)",
+                  background: "rgba(29,78,216,0.06)",
                 }}
               />
             </div>
@@ -81,7 +81,7 @@ const VisaGuideSection = () => {
               <div
                 className="w-9 h-9 rounded-xl flex items-center justify-center"
                 style={{
-                  background: "linear-gradient(135deg, #1D4ED8, #3B82F6)",
+                  background: "#2563EB",
                   boxShadow: "0 4px 12px rgba(59,130,246,0.25)",
                 }}
               >
@@ -121,12 +121,7 @@ const VisaGuideSection = () => {
               >
                 We Handle the Filing,
                 <br />
-                <span
-                  className="bg-clip-text text-transparent"
-                   style={{
-                    backgroundImage: "linear-gradient(135deg, #1D4ED8, #3B82F6, #60A5FA)",
-                  }}
-                >
+                <span className="text-primary">
                   You Enjoy the Trip.
                 </span>
               </h2>

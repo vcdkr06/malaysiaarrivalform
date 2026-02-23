@@ -8,7 +8,7 @@ const WhyChooseUsSection = () => {
       desc: "Most filings are reviewed and returned within a single business day.",
       stat: "< 24h",
       color: "#4B7BE5",
-      bg: "linear-gradient(135deg, #EEF4FF, #E8EEFF)",
+      bg: "#EEF4FF",
       border: "#DBEAFE",
     },
     {
@@ -17,7 +17,7 @@ const WhyChooseUsSection = () => {
       desc: "Every byte of your data travels through 256-bit SSL encryption.",
       stat: "256-bit",
       color: "#2563EB",
-      bg: "linear-gradient(135deg, #EFF6FF, #DBEAFE)",
+      bg: "#EFF6FF",
       border: "#BFDBFE",
     },
     {
@@ -26,7 +26,7 @@ const WhyChooseUsSection = () => {
       desc: "Real humans ready to help — any hour, any timezone, any question.",
       stat: "24/7",
       color: "#10B981",
-      bg: "linear-gradient(135deg, #ECFDF5, #E2FBF0)",
+      bg: "#ECFDF5",
       border: "#D1FAE5",
     },
     {
@@ -35,7 +35,7 @@ const WhyChooseUsSection = () => {
       desc: "We flag mistakes before they reach immigration — so you don't have to.",
       stat: "99.8%",
       color: "#E8883C",
-      bg: "linear-gradient(135deg, #FFF6ED, #FFF0E2)",
+      bg: "#FFF6ED",
       border: "#FEEFC3",
     },
   ];
@@ -70,9 +70,7 @@ const WhyChooseUsSection = () => {
   return (
     <section
       className="relative py-16 md:py-24 overflow-hidden"
-      style={{
-        background: "linear-gradient(180deg, #FFFFFF 0%, #F6F9FF 40%, #F0F4FF 70%, #F8FAFF 100%)",
-      }}
+      style={{ background: "#F8FAFF" }}
     >
       {/* Decorative blobs */}
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
@@ -111,12 +109,7 @@ const WhyChooseUsSection = () => {
             }}
           >
             Built for Travelers Who{" "}
-            <span
-              className="bg-clip-text text-transparent"
-              style={{
-                backgroundImage: "linear-gradient(135deg, #1D4ED8, #3B82F6)",
-              }}
-            >
+            <span className="text-primary">
               Value Their Time
             </span>
           </h2>

@@ -41,9 +41,7 @@ const FAQSection = () => {
     <section
       id="faq"
       className="py-14 md:py-24"
-      style={{
-        background: "linear-gradient(180deg, #FFFFFF 0%, #F6F9FF 40%, #F0F4FF 70%, #F8FAFF 100%)",
-      }}
+      style={{ background: "#F8FAFF" }}
     >
       <div className="container mx-auto px-5 md:px-6 max-w-5xl">
         <div className="flex flex-col lg:flex-row gap-10 lg:gap-16">
@@ -69,12 +67,7 @@ const FAQSection = () => {
               }}
             >
               Frequently Asked{" "}
-              <span
-                className="bg-clip-text text-transparent"
-                style={{
-                  backgroundImage: "linear-gradient(135deg, #1D4ED8, #3B82F6, #60A5FA)",
-                }}
-              >
+              <span className="text-primary">
                 Questions
               </span>
             </h2>

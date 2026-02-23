@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, ClipboardList, CreditCard, UserCheck, MailCheck, Lightbulb, Zap } from "lucide-react";
-import malaysiaPattern from "@/assets/malaysia-pattern-bg.png";
 
 const HeroSection = () => {
   const steps = [
@@ -10,23 +9,23 @@ const HeroSection = () => {
       title: "Submit Details",
       desc: "Provide your basic personal info and travel itinerary.",
       color: "#4B7BE5",
-      bg: "linear-gradient(135deg, #EEF4FF, #E8EEFF)",
+      bg: "#EEF4FF",
       border: "#DBEAFE",
     },
     {
       icon: <CreditCard className="w-4 h-4" />,
       title: "Settle Payment",
       desc: "Complete your transaction through our reliable checkout.",
-      color: "#8B5CF6",
-      bg: "linear-gradient(135deg, #F3F0FF, #EDE8FF)",
-      border: "#EDE9FE",
+      color: "#2563EB",
+      bg: "#EFF6FF",
+      border: "#BFDBFE",
     },
     {
       icon: <UserCheck className="w-4 h-4" />,
       title: "Expert Review",
       desc: "Our specialists double-check everything to prevent errors.",
       color: "#E8883C",
-      bg: "linear-gradient(135deg, #FFF6ED, #FFF0E2)",
+      bg: "#FFF6ED",
       border: "#FEEFC3",
     },
     {
@@ -34,28 +33,15 @@ const HeroSection = () => {
       title: "Get Confirmation",
       desc: "Check your inbox for your approved digital arrival pass.",
       color: "#10B981",
-      bg: "linear-gradient(135deg, #ECFDF5, #E2FBF0)",
+      bg: "#ECFDF5",
       border: "#D1FAE5",
     },
   ];
 
   return (
     <section
-      className="relative overflow-hidden min-h-[92vh] flex items-center py-6 md:py-10 lg:py-0"
-      style={{
-        background: "linear-gradient(170deg, #FFFFFF 0%, #F8FAFF 20%, #F0F4FF 50%, #F6F8FF 80%, #FFFFFF 100%)",
-      }}
+      className="relative overflow-hidden min-h-[92vh] flex items-center py-6 md:py-10 lg:py-0 bg-background"
     >
-      {/* Pattern Background */}
-      <div
-        className="absolute inset-0 z-0 pointer-events-none"
-        style={{
-          backgroundImage: `url(${malaysiaPattern})`,
-          backgroundSize: "800px",
-          backgroundRepeat: "repeat",
-          opacity: 0.05,
-        }}
-      />
       {/* Decorative Background Elements */}
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
         <div
@@ -93,12 +79,7 @@ const HeroSection = () => {
             >
               Streamline Your Arrival
               <br className="hidden lg:block" /> into{" "}
-              <span
-                className="bg-clip-text text-transparent"
-                 style={{
-                  backgroundImage: "linear-gradient(135deg, #1D4ED8, #3B82F6, #60A5FA)",
-                }}
-              >
+              <span className="text-primary">
                 Malaysia
               </span>
             </h1>
@@ -118,9 +99,8 @@ const HeroSection = () => {
               <Button
                 asChild
                 size="lg"
-                className="font-bold h-12 lg:h-13 px-6 lg:px-8 rounded-full transition-all duration-300 hover:translate-y-[-2px] group text-[14px] lg:text-[15px] w-full md:w-auto text-white border-0"
+                className="font-bold h-12 lg:h-13 px-6 lg:px-8 rounded-full transition-all duration-300 hover:translate-y-[-2px] group text-[14px] lg:text-[15px] w-full md:w-auto text-primary-foreground bg-primary hover:bg-primary-dark border-0"
                 style={{
-                  background: "linear-gradient(135deg, #1D4ED8, #3B82F6, #60A5FA)",
                   boxShadow: "0 8px 30px rgba(59,130,246,0.3), 0 2px 8px rgba(29,78,216,0.2)",
                 }}
               >
