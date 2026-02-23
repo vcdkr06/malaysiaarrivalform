@@ -93,7 +93,14 @@ const HeroSection = () => {
             >
               Streamline Your Arrival
               <br className="hidden lg:block" /> into{" "}
-              <span className="bg-clip-text text-transparent bg-gradient-primary">Malaysia</span>
+              <span
+                className="bg-clip-text text-transparent"
+                style={{
+                  backgroundImage: "linear-gradient(135deg, #4338CA, #6366F1, #818CF8)",
+                }}
+              >
+                Malaysia
+              </span>
             </h1>
 
             {/* Desktop Description */}
@@ -111,7 +118,11 @@ const HeroSection = () => {
               <Button
                 asChild
                 size="lg"
-                className="font-bold h-12 lg:h-13 px-6 lg:px-8 rounded-full transition-all duration-300 hover:translate-y-[-2px] hover:shadow-xl group text-[14px] lg:text-[15px] w-full md:w-auto bg-primary hover:bg-primary-dark text-primary-foreground shadow-elegant"
+                className="font-bold h-12 lg:h-13 px-6 lg:px-8 rounded-full transition-all duration-300 hover:translate-y-[-2px] group text-[14px] lg:text-[15px] w-full md:w-auto text-white border-0"
+                style={{
+                  background: "linear-gradient(135deg, #4338CA, #6366F1, #818CF8)",
+                  boxShadow: "0 8px 30px rgba(99,102,241,0.3), 0 2px 8px rgba(67,56,202,0.2)",
+                }}
               >
                 <Link to="/apply" className="flex items-center justify-center gap-2 h-12">
                   Start Application
