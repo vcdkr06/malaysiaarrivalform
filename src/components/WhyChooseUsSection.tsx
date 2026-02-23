@@ -38,7 +38,7 @@ const WhyChooseUsSection = () => {
 
   return (
     <section className="relative py-12 md:py-16 overflow-hidden">
-      {/* Background Image: KL Tower (UNCHANGED) */}
+      {/* Background Image: KL Tower (Static as requested) */}
       <div className="absolute inset-0 z-0">
         <img
           src="https://images.unsplash.com/photo-1596422846543-75c6fc18a593?q=80&w=2070&auto=format&fit=crop"
@@ -57,32 +57,37 @@ const WhyChooseUsSection = () => {
           </h2>
         </div>
 
-        {/* Benefits Grid - Enhanced Stand-out Cards */}
+        {/* Redesigned Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5">
           {benefits.map((b, i) => {
             const Icon = b.icon;
             return (
               <div
                 key={i}
-                className="group relative p-6 rounded-2xl bg-white border border-white/20 shadow-[0_20px_40px_-15px_rgba(0,0,0,0.5)] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-blue-500/10"
+                className="group relative bg-white p-6 rounded-2xl shadow-[0_15px_35px_-10px_rgba(0,0,0,0.6)] transition-all duration-300 hover:scale-[1.02] hover:shadow-blue-500/20"
               >
-                {/* Subtle Top Accent Line */}
-                <div className="absolute top-0 left-6 right-6 h-1 bg-[#f0f7ff] group-hover:bg-blue-500 rounded-b-full transition-colors" />
-
-                <div className="flex items-start gap-4 lg:flex-col lg:gap-0 mt-2">
-                  {/* Icon Wrapper - Stronger Contrast */}
-                  <div className="flex-shrink-0 w-10 h-10 lg:w-12 lg:h-12 bg-[#f0f7ff] rounded-xl flex items-center justify-center lg:mb-5 group-hover:scale-110 transition-transform duration-300">
-                    <Icon className="w-5 h-5 lg:w-6 lg:h-6 text-[#0a192f]" strokeWidth={2.5} />
+                {/* The Redesigned Icon Wrapper */}
+                <div className="relative mb-6">
+                  <div className="w-12 h-12 bg-[#f0f7ff] rounded-2xl rotate-3 flex items-center justify-center transition-all duration-300 group-hover:rotate-0 group-hover:bg-[#0a192f]">
+                    <Icon
+                      className="w-6 h-6 text-[#0a192f] transition-colors duration-300 group-hover:text-white -rotate-3 group-hover:rotate-0"
+                      strokeWidth={2.2}
+                    />
                   </div>
-
-                  {/* Text Content */}
-                  <div>
-                    <h3 className="text-[15px] md:text-[16px] font-bold text-[#0a192f] mb-1.5 leading-tight">
-                      {b.title}
-                    </h3>
-                    <p className="text-[12px] md:text-[13px] text-slate-500 leading-relaxed font-medium">{b.desc}</p>
-                  </div>
+                  {/* Subtle shadow behind the icon for depth */}
+                  <div className="absolute inset-0 w-12 h-12 bg-blue-500/10 rounded-2xl -z-10 blur-sm translate-y-1" />
                 </div>
+
+                {/* Text Content */}
+                <div className="space-y-2">
+                  <h3 className="text-[15px] font-bold text-[#0a192f] leading-tight flex items-center gap-2">
+                    {b.title}
+                  </h3>
+                  <p className="text-[12px] md:text-[13px] text-slate-500 leading-relaxed font-medium">{b.desc}</p>
+                </div>
+
+                {/* Lean Progress Bar (Interactive Decoration) */}
+                <div className="absolute bottom-0 left-0 h-1 bg-transparent group-hover:bg-blue-500 rounded-b-2xl transition-all duration-500 w-0 group-hover:w-full" />
               </div>
             );
           })}
