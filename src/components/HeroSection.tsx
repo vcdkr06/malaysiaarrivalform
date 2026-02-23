@@ -5,22 +5,22 @@ import batikPattern from "@/assets/batik-pattern.jpg";
 
 const HeroSection = () => {
   const steps = [
-    {
-      icon: <FileText className="w-5 h-5" />,
-      title: "1. Complete Application",
-      desc: "Provide travel details via our simplified digital form.",
-    },
-    {
-      icon: <CreditCard className="w-5 h-5" />,
-      title: "2. Secure Settlement",
-      desc: "Process fees through our bank-grade encrypted portal.",
-    },
-    {
-      icon: <ShieldCheck className="w-5 h-5" />,
-      title: "3. Review & Delivery",
-      desc: "Specialists audit data before emailing your MDAC PIN.",
-    },
-  ];
+  {
+    icon: <FileText className="w-5 h-5" />,
+    title: "1. Complete Application",
+    desc: "Provide travel details via our simplified digital form."
+  },
+  {
+    icon: <CreditCard className="w-5 h-5" />,
+    title: "2. Secure Settlement",
+    desc: "Process fees through our bank-grade encrypted portal."
+  },
+  {
+    icon: <ShieldCheck className="w-5 h-5" />,
+    title: "3. Review & Delivery",
+    desc: "Specialists audit data before emailing your MDAC PIN."
+  }];
+
 
   return (
     <section className="relative bg-[#0a192f] overflow-hidden min-h-[80vh] flex items-center pt-8 md:pt-0">
@@ -30,9 +30,9 @@ const HeroSection = () => {
         style={{
           backgroundImage: `url(${batikPattern})`,
           backgroundSize: '600px',
-          backgroundRepeat: 'repeat',
-        }}
-      />
+          backgroundRepeat: 'repeat'
+        }} />
+
       <div className="absolute inset-0 bg-gradient-to-b from-[#0a192f] via-transparent to-[#0a192f] z-0" />
 
       <div className="container mx-auto px-6 py-4 md:py-8 relative z-10">
@@ -56,7 +56,7 @@ const HeroSection = () => {
             </h1>
 
             <p className="text-sm md:text-lg text-slate-400 mb-4 md:mb-8 max-w-xl leading-snug">
-              <span className="text-red-500 font-semibold">Required for all foreign visitors</span> — submit an MDAC 72 hours before arrival. We handle the filing to ensure your
+              <span className="font-semibold text-slate-50">Required for all foreign visitors</span> — submit an MDAC 72 hours before arrival. We handle the filing to ensure your
               entry is seamless.
             </p>
 
@@ -65,8 +65,8 @@ const HeroSection = () => {
               <Button
                 asChild
                 size="lg"
-                className="bg-accent text-accent-foreground hover:bg-accent/90 font-bold h-12 px-8 rounded-lg shadow-xl shadow-accent/10"
-              >
+                className="bg-accent text-accent-foreground hover:bg-accent/90 font-bold h-12 px-8 rounded-lg shadow-xl shadow-accent/10">
+
                 <Link to="/apply">Apply for MDAC Now</Link>
               </Button>
               <div className="flex items-center gap-2 bg-white/5 border border-white/10 px-4 py-2 rounded-lg">
@@ -89,8 +89,8 @@ const HeroSection = () => {
               </div>
 
               <div className="space-y-4 md:space-y-7">
-                {steps.map((step, index) => (
-                  <div key={index} className="flex gap-4 md:gap-5">
+                {steps.map((step, index) =>
+                <div key={index} className="flex gap-4 md:gap-5">
                     <div className="flex-shrink-0 w-9 h-9 md:w-11 md:h-11 rounded-lg bg-accent/5 border border-accent/15 flex items-center justify-center text-accent">
                       {step.icon}
                     </div>
@@ -101,7 +101,7 @@ const HeroSection = () => {
                       </p>
                     </div>
                   </div>
-                ))}
+                )}
               </div>
             </div>
           </div>
@@ -114,8 +114,8 @@ const HeroSection = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>);
+
 };
 
 export default HeroSection;
