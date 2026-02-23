@@ -44,9 +44,7 @@ const CountryFlagsSection = () => {
   return (
     <section
       className="py-14 md:py-20"
-      style={{
-        background: "linear-gradient(180deg, #FFFFFF 0%, #F6F9FF 40%, #F0F4FF 70%, #F8FAFF 100%)",
-      }}
+      style={{ background: "#F8FAFF" }}
     >
       <div className="container mx-auto px-5 md:px-6 max-w-5xl">
         {/* Header */}
@@ -70,12 +68,7 @@ const CountryFlagsSection = () => {
             }}
           >
             Who Needs an{" "}
-            <span
-              className="bg-clip-text text-transparent"
-              style={{
-                backgroundImage: "linear-gradient(135deg, #1D4ED8, #3B82F6, #60A5FA)",
-              }}
-            >
+            <span className="text-primary">
               MDAC
             </span>
             ?
@@ -114,9 +107,9 @@ const CountryFlagsSection = () => {
         {!showAll && countries.length > INITIAL && (
           <div
             className="relative h-8 -mt-8 pointer-events-none"
-            style={{
-              background: "linear-gradient(to top, #F0F4FF, transparent)",
-            }}
+              style={{
+                background: "linear-gradient(to top, #F8FAFF, transparent)",
+              }}
           />
         )}
 
@@ -128,7 +121,7 @@ const CountryFlagsSection = () => {
               variant="outline"
               className="rounded-full text-xs font-bold px-6 h-9 gap-1.5 transition-all duration-200 hover:translate-y-[-1px]"
               style={{
-                background: showAll ? "#FFFFFF" : "linear-gradient(135deg, #1D4ED8, #3B82F6)",
+                background: showAll ? "#FFFFFF" : "#2563EB",
                 color: showAll ? "#3B82F6" : "#FFFFFF",
                 border: showAll ? "1px solid #BFDBFE" : "none",
                 boxShadow: showAll ? "0 1px 4px rgba(45,74,111,0.06)" : "0 4px 16px rgba(59,130,246,0.25)",

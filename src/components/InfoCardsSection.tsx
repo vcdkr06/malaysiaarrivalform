@@ -9,7 +9,7 @@ const InfoCardsSection = () => {
       title: "What is MDAC?",
       text: "A mandatory digital form that replaces the old paper arrival card for every foreign visitor entering Malaysia.",
       color: "#4B7BE5",
-      bg: "linear-gradient(135deg, #EEF4FF, #E8EEFF)",
+      bg: "#EEF4FF",
       border: "#DBEAFE",
     },
     {
@@ -17,7 +17,7 @@ const InfoCardsSection = () => {
       title: "Who needs one?",
       text: "Every foreign national arriving by air, land, or sea — regardless of visa status. Very few exemptions apply.",
       color: "#2563EB",
-      bg: "linear-gradient(135deg, #EFF6FF, #DBEAFE)",
+      bg: "#EFF6FF",
       border: "#BFDBFE",
     },
     {
@@ -25,7 +25,7 @@ const InfoCardsSection = () => {
       title: "When to submit?",
       text: "File your MDAC within 72 hours of arrival. Late or missing submissions may delay your entry at the border.",
       color: "#E8883C",
-      bg: "linear-gradient(135deg, #FFF6ED, #FFF0E2)",
+      bg: "#FFF6ED",
       border: "#FEEFC3",
     },
   ];
@@ -53,12 +53,7 @@ const InfoCardsSection = () => {
             }}
           >
             Essential{" "}
-            <span
-              className="bg-clip-text text-transparent"
-              style={{
-                backgroundImage: "linear-gradient(135deg, #1D4ED8, #3B82F6)",
-              }}
-            >
+            <span className="text-primary">
               Entry Information
             </span>
           </h2>
@@ -112,7 +107,7 @@ const InfoCardsSection = () => {
         <div
           className="relative overflow-hidden rounded-[20px] p-7 md:p-10"
           style={{
-            background: "linear-gradient(135deg, #1D4ED8, #3B82F6)",
+            background: "#2563EB",
             boxShadow: "0 8px 40px rgba(59,130,246,0.18)",
           }}
         >
