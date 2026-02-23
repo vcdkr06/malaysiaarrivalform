@@ -1,5 +1,4 @@
 import { Clock, Shield, Headphones, CheckCircle, FileText, Search, FolderCheck, Languages } from "lucide-react";
-import petronasTowers from "@/assets/petronas-towers.png";
 import batikPattern from "@/assets/batik-pattern.jpg";
 
 const WhyChooseUsSection = () => {
@@ -8,99 +7,136 @@ const WhyChooseUsSection = () => {
       icon: Clock,
       title: "24-Hour Processing",
       desc: "Most applications reviewed and returned within one business day.",
+      stat: "< 24h",
     },
     {
       icon: Shield,
       title: "Enterprise Security",
       desc: "SSL encryption and bank-grade data protection at every step.",
+      stat: "256-bit",
     },
     {
       icon: Headphones,
       title: "24/7 Assistance",
       desc: "Our support team is available around the clock for any queries.",
+      stat: "24/7",
     },
     {
       icon: CheckCircle,
       title: "Accuracy Guaranteed",
       desc: "We catch errors before submission to maximise approval rates.",
+      stat: "99.8%",
     },
     {
       icon: FileText,
       title: "Step-by-Step Guidance",
       desc: "Clear instructions at every stage — no guesswork required.",
+      stat: "5 min",
     },
     {
       icon: Search,
       title: "Professional Review",
       desc: "A specialist checks your details for compliance before filing.",
+      stat: "2x check",
     },
-    { icon: FolderCheck, title: "Document Prep", desc: "We verify your uploads meet format and size requirements." },
-    { icon: Languages, title: "Multilingual Team", desc: "Support available in English, Mandarin, Arabic, and more." },
+    {
+      icon: FolderCheck,
+      title: "Document Prep",
+      desc: "We verify your uploads meet format and size requirements.",
+      stat: "Auto",
+    },
+    {
+      icon: Languages,
+      title: "Multilingual Team",
+      desc: "Support available in English, Mandarin, Arabic, and more.",
+      stat: "8+ langs",
+    },
   ];
 
+  const featured = benefits.slice(0, 4);
+  const rest = benefits.slice(4);
+
   return (
-    <section className="relative bg-[#0a192f] py-12 md:py-16 overflow-hidden">
-      {/* Batik Pattern Overlay (matching Hero) */}
+    <section className="relative bg-[#0a192f] py-16 md:py-24 overflow-hidden">
+      {/* Batik Pattern Overlay */}
       <div
-        className="absolute inset-0 z-0 opacity-[0.06]"
+        className="absolute inset-0 z-0 opacity-[0.04]"
         style={{
           backgroundImage: `url(${batikPattern})`,
-          backgroundSize: '600px',
-          backgroundRepeat: 'repeat',
+          backgroundSize: "600px",
+          backgroundRepeat: "repeat",
         }}
       />
       <div className="absolute inset-0 bg-gradient-to-b from-[#0a192f] via-transparent to-[#0a192f] z-0" />
 
-      {/* Petronas Towers Background */}
-      <div className="absolute inset-0 z-0">
-        <img
-          src={petronasTowers}
-          alt="Petronas Twin Towers Malaysia"
-          className="w-full h-full object-cover opacity-[0.35]"
-        />
-        <div className="absolute inset-0 bg-[#0a192f]/80" />
-      </div>
-
       <div className="container mx-auto px-6 max-w-6xl relative z-10">
-        {/* Header */}
-        <div className="mb-10 md:mb-14 border-l-4 border-blue-500 pl-4 md:pl-6">
-          <p className="text-[10px] uppercase tracking-[0.2em] text-blue-400 font-bold mb-1">Our Advantages</p>
-          <h2 className="text-2xl md:text-3xl font-light text-white tracking-tight">
-            Why Travelers <span className="font-semibold">Trust Our System</span>
+        {/* Header — Centered */}
+        <div className="text-center mb-12 md:mb-16">
+          <span className="inline-block text-[10px] uppercase tracking-[0.25em] text-accent font-bold bg-accent/10 border border-accent/20 px-4 py-1.5 rounded-full mb-4">
+            Our Advantages
+          </span>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-white tracking-tight leading-tight">
+            Why Travelers{" "}
+            <span className="text-accent">Trust</span> Our System
           </h2>
+          <p className="text-slate-400 text-sm md:text-base mt-3 max-w-lg mx-auto">
+            Built for speed, security, and peace of mind — every step of the way.
+          </p>
         </div>
 
-        {/* Redesigned Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5">
-          {benefits.map((b, i) => {
+        {/* Featured Row — 4 large stat cards */}
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4 mb-3 md:mb-4">
+          {featured.map((b, i) => {
             const Icon = b.icon;
             return (
               <div
                 key={i}
-                className="group relative bg-white p-6 rounded-2xl shadow-[0_15px_35px_-10px_rgba(0,0,0,0.6)] transition-all duration-300 hover:scale-[1.02] hover:shadow-blue-500/20"
+                className="group relative bg-white/[0.03] backdrop-blur-sm border border-white/[0.08] rounded-2xl p-5 md:p-6 hover:bg-white/[0.07] hover:border-accent/30 transition-all duration-300"
               >
-                {/* The Redesigned Icon Wrapper */}
-                <div className="relative mb-6">
-                  <div className="w-12 h-12 bg-[#f0f7ff] rounded-2xl rotate-3 flex items-center justify-center transition-all duration-300 group-hover:rotate-0 group-hover:bg-[#0a192f]">
-                    <Icon
-                      className="w-6 h-6 text-[#0a192f] transition-colors duration-300 group-hover:text-white -rotate-3 group-hover:rotate-0"
-                      strokeWidth={2.2}
-                    />
-                  </div>
-                  {/* Subtle shadow behind the icon for depth */}
-                  <div className="absolute inset-0 w-12 h-12 bg-blue-500/10 rounded-2xl -z-10 blur-sm translate-y-1" />
-                </div>
+                {/* Stat number */}
+                <p className="text-2xl md:text-3xl font-black text-accent mb-3 tracking-tight">
+                  {b.stat}
+                </p>
 
-                {/* Text Content */}
-                <div className="space-y-2">
-                  <h3 className="text-[15px] font-bold text-[#0a192f] leading-tight flex items-center gap-2">
+                {/* Icon + Title */}
+                <div className="flex items-center gap-2 mb-2">
+                  <Icon className="w-4 h-4 text-accent/70" strokeWidth={2.5} />
+                  <h3 className="text-[13px] md:text-sm font-bold text-white">
                     {b.title}
                   </h3>
-                  <p className="text-[12px] md:text-[13px] text-slate-500 leading-relaxed font-medium">{b.desc}</p>
                 </div>
 
-                {/* Lean Progress Bar (Interactive Decoration) */}
-                <div className="absolute bottom-0 left-0 h-1 bg-transparent group-hover:bg-blue-500 rounded-b-2xl transition-all duration-500 w-0 group-hover:w-full" />
+                <p className="text-[11px] md:text-xs text-slate-400 leading-relaxed">
+                  {b.desc}
+                </p>
+
+                {/* Bottom accent line */}
+                <div className="absolute bottom-0 left-4 right-4 h-[2px] bg-accent/0 group-hover:bg-accent/40 rounded-full transition-all duration-500" />
+              </div>
+            );
+          })}
+        </div>
+
+        {/* Bottom Row — 4 compact horizontal cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4">
+          {rest.map((b, i) => {
+            const Icon = b.icon;
+            return (
+              <div
+                key={i}
+                className="flex items-start gap-3 bg-white/[0.02] border border-white/[0.06] rounded-xl p-4 hover:bg-white/[0.05] hover:border-accent/20 transition-all duration-300"
+              >
+                <div className="flex-shrink-0 w-9 h-9 rounded-lg bg-accent/10 border border-accent/15 flex items-center justify-center">
+                  <Icon className="w-4 h-4 text-accent" strokeWidth={2.2} />
+                </div>
+                <div>
+                  <h3 className="text-[12px] md:text-[13px] font-bold text-white mb-0.5">
+                    {b.title}
+                  </h3>
+                  <p className="text-[10px] md:text-[11px] text-slate-500 leading-snug">
+                    {b.desc}
+                  </p>
+                </div>
               </div>
             );
           })}
