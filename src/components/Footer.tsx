@@ -2,7 +2,7 @@ import logo from "@/assets/mdac-logo.png";
 
 const Footer = () => {
   return (
-    <footer className="bg-gradient-cta py-12">
+    <footer className="py-12" style={{ background: 'linear-gradient(135deg, #1e1b4b, #312e81, #3730a3)' }}>
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-3 gap-8">
           <div>
