@@ -9,24 +9,23 @@ const Header = () => {
       <NoticeBanner />
       <div className="container mx-auto px-4 sm:px-6">
         <div className="flex items-center justify-between h-20 sm:h-24">
-          {/* Increased container height slightly to accommodate the larger logo */}
           <div className="flex items-center gap-3">
-            <img
-              src={logo}
-              alt="MDAC Logo"
-              className="h-[77px] w-auto object-contain" // 20% larger than the original h-16 (64px)
-            />
+            <img src={logo} alt="MDAC Logo" className="h-[77px] w-auto object-contain" />
           </div>
           <div className="flex items-center gap-3">
             <Link to="/apply">
               <Button
-                className="text-white font-bold h-9 px-5 rounded-full border-0 transition-all duration-300 hover:translate-y-[-1px] text-base"
+                className="text-white font-bold h-10 px-6 rounded-full border-0 transition-all duration-300 hover:translate-y-[-1px] text-base"
                 style={{
                   background: "#2563EB",
                   boxShadow: "0 4px 15px rgba(59,130,246,0.3), 0 1px 4px rgba(29,78,216,0.2)",
                 }}
               >
-                Apply Now
+                {/* Mobile Text */}
+                <span className="sm:hidden">Apply Now</span>
+
+                {/* Desktop Text */}
+                <span className="hidden sm:inline">Apply for MDAC Now</span>
               </Button>
             </Link>
           </div>
