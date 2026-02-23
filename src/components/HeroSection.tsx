@@ -44,14 +44,24 @@ const HeroSection = () => {
               Official Entry Concierge
             </div>
 
+            {/* Shortened Headline for Mobile */}
             <h1 className="text-4xl md:text-5xl lg:text-7xl font-black text-white leading-[1.02] mb-6 tracking-tight">
-              Fast-Track Your <br />
-              <span className="text-accent">Malaysia</span> Entry.
+              <span className="hidden md:inline">
+                Fast-Track Your <br />
+              </span>
+              <span className="text-accent md:text-white">Malaysia</span>
+              <span className="md:text-accent"> Entry.</span>
             </h1>
 
+            {/* Shortened Sub-headline for Mobile */}
             <p className="text-base md:text-lg text-slate-400 mb-8 max-w-xl leading-snug">
-              Every foreign visitor must submit a Malaysia Digital Arrival Card (MDAC) 72 hours before arrival. We
-              handle the filing to ensure your entry is seamless and error-free.
+              <span className="md:hidden">
+                Get your mandatory MDAC PIN 72 hours before arrival. Seamless, error-free filing.
+              </span>
+              <span className="hidden md:inline">
+                Every foreign visitor must submit a Malaysia Digital Arrival Card (MDAC) 72 hours before arrival. We
+                handle the filing to ensure your entry is seamless.
+              </span>
             </p>
 
             <div className="flex flex-wrap gap-4 items-center mb-6">
@@ -72,9 +82,7 @@ const HeroSection = () => {
 
             {/* Regulatory Disclaimer */}
             <p className="text-[10px] leading-relaxed text-slate-500 max-w-md border-l border-slate-800 pl-4">
-              This website is a private, independent service provider and is not affiliated with, endorsed by, or
-              operated by any government agency. We are not part of or connected to any official immigration or border
-              authority.
+              This website is a private service provider and is not affiliated with any government agency.
             </p>
           </div>
 
@@ -84,7 +92,7 @@ const HeroSection = () => {
 
             <div className="relative bg-[#112240]/80 backdrop-blur-xl border border-white/10 rounded-3xl p-6 lg:p-8 shadow-2xl">
               <div className="flex items-center justify-between mb-8">
-                <h3 className="text-white font-bold text-base tracking-tight uppercase text-xs">Processing Journey</h3>
+                <h3 className="text-white font-bold tracking-tight uppercase text-xs">Processing Journey</h3>
                 <span className="text-[10px] bg-accent/10 text-accent px-2 py-0.5 rounded border border-accent/20 font-bold uppercase">
                   Fast-Track
                 </span>
@@ -104,14 +112,7 @@ const HeroSection = () => {
                 ))}
               </div>
 
-              <div className="mt-8 pt-5 border-t border-white/5 flex items-center justify-between">
-                <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Global Access</span>
-                <div className="flex gap-1.5 opacity-40 grayscale group-hover:grayscale-0 transition-all duration-500">
-                  <div className="w-6 h-4 bg-white/20 rounded-sm" />
-                  <div className="w-6 h-4 bg-white/20 rounded-sm" />
-                  <div className="w-6 h-4 bg-white/20 rounded-sm" />
-                </div>
-              </div>
+              {/* Removed Global Access section as requested */}
             </div>
           </div>
         </div>
