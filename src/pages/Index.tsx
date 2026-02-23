@@ -16,7 +16,7 @@ const Index = () => {
       <HeroSection />
       <InfoCardsSection />
       
-      <ReadyToApplySection />
+      
       <CountryFlagsSection />
       <WhyChooseUsSection />
       <VisaGuideSection />
