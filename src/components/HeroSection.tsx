@@ -22,7 +22,7 @@ const HeroSection = () => {
   ];
 
   return (
-    <section className="relative bg-[#0a192f] overflow-hidden min-h-[85vh] flex items-center pt-16 md:pt-0">
+    <section className="relative bg-[#0a192f] overflow-hidden min-h-[85vh] flex items-center pt-12 md:pt-0">
       {/* Background Grid */}
       <div className="absolute inset-0 z-0">
         <div
@@ -37,28 +37,32 @@ const HeroSection = () => {
 
       <div className="container mx-auto px-6 py-8 relative z-10">
         <div className="flex flex-col lg:grid lg:grid-cols-[1fr_420px] gap-8 lg:gap-16 items-start max-w-7xl mx-auto">
-          {/* Headline - Always Top */}
+          {/* Top Block: Badges, Headline, and Subtitle */}
           <div className="flex flex-col w-full">
             <div className="inline-flex items-center gap-2 bg-accent/10 border border-accent/20 text-accent px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest mb-4 w-fit">
               <span className="w-2 h-2 bg-accent rounded-full animate-pulse" />
               Official Entry Concierge
             </div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-7xl font-black text-white leading-[1.02] mb-6 tracking-tight">
+            {/* Headline: Responsive Content */}
+            <h1 className="text-4xl md:text-5xl lg:text-7xl font-black text-white leading-[1.05] mb-4 tracking-tight">
+              <span className="md:hidden">
+                Malaysia Digital <br />
+                <span className="text-accent">Arrival Card</span>
+              </span>
               <span className="hidden md:inline">
                 Fast-Track Your <br />
+                <span className="text-accent">Malaysia</span> Entry.
               </span>
-              <span className="text-accent md:text-white">Malaysia</span>
-              <span className="md:text-accent"> Entry.</span>
             </h1>
 
-            {/* Sub-headline: Hidden on mobile, moved below card */}
-            <p className="hidden lg:block text-lg text-slate-400 mb-8 max-w-xl leading-snug">
-              Every foreign visitor must submit a Malaysia Digital Arrival Card (MDAC) 72 hours before arrival. We
-              handle the filing to ensure your entry is seamless and error-free.
+            {/* Subtitle: Stays below title on all devices */}
+            <p className="text-base md:text-lg text-slate-400 mb-8 max-w-xl leading-snug">
+              Every foreign visitor must submit an MDAC 72 hours before arrival. We handle the filing to ensure your
+              entry is seamless.
             </p>
 
-            {/* Desktop CTA */}
+            {/* Desktop-Only CTA */}
             <div className="hidden lg:flex flex-wrap gap-4 items-center mb-6">
               <Button
                 asChild
@@ -74,7 +78,7 @@ const HeroSection = () => {
             </div>
           </div>
 
-          {/* Processing Card - Second on mobile, Right on Desktop */}
+          {/* Processing Card: Order 2 on mobile, Right column on Desktop */}
           <div className="relative group w-full order-2 lg:order-none">
             <div className="absolute -inset-2 bg-accent/20 blur-2xl rounded-full opacity-20" />
 
@@ -104,20 +108,10 @@ const HeroSection = () => {
             </div>
           </div>
 
-          {/* Mobile Description & Disclaimer - Bottom */}
-          <div className="lg:hidden order-3 flex flex-col gap-6">
-            <p className="text-base text-slate-400 leading-snug">
-              Submit your mandatory MDAC 72 hours before arrival. We handle the filing to ensure your entry is seamless.
-            </p>
-            <p className="text-[10px] leading-relaxed text-slate-500 border-l border-slate-800 pl-4">
-              Private service provider. Not affiliated with government agencies.
-            </p>
-          </div>
-
-          {/* Desktop Disclaimer (Hidden on Mobile) */}
-          <div className="hidden lg:block">
-            <p className="text-[10px] leading-relaxed text-slate-500 max-w-md border-l border-slate-800 pl-4 mt-[-20px]">
-              Private service provider. Not affiliated with government agencies.
+          {/* Footer Disclaimer: Bottom on mobile, relative positioning on desktop */}
+          <div className="order-3 lg:col-start-1 lg:mt-[-2rem]">
+            <p className="text-[10px] leading-relaxed text-slate-500 max-w-md border-l border-slate-800 pl-4">
+              Private service provider. Not affiliated with government agencies or official immigration authorities.
             </p>
           </div>
         </div>
