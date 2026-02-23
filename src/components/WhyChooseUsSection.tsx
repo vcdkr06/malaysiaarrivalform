@@ -1,65 +1,216 @@
 import { Clock, Shield, Headphones, CheckCircle, FileText, Search, FolderCheck, Languages } from "lucide-react";
 
 const WhyChooseUsSection = () => {
-  const benefits = [
-    { icon: Clock, title: "24-Hour Processing", desc: "Most applications reviewed and returned within one business day.", stat: "< 24h" },
-    { icon: Shield, title: "Enterprise Security", desc: "SSL encryption and bank-grade data protection at every step.", stat: "256-bit" },
-    { icon: Headphones, title: "24/7 Assistance", desc: "Our support team is available around the clock for any queries.", stat: "24/7" },
-    { icon: CheckCircle, title: "Accuracy Guaranteed", desc: "We catch errors before submission to maximise approval rates.", stat: "99.8%" },
-    { icon: FileText, title: "Step-by-Step Guidance", desc: "Clear instructions at every stage — no guesswork required.", stat: "5 min" },
-    { icon: Search, title: "Professional Review", desc: "A specialist checks your details for compliance before filing.", stat: "2x check" },
-    { icon: FolderCheck, title: "Document Prep", desc: "We verify your uploads meet format and size requirements.", stat: "Auto" },
-    { icon: Languages, title: "Multilingual Team", desc: "Support available in English, Mandarin, Arabic, and more.", stat: "8+ langs" },
+  const featured = [
+    {
+      icon: Clock,
+      title: "Same-Day Processing",
+      desc: "Most filings are reviewed and returned within a single business day.",
+      stat: "< 24h",
+      color: "#4B7BE5",
+      bg: "linear-gradient(135deg, #EEF4FF, #E8EEFF)",
+      border: "#DBEAFE",
+    },
+    {
+      icon: Shield,
+      title: "Bank-Level Security",
+      desc: "Every byte of your data travels through 256-bit SSL encryption.",
+      stat: "256-bit",
+      color: "#8B5CF6",
+      bg: "linear-gradient(135deg, #F3F0FF, #EDE8FF)",
+      border: "#EDE9FE",
+    },
+    {
+      icon: Headphones,
+      title: "Always-On Support",
+      desc: "Real humans ready to help — any hour, any timezone, any question.",
+      stat: "24/7",
+      color: "#10B981",
+      bg: "linear-gradient(135deg, #ECFDF5, #E2FBF0)",
+      border: "#D1FAE5",
+    },
+    {
+      icon: CheckCircle,
+      title: "Near-Perfect Accuracy",
+      desc: "We flag mistakes before they reach immigration — so you don't have to.",
+      stat: "99.8%",
+      color: "#E8883C",
+      bg: "linear-gradient(135deg, #FFF6ED, #FFF0E2)",
+      border: "#FEEFC3",
+    },
   ];
 
-  const featured = benefits.slice(0, 4);
-  const rest = benefits.slice(4);
+  const extras = [
+    {
+      icon: FileText,
+      title: "Guided Form",
+      desc: "Finish in under 5 minutes with clear prompts at every field.",
+      color: "#4B7BE5",
+    },
+    {
+      icon: Search,
+      title: "Specialist Review",
+      desc: "A trained agent double-checks your data for compliance.",
+      color: "#8B5CF6",
+    },
+    {
+      icon: FolderCheck,
+      title: "Document Check",
+      desc: "We verify your uploads meet format and size standards.",
+      color: "#10B981",
+    },
+    {
+      icon: Languages,
+      title: "8+ Languages",
+      desc: "Support in English, Mandarin, Arabic, Bahasa & more.",
+      color: "#E8883C",
+    },
+  ];
 
   return (
-    <section className="relative bg-gradient-hero py-16 md:py-24 overflow-hidden">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_70%,hsl(230_60%_55%/0.12),transparent_60%)] z-0" />
+    <section
+      className="relative py-16 md:py-24 overflow-hidden"
+      style={{
+        background: "linear-gradient(180deg, #FFFFFF 0%, #F6F9FF 40%, #F0F4FF 70%, #F8FAFF 100%)",
+      }}
+    >
+      {/* Decorative blobs */}
+      <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+        <div
+          className="absolute top-[-10%] left-[10%] w-[400px] h-[400px] rounded-full blur-3xl"
+          style={{
+            background: "radial-gradient(circle, rgba(75,123,229,0.05) 0%, transparent 65%)",
+          }}
+        />
+        <div
+          className="absolute bottom-[-8%] right-[5%] w-[350px] h-[350px] rounded-full blur-3xl"
+          style={{
+            background: "radial-gradient(circle, rgba(139,92,246,0.04) 0%, transparent 60%)",
+          }}
+        />
+      </div>
 
-      <div className="container mx-auto px-6 max-w-6xl relative z-10">
-        <div className="text-center mb-12 md:mb-16">
-          <span className="inline-block text-[10px] uppercase tracking-[0.25em] text-primary-foreground/80 font-bold bg-primary-foreground/10 border border-primary-foreground/15 px-4 py-1.5 rounded-full mb-4">
-            Our Advantages
+      <div className="container mx-auto px-5 md:px-6 max-w-6xl relative z-10">
+        {/* Header */}
+        <div className="text-center mb-10 md:mb-14">
+          <span
+            className="inline-flex items-center gap-1.5 text-[10px] uppercase tracking-[0.2em] font-bold px-3.5 py-1.5 rounded-full mb-4"
+            style={{
+              background: "#EEF4FF",
+              border: "1px solid #DBEAFE",
+              color: "#4B7BE5",
+            }}
+          >
+            Why Choose Us
           </span>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-primary-foreground tracking-tight leading-tight">
-            Why Travelers <span className="text-white/90">Trust</span> Our System
+          <h2
+            className="text-2xl md:text-4xl lg:text-[2.75rem] font-extrabold tracking-[-0.02em] leading-tight mb-3"
+            style={{
+              color: "#2D4A6F",
+              fontFamily: "'Outfit', system-ui, sans-serif",
+            }}
+          >
+            Built for Travelers Who{" "}
+            <span
+              className="bg-clip-text text-transparent"
+              style={{
+                backgroundImage: "linear-gradient(135deg, #4B7BE5, #7C5CE5)",
+              }}
+            >
+              Value Their Time
+            </span>
           </h2>
-          <p className="text-primary-foreground/60 text-sm md:text-base mt-3 max-w-lg mx-auto">
-            Built for speed, security, and peace of mind — every step of the way.
+          <p className="text-sm md:text-[15px] max-w-md mx-auto leading-relaxed" style={{ color: "#8196AE" }}>
+            Speed, security, and peace of mind — baked into every step of your application.
           </p>
         </div>
 
+        {/* Featured 4 — stat cards */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4 mb-3 md:mb-4">
           {featured.map((b, i) => {
             const Icon = b.icon;
             return (
-              <div key={i} className="group relative bg-primary-foreground/[0.06] backdrop-blur-sm border border-primary-foreground/[0.1] rounded-2xl p-5 md:p-6 hover:bg-primary-foreground/[0.12] hover:border-primary-foreground/25 transition-all duration-300">
-                <p className="text-2xl md:text-3xl font-black text-primary-foreground mb-3 tracking-tight">{b.stat}</p>
-                <div className="flex items-center gap-2 mb-2">
-                  <Icon className="w-4 h-4 text-primary-foreground/70" strokeWidth={2.5} />
-                  <h3 className="text-[13px] md:text-sm font-bold text-primary-foreground">{b.title}</h3>
+              <div
+                key={i}
+                className="group relative rounded-2xl p-5 md:p-6 transition-all duration-300 hover:translate-y-[-3px] hover:shadow-lg cursor-default overflow-hidden"
+                style={{
+                  background: b.bg,
+                  border: `1px solid ${b.border}`,
+                }}
+              >
+                {/* Large stat watermark */}
+                <span
+                  className="absolute -top-2 -right-1 text-[4rem] md:text-[5rem] font-black leading-none select-none opacity-[0.06] tracking-tighter"
+                  style={{ color: b.color }}
+                >
+                  {b.stat}
+                </span>
+
+                {/* Stat value */}
+                <p
+                  className="text-xl md:text-2xl font-extrabold mb-3 tracking-tight relative z-10"
+                  style={{ color: b.color }}
+                >
+                  {b.stat}
+                </p>
+
+                {/* Icon + title */}
+                <div className="flex items-center gap-2 mb-1.5 relative z-10">
+                  <div
+                    className="w-7 h-7 rounded-lg flex items-center justify-center"
+                    style={{ background: "#FFFFFF", boxShadow: `0 1px 4px ${b.color}10` }}
+                  >
+                    <Icon className="w-3.5 h-3.5" style={{ color: b.color }} strokeWidth={2.5} />
+                  </div>
+                  <h3 className="text-[12px] md:text-[13px] font-bold" style={{ color: "#3D5A80" }}>
+                    {b.title}
+                  </h3>
                 </div>
-                <p className="text-[11px] md:text-xs text-primary-foreground/50 leading-relaxed">{b.desc}</p>
-                <div className="absolute bottom-0 left-4 right-4 h-[2px] bg-primary-foreground/0 group-hover:bg-primary-foreground/30 rounded-full transition-all duration-500" />
+
+                {/* Description */}
+                <p className="text-[10px] md:text-[11px] leading-relaxed relative z-10" style={{ color: "#8DA2B8" }}>
+                  {b.desc}
+                </p>
+
+                {/* Bottom accent line on hover */}
+                <div
+                  className="absolute bottom-0 left-0 right-0 h-[2px] scale-x-0 group-hover:scale-x-100 transition-transform duration-400 origin-left"
+                  style={{ background: b.color, opacity: 0.4 }}
+                />
               </div>
             );
           })}
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4">
-          {rest.map((b, i) => {
+        {/* Bottom row — compact extras */}
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4">
+          {extras.map((b, i) => {
             const Icon = b.icon;
             return (
-              <div key={i} className="flex items-start gap-3 bg-primary-foreground/[0.04] border border-primary-foreground/[0.08] rounded-xl p-4 hover:bg-primary-foreground/[0.08] hover:border-primary-foreground/20 transition-all duration-300">
-                <div className="flex-shrink-0 w-9 h-9 rounded-lg bg-primary-foreground/10 border border-primary-foreground/15 flex items-center justify-center">
-                  <Icon className="w-4 h-4 text-primary-foreground" strokeWidth={2.2} />
+              <div
+                key={i}
+                className="flex items-start gap-3 rounded-xl p-3.5 md:p-4 transition-all duration-200 hover:shadow-sm cursor-default"
+                style={{
+                  background: "#FFFFFF",
+                  border: "1px solid #E8EFF8",
+                }}
+              >
+                <div
+                  className="flex-shrink-0 w-8 h-8 rounded-lg flex items-center justify-center"
+                  style={{
+                    background: `${b.color}0A`,
+                    border: `1px solid ${b.color}15`,
+                  }}
+                >
+                  <Icon className="w-3.5 h-3.5" style={{ color: b.color }} strokeWidth={2.2} />
                 </div>
                 <div>
-                  <h3 className="text-[12px] md:text-[13px] font-bold text-primary-foreground mb-0.5">{b.title}</h3>
-                  <p className="text-[10px] md:text-[11px] text-primary-foreground/50 leading-snug">{b.desc}</p>
+                  <h3 className="text-[11px] md:text-[12px] font-bold mb-0.5" style={{ color: "#3D5A80" }}>
+                    {b.title}
+                  </h3>
+                  <p className="text-[10px] md:text-[11px] leading-snug" style={{ color: "#8DA2B8" }}>
+                    {b.desc}
+                  </p>
                 </div>
               </div>
             );
