@@ -1,133 +1,88 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { CheckCircle, Shield, FileText, creditCard, Search, Mail, Info } from "lucide-react";
+import { User, CreditCard, ShieldCheck, Send, Info } from "lucide-react";
 
 const HeroSection = () => {
+  const steps = [
+    { icon: <User className="w-4 h-4" />, title: "Submit Details", desc: "Enter passport & travel info" },
+    { icon: <CreditCard className="w-4 h-4" />, title: "Secure Checkout", desc: "Safe, encrypted payment" },
+    { icon: <ShieldCheck className="w-4 h-4" />, title: "Expert Audit", desc: "Manual review for 100% accuracy" },
+    { icon: <Send className="w-4 h-4" />, title: "Instant Delivery", desc: "Receive your PIN via email" },
+  ];
+
   return (
     <section className="relative bg-primary overflow-hidden min-h-[90vh] flex items-center">
-      {/* Gradient & Malaysia Pattern Overlay */}
-      <div className="absolute inset-0 bg-gradient-hero pointer-events-none" />
-
       {/* Malaysia Pattern Graphic */}
       <div
-        className="absolute inset-0 opacity-[0.05] pointer-events-none"
+        className="absolute inset-0 opacity-[0.04] pointer-events-none"
         style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M40 0l40 40-40 40L0 40z' fill='%23ffffff' fill-opacity='1' fill-rule='evenodd'/%3E%3C/svg%3E")`,
-          backgroundSize: "120px 120px",
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0l30 30-30 30L0 30z' fill='%23ffffff'/%3E%3C/svg%3E")`,
+          backgroundSize: "80px 80px",
         }}
       />
+      <div className="absolute inset-0 bg-gradient-to-b from-primary/50 via-primary to-primary pointer-events-none" />
 
-      <div className="container mx-auto px-6 py-12 md:py-20 relative z-10">
-        <div className="grid lg:grid-cols-[1fr_480px] gap-12 items-center max-w-7xl mx-auto">
-          {/* Left Side: Copy & CTA */}
+      <div className="container mx-auto px-6 py-12 relative z-10">
+        <div className="grid lg:grid-cols-[1fr_420px] gap-16 items-center max-w-7xl mx-auto">
+          {/* Left: Value Proposition */}
           <div>
-            <div className="inline-flex items-center gap-2 bg-accent/10 border border-accent/20 text-accent px-4 py-1.5 rounded-full text-xs font-medium tracking-wide mb-6">
+            <div className="inline-flex items-center gap-2 bg-accent/10 border border-accent/20 text-accent px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest mb-6">
               <span className="w-1.5 h-1.5 bg-accent rounded-full animate-pulse" />
-              MDAC Official Entry Guide 2024
+              MDAC Concierge Service
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-7xl font-extrabold text-primary-foreground leading-[1.05] mb-6">
-              Seamless Entry
-              <br />
-              into <span className="text-accent">Malaysia</span>.
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-primary-foreground tracking-tight leading-[0.95] mb-6">
+              Malaysia <br />
+              <span className="text-accent">Made Easy.</span>
             </h1>
-            <p className="text-lg text-primary-foreground/60 mb-8 max-w-xl leading-relaxed">
-              All foreign visitors are required to complete the MDAC within 72 hours of arrival. We handle the
-              paperwork, so you can focus on your journey.
+            <p className="text-lg text-primary-foreground/60 mb-8 max-w-lg leading-relaxed">
+              Skip the confusion. We process your Mandatory Digital Arrival Card with expert oversight, ensuring a
+              smooth entry at immigration.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center mb-10">
-              <Button
-                asChild
-                size="lg"
-                className="bg-accent text-accent-foreground hover:bg-accent/90 font-bold h-14 px-10 rounded-xl text-base shadow-lg shadow-accent/20"
-              >
-                <Link to="/apply">Apply for MDAC Now</Link>
-              </Button>
+            <Button
+              asChild
+              size="lg"
+              className="bg-accent text-accent-foreground hover:bg-accent/90 font-bold h-14 px-10 rounded-xl shadow-xl shadow-accent/20 mb-8"
+            >
+              <Link to="/apply">Start My Application</Link>
+            </Button>
 
-              <div className="flex items-center gap-2 text-primary-foreground/40 text-sm italic">
-                <Shield className="w-4 h-4" />
-                Secure 256-bit Encrypted Processing
-              </div>
-            </div>
-
-            {/* Pro Tip */}
-            <div className="inline-flex items-center gap-3 bg-white/5 border border-white/10 p-3 rounded-lg">
-              <div className="bg-accent/20 p-1.5 rounded-md">
-                <Info className="w-4 h-4 text-accent" />
-              </div>
-              <p className="text-sm text-primary-foreground/70">
-                <span className="font-bold text-accent">Pro Tip:</span> Apply at least 3 days before your travel date.
+            <div className="flex items-center gap-3 text-primary-foreground/40 border-t border-white/10 pt-6">
+              <Info className="w-5 h-5 text-accent" />
+              <p className="text-sm">
+                <strong>Pro Tip:</strong> Apply 3 days before departure for peace of mind.
               </p>
             </div>
           </div>
 
-          {/* Right Side: Application Process (Above the Fold) */}
-          <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-3xl p-6 md:p-8 relative">
-            <h3 className="text-white font-bold text-xl mb-6 flex items-center gap-2">Application Process</h3>
+          {/* Right: Concise Process Card */}
+          <div className="relative">
+            <div className="absolute -inset-4 bg-accent/20 blur-3xl rounded-full opacity-20" />
+            <div className="relative bg-white/5 backdrop-blur-xl border border-white/10 rounded-[2rem] p-8">
+              <h3 className="text-white font-bold text-lg mb-8 tracking-tight">Quick Process</h3>
 
-            <div className="space-y-6">
-              {/* Step 1 */}
-              <div className="flex gap-4">
-                <div className="flex-shrink-0 w-8 h-8 rounded-full bg-accent text-accent-foreground flex items-center justify-center font-bold text-sm">
-                  1
-                </div>
-                <div>
-                  <h4 className="text-primary-foreground font-semibold text-sm">Complete Online Form</h4>
-                  <p className="text-xs text-primary-foreground/40 mt-1">
-                    Enter your personal and travel details accurately.
-                  </p>
-                </div>
+              <div className="space-y-8">
+                {steps.map((step, index) => (
+                  <div key={index} className="flex gap-5 group">
+                    <div className="relative">
+                      <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-accent-foreground transition-colors">
+                        {step.icon}
+                      </div>
+                      {index !== steps.length - 1 && (
+                        <div className="absolute top-12 left-1/2 -translate-x-1/2 w-px h-6 bg-white/10" />
+                      )}
+                    </div>
+                    <div>
+                      <h4 className="text-primary-foreground font-bold text-sm tracking-wide">{step.title}</h4>
+                      <p className="text-xs text-primary-foreground/40 mt-1 leading-relaxed">{step.desc}</p>
+                    </div>
+                  </div>
+                ))}
               </div>
 
-              {/* Step 2 */}
-              <div className="flex gap-4">
-                <div className="flex-shrink-0 w-8 h-8 rounded-full bg-accent text-accent-foreground flex items-center justify-center font-bold text-sm">
-                  2
-                </div>
-                <div>
-                  <h4 className="text-primary-foreground font-semibold text-sm">Pay Processing Fee</h4>
-                  <p className="text-xs text-primary-foreground/40 mt-1">
-                    Use secure payment options provided on our portal.
-                  </p>
-                </div>
-              </div>
-
-              {/* Step 3 */}
-              <div className="flex gap-4">
-                <div className="flex-shrink-0 w-8 h-8 rounded-full bg-accent text-accent-foreground flex items-center justify-center font-bold text-sm">
-                  3
-                </div>
-                <div>
-                  <h4 className="text-primary-foreground font-semibold text-sm">Review & Verification</h4>
-                  <p className="text-xs text-primary-foreground/40 mt-1">
-                    Specialists manually review your data for 100% accuracy.
-                  </p>
-                </div>
-              </div>
-
-              {/* Step 4 */}
-              <div className="flex gap-4">
-                <div className="flex-shrink-0 w-8 h-8 rounded-full bg-accent text-accent-foreground flex items-center justify-center font-bold text-sm">
-                  4
-                </div>
-                <div>
-                  <h4 className="text-primary-foreground font-semibold text-sm">Delivery & Approval</h4>
-                  <p className="text-xs text-primary-foreground/40 mt-1">
-                    Receive your MDAC PIN via email. Present at immigration.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* Quick Stats Overlay */}
-            <div className="mt-8 pt-6 border-t border-white/10 flex justify-between items-center">
-              <div>
-                <p className="text-[10px] text-primary-foreground/30 uppercase tracking-tighter">Fast-Track</p>
-                <p className="text-lg font-bold text-accent">&lt; 24 Hours</p>
-              </div>
-              <div className="text-right">
-                <p className="text-[10px] text-primary-foreground/30 uppercase tracking-tighter">Support</p>
-                <p className="text-sm font-semibold text-primary-foreground">24/7 Concierge</p>
+              <div className="mt-10 p-4 bg-white/5 rounded-2xl border border-white/5 flex items-center justify-between">
+                <span className="text-[10px] font-bold text-primary-foreground/30 uppercase">Priority Status</span>
+                <span className="text-xs font-bold text-accent">Active & Verified</span>
               </div>
             </div>
           </div>
