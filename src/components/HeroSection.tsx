@@ -62,7 +62,6 @@ const HeroSection = () => {
       </div>
 
       <div className="container mx-auto px-6 relative z-10 max-w-6xl">
-        {/* MODIFIED: Trigger grid on md (tablet) instead of lg (desktop) */}
         <div className="flex flex-col md:grid md:grid-cols-2 lg:grid-cols-[1.15fr_1fr] gap-8 md:gap-10 lg:gap-16 items-center">
           {/* ——— LEFT COLUMN: Copy & CTA ——— */}
           <div className="flex flex-col w-full">
@@ -152,9 +151,10 @@ const HeroSection = () => {
           </div>
 
           {/* ——— RIGHT COLUMN: Stepper ——— */}
-          <div className="w-full">
+          {/* Added py-6 lg:py-10 to give breathing room top and bottom */}
+          <div className="w-full py-6 lg:py-10">
             <div
-              className="rounded-[2rem] p-6 lg:p-9"
+              className="rounded-[2rem] p-5 lg:p-7" // Tighter padding
               style={{
                 background: "rgba(255, 255, 255, 0.7)",
                 backdropFilter: "blur(12px)",
@@ -162,7 +162,7 @@ const HeroSection = () => {
                 boxShadow: "0 10px 40px rgba(45,74,111,0.04)",
               }}
             >
-              <div className="flex items-center justify-between mb-8">
+              <div className="flex items-center justify-between mb-5 lg:mb-6">
                 <h3 className="font-bold text-[15px] lg:text-[16px]" style={{ color: "#3D5A80" }}>
                   How It Works
                 </h3>
@@ -179,13 +179,14 @@ const HeroSection = () => {
               </div>
 
               {/* Unique Stepper Layout */}
-              <div className="relative space-y-6 lg:space-y-7 pl-1">
+              <div className="relative space-y-4 lg:space-y-5 pl-1">
+                {" "}
+                {/* Tighter step spacing */}
                 {/* Dashed background track */}
                 <div
-                  className="absolute top-4 bottom-4 left-[21px] border-l-[1.5px] border-dashed"
+                  className="absolute top-2 bottom-2 left-[21px] border-l-[1.5px] border-dashed"
                   style={{ borderColor: "#CBD5E1" }}
                 />
-
                 {steps.map((step, index) => (
                   <div key={index} className="relative z-10 flex gap-4 lg:gap-5 items-center group cursor-default">
                     {/* Icon Bubble */}
@@ -203,12 +204,12 @@ const HeroSection = () => {
                     {/* Text Content */}
                     <div className="flex-1 min-w-0">
                       <h4
-                        className="font-bold text-[13px] lg:text-[14px] mb-1 transition-colors duration-200"
+                        className="font-bold text-[13px] lg:text-[14px] mb-0.5 lg:mb-1 transition-colors duration-200"
                         style={{ color: "#2D4A6F" }}
                       >
                         {step.title}
                       </h4>
-                      <p className="text-[11px] lg:text-[12.5px] leading-snug" style={{ color: "#8DA2B8" }}>
+                      <p className="text-[11px] lg:text-[12px] leading-snug" style={{ color: "#8DA2B8" }}>
                         {step.desc}
                       </p>
                     </div>
@@ -218,7 +219,7 @@ const HeroSection = () => {
 
               {/* Alert / Notice */}
               <div
-                className="flex items-start gap-3 mt-7 lg:mt-8 px-4 lg:px-5 py-4 rounded-2xl"
+                className="flex items-start gap-3 mt-5 lg:mt-6 px-4 py-3 rounded-2xl" // Tighter alert box
                 style={{
                   background: "#F8FAFF",
                   border: "1px solid #E2E8F0",
@@ -235,7 +236,7 @@ const HeroSection = () => {
 
             {/* Disclaimer - Mobile Only (Visible at bottom under the card) */}
             <p
-              className="block md:hidden mt-6 text-[10px] leading-relaxed text-center px-4"
+              className="block md:hidden mt-4 text-[10px] leading-relaxed text-center px-4"
               style={{ color: "#94A3B8" }}
             >
               Disclaimer: We are an independent agency assisting travelers with their documentation. We are not legally
