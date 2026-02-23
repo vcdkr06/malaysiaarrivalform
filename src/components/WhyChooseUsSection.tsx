@@ -1,5 +1,4 @@
 import { Clock, Shield, Headphones, CheckCircle, FileText, Search, FolderCheck, Languages } from "lucide-react";
-import petronasTowers from "@/assets/petronas-towers.png";
 
 const WhyChooseUsSection = () => {
   const benefits = [
@@ -38,48 +37,50 @@ const WhyChooseUsSection = () => {
   ];
 
   return (
-    <section className="relative py-12 md:py-20 overflow-hidden">
-      {/* Background Image: KL Tower */}
+    <section className="relative py-12 md:py-16 overflow-hidden">
+      {/* Background Image: KL Tower (UNCHANGED) */}
       <div className="absolute inset-0 z-0">
         <img
-          src={petronasTowers}
-          alt="Petronas Twin Towers Malaysia"
+          src="https://images.unsplash.com/photo-1596422846543-75c6fc18a593?q=80&w=2070&auto=format&fit=crop"
+          alt="KL Tower Malaysia"
           className="w-full h-full object-cover"
         />
-        {/* Dark Navy Overlay for Readability */}
-        <div className="absolute inset-0 bg-[#0a192f]/90 md:bg-[#0a192f]/85 backdrop-blur-[2px]" />
+        <div className="absolute inset-0 bg-[#0a192f]/90" />
       </div>
 
       <div className="container mx-auto px-6 max-w-6xl relative z-10">
-        {/* Header - Lean & White Text for Contrast */}
-        <div className="mb-8 md:mb-14 border-l-2 border-blue-400 pl-4">
+        {/* Header */}
+        <div className="mb-10 md:mb-14 border-l-4 border-blue-500 pl-4 md:pl-6">
           <p className="text-[10px] uppercase tracking-[0.2em] text-blue-400 font-bold mb-1">Our Advantages</p>
-          <h2 className="text-2xl md:text-4xl font-light text-white tracking-tight">
+          <h2 className="text-2xl md:text-3xl font-light text-white tracking-tight">
             Why Travelers <span className="font-semibold">Trust Our System</span>
           </h2>
         </div>
 
-        {/* Benefits Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4">
+        {/* Benefits Grid - Enhanced Stand-out Cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5">
           {benefits.map((b, i) => {
             const Icon = b.icon;
             return (
               <div
                 key={i}
-                className="group p-5 rounded-xl bg-white/[0.08] border border-white/15 hover:bg-white/[0.14] hover:border-blue-400/50 transition-all duration-300 backdrop-blur-md shadow-lg shadow-black/20"
+                className="group relative p-6 rounded-2xl bg-white border border-white/20 shadow-[0_20px_40px_-15px_rgba(0,0,0,0.5)] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-blue-500/10"
               >
-                <div className="flex items-start gap-4 lg:flex-col lg:gap-0">
-                  {/* Icon Wrapper */}
-                  <div className="flex-shrink-0 w-9 h-9 lg:w-11 lg:h-11 bg-blue-500/10 rounded-lg flex items-center justify-center lg:mb-4 group-hover:bg-blue-500 transition-colors">
-                    <Icon className="w-5 h-5 text-blue-400 group-hover:text-white transition-colors" strokeWidth={2} />
+                {/* Subtle Top Accent Line */}
+                <div className="absolute top-0 left-6 right-6 h-1 bg-[#f0f7ff] group-hover:bg-blue-500 rounded-b-full transition-colors" />
+
+                <div className="flex items-start gap-4 lg:flex-col lg:gap-0 mt-2">
+                  {/* Icon Wrapper - Stronger Contrast */}
+                  <div className="flex-shrink-0 w-10 h-10 lg:w-12 lg:h-12 bg-[#f0f7ff] rounded-xl flex items-center justify-center lg:mb-5 group-hover:scale-110 transition-transform duration-300">
+                    <Icon className="w-5 h-5 lg:w-6 lg:h-6 text-[#0a192f]" strokeWidth={2.5} />
                   </div>
 
                   {/* Text Content */}
                   <div>
-                    <h3 className="text-[14px] md:text-sm font-bold text-white mb-1 group-hover:text-blue-400 transition-colors">
+                    <h3 className="text-[15px] md:text-[16px] font-bold text-[#0a192f] mb-1.5 leading-tight">
                       {b.title}
                     </h3>
-                    <p className="text-[12px] text-slate-300 leading-snug">{b.desc}</p>
+                    <p className="text-[12px] md:text-[13px] text-slate-500 leading-relaxed font-medium">{b.desc}</p>
                   </div>
                 </div>
               </div>
