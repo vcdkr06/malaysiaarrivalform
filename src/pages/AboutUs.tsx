@@ -65,12 +65,12 @@ const AboutUs = () => {
     <div className="min-h-screen bg-background font-quicksand">
       <Header />
 
-      {/* Slimmer Header Bar - Aligned with Content */}
-      <section className="bg-blue-600 py-6 md:py-8">
+      {/* Slimmer Header Bar */}
+      <section className="bg-accent py-6 md:py-8">
         <div className="container mx-auto px-4 max-w-4xl">
           <div className="text-left">
-            <h1 className="text-xl md:text-2xl font-bold text-white mb-0.5">About Us</h1>
-            <p className="text-xs md:text-sm text-blue-50 opacity-80 font-medium">
+            <h1 className="text-xl md:text-2xl font-bold text-accent-foreground mb-0.5">About Us</h1>
+            <p className="text-xs md:text-sm text-accent-foreground/80 font-medium">
               Clear, transparent, and up-to-date pricing
             </p>
           </div>
@@ -99,16 +99,16 @@ const AboutUs = () => {
           {pricingPlans.map((plan, index) => (
             <div
               key={index}
-              className={`bg-card rounded-2xl p-8 relative border-2 shadow-sm flex flex-col ${plan.popular ? "border-blue-600" : "border-border"}`}
+              className={`bg-card rounded-2xl p-8 relative border-2 shadow-sm flex flex-col ${plan.popular ? "border-accent" : "border-border"}`}
             >
               {plan.popular && (
-                <span className="absolute -top-3.5 left-6 bg-blue-600 text-white text-[10px] px-3 py-1 rounded-full font-bold uppercase tracking-wider">
+                <span className="absolute -top-3.5 left-6 bg-accent text-accent-foreground text-[10px] px-3 py-1 rounded-full font-bold uppercase tracking-wider">
                   Most Popular
                 </span>
               )}
               <h3 className="text-2xl font-bold text-foreground mb-1">{plan.name}</h3>
               <div className="flex items-baseline gap-1 mb-4">
-                <span className="text-4xl font-bold text-blue-600">{plan.price}</span>
+                <span className="text-4xl font-bold text-accent">{plan.price}</span>
                 <span className="text-lg text-muted-foreground">USD</span>
               </div>
               <p className="text-muted-foreground mb-6 text-base">{plan.description}</p>
@@ -116,14 +116,14 @@ const AboutUs = () => {
               <ul className="space-y-4 border-t pt-6 flex-grow">
                 {plan.features.map((f, i) => (
                   <li key={i} className="flex items-start gap-3 text-[15px] text-muted-foreground leading-tight">
-                    <Check className="h-5 w-5 text-blue-600 mt-0.5 flex-shrink-0" /> {f}
+                    <Check className="h-5 w-5 text-accent mt-0.5 flex-shrink-0" /> {f}
                   </li>
                 ))}
               </ul>
               <Link to="/apply" className="block mt-8">
                 <Button
                   size="lg"
-                  className={`w-full py-6 text-lg font-bold ${plan.popular ? "bg-blue-600 hover:bg-blue-700" : "bg-secondary"}`}
+                  className={`w-full py-6 text-lg font-bold ${plan.popular ? "bg-accent hover:bg-accent/90 text-accent-foreground" : "bg-secondary"}`}
                 >
                   Apply Now
                 </Button>
@@ -137,7 +137,7 @@ const AboutUs = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-20 text-left">
           {serviceFeatures.map((f, i) => (
             <div key={i} className="flex gap-5 p-6 border rounded-2xl bg-muted/20 hover:bg-muted/40 transition-colors">
-              <f.icon className="h-8 w-8 text-blue-600 flex-shrink-0" />
+              <f.icon className="h-8 w-8 text-accent flex-shrink-0" />
               <div>
                 <h4 className="text-lg font-bold mb-2">{f.title}</h4>
                 <p className="text-[15px] text-muted-foreground leading-relaxed">{f.desc}</p>
@@ -156,8 +156,8 @@ const AboutUs = () => {
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {["Our service fee", "Processing and handling", "Priority processing"].map((item, idx) => (
-              <div key={idx} className="flex items-center gap-3 bg-white p-4 rounded-xl border border-border">
-                <Check className="h-5 w-5 text-blue-600" />
+              <div key={idx} className="flex items-center gap-3 bg-card p-4 rounded-xl border border-border">
+                <Check className="h-5 w-5 text-accent" />
                 <span className="font-semibold text-foreground text-sm">{item}</span>
               </div>
             ))}
@@ -167,7 +167,7 @@ const AboutUs = () => {
         {/* Security Section */}
         <div className="grid md:grid-cols-2 gap-12 mb-20 border-t pt-12">
           <div>
-            <h3 className="text-xl font-bold flex items-center gap-3 mb-4 text-blue-600">
+            <h3 className="text-xl font-bold flex items-center gap-3 mb-4 text-accent">
               <Lock className="h-6 w-6" /> Secure Checkout
             </h3>
             <p className="text-base text-muted-foreground leading-relaxed">
@@ -176,7 +176,7 @@ const AboutUs = () => {
             </p>
           </div>
           <div>
-            <h3 className="text-xl font-bold flex items-center gap-3 mb-4 text-blue-600">
+            <h3 className="text-xl font-bold flex items-center gap-3 mb-4 text-accent">
               <Shield className="h-6 w-6" /> Data Protection
             </h3>
             <p className="text-base text-muted-foreground leading-relaxed">
@@ -187,7 +187,7 @@ const AboutUs = () => {
         </div>
 
         {/* CTA */}
-        <section className="bg-blue-600 rounded-3xl p-10 text-center text-white shadow-xl shadow-blue-600/20">
+        <section className="bg-accent rounded-3xl p-10 text-center text-accent-foreground shadow-xl shadow-accent/20">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to Apply?</h2>
           <p className="text-lg opacity-90 mb-8 max-w-xl mx-auto font-medium">
             Start your Malaysia Digital Arrival Card application today and travel with peace of mind.
@@ -195,7 +195,7 @@ const AboutUs = () => {
           <Link to="/apply">
             <Button
               size="lg"
-              className="bg-white text-blue-600 hover:bg-gray-100 px-12 py-7 text-xl font-bold rounded-xl shadow-lg"
+              className="bg-accent-foreground text-accent hover:bg-accent-foreground/90 px-12 py-7 text-xl font-bold rounded-xl shadow-lg"
             >
               Start Application
             </Button>
