@@ -1,55 +1,60 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, CheckCircle, Shield, Clock } from "lucide-react";
+import { CheckCircle, Shield } from "lucide-react";
 
 const HeroSection = () => {
   return (
     <section className="relative bg-primary overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary to-primary-light pointer-events-none" />
+      {/* Gradient overlay */}
+      <div className="absolute inset-0 bg-gradient-hero pointer-events-none" />
+      {/* Grid pattern */}
+      <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, hsl(210 40% 98%) 1px, transparent 1px)', backgroundSize: '24px 24px' }} />
 
       <div className="container mx-auto px-6 py-20 md:py-28 relative z-10">
         <div className="grid md:grid-cols-[1fr_420px] gap-14 items-center max-w-6xl mx-auto">
           <div>
-            <div className="inline-block bg-accent text-accent-foreground px-4 py-1.5 rounded-full font-semibold text-xs tracking-widest mb-6 uppercase">
+            <div className="inline-flex items-center gap-2 bg-accent/10 border border-accent/20 text-accent px-4 py-1.5 rounded-full text-xs font-medium tracking-wide mb-6">
+              <span className="w-1.5 h-1.5 bg-accent rounded-full animate-pulse" />
               MDAC Official Entry Guide
             </div>
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-primary-foreground leading-[1.05] mb-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-primary-foreground leading-[1.08] mb-6">
               Seamless Entry<br />into <span className="text-accent">Malaysia</span>.
             </h1>
-            <p className="text-lg text-primary-foreground/60 mb-10 max-w-xl leading-relaxed">
+            <p className="text-base text-primary-foreground/50 mb-10 max-w-xl leading-relaxed">
               All foreign visitors are required to complete the Malaysia Digital Arrival Card (MDAC) within 72 hours of arrival. Our concierge handles the complexity, so you can focus on the journey.
             </p>
-            <div className="flex flex-wrap gap-4 items-center">
-              <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 font-bold h-12 px-8 rounded-full text-sm uppercase tracking-wider">
+            <div className="flex flex-wrap gap-3 items-center">
+              <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 font-semibold h-11 px-7 rounded-lg text-sm">
                 <Link to="/apply">Apply for MDAC</Link>
               </Button>
-              <Button asChild variant="outline" size="lg" className="border-primary-foreground/20 text-primary-foreground hover:bg-primary-foreground/10 font-semibold h-12 px-8 rounded-full text-sm uppercase tracking-wider">
+              <Button asChild variant="outline" size="lg" className="border-primary-foreground/20 text-primary-foreground/70 hover:bg-primary-foreground/5 hover:text-primary-foreground font-medium h-11 px-7 rounded-lg text-sm">
                 <a href="#faq">View Checklist</a>
               </Button>
             </div>
           </div>
 
-          <div className="space-y-4">
-            <div className="bg-primary-foreground/5 backdrop-blur-sm border border-primary-foreground/10 rounded-2xl p-6 flex items-center justify-between">
+          {/* Feature Cards */}
+          <div className="space-y-3">
+            <div className="bg-primary-foreground/[0.06] backdrop-blur border border-primary-foreground/10 rounded-xl p-5 flex items-center justify-between">
               <div>
-                <p className="text-xs text-primary-foreground/40 uppercase tracking-widest mb-1">Standard Processing</p>
-                <h3 className="text-lg font-bold text-primary-foreground">Fast-Track Delivery</h3>
+                <p className="text-[10px] text-primary-foreground/40 uppercase tracking-widest mb-0.5">Standard Processing</p>
+                <h3 className="text-base font-bold text-primary-foreground">Fast-Track Delivery</h3>
               </div>
-              <span className="text-accent text-2xl font-bold">&lt; 24h</span>
+              <span className="text-accent text-xl font-bold">&lt; 24h</span>
             </div>
-            <div className="grid grid-cols-2 gap-4">
-              <div className="bg-primary-foreground/5 backdrop-blur-sm border border-primary-foreground/10 rounded-2xl p-5">
-                <div className="w-10 h-10 bg-accent/15 rounded-full flex items-center justify-center mb-3">
-                  <CheckCircle className="w-5 h-5 text-accent" />
+            <div className="grid grid-cols-2 gap-3">
+              <div className="bg-primary-foreground/[0.06] backdrop-blur border border-primary-foreground/10 rounded-xl p-4">
+                <div className="w-9 h-9 bg-accent/10 border border-accent/20 rounded-lg flex items-center justify-center mb-3">
+                  <CheckCircle className="w-4 h-4 text-accent" />
                 </div>
-                <h3 className="text-sm font-bold text-primary-foreground mb-1">Expert Review</h3>
+                <h3 className="text-sm font-semibold text-primary-foreground mb-1">Expert Review</h3>
                 <p className="text-xs text-primary-foreground/40 leading-relaxed">Every submission manually verified by our team.</p>
               </div>
-              <div className="bg-primary-foreground/5 backdrop-blur-sm border border-primary-foreground/10 rounded-2xl p-5">
-                <div className="w-10 h-10 bg-accent/15 rounded-full flex items-center justify-center mb-3">
-                  <Shield className="w-5 h-5 text-accent" />
+              <div className="bg-primary-foreground/[0.06] backdrop-blur border border-primary-foreground/10 rounded-xl p-4">
+                <div className="w-9 h-9 bg-accent/10 border border-accent/20 rounded-lg flex items-center justify-center mb-3">
+                  <Shield className="w-4 h-4 text-accent" />
                 </div>
-                <h3 className="text-sm font-bold text-primary-foreground mb-1">Secure Filing</h3>
+                <h3 className="text-sm font-semibold text-primary-foreground mb-1">Secure Filing</h3>
                 <p className="text-xs text-primary-foreground/40 leading-relaxed">Bank-grade encryption for your personal data.</p>
               </div>
             </div>

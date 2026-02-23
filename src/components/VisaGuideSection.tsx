@@ -2,7 +2,7 @@ import malaysiaCoupleNew from "@/assets/malaysia-couple-new.webp";
 
 const VisaGuideSection = () => {
   return (
-    <section className="py-20 bg-background">
+    <section className="py-20 bg-secondary border-y border-border">
       <div className="container mx-auto px-4 max-w-5xl">
         <div className="flex flex-col md:flex-row items-center gap-12">
           <div className="w-full md:w-1/2 order-2 md:order-1 space-y-5">
@@ -17,7 +17,7 @@ const VisaGuideSection = () => {
             </div>
           </div>
           <div className="w-full md:w-1/2 order-1 md:order-2">
-            <img alt="Travelers in Malaysia" className="w-full rounded-2xl shadow-elegant object-cover aspect-[4/3]" src={malaysiaCoupleNew} />
+            <img alt="Travelers in Malaysia" className="w-full rounded-xl shadow-elegant object-cover aspect-[4/3]" src={malaysiaCoupleNew} />
           </div>
         </div>
       </div>
