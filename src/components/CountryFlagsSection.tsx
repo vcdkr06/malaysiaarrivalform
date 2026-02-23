@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
+import { ChevronDown, ChevronUp, Globe } from "lucide-react";
 
 interface Country {
   country: string;
@@ -37,42 +38,113 @@ const CountryFlagsSection = () => {
   }, []);
 
   const shown = showAll ? countries : countries.slice(0, INITIAL);
+
   if (loading) return null;
 
   return (
-    <section className="py-16 bg-secondary">
-      <div className="container mx-auto px-4 max-w-5xl">
-        <div className="text-center mb-10">
-          <p className="text-xs uppercase tracking-widest text-accent font-semibold mb-2">Applicable Countries</p>
-          <h2 className="text-2xl md:text-3xl font-bold text-foreground">Eligible Nationalities</h2>
-          <p className="text-sm text-muted-foreground mt-2 max-w-lg mx-auto">
-            Travelers from these countries must complete the MDAC prior to entering Malaysia.
+    <section
+      className="py-14 md:py-20"
+      style={{
+        background: "linear-gradient(180deg, #FFFFFF 0%, #F6F9FF 40%, #F0F4FF 70%, #F8FAFF 100%)",
+      }}
+    >
+      <div className="container mx-auto px-5 md:px-6 max-w-5xl">
+        {/* Header */}
+        <div className="text-center mb-10 md:mb-12">
+          <div
+            className="inline-flex items-center gap-1.5 text-[10px] uppercase tracking-[0.2em] font-bold px-3.5 py-1.5 rounded-full mb-3"
+            style={{
+              background: "#EEF4FF",
+              border: "1px solid #DBEAFE",
+              color: "#4B7BE5",
+            }}
+          >
+            <Globe className="w-3 h-3" />
+            Eligible Nationalities
+          </div>
+          <h2
+            className="text-2xl md:text-3xl font-extrabold tracking-[-0.02em] mb-2"
+            style={{
+              color: "#2D4A6F",
+              fontFamily: "'Outfit', system-ui, sans-serif",
+            }}
+          >
+            Who Needs an{" "}
+            <span
+              className="bg-clip-text text-transparent"
+              style={{
+                backgroundImage: "linear-gradient(135deg, #4338CA, #6366F1, #818CF8)",
+              }}
+            >
+              MDAC
+            </span>
+            ?
+          </h2>
+          <p className="text-sm max-w-md mx-auto leading-relaxed" style={{ color: "#8196AE" }}>
+            Travelers holding passports from these countries must complete the Digital Arrival Card before entering
+            Malaysia.
           </p>
         </div>
-        <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-5 gap-3 max-w-4xl mx-auto">
+
+        {/* Flags grid */}
+        <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-5 gap-2.5 md:gap-3 max-w-4xl mx-auto">
           {shown.map((c, i) => (
             <div
               key={i}
-              className="flex items-center gap-2.5 bg-background rounded-xl px-3 py-2.5 border border-border hover:shadow-soft transition-shadow"
+              className="group flex items-center gap-2.5 rounded-xl px-3 py-2.5 transition-all duration-200 cursor-default hover:translate-y-[-2px] hover:shadow-md"
+              style={{
+                background: "#FFFFFF",
+                border: "1px solid #E8EFF8",
+              }}
             >
-              <img
-                src={c.flag_url}
-                alt={c.country}
-                className="w-6 h-4 object-cover rounded-sm flex-shrink-0"
-                loading="lazy"
-              />
-              <span className="text-xs font-medium text-foreground truncate">{c.country}</span>
+              <div
+                className="w-7 h-5 rounded overflow-hidden flex-shrink-0 shadow-sm"
+                style={{ border: "1px solid #F0F4FF" }}
+              >
+                <img src={c.flag_url} alt={c.country} className="w-full h-full object-cover" loading="lazy" />
+              </div>
+              <span className="text-[11px] md:text-xs font-semibold truncate" style={{ color: "#3D5A80" }}>
+                {c.country}
+              </span>
             </div>
           ))}
         </div>
+
+        {/* Fade overlay when collapsed */}
+        {!showAll && countries.length > INITIAL && (
+          <div
+            className="relative h-8 -mt-8 pointer-events-none"
+            style={{
+              background: "linear-gradient(to top, #F0F4FF, transparent)",
+            }}
+          />
+        )}
+
+        {/* Toggle button */}
         {countries.length > INITIAL && (
-          <div className="text-center mt-8">
+          <div className="text-center mt-6">
             <Button
               onClick={() => setShowAll(!showAll)}
               variant="outline"
-              className="rounded-full text-xs font-semibold px-6 border-primary text-primary hover:bg-primary hover:text-primary-foreground"
+              className="rounded-full text-xs font-bold px-6 h-9 gap-1.5 transition-all duration-200 hover:translate-y-[-1px]"
+              style={{
+                background: showAll ? "#FFFFFF" : "linear-gradient(135deg, #4338CA, #6366F1)",
+                color: showAll ? "#4B7BE5" : "#FFFFFF",
+                border: showAll ? "1px solid #DBEAFE" : "none",
+                boxShadow: showAll ? "0 1px 4px rgba(45,74,111,0.06)" : "0 4px 16px rgba(99,102,241,0.25)",
+              }}
             >
-              {showAll ? "Show Less" : `Show All (${countries.length})`}
+              {showAll ? (
+                <>
+                  Show Less
+                  <ChevronUp className="w-3.5 h-3.5" />
+                </>
+              ) : (
+                <>
+                  View All {countries.length} Countries
+                  <ChevronDown className="w-3.5 h-3.5" />
+                </>
+              )}
             </Button>
           </div>
         )}
