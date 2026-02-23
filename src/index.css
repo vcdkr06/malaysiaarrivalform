@@ -30,8 +30,8 @@
     --muted: 210 20% 96%;
     --muted-foreground: 215 16% 47%;
 
-    --accent: 187 72% 55%;
-    --accent-foreground: 215 28% 9%;
+    --accent: 217 91% 60%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 72% 51%;
     --destructive-foreground: 0 0% 98%;
@@ -41,7 +41,7 @@
 
     --border: 214 20% 92%;
     --input: 214 20% 92%;
-    --ring: 187 72% 55%;
+    --ring: 217 91% 60%;
 
     --gradient-primary: linear-gradient(135deg, hsl(215, 32%, 6%), hsl(215, 25%, 15%));
     --gradient-hero: linear-gradient(160deg, hsl(215, 32%, 6%), hsl(215, 25%, 12%));
