@@ -1,4 +1,5 @@
 import { Clock, Shield, Headphones, CheckCircle, FileText, Search, FolderCheck, Languages } from "lucide-react";
+import petronasTowers from "@/assets/petronas-towers.png";
 
 const WhyChooseUsSection = () => {
   const benefits = [
@@ -41,8 +42,8 @@ const WhyChooseUsSection = () => {
       {/* Background Image: KL Tower */}
       <div className="absolute inset-0 z-0">
         <img
-          src="https://images.unsplash.com/photo-1596422846543-75c6fc18a593?q=80&w=2070&auto=format&fit=crop"
-          alt="KL Tower Malaysia"
+          src={petronasTowers}
+          alt="Petronas Twin Towers Malaysia"
           className="w-full h-full object-cover"
         />
         {/* Dark Navy Overlay for Readability */}
