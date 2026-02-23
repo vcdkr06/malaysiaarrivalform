@@ -10,7 +10,7 @@ const Header = () => {
       <div className="container mx-auto px-4 sm:px-6">
         <div className="flex items-center justify-between h-20 sm:h-20">
           <div className="flex items-center gap-3">
-            <img src={logo} alt="MDAC Logo" className="h-20 sm:hue-rotate-1object-contain" />
+            <img src={logo} alt="MDAC Logo" className="h-16 sm:hue-rotate-1object-contain" />
             <span className="text-sm leading-tigh uppercase tracking-wide font-extrabold font-sans text-secondary-foreground sm:text-l my-[10px]">
               Malaysia Digital<br />Arrival Card
             </span>
