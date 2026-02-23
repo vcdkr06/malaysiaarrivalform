@@ -9,33 +9,33 @@ const HeroSection = () => {
       icon: <ClipboardList className="w-4 h-4" />,
       title: "Submit Details",
       desc: "Provide your basic personal info and travel itinerary.",
-      color: "hsl(230, 65%, 42%)",
-      bg: "hsl(225, 40%, 96%)",
-      border: "hsl(225, 30%, 90%)",
+      color: "#4B7BE5",
+      bg: "linear-gradient(135deg, #EEF4FF, #E8EEFF)",
+      border: "#DBEAFE",
     },
     {
       icon: <CreditCard className="w-4 h-4" />,
       title: "Settle Payment",
       desc: "Complete your transaction through our reliable checkout.",
-      color: "hsl(250, 55%, 50%)",
-      bg: "hsl(250, 30%, 96%)",
-      border: "hsl(250, 25%, 90%)",
+      color: "#8B5CF6",
+      bg: "linear-gradient(135deg, #F3F0FF, #EDE8FF)",
+      border: "#EDE9FE",
     },
     {
       icon: <UserCheck className="w-4 h-4" />,
       title: "Expert Review",
       desc: "Our specialists double-check everything to prevent errors.",
-      color: "hsl(230, 50%, 55%)",
-      bg: "hsl(230, 30%, 96%)",
-      border: "hsl(230, 25%, 90%)",
+      color: "#E8883C",
+      bg: "linear-gradient(135deg, #FFF6ED, #FFF0E2)",
+      border: "#FEEFC3",
     },
     {
       icon: <MailCheck className="w-4 h-4" />,
       title: "Get Confirmation",
       desc: "Check your inbox for your approved digital arrival pass.",
-      color: "hsl(215, 60%, 45%)",
-      bg: "hsl(215, 35%, 96%)",
-      border: "hsl(215, 25%, 90%)",
+      color: "#10B981",
+      bg: "linear-gradient(135deg, #ECFDF5, #E2FBF0)",
+      border: "#D1FAE5",
     },
   ];
 
@@ -43,7 +43,7 @@ const HeroSection = () => {
     <section
       className="relative overflow-hidden min-h-[92vh] flex items-center py-6 md:py-10 lg:py-0"
       style={{
-        background: "linear-gradient(170deg, hsl(220,30%,97%) 0%, hsl(225,35%,95%) 30%, hsl(230,30%,93%) 60%, hsl(225,35%,95%) 80%, hsl(220,30%,97%) 100%)",
+        background: "linear-gradient(170deg, #FFFFFF 0%, #F8FAFF 20%, #F0F4FF 50%, #F6F8FF 80%, #FFFFFF 100%)",
       }}
     >
       {/* Pattern Background */}
@@ -53,7 +53,7 @@ const HeroSection = () => {
           backgroundImage: `url(${malaysiaPattern})`,
           backgroundSize: "800px",
           backgroundRepeat: "repeat",
-          opacity: 0.08,
+          opacity: 0.05,
         }}
       />
       {/* Decorative Background Elements */}
@@ -61,13 +61,13 @@ const HeroSection = () => {
         <div
           className="absolute -top-32 right-[0%] w-[600px] h-[600px] rounded-full blur-3xl"
           style={{
-            background: "radial-gradient(circle, hsl(230,65%,42%,0.06) 0%, hsl(250,55%,50%,0.03) 50%, transparent 70%)",
+            background: "radial-gradient(circle, rgba(75,123,229,0.07) 0%, rgba(139,92,246,0.03) 50%, transparent 70%)",
           }}
         />
         <div
           className="absolute bottom-[-10%] left-[-5%] w-[450px] h-[450px] rounded-full blur-3xl"
           style={{
-            background: "radial-gradient(circle, hsl(230,65%,42%,0.04) 0%, transparent 60%)",
+            background: "radial-gradient(circle, rgba(16,185,129,0.04) 0%, transparent 60%)",
           }}
         />
       </div>
@@ -77,9 +77,7 @@ const HeroSection = () => {
           {/* ——— LEFT COLUMN: Copy & CTA ——— */}
           <div className="flex flex-col w-full">
             {/* Badge - Desktop Only */}
-            <div
-              className="hidden md:inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-[11px] font-semibold mb-6 w-fit bg-secondary border border-border text-primary"
-            >
+            <div className="hidden md:inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-[11px] font-semibold mb-6 w-fit bg-secondary border border-border text-primary">
               <Zap className="w-3.5 h-3.5 text-warning" />
               Mandatory Travel Requirement
             </div>
@@ -95,9 +93,7 @@ const HeroSection = () => {
             >
               Streamline Your Arrival
               <br className="hidden lg:block" /> into{" "}
-              <span className="bg-clip-text text-transparent bg-gradient-primary">
-                Malaysia
-              </span>
+              <span className="bg-clip-text text-transparent bg-gradient-primary">Malaysia</span>
             </h1>
 
             {/* Desktop Description */}
@@ -135,9 +131,7 @@ const HeroSection = () => {
           <div className="w-full py-2 md:py-6 lg:py-10">
             <div className="rounded-[1.5rem] md:rounded-[2rem] p-4 md:p-5 lg:p-7 bg-card/80 backdrop-blur-xl border border-border shadow-soft">
               <div className="flex items-center justify-between mb-4 md:mb-5 lg:mb-6">
-                <h3 className="font-bold text-[14px] lg:text-[16px] text-foreground">
-                  How It Works
-                </h3>
+                <h3 className="font-bold text-[14px] lg:text-[16px] text-foreground">How It Works</h3>
                 <span className="text-[9px] lg:text-[10px] px-2.5 py-1 md:px-3 md:py-1.5 rounded-full font-bold tracking-widest uppercase bg-secondary text-muted-foreground border border-border">
                   Quick Guide
                 </span>
@@ -145,7 +139,10 @@ const HeroSection = () => {
 
               {/* Stepper */}
               <div className="relative space-y-3 md:space-y-4 lg:space-y-5 pl-1">
-                <div className="absolute top-2 bottom-2 left-[19px] md:left-[21px] border-l-[1.5px] border-dashed border-border" />
+                <div
+                  className="absolute top-2 bottom-2 left-[19px] md:left-[21px] border-l-[1.5px] border-dashed"
+                  style={{ borderColor: "#DCE6F2" }}
+                />
 
                 {steps.map((step, index) => (
                   <div
@@ -163,9 +160,7 @@ const HeroSection = () => {
                       {step.icon}
                     </div>
                     <div className="flex-1 min-w-0">
-                      <h4 className="font-bold text-[13px] lg:text-[14px] mb-0.5 text-foreground">
-                        {step.title}
-                      </h4>
+                      <h4 className="font-bold text-[13px] lg:text-[14px] mb-0.5 text-foreground">{step.title}</h4>
                       <p className="text-[11px] lg:text-[12px] leading-tight md:leading-snug text-muted-foreground">
                         {step.desc}
                       </p>
@@ -178,9 +173,8 @@ const HeroSection = () => {
               <div className="flex items-start gap-2.5 md:gap-3 mt-4 md:mt-5 lg:mt-6 px-3 py-2.5 md:px-4 md:py-3 rounded-xl md:rounded-2xl bg-secondary border border-border">
                 <Lightbulb className="w-3.5 h-3.5 md:w-4 md:h-4 flex-shrink-0 mt-0.5 text-primary" />
                 <p className="text-[10.5px] md:text-[11px] lg:text-[12px] leading-relaxed text-muted-foreground">
-                  <span className="text-foreground font-bold">Important Note:</span> Travelers must submit this
-                  form within <span className="text-primary font-bold">3 days prior</span> to their scheduled
-                  arrival date.
+                  <span className="text-foreground font-bold">Important Note:</span> Travelers must submit this form
+                  within <span className="text-primary font-bold">3 days prior</span> to their scheduled arrival date.
                 </p>
               </div>
             </div>
