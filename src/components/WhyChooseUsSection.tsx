@@ -1,5 +1,6 @@
 import { Clock, Shield, Headphones, CheckCircle, FileText, Search, FolderCheck, Languages } from "lucide-react";
 import petronasTowers from "@/assets/petronas-towers.png";
+import batikPattern from "@/assets/batik-pattern.jpg";
 
 const WhyChooseUsSection = () => {
   const benefits = [
@@ -38,15 +39,26 @@ const WhyChooseUsSection = () => {
   ];
 
   return (
-    <section className="relative py-12 md:py-16 overflow-hidden">
-      {/* Background Image: KL Tower (Static as requested) */}
+    <section className="relative bg-[#0a192f] py-12 md:py-16 overflow-hidden">
+      {/* Batik Pattern Overlay (matching Hero) */}
+      <div
+        className="absolute inset-0 z-0 opacity-[0.06]"
+        style={{
+          backgroundImage: `url(${batikPattern})`,
+          backgroundSize: '600px',
+          backgroundRepeat: 'repeat',
+        }}
+      />
+      <div className="absolute inset-0 bg-gradient-to-b from-[#0a192f] via-transparent to-[#0a192f] z-0" />
+
+      {/* Petronas Towers Background */}
       <div className="absolute inset-0 z-0">
         <img
           src={petronasTowers}
           alt="Petronas Twin Towers Malaysia"
           className="w-full h-full object-cover opacity-[0.35]"
         />
-        <div className="absolute inset-0 bg-[#0B1D3A]/80" />
+        <div className="absolute inset-0 bg-[#0a192f]/80" />
       </div>
 
       <div className="container mx-auto px-6 max-w-6xl relative z-10">
