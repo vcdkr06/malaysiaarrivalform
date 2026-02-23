@@ -241,7 +241,8 @@ const HeroSection = () => {
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center gap-2 mb-0.5">
                         <span className="text-[9px] font-extrabold tracking-[0.12em]" style={{ color: step.color }}>
-                          STEP {step.num}
+                          {/* FIX APPLIED HERE: Replaced step.num with index + 1 */}
+                          STEP {index + 1}
                         </span>
                       </div>
                       <h4 className="font-bold text-[13px] mb-0.5 truncate" style={{ color: "#3D5A80" }}>
