@@ -1,14 +1,6 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import {
-  ArrowRight,
-  ClipboardList,
-  CreditCard,
-  UserCheck,
-  MailCheck,
-  Lightbulb,
-  Zap,
-} from "lucide-react";
+import { ArrowRight, ClipboardList, CreditCard, UserCheck, MailCheck, Lightbulb, Zap } from "lucide-react";
 
 const HeroSection = () => {
   const steps = [
@@ -50,8 +42,7 @@ const HeroSection = () => {
     <section
       className="relative overflow-hidden min-h-[92vh] flex items-center py-10 lg:py-0"
       style={{
-        background:
-          "linear-gradient(170deg, #FFFFFF 0%, #F8FAFF 20%, #F0F5FF 50%, #F5F8FF 80%, #FFFFFF 100%)",
+        background: "linear-gradient(170deg, #FFFFFF 0%, #F8FAFF 20%, #F0F5FF 50%, #F5F8FF 80%, #FFFFFF 100%)",
       }}
     >
       {/* Decorative Background Elements */}
@@ -59,15 +50,13 @@ const HeroSection = () => {
         <div
           className="absolute -top-32 right-[0%] w-[600px] h-[600px] rounded-full blur-3xl"
           style={{
-            background:
-              "radial-gradient(circle, rgba(99,147,255,0.07) 0%, rgba(139,92,246,0.03) 50%, transparent 70%)",
+            background: "radial-gradient(circle, rgba(99,147,255,0.07) 0%, rgba(139,92,246,0.03) 50%, transparent 70%)",
           }}
         />
         <div
           className="absolute bottom-[-10%] left-[-5%] w-[450px] h-[450px] rounded-full blur-3xl"
           style={{
-            background:
-              "radial-gradient(circle, rgba(59,130,246,0.05) 0%, transparent 60%)",
+            background: "radial-gradient(circle, rgba(59,130,246,0.05) 0%, transparent 60%)",
           }}
         />
       </div>
@@ -75,7 +64,6 @@ const HeroSection = () => {
       <div className="container mx-auto px-6 relative z-10 max-w-6xl">
         {/* MODIFIED: Trigger grid on md (tablet) instead of lg (desktop) */}
         <div className="flex flex-col md:grid md:grid-cols-2 lg:grid-cols-[1.15fr_1fr] gap-8 md:gap-10 lg:gap-16 items-center">
-          
           {/* ——— LEFT COLUMN: Copy & CTA ——— */}
           <div className="flex flex-col w-full">
             {/* Badge - Desktop Only */}
@@ -111,8 +99,7 @@ const HeroSection = () => {
               <span
                 className="bg-clip-text text-transparent"
                 style={{
-                  backgroundImage:
-                    "linear-gradient(135deg, #4B7BE5, #7C5CE5)",
+                  backgroundImage: "linear-gradient(135deg, #4B7BE5, #7C5CE5)",
                 }}
               >
                 Malaysia
@@ -124,14 +111,12 @@ const HeroSection = () => {
               className="hidden md:block text-[13px] lg:text-[15px] leading-[1.7] mb-8 max-w-lg"
               style={{ color: "#8196AE" }}
             >
-              Skip the paperwork at immigration. All foreign visitors are now required to submit their digital arrival profile prior to reaching the border to ensure a smooth, hassle-free entry.
+              Skip the paperwork at immigration. All foreign visitors are now required to submit their digital arrival
+              profile prior to reaching the border to ensure a smooth, hassle-free entry.
             </p>
 
             {/* Mobile Description (Shorter) */}
-            <p
-              className="block md:hidden text-[14px] leading-[1.6] mb-7 max-w-lg"
-              style={{ color: "#8196AE" }}
-            >
+            <p className="block md:hidden text-[14px] leading-[1.6] mb-7 max-w-lg" style={{ color: "#8196AE" }}>
               Submit your digital arrival profile before reaching the border to ensure a smooth, hassle-free entry.
             </p>
 
@@ -161,7 +146,8 @@ const HeroSection = () => {
                 borderLeft: "2px solid #DCE6F2",
               }}
             >
-              Disclaimer: We are an independent agency assisting travelers with their documentation. We are not legally affiliated with the Malaysian government.
+              Disclaimer: We are an independent agency assisting travelers with their documentation. We are not legally
+              affiliated with the Malaysian government.
             </p>
           </div>
 
@@ -177,5 +163,89 @@ const HeroSection = () => {
               }}
             >
               <div className="flex items-center justify-between mb-8">
-                <h3
-                  className="font-bold text-
+                <h3 className="font-bold text-[15px] lg:text-[16px]" style={{ color: "#3D5A80" }}>
+                  How It Works
+                </h3>
+                <span
+                  className="text-[9px] lg:text-[10px] px-3 py-1.5 rounded-full font-bold tracking-widest uppercase"
+                  style={{
+                    background: "#F8FAFC",
+                    color: "#64748B",
+                    border: "1px solid #E2E8F0",
+                  }}
+                >
+                  Quick Guide
+                </span>
+              </div>
+
+              {/* Unique Stepper Layout */}
+              <div className="relative space-y-6 lg:space-y-7 pl-1">
+                {/* Dashed background track */}
+                <div
+                  className="absolute top-4 bottom-4 left-[21px] border-l-[1.5px] border-dashed"
+                  style={{ borderColor: "#CBD5E1" }}
+                />
+
+                {steps.map((step, index) => (
+                  <div key={index} className="relative z-10 flex gap-4 lg:gap-5 items-center group cursor-default">
+                    {/* Icon Bubble */}
+                    <div
+                      className="w-10 h-10 rounded-2xl flex-shrink-0 flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:rotate-3"
+                      style={{
+                        background: step.bg,
+                        color: step.color,
+                        border: `1px solid ${step.border}`,
+                      }}
+                    >
+                      {step.icon}
+                    </div>
+
+                    {/* Text Content */}
+                    <div className="flex-1 min-w-0">
+                      <h4
+                        className="font-bold text-[13px] lg:text-[14px] mb-1 transition-colors duration-200"
+                        style={{ color: "#2D4A6F" }}
+                      >
+                        {step.title}
+                      </h4>
+                      <p className="text-[11px] lg:text-[12.5px] leading-snug" style={{ color: "#8DA2B8" }}>
+                        {step.desc}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Alert / Notice */}
+              <div
+                className="flex items-start gap-3 mt-7 lg:mt-8 px-4 lg:px-5 py-4 rounded-2xl"
+                style={{
+                  background: "#F8FAFF",
+                  border: "1px solid #E2E8F0",
+                }}
+              >
+                <Lightbulb className="w-4 h-4 flex-shrink-0 mt-0.5" style={{ color: "#3B82F6" }} />
+                <p className="text-[11px] lg:text-[12px] leading-relaxed" style={{ color: "#64748B" }}>
+                  <span style={{ color: "#1E293B", fontWeight: 700 }}>Important Note:</span> Travelers must submit this
+                  form within <span style={{ color: "#3B82F6", fontWeight: 700 }}>3 days prior</span> to their scheduled
+                  arrival date.
+                </p>
+              </div>
+            </div>
+
+            {/* Disclaimer - Mobile Only (Visible at bottom under the card) */}
+            <p
+              className="block md:hidden mt-6 text-[10px] leading-relaxed text-center px-4"
+              style={{ color: "#94A3B8" }}
+            >
+              Disclaimer: We are an independent agency assisting travelers with their documentation. We are not legally
+              affiliated with the Malaysian government.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default HeroSection;
