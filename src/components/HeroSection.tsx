@@ -23,7 +23,7 @@ const HeroSection = () => {
 
   return (
     <section className="relative bg-[#0a192f] overflow-hidden min-h-[85vh] flex items-center">
-      {/* High-Visibility Grid Pattern */}
+      {/* Background Grid */}
       <div className="absolute inset-0 z-0">
         <div
           className="absolute inset-0 opacity-[0.12]"
@@ -35,16 +35,16 @@ const HeroSection = () => {
         <div className="absolute inset-0 bg-gradient-to-tr from-[#0a192f] via-transparent to-accent/5" />
       </div>
 
-      <div className="container mx-auto px-6 py-4 md:py-8 relative z-10">
-        <div className="grid lg:grid-cols-[1fr_420px] gap-8 lg:gap-16 items-start max-w-7xl mx-auto">
-          {/* Left Side: Headline & CTAs */}
-          <div className="flex flex-col justify-center pt-2 md:pt-6">
+      <div className="container mx-auto px-6 py-8 md:py-12 relative z-10">
+        {/* Changed order on mobile: Card first, then Text */}
+        <div className="flex flex-col-reverse lg:grid lg:grid-cols-[1fr_420px] gap-8 lg:gap-16 items-start max-w-7xl mx-auto">
+          {/* Left Side: Headline & Content */}
+          <div className="flex flex-col justify-center">
             <div className="inline-flex items-center gap-2 bg-accent/10 border border-accent/20 text-accent px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest mb-4 w-fit">
               <span className="w-2 h-2 bg-accent rounded-full animate-pulse" />
               Official Entry Concierge
             </div>
 
-            {/* Shortened Headline for Mobile */}
             <h1 className="text-4xl md:text-5xl lg:text-7xl font-black text-white leading-[1.02] mb-6 tracking-tight">
               <span className="hidden md:inline">
                 Fast-Track Your <br />
@@ -53,18 +53,19 @@ const HeroSection = () => {
               <span className="md:text-accent"> Entry.</span>
             </h1>
 
-            {/* Shortened Sub-headline for Mobile */}
             <p className="text-base md:text-lg text-slate-400 mb-8 max-w-xl leading-snug">
-              <span className="md:hidden">
-                Get your mandatory MDAC PIN 72 hours before arrival. Seamless, error-free filing.
+              <span className="md:hidden text-sm">
+                Submit your mandatory MDAC 72 hours before arrival. We handle the filing to ensure your entry is
+                seamless.
               </span>
               <span className="hidden md:inline">
                 Every foreign visitor must submit a Malaysia Digital Arrival Card (MDAC) 72 hours before arrival. We
-                handle the filing to ensure your entry is seamless.
+                handle the filing to ensure your entry is seamless and error-free.
               </span>
             </p>
 
-            <div className="flex flex-wrap gap-4 items-center mb-6">
+            {/* CTA: Only visible on desktop (md and up) */}
+            <div className="hidden md:flex flex-wrap gap-4 items-center mb-6">
               <Button
                 asChild
                 size="lg"
@@ -80,39 +81,38 @@ const HeroSection = () => {
               </div>
             </div>
 
-            {/* Regulatory Disclaimer */}
             <p className="text-[10px] leading-relaxed text-slate-500 max-w-md border-l border-slate-800 pl-4">
-              This website is a private service provider and is not affiliated with any government agency.
+              Private service provider. Not affiliated with government agencies.
             </p>
           </div>
 
-          {/* Right Side: Rephrased 3-Step Card */}
-          <div className="relative group mt-6 lg:mt-0">
+          {/* Right Side: 3-Step Card (Appears first on mobile) */}
+          <div className="relative group w-full mb-8 lg:mb-0">
             <div className="absolute -inset-2 bg-accent/20 blur-2xl rounded-full opacity-20 transition duration-1000 group-hover:opacity-40" />
 
             <div className="relative bg-[#112240]/80 backdrop-blur-xl border border-white/10 rounded-3xl p-6 lg:p-8 shadow-2xl">
               <div className="flex items-center justify-between mb-8">
-                <h3 className="text-white font-bold tracking-tight uppercase text-xs">Processing Journey</h3>
+                <h3 className="text-white font-bold tracking-tight uppercase text-[10px] md:text-xs">
+                  Processing Journey
+                </h3>
                 <span className="text-[10px] bg-accent/10 text-accent px-2 py-0.5 rounded border border-accent/20 font-bold uppercase">
                   Fast-Track
                 </span>
               </div>
 
-              <div className="space-y-7">
+              <div className="space-y-6 md:space-y-7">
                 {steps.map((step, index) => (
-                  <div key={index} className="flex gap-5">
-                    <div className="flex-shrink-0 w-11 h-11 rounded-xl bg-accent/5 border border-accent/15 flex items-center justify-center text-accent shadow-inner">
+                  <div key={index} className="flex gap-4 md:gap-5">
+                    <div className="flex-shrink-0 w-10 h-10 md:w-11 md:h-11 rounded-xl bg-accent/5 border border-accent/15 flex items-center justify-center text-accent shadow-inner">
                       {step.icon}
                     </div>
                     <div>
-                      <h4 className="text-white font-bold text-[14px] mb-1">{step.title}</h4>
-                      <p className="text-[12px] text-slate-400 leading-normal">{step.desc}</p>
+                      <h4 className="text-white font-bold text-[13px] md:text-[14px] mb-1">{step.title}</h4>
+                      <p className="text-[11px] md:text-[12px] text-slate-400 leading-normal">{step.desc}</p>
                     </div>
                   </div>
                 ))}
               </div>
-
-              {/* Removed Global Access section as requested */}
             </div>
           </div>
         </div>
