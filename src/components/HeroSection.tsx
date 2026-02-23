@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, ClipboardList, CreditCard, UserCheck, MailCheck, Lightbulb, Zap } from "lucide-react";
+import malaysiaPattern from "@/assets/malaysia-pattern-bg.png";
 
 const HeroSection = () => {
   const steps = [
@@ -45,6 +46,16 @@ const HeroSection = () => {
         background: "linear-gradient(170deg, #FFFFFF 0%, #F8FAFF 20%, #F0F5FF 50%, #F5F8FF 80%, #FFFFFF 100%)",
       }}
     >
+      {/* Pattern Background */}
+      <div
+        className="absolute inset-0 z-0 pointer-events-none"
+        style={{
+          backgroundImage: `url(${malaysiaPattern})`,
+          backgroundSize: "800px",
+          backgroundRepeat: "repeat",
+          opacity: 0.06,
+        }}
+      />
       {/* Decorative Background Elements */}
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
         <div
