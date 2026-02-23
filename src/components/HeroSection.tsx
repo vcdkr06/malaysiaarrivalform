@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { FileText, CreditCard, ShieldCheck, Info } from "lucide-react";
+import batikPattern from "@/assets/batik-pattern.jpg";
 
 const HeroSection = () => {
   const steps = [
@@ -23,7 +24,16 @@ const HeroSection = () => {
 
   return (
     <section className="relative bg-gradient-hero overflow-hidden min-h-[80vh] flex items-center pt-8 md:pt-0">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,hsl(205_55%_58%/0.15),transparent_60%)] z-0" />
+      <div
+        className="absolute inset-0 z-0 opacity-[0.06]"
+        style={{
+          backgroundImage: `url(${batikPattern})`,
+          backgroundSize: '600px',
+          backgroundRepeat: 'repeat'
+        }}
+      />
+      <div className="absolute inset-0 bg-gradient-to-b from-primary-dark/40 via-transparent to-primary-dark/40 z-0" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,hsl(210_90%_55%/0.15),transparent_60%)] z-0" />
 
       <div className="container mx-auto px-6 py-4 md:py-8 relative z-10">
         <div className="flex flex-col lg:grid lg:grid-cols-[1fr_420px] gap-4 md:gap-6 lg:gap-16 items-start max-w-7xl mx-auto">
