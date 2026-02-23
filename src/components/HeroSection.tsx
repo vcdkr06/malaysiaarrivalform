@@ -65,8 +65,9 @@ const HeroSection = () => {
         <div className="flex flex-col lg:grid lg:grid-cols-[1.15fr_1fr] gap-10 lg:gap-16 items-center">
           {/* ——— LEFT COLUMN: Copy & CTA ——— */}
           <div className="flex flex-col w-full">
+            {/* Badge - Desktop Only */}
             <div
-              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-[11px] font-semibold mb-6 w-fit"
+              className="hidden md:inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-[11px] font-semibold mb-6 w-fit"
               style={{
                 background: "linear-gradient(135deg, #EFF6FF, #F5F3FF)",
                 border: "1px solid #DBEAFE",
