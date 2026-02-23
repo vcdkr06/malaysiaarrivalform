@@ -1,4 +1,4 @@
-import logo from "@/assets/mdac-logo.png";
+import logo from "@/assets/mdac-logo-new.jpg";
 
 const Footer = () => {
   return (
@@ -7,7 +7,7 @@ const Footer = () => {
         <div className="grid md:grid-cols-3 gap-8">
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <img src={logo} alt="MDAC Logo" className="w-8 h-8 object-contain" />
+              <img src={logo} alt="MDAC Logo" className="h-8 object-contain" />
               <span className="text-primary-foreground font-semibold text-sm">Malaysia Digital Arrival Card</span>
             </div>
             <p className="text-primary-foreground/50 text-sm leading-relaxed">
