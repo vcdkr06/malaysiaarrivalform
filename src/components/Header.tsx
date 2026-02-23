@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import logo from "@/assets/mdac-logo-new.jpg";
+import logo from "@/assets/mdac-icon-logo.png";
 import NoticeBanner from "./NoticeBanner";
 
 const Header = () => {
@@ -8,10 +8,12 @@ const Header = () => {
     <header className="w-full sticky top-0 z-50 bg-card border-b border-border shadow-soft">
       <NoticeBanner />
       <div className="container mx-auto px-4 sm:px-6">
-        <div className="flex items-center justify-between h-14 sm:h-16">
-          <div className="flex items-center gap-2">
-            <img src={logo} alt="MDAC Logo" className="h-9 object-contain" />
-            <span className="text-foreground font-semibold text-sm hidden sm:inline">Malaysia Digital Arrival Card</span>
+        <div className="flex items-center justify-between h-16 sm:h-20">
+          <div className="flex items-center gap-3">
+            <img src={logo} alt="MDAC Logo" className="h-12 sm:h-14 object-contain" />
+            <span className="text-foreground font-bold text-sm sm:text-base leading-tight">
+              Malay Digital<br />Arrival Card
+            </span>
           </div>
           <div className="flex items-center gap-3">
             <Link to="/apply">
