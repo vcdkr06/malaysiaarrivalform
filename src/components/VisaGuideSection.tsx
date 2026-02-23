@@ -1,5 +1,5 @@
 import { Check } from "lucide-react";
-import malaysiaCoupleNew from "@/assets/malaysia-couple-new.webp";
+import malaysiaCoupleNew from "@/assets/malaysia-couple-petronas.jpg";
 
 const VisaGuideSection = () => {
   const highlights = [
