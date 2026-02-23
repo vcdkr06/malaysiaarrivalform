@@ -17,7 +17,7 @@ const WhyChooseUsSection = () => {
 
   return (
     <section className="relative bg-gradient-hero py-16 md:py-24 overflow-hidden">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_70%,hsl(205_55%_58%/0.12),transparent_60%)] z-0" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_70%,hsl(230_60%_55%/0.12),transparent_60%)] z-0" />
 
       <div className="container mx-auto px-6 max-w-6xl relative z-10">
         <div className="text-center mb-12 md:mb-16">
