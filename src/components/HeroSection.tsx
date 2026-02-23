@@ -15,307 +15,238 @@ import {
 const HeroSection = () => {
   const steps = [
     {
-      icon: <ClipboardList className="w-5 h-5" />,
-      num: "1",
-      title: "Complete the online form",
-      desc: "Enter your personal and travel details accurately.",
-      color: "#3B82F6",
-      bg: "#EFF6FF",
-      border: "#DBEAFE",
+      icon: <ClipboardList className="w-4 h-4" />,
+      num: "01",
+      title: "Fill in Your Details",
+      desc: "Complete the secure online form with your travel and personal information.",
+      color: "#2563EB",
+      accent: "rgba(37,99,235,0.1)",
     },
     {
-      icon: <CreditCard className="w-5 h-5" />,
-      num: "2",
-      title: "Pay the processing fee",
-      desc: "Use secure payment options provided on our portal.",
-      color: "#8B5CF6",
-      bg: "#F5F3FF",
-      border: "#EDE9FE",
+      icon: <CreditCard className="w-4 h-4" />,
+      num: "02",
+      title: "Pay the Processing Fee",
+      desc: "Choose from multiple secure payment methods on our encrypted portal.",
+      color: "#7C3AED",
+      accent: "rgba(124,58,237,0.1)",
     },
     {
-      icon: <UserCheck className="w-5 h-5" />,
-      num: "3",
-      title: "Details Review & Verification",
-      desc: "Our specialists manually review your application to ensure all information is complete and accurate before processing.",
-      color: "#F59E0B",
-      bg: "#FFFBEB",
-      border: "#FEF3C7",
+      icon: <UserCheck className="w-4 h-4" />,
+      num: "03",
+      title: "Expert Review",
+      desc: "Our team carefully verifies every application for accuracy and completeness.",
+      color: "#0891B2",
+      accent: "rgba(8,145,178,0.1)",
     },
     {
-      icon: <MailCheck className="w-5 h-5" />,
-      num: "4",
-      title: "Delivery & Approval",
-      desc: "Receive your MDAC confirmation by email with your PIN once approved. Present it at immigration for faster processing.",
-      color: "#10B981",
-      bg: "#ECFDF5",
-      border: "#D1FAE5",
+      icon: <MailCheck className="w-4 h-4" />,
+      num: "04",
+      title: "Receive & Travel",
+      desc: "Get your MDAC approval and PIN by email — present it at immigration for swift entry.",
+      color: "#059669",
+      accent: "rgba(5,150,105,0.1)",
     },
   ];
 
   return (
-    <>
-      {/* ═══════════ HERO ═══════════ */}
-      <section
-        className="relative overflow-hidden pt-10 pb-16 md:pt-16 md:pb-24"
+    <section
+      className="relative overflow-hidden min-h-screen flex flex-col justify-center"
+      style={{
+        background: "#05080F",
+        fontFamily: "'DM Sans', system-ui, sans-serif",
+      }}
+    >
+      {/* ── Grid texture ── */}
+      <div
+        className="absolute inset-0 z-0 pointer-events-none"
         style={{
-          background: "linear-gradient(170deg, #FFFFFF 0%, #F7FAFF 25%, #EDF3FF 55%, #F4F7FF 85%, #FFFFFF 100%)",
+          backgroundImage: `
+            linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px)
+          `,
+          backgroundSize: "48px 48px",
         }}
-      >
-        {/* Decorative background */}
-        <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+      />
+
+      {/* ── Glow orbs ── */}
+      <div
+        className="absolute top-[-120px] left-1/2 -translate-x-1/2 w-[700px] h-[400px] rounded-full blur-[120px] z-0 pointer-events-none"
+        style={{ background: "radial-gradient(ellipse, rgba(37,99,235,0.18) 0%, transparent 70%)" }}
+      />
+      <div
+        className="absolute bottom-0 right-[-10%] w-[400px] h-[400px] rounded-full blur-[100px] z-0 pointer-events-none"
+        style={{ background: "radial-gradient(ellipse, rgba(124,58,237,0.12) 0%, transparent 70%)" }}
+      />
+
+      <div className="container mx-auto px-6 max-w-5xl relative z-10 py-16 md:py-20">
+        {/* ── Badge ── */}
+        <div className="flex justify-center mb-6">
           <div
-            className="absolute -top-28 right-[5%] w-[520px] h-[520px] rounded-full blur-3xl"
+            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-[11px] font-semibold"
             style={{
-              background:
-                "radial-gradient(circle, rgba(59,130,246,0.09) 0%, rgba(139,92,246,0.04) 50%, transparent 70%)",
+              background: "rgba(37,99,235,0.12)",
+              border: "1px solid rgba(37,99,235,0.3)",
+              color: "#93C5FD",
             }}
-          />
-          <div
-            className="absolute bottom-[-15%] left-[-8%] w-[400px] h-[400px] rounded-full blur-3xl"
-            style={{
-              background: "radial-gradient(circle, rgba(16,185,129,0.06) 0%, transparent 60%)",
-            }}
-          />
-          {/* Floating shapes */}
-          <div
-            className="absolute top-[12%] right-[6%] w-14 h-14 rounded-2xl rotate-12 opacity-[0.06]"
-            style={{
-              background: "linear-gradient(135deg, #3B82F6, #8B5CF6)",
-            }}
-          />
-          <div
-            className="absolute top-[55%] right-[12%] w-8 h-8 rounded-full opacity-[0.05]"
-            style={{ background: "#10B981" }}
-          />
-          <div
-            className="absolute top-[30%] left-[3%] w-6 h-6 rounded-lg rotate-45 opacity-[0.05]"
-            style={{ background: "#F59E0B" }}
-          />
-        </div>
-
-        <div className="container mx-auto px-6 relative z-10 max-w-5xl">
-          {/* Center-aligned hero content */}
-          <div className="text-center max-w-3xl mx-auto">
-            {/* Update badge */}
-            <div
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-[11px] font-bold mb-6"
-              style={{
-                background: "linear-gradient(135deg, #EFF6FF, #F5F3FF)",
-                border: "1px solid #DBEAFE",
-                color: "#4F46E5",
-              }}
-            >
-              <Zap className="w-3.5 h-3.5" style={{ color: "#F59E0B" }} />
-              New Update — Digital Arrival Card
-            </div>
-
-            {/* Pre-heading */}
-            <p
-              className="text-sm md:text-base font-semibold uppercase tracking-[0.15em] mb-3"
-              style={{ color: "#3B82F6" }}
-            >
-              Apply For Malaysia Digital Arrival Card
-            </p>
-
-            {/* Main headline */}
-            <h1
-              className="text-3xl md:text-5xl lg:text-[3.4rem] font-black leading-[1.1] mb-5 tracking-[-0.02em]"
-              style={{
-                color: "#0F172A",
-                fontFamily: "'Outfit', system-ui, sans-serif",
-              }}
-            >
-              Experience Faster Entry
-              <br />
-              with the Updated{" "}
-              <span
-                className="bg-clip-text text-transparent"
-                style={{
-                  backgroundImage: "linear-gradient(135deg, #2563EB, #7C3AED)",
-                }}
-              >
-                MDAC System
-              </span>
-            </h1>
-
-            {/* Description */}
-            <p className="text-sm md:text-[16px] leading-relaxed mb-8 max-w-2xl mx-auto" style={{ color: "#64748B" }}>
-              The Malaysia Digital Arrival Card (MDAC) is Malaysia's new and improved digital entry form — replacing the
-              old paper-based card with a{" "}
-              <span className="font-semibold" style={{ color: "#0F172A" }}>
-                faster, more secure online system
-              </span>{" "}
-              for travelers entering by air, land, or sea.
-            </p>
-
-            {/* CTA */}
-            <div className="flex flex-wrap gap-3 items-center justify-center mb-6">
-              <Button
-                asChild
-                size="lg"
-                className="font-bold h-13 px-8 rounded-full transition-all duration-200 hover:translate-y-[-2px] hover:shadow-2xl group text-[15px]"
-                style={{
-                  background: "linear-gradient(135deg, #2563EB, #4F46E5)",
-                  color: "#FFFFFF",
-                  boxShadow: "0 8px 32px rgba(37,99,235,0.25)",
-                }}
-              >
-                <Link to="/apply" className="flex items-center gap-2.5">
-                  Apply Now
-                  <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
-                </Link>
-              </Button>
-            </div>
-
-            {/* Trust row */}
-            <div className="flex items-center gap-4 justify-center flex-wrap mb-8">
-              {[
-                {
-                  icon: <ShieldCheck className="w-3.5 h-3.5" />,
-                  text: "256-bit encrypted",
-                },
-                {
-                  icon: <Globe className="w-3.5 h-3.5" />,
-                  text: "Air, land & sea",
-                },
-                {
-                  icon: <MailCheck className="w-3.5 h-3.5" />,
-                  text: "Email delivery",
-                },
-              ].map((item, i) => (
-                <div key={i} className="flex items-center gap-1.5" style={{ color: "#94A3B8" }}>
-                  {item.icon}
-                  <span className="text-[11px] font-medium">{item.text}</span>
-                </div>
-              ))}
-            </div>
-
-            {/* Disclaimer */}
-            <p className="text-[10px] leading-relaxed max-w-lg mx-auto" style={{ color: "#B0BEC5" }}>
-              This website is a private, independent service provider and is not affiliated with, endorsed by, or
-              operated by any government agency. We are not part of or connected to any official immigration or border
-              authority.
-            </p>
+          >
+            <Zap className="w-3 h-3" style={{ color: "#FBBF24" }} />
+            New — Malaysia Digital Arrival Card
           </div>
         </div>
-      </section>
 
-      {/* ═══════════ APPLICATION PROCESS ═══════════ */}
-      <section className="relative py-16 md:py-24" style={{ background: "#FFFFFF" }}>
-        <div className="container mx-auto px-6 max-w-5xl">
-          {/* Section header */}
-          <div className="text-center mb-12 md:mb-16">
-            <p className="text-[11px] font-bold uppercase tracking-[0.2em] mb-3" style={{ color: "#3B82F6" }}>
-              How It Works
-            </p>
-            <h2
-              className="text-2xl md:text-4xl font-black tracking-[-0.02em]"
+        {/* ── Headline ── */}
+        <div className="text-center mb-4">
+          <p className="text-[11px] font-bold uppercase tracking-[0.2em] mb-3" style={{ color: "#3B82F6" }}>
+            Apply for MDAC · Air · Land · Sea
+          </p>
+          <h1
+            className="text-3xl md:text-5xl lg:text-[3.2rem] font-black leading-[1.1] tracking-[-0.025em] mb-5"
+            style={{
+              color: "#F8FAFC",
+              fontFamily: "'DM Sans', system-ui, sans-serif",
+            }}
+          >
+            Skip the Queue.
+            <br />
+            Enter Malaysia{" "}
+            <span
+              className="bg-clip-text text-transparent"
+              style={{ backgroundImage: "linear-gradient(135deg, #60A5FA, #A78BFA)" }}
+            >
+              Faster.
+            </span>
+          </h1>
+
+          <p className="text-sm md:text-[15px] leading-relaxed max-w-xl mx-auto mb-8" style={{ color: "#94A3B8" }}>
+            The MDAC replaces the old paper arrival card with a{" "}
+            <span style={{ color: "#CBD5E1", fontWeight: 600 }}>fully digital, faster-processing system</span> — apply
+            online and sail through immigration.
+          </p>
+
+          {/* ── CTA ── */}
+          <div className="flex flex-wrap gap-3 items-center justify-center mb-8">
+            <Button
+              asChild
+              size="lg"
+              className="font-bold px-8 h-12 rounded-full text-[14px] group transition-all duration-200 hover:scale-[1.03] hover:shadow-[0_0_40px_rgba(37,99,235,0.4)]"
               style={{
-                color: "#0F172A",
-                fontFamily: "'Outfit', system-ui, sans-serif",
+                background: "linear-gradient(135deg, #2563EB, #4F46E5)",
+                color: "#fff",
+                border: "none",
               }}
             >
-              Application Process
-            </h2>
+              <Link to="/apply" className="flex items-center gap-2">
+                Start My Application
+                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
+              </Link>
+            </Button>
           </div>
 
-          {/* Steps grid — 2x2 on desktop, stacked on mobile */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5 mb-10">
+          {/* ── Trust pills ── */}
+          <div className="flex items-center gap-4 justify-center flex-wrap mb-10">
+            {[
+              { icon: <ShieldCheck className="w-3.5 h-3.5" />, text: "256-bit encrypted" },
+              { icon: <Globe className="w-3.5 h-3.5" />, text: "All entry points" },
+              { icon: <MailCheck className="w-3.5 h-3.5" />, text: "Instant email delivery" },
+            ].map((item, i) => (
+              <div key={i} className="flex items-center gap-1.5" style={{ color: "#475569" }}>
+                {item.icon}
+                <span className="text-[11px] font-medium">{item.text}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* ═══ HOW IT WORKS — inline steps ═══ */}
+        <div
+          className="rounded-2xl p-5 md:p-6"
+          style={{
+            background: "rgba(255,255,255,0.03)",
+            border: "1px solid rgba(255,255,255,0.07)",
+          }}
+        >
+          {/* Label */}
+          <p className="text-center text-[10px] font-bold uppercase tracking-[0.2em] mb-5" style={{ color: "#475569" }}>
+            How It Works — 4 Simple Steps
+          </p>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
             {steps.map((step, index) => (
-              <div
-                key={index}
-                className="group relative rounded-2xl p-5 md:p-6 transition-all duration-300 hover:translate-y-[-3px] hover:shadow-lg cursor-default"
-                style={{
-                  background: step.bg,
-                  border: `1px solid ${step.border}`,
-                }}
-              >
-                {/* Top row: number + icon */}
-                <div className="flex items-start justify-between mb-4">
+              <div key={index} className="relative group">
+                {/* Connector line */}
+                {index < 3 && (
                   <div
-                    className="w-11 h-11 rounded-xl flex items-center justify-center transition-transform duration-300 group-hover:scale-110"
+                    className="hidden md:block absolute top-5 left-[calc(100%-4px)] w-full h-[1px] z-0"
                     style={{
-                      background: "#FFFFFF",
-                      border: `1px solid ${step.border}`,
-                      color: step.color,
-                      boxShadow: `0 2px 8px ${step.color}15`,
+                      background: "linear-gradient(90deg, rgba(255,255,255,0.08), transparent)",
                     }}
-                  >
-                    {step.icon}
-                  </div>
-                  <span
-                    className="text-[48px] font-black leading-none opacity-[0.08] select-none"
-                    style={{ color: step.color }}
-                  >
-                    {step.num}
-                  </span>
-                </div>
+                  />
+                )}
 
-                {/* Step label */}
-                <span
-                  className="text-[10px] font-bold uppercase tracking-[0.15em] mb-1.5 block"
-                  style={{ color: step.color }}
+                <div
+                  className="relative z-10 rounded-xl p-4 h-full transition-all duration-200 hover:translate-y-[-2px]"
+                  style={{
+                    background: step.accent,
+                    border: `1px solid ${step.color}22`,
+                  }}
                 >
-                  Step {step.num}
-                </span>
-
-                {/* Title */}
-                <h3 className="font-bold text-[15px] md:text-[16px] mb-1.5" style={{ color: "#0F172A" }}>
-                  {step.title}
-                </h3>
-
-                {/* Description */}
-                <p className="text-[13px] leading-relaxed" style={{ color: "#64748B" }}>
-                  {step.desc}
-                </p>
-
-                {/* Connector arrow (between 1→2 and 3→4 on desktop) */}
-                {(index === 0 || index === 2) && (
-                  <div className="hidden md:block absolute top-1/2 -right-3 -translate-y-1/2 z-10">
+                  {/* Icon + number */}
+                  <div className="flex items-center justify-between mb-3">
                     <div
-                      className="w-6 h-6 rounded-full flex items-center justify-center"
+                      className="w-8 h-8 rounded-lg flex items-center justify-center"
                       style={{
-                        background: "#FFFFFF",
-                        border: "1px solid #E2E8F0",
-                        boxShadow: "0 2px 6px rgba(0,0,0,0.04)",
+                        background: `${step.color}22`,
+                        color: step.color,
                       }}
                     >
-                      <ArrowRight className="w-3 h-3" style={{ color: "#94A3B8" }} />
+                      {step.icon}
                     </div>
+                    <span
+                      className="text-[28px] font-black leading-none select-none"
+                      style={{ color: step.color, opacity: 0.15 }}
+                    >
+                      {step.num}
+                    </span>
                   </div>
-                )}
+
+                  <p className="text-[10px] font-bold uppercase tracking-[0.12em] mb-1" style={{ color: step.color }}>
+                    Step {step.num}
+                  </p>
+                  <h3 className="text-[13px] font-bold mb-1" style={{ color: "#E2E8F0" }}>
+                    {step.title}
+                  </h3>
+                  <p className="text-[11px] leading-relaxed" style={{ color: "#64748B" }}>
+                    {step.desc}
+                  </p>
+                </div>
               </div>
             ))}
           </div>
 
-          {/* Pro Tip */}
+          {/* Pro tip */}
           <div
-            className="flex items-start md:items-center gap-3 md:gap-4 rounded-2xl px-5 py-4 max-w-2xl mx-auto"
+            className="mt-4 flex items-center gap-3 rounded-xl px-4 py-3"
             style={{
-              background: "linear-gradient(135deg, #FFFBEB, #FEF9F0)",
-              border: "1px solid #FEF3C7",
+              background: "rgba(251,191,36,0.06)",
+              border: "1px solid rgba(251,191,36,0.15)",
             }}
           >
-            <div
-              className="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0"
-              style={{ background: "#FEF3C7" }}
-            >
-              <Lightbulb className="w-4 h-4" style={{ color: "#F59E0B" }} />
-            </div>
-            <p className="text-[13px] leading-relaxed" style={{ color: "#64748B" }}>
-              <span className="font-bold" style={{ color: "#92400E" }}>
-                Pro Tip:
-              </span>{" "}
-              Apply at least{" "}
-              <span className="font-bold" style={{ color: "#0F172A" }}>
-                3 days before
-              </span>{" "}
-              your travel date to avoid last-minute delays.
+            <Lightbulb className="w-4 h-4 flex-shrink-0" style={{ color: "#FBBF24" }} />
+            <p className="text-[12px]" style={{ color: "#94A3B8" }}>
+              <span style={{ color: "#FCD34D", fontWeight: 700 }}>Pro Tip: </span>
+              Apply at least <span style={{ color: "#E2E8F0", fontWeight: 600 }}>3 days before departure</span> to avoid
+              any last-minute delays.
             </p>
           </div>
         </div>
-      </section>
-    </>
+
+        {/* ── Disclaimer ── */}
+        <p className="text-center text-[10px] leading-relaxed max-w-lg mx-auto mt-6" style={{ color: "#334155" }}>
+          This is an independent service provider and is not affiliated with, endorsed by, or operated by any government
+          agency or official immigration authority.
+        </p>
+      </div>
+    </section>
   );
 };
 
