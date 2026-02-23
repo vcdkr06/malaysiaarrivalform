@@ -1,13 +1,13 @@
-
-
 const Footer = () => {
   return (
-    <footer className="py-12" style={{ background: "linear-gradient(135deg, #0F172A, #1E3A5F, #1D4ED8)" }}>
+    <footer className="py-12 bg-[#0F172A]">
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-3 gap-8">
           <div>
             <div className="mb-4">
-              <span className="text-primary-foreground font-bold text-sm uppercase tracking-wide">Malaysia Digital Arrival Card</span>
+              <span className="text-primary-foreground font-bold text-sm uppercase tracking-wide">
+                Malaysia Digital Arrival Card
+              </span>
             </div>
             <p className="text-primary-foreground/50 text-sm leading-relaxed">
               Your data is securely encrypted with SSL technology.
@@ -58,6 +58,7 @@ const Footer = () => {
             </ul>
           </div>
         </div>
+
         <div className="border-t border-primary-foreground/10 mt-10 pt-6">
           <div className="bg-primary-foreground/[0.06] border border-primary-foreground/10 rounded-xl p-5 mb-6">
             <p className="text-xs font-semibold text-primary-foreground/70 mb-2 uppercase tracking-wider">
