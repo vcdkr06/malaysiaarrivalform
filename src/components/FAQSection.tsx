@@ -7,7 +7,7 @@ const faqData = [
   { q: "Do children need one?", a: "Yes — all foreign nationals, regardless of age, require a completed MDAC. Parents must submit separate forms for each child." },
   { q: "How will I receive it?", a: "You'll get a confirmation email with a PDF copy and unique PIN. Save or print it to show at immigration." },
   { q: "What if I made an error?", a: "Submit a new corrected application. Immigration references the most recent submission linked to your passport." },
-  { q: "Is this a visa?", a: "No. The MDAC is an arrival registration form — not a visa. If your nationality requires a visa, obtain it separately." },
+  { q: "Is the MDAC the same as a visa?", a: "No. The MDAC is an arrival registration form — not a visa. If your nationality requires a visa, obtain it separately." },
   { q: "Why use this service?", a: "We catch errors before submission, ensure compliance, and save you time — so you can travel with confidence." },
 ];
 
@@ -21,7 +21,7 @@ const FAQSection = () => {
         </div>
         <Accordion type="single" collapsible className="space-y-2">
           {faqData.map((faq, i) => (
-            <AccordionItem key={i} value={`item-${i}`} className="bg-secondary border-none rounded-xl px-5">
+            <AccordionItem key={i} value={`item-${i}`} className="bg-secondary border border-border rounded-xl px-5">
               <AccordionTrigger className="py-4 text-left font-semibold text-foreground text-sm hover:no-underline">{faq.q}</AccordionTrigger>
               <AccordionContent className="text-sm text-muted-foreground pb-4">{faq.a}</AccordionContent>
             </AccordionItem>

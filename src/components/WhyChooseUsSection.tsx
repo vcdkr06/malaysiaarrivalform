@@ -13,21 +13,21 @@ const WhyChooseUsSection = () => {
   ];
 
   return (
-    <section className="py-16 bg-secondary">
+    <section className="py-16 bg-background">
       <div className="container mx-auto px-4 max-w-5xl">
         <div className="text-center mb-12">
           <p className="text-xs uppercase tracking-widest text-accent font-semibold mb-2">Our Advantages</p>
           <h2 className="text-2xl md:text-3xl font-bold text-foreground">Why Travelers Choose Us</h2>
         </div>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
           {benefits.map((b, i) => {
             const Icon = b.icon;
             return (
-              <div key={i} className="bg-background rounded-2xl p-5 shadow-soft">
-                <div className="w-10 h-10 bg-primary/5 rounded-xl flex items-center justify-center mb-3">
-                  <Icon className="w-5 h-5 text-primary" />
+              <div key={i} className="bg-secondary rounded-xl p-5 border border-border hover:shadow-elegant transition-shadow">
+                <div className="w-9 h-9 bg-accent/10 rounded-lg flex items-center justify-center mb-3">
+                  <Icon className="w-4 h-4 text-accent" />
                 </div>
-                <h3 className="text-sm font-bold text-foreground mb-1">{b.title}</h3>
+                <h3 className="text-sm font-semibold text-foreground mb-1">{b.title}</h3>
                 <p className="text-xs text-muted-foreground leading-relaxed">{b.desc}</p>
               </div>
             );
