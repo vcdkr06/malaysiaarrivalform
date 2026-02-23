@@ -7,22 +7,22 @@ const HeroSection = () => {
     {
       icon: <FileText className="w-5 h-5" />,
       title: "1. Complete Application",
-      desc: "Provide your travel and personal details through our simplified, user-friendly digital form.",
+      desc: "Provide your travel and personal details through our simplified digital form.",
     },
     {
       icon: <CreditCard className="w-5 h-5" />,
       title: "2. Secure Settlement",
-      desc: "Process your application fee through our bank-grade encrypted portal using any major card.",
+      desc: "Process your application fee through our bank-grade encrypted portal.",
     },
     {
       icon: <ShieldCheck className="w-5 h-5" />,
       title: "3. Review & Delivery",
-      desc: "Our specialists audit your data for 100% accuracy before emailing your MDAC PIN for entry.",
+      desc: "Our specialists audit your data before emailing your MDAC PIN for entry.",
     },
   ];
 
   return (
-    <section className="relative bg-[#0a192f] overflow-hidden min-h-[85vh] flex items-center">
+    <section className="relative bg-[#0a192f] overflow-hidden min-h-[85vh] flex items-center pt-16 md:pt-0">
       {/* Background Grid */}
       <div className="absolute inset-0 z-0">
         <div
@@ -35,11 +35,10 @@ const HeroSection = () => {
         <div className="absolute inset-0 bg-gradient-to-tr from-[#0a192f] via-transparent to-accent/5" />
       </div>
 
-      <div className="container mx-auto px-6 py-8 md:py-12 relative z-10">
-        {/* Changed order on mobile: Card first, then Text */}
-        <div className="flex flex-col-reverse lg:grid lg:grid-cols-[1fr_420px] gap-8 lg:gap-16 items-start max-w-7xl mx-auto">
-          {/* Left Side: Headline & Content */}
-          <div className="flex flex-col justify-center">
+      <div className="container mx-auto px-6 py-8 relative z-10">
+        <div className="flex flex-col lg:grid lg:grid-cols-[1fr_420px] gap-8 lg:gap-16 items-start max-w-7xl mx-auto">
+          {/* Headline - Always Top */}
+          <div className="flex flex-col w-full">
             <div className="inline-flex items-center gap-2 bg-accent/10 border border-accent/20 text-accent px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest mb-4 w-fit">
               <span className="w-2 h-2 bg-accent rounded-full animate-pulse" />
               Official Entry Concierge
@@ -53,19 +52,14 @@ const HeroSection = () => {
               <span className="md:text-accent"> Entry.</span>
             </h1>
 
-            <p className="text-base md:text-lg text-slate-400 mb-8 max-w-xl leading-snug">
-              <span className="md:hidden text-sm">
-                Submit your mandatory MDAC 72 hours before arrival. We handle the filing to ensure your entry is
-                seamless.
-              </span>
-              <span className="hidden md:inline">
-                Every foreign visitor must submit a Malaysia Digital Arrival Card (MDAC) 72 hours before arrival. We
-                handle the filing to ensure your entry is seamless and error-free.
-              </span>
+            {/* Sub-headline: Hidden on mobile, moved below card */}
+            <p className="hidden lg:block text-lg text-slate-400 mb-8 max-w-xl leading-snug">
+              Every foreign visitor must submit a Malaysia Digital Arrival Card (MDAC) 72 hours before arrival. We
+              handle the filing to ensure your entry is seamless and error-free.
             </p>
 
-            {/* CTA: Only visible on desktop (md and up) */}
-            <div className="hidden md:flex flex-wrap gap-4 items-center mb-6">
+            {/* Desktop CTA */}
+            <div className="hidden lg:flex flex-wrap gap-4 items-center mb-6">
               <Button
                 asChild
                 size="lg"
@@ -75,20 +69,14 @@ const HeroSection = () => {
               </Button>
               <div className="flex items-center gap-2 bg-white/5 border border-white/10 px-4 py-2 rounded-lg">
                 <Info className="w-4 h-4 text-accent" />
-                <p className="text-xs text-slate-300 font-medium italic underline underline-offset-4 decoration-accent/30">
-                  Apply 3 days before travel.
-                </p>
+                <p className="text-xs text-slate-300 font-medium italic underline">Apply 3 days before travel.</p>
               </div>
             </div>
-
-            <p className="text-[10px] leading-relaxed text-slate-500 max-w-md border-l border-slate-800 pl-4">
-              Private service provider. Not affiliated with government agencies.
-            </p>
           </div>
 
-          {/* Right Side: 3-Step Card (Appears first on mobile) */}
-          <div className="relative group w-full mb-8 lg:mb-0">
-            <div className="absolute -inset-2 bg-accent/20 blur-2xl rounded-full opacity-20 transition duration-1000 group-hover:opacity-40" />
+          {/* Processing Card - Second on mobile, Right on Desktop */}
+          <div className="relative group w-full order-2 lg:order-none">
+            <div className="absolute -inset-2 bg-accent/20 blur-2xl rounded-full opacity-20" />
 
             <div className="relative bg-[#112240]/80 backdrop-blur-xl border border-white/10 rounded-3xl p-6 lg:p-8 shadow-2xl">
               <div className="flex items-center justify-between mb-8">
@@ -103,7 +91,7 @@ const HeroSection = () => {
               <div className="space-y-6 md:space-y-7">
                 {steps.map((step, index) => (
                   <div key={index} className="flex gap-4 md:gap-5">
-                    <div className="flex-shrink-0 w-10 h-10 md:w-11 md:h-11 rounded-xl bg-accent/5 border border-accent/15 flex items-center justify-center text-accent shadow-inner">
+                    <div className="flex-shrink-0 w-10 h-10 md:w-11 md:h-11 rounded-xl bg-accent/5 border border-accent/15 flex items-center justify-center text-accent">
                       {step.icon}
                     </div>
                     <div>
@@ -114,6 +102,23 @@ const HeroSection = () => {
                 ))}
               </div>
             </div>
+          </div>
+
+          {/* Mobile Description & Disclaimer - Bottom */}
+          <div className="lg:hidden order-3 flex flex-col gap-6">
+            <p className="text-base text-slate-400 leading-snug">
+              Submit your mandatory MDAC 72 hours before arrival. We handle the filing to ensure your entry is seamless.
+            </p>
+            <p className="text-[10px] leading-relaxed text-slate-500 border-l border-slate-800 pl-4">
+              Private service provider. Not affiliated with government agencies.
+            </p>
+          </div>
+
+          {/* Desktop Disclaimer (Hidden on Mobile) */}
+          <div className="hidden lg:block">
+            <p className="text-[10px] leading-relaxed text-slate-500 max-w-md border-l border-slate-800 pl-4 mt-[-20px]">
+              Private service provider. Not affiliated with government agencies.
+            </p>
           </div>
         </div>
       </div>
