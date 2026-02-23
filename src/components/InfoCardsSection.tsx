@@ -22,58 +22,67 @@ const InfoCardsSection = () => {
   ];
 
   return (
-    <section className="relative py-12 md:py-20 bg-[#0a192f] overflow-hidden">
-      {/* Subtile Batik Background */}
+    <section className="relative py-12 md:py-24 bg-white overflow-hidden">
+      {/* Subtile Navy Batik Background */}
       <div
-        className="absolute inset-0 z-0 opacity-[0.03] pointer-events-none"
+        className="absolute inset-0 z-0 opacity-[0.04] pointer-events-none"
         style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0l15 15-15 15-15-15zM0 30l15 15-15 15-15-15zM60 30l15 15-15 15-15-15zM30 60l15 15-15 15-15-15z' fill='%2364ffda' fill-opacity='1' fill-rule='evenodd'/%3E%3C/svg%3E")`,
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0l15 15-15 15-15-15zM0 30l15 15-15 15-15-15zM60 30l15 15-15 15-15-15zM30 60l15 15-15 15-15-15z' fill='%230a192f' fill-opacity='1' fill-rule='evenodd'/%3E%3C/svg%3E")`,
         }}
       />
 
       <div className="container mx-auto px-6 relative z-10 max-w-6xl">
         {/* Section Header */}
-        <div className="mb-10 md:mb-16">
-          <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">Essential Entry Information</h2>
-          <div className="w-12 h-1 bg-accent rounded-full" />
+        <div className="mb-8 md:mb-16">
+          <h2 className="text-2xl md:text-4xl font-black text-[#0a192f] mb-3 tracking-tight">
+            Essential Entry Information
+          </h2>
+          <div className="w-16 h-1.5 bg-[#0a192f] rounded-full" />
         </div>
 
         {/* Info Grid */}
-        <div className="grid md:grid-cols-3 gap-6 mb-16">
+        <div className="grid md:grid-cols-3 gap-4 md:gap-8 mb-12 md:mb-20">
           {cards.map((card, i) => {
             const Icon = card.icon;
             return (
               <div
                 key={i}
-                className="group p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-accent/30 transition-all duration-300"
+                className="group p-6 md:p-8 rounded-2xl bg-slate-50 border border-slate-100 hover:border-[#0a192f]/20 hover:bg-white hover:shadow-xl hover:shadow-navy-900/5 transition-all duration-300"
               >
-                <div className="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                  <Icon className="w-6 h-6 text-accent" />
+                <div className="w-12 h-12 bg-[#0a192f]/5 rounded-xl flex items-center justify-center mb-5 group-hover:bg-[#0a192f] transition-colors duration-300">
+                  <Icon className="w-6 h-6 text-[#0a192f] group-hover:text-white transition-colors" />
                 </div>
-                <h3 className="text-lg font-bold text-white mb-3">{card.title}</h3>
-                <p className="text-sm text-slate-400 leading-relaxed">{card.text}</p>
+                <h3 className="text-lg font-bold text-[#0a192f] mb-3">{card.title}</h3>
+                <p className="text-sm text-slate-600 leading-relaxed">{card.text}</p>
               </div>
             );
           })}
         </div>
 
         {/* Bottom CTA Block */}
-        <div className="mt-12 pt-10 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-6">
-          <div className="text-center md:text-left">
-            <h4 className="text-xl md:text-2xl font-bold text-white mb-1">Ready to start your application?</h4>
-            <p className="text-slate-400 text-sm md:text-base">
-              Join thousands of travelers who use our fast-track concierge daily.
+        <div className="mt-8 md:mt-12 p-8 md:p-12 rounded-[2rem] bg-[#0a192f] text-white flex flex-col md:flex-row items-center justify-between gap-8 relative overflow-hidden shadow-2xl">
+          {/* Internal Batik Pattern for the CTA Box */}
+          <div
+            className="absolute inset-0 z-0 opacity-[0.05] pointer-events-none scale-150 rotate-12"
+            style={{
+              backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0l15 15-15 15-15-15zM0 30l15 15-15 15-15-15zM60 30l15 15-15 15-15-15zM30 60l15 15-15 15-15-15z' fill='%23ffffff' fill-opacity='1' fill-rule='evenodd'/%3E%3C/svg%3E")`,
+            }}
+          />
+
+          <div className="text-center md:text-left relative z-10">
+            <h4 className="text-2xl md:text-3xl font-black mb-2">Ready to apply?</h4>
+            <p className="text-slate-300 text-sm md:text-lg max-w-md">
+              Complete your MDAC registration in minutes with our guided process.
             </p>
           </div>
 
           <Button
             asChild
-            size="xl"
-            className="w-full md:w-auto bg-accent text-accent-foreground hover:bg-accent/90 font-bold px-10 h-14 rounded-xl shadow-2xl shadow-accent/20 transition-all active:scale-95"
+            className="w-full md:w-auto bg-white text-[#0a192f] hover:bg-slate-100 font-black px-12 h-16 text-lg rounded-xl transition-all active:scale-95 relative z-10"
           >
-            <Link to="/apply" className="flex items-center gap-2">
+            <Link to="/apply" className="flex items-center gap-3">
               Apply Now
-              <ArrowRight className="w-5 h-5" />
+              <ArrowRight className="w-6 h-6" />
             </Link>
           </Button>
         </div>
