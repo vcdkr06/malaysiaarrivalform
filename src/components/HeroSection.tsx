@@ -1,26 +1,29 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { FileText, CreditCard, ShieldCheck, ArrowRight, Clock } from "lucide-react";
+import { FileText, CreditCard, ShieldCheck, ArrowRight, Plane, Sparkles, CheckCircle2 } from "lucide-react";
 
 const HeroSection = () => {
   const steps = [
     {
-      icon: <FileText className="w-4 h-4" />,
-      num: "01",
-      title: "Complete Application",
-      desc: "Provide travel details via our simplified digital form.",
+      icon: <FileText className="w-5 h-5" />,
+      title: "Fill & Submit",
+      desc: "5-minute smart form",
+      color: "#3B82F6",
+      bg: "#EFF6FF",
     },
     {
-      icon: <CreditCard className="w-4 h-4" />,
-      num: "02",
-      title: "Secure Settlement",
-      desc: "Process fees through our bank-grade encrypted portal.",
+      icon: <CreditCard className="w-5 h-5" />,
+      title: "Pay Securely",
+      desc: "Bank-grade encryption",
+      color: "#8B5CF6",
+      bg: "#F5F3FF",
     },
     {
-      icon: <ShieldCheck className="w-4 h-4" />,
-      num: "03",
-      title: "Review & Delivery",
-      desc: "Specialists audit data before emailing your MDAC PIN.",
+      icon: <ShieldCheck className="w-5 h-5" />,
+      title: "Get Your PIN",
+      desc: "Delivered to inbox",
+      color: "#10B981",
+      bg: "#ECFDF5",
     },
   ];
 
@@ -28,195 +31,238 @@ const HeroSection = () => {
     <section
       className="relative overflow-hidden min-h-[80vh] flex items-center pt-8 md:pt-0"
       style={{
-        background: "linear-gradient(175deg, #FFFFFF 0%, #F0F7FF 35%, #E4F0FB 70%, #F5F9FF 100%)",
+        background: "linear-gradient(160deg, #FFFFFF 0%, #F8FBFF 20%, #EEF4FF 50%, #F0F4FF 80%, #FFFFFF 100%)",
       }}
     >
-      {/* Soft decorative blobs */}
+      {/* ——— Decorative background ——— */}
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+        {/* Vibrant gradient orbs */}
         <div
-          className="absolute -top-40 -right-40 w-[600px] h-[600px] rounded-full"
+          className="absolute -top-20 right-[10%] w-[500px] h-[500px] rounded-full blur-3xl"
           style={{
-            background: "radial-gradient(circle, rgba(125,197,236,0.12) 0%, transparent 60%)",
+            background: "radial-gradient(circle, rgba(59,130,246,0.1) 0%, rgba(139,92,246,0.05) 50%, transparent 70%)",
           }}
         />
         <div
-          className="absolute -bottom-32 -left-32 w-[450px] h-[450px] rounded-full"
+          className="absolute bottom-[-10%] left-[-5%] w-[400px] h-[400px] rounded-full blur-3xl"
           style={{
-            background: "radial-gradient(circle, rgba(96,175,227,0.08) 0%, transparent 55%)",
+            background: "radial-gradient(circle, rgba(16,185,129,0.07) 0%, rgba(59,130,246,0.04) 50%, transparent 65%)",
           }}
         />
-        {/* Dot grid */}
+        {/* Floating geometric shapes */}
         <div
-          className="absolute inset-0 opacity-[0.35]"
-          style={{
-            backgroundImage: "radial-gradient(circle, #B8D6EC 0.6px, transparent 0.6px)",
-            backgroundSize: "32px 32px",
-          }}
+          className="absolute top-[15%] right-[8%] w-16 h-16 rounded-2xl rotate-12 opacity-[0.07]"
+          style={{ background: "linear-gradient(135deg, #3B82F6, #8B5CF6)" }}
+        />
+        <div
+          className="absolute top-[60%] right-[15%] w-10 h-10 rounded-full opacity-[0.06]"
+          style={{ background: "#10B981" }}
+        />
+        <div
+          className="absolute top-[35%] left-[5%] w-8 h-8 rounded-lg rotate-45 opacity-[0.05]"
+          style={{ background: "#F59E0B" }}
         />
       </div>
 
       <div className="container mx-auto px-6 py-4 md:py-8 relative z-10">
-        <div className="flex flex-col lg:grid lg:grid-cols-[1fr_400px] gap-4 md:gap-6 lg:gap-20 items-start max-w-7xl mx-auto">
+        <div className="flex flex-col lg:grid lg:grid-cols-[1.1fr_1fr] gap-6 lg:gap-16 items-center max-w-7xl mx-auto">
           {/* ——— Left column ——— */}
           <div className="flex flex-col w-full">
             {/* Badge */}
             <div
-              className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-[0.18em] mb-5 w-fit"
+              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-[11px] font-semibold mb-6 w-fit"
               style={{
-                background: "#EBF5FF",
-                border: "1px solid #C8E2F5",
-                color: "#2E86C1",
+                background: "linear-gradient(135deg, #EFF6FF, #F5F3FF)",
+                border: "1px solid #DBEAFE",
+                color: "#3B82F6",
               }}
             >
-              <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ background: "#2E86C1" }} />
-              Official Entry Concierge
+              <Plane className="w-3.5 h-3.5" />
+              Trusted by 50,000+ travelers
             </div>
 
             {/* Headline */}
             <h1
-              className="text-3xl md:text-5xl lg:text-[4.25rem] font-black leading-[1.08] mb-3 md:mb-5 tracking-[-0.03em]"
+              className="text-3xl md:text-5xl lg:text-[3.6rem] font-black leading-[1.08] mb-4 md:mb-5 tracking-[-0.03em]"
               style={{
-                color: "#1A3A52",
+                color: "#0F172A",
                 fontFamily: "'Outfit', system-ui, sans-serif",
               }}
             >
-              <span className="md:hidden uppercase">
-                Malaysia Digital
+              <span className="md:hidden">
+                Your Ticket Into
                 <br />
-                <span style={{ color: "#2E86C1" }}>Arrival Card</span>
+                <span
+                  className="bg-clip-text text-transparent"
+                  style={{
+                    backgroundImage: "linear-gradient(135deg, #2563EB, #7C3AED)",
+                  }}
+                >
+                  Malaysia
+                </span>{" "}
+                Starts Here
               </span>
               <span className="hidden md:inline">
-                Fast-Track Your
+                Your Ticket Into
                 <br />
-                <span style={{ color: "#2E86C1" }}>Malaysia</span> Entry.
+                <span
+                  className="bg-clip-text text-transparent"
+                  style={{
+                    backgroundImage: "linear-gradient(135deg, #2563EB, #7C3AED)",
+                  }}
+                >
+                  Malaysia
+                </span>{" "}
+                Starts Here.
               </span>
             </h1>
 
             {/* Subtitle */}
-            <p className="text-sm md:text-[17px] mb-5 md:mb-9 max-w-lg leading-relaxed" style={{ color: "#6B8EA6" }}>
-              <span className="font-semibold" style={{ color: "#1A3A52" }}>
-                Required for all foreign visitors
+            <p className="text-sm md:text-base mb-6 md:mb-8 max-w-md leading-relaxed" style={{ color: "#64748B" }}>
+              Skip the paperwork stress.{" "}
+              <span className="font-semibold" style={{ color: "#0F172A" }}>
+                Every foreign visitor needs an MDAC
               </span>{" "}
-              — submit an MDAC 72 hours before arrival. We handle the filing to ensure your entry is seamless.
+              — we file yours in minutes so you can focus on the adventure.
             </p>
 
-            {/* CTA row — Desktop */}
-            <div className="hidden lg:flex flex-wrap gap-4 items-center mb-8">
+            {/* CTA row */}
+            <div className="flex flex-wrap gap-3 items-center mb-8">
               <Button
                 asChild
                 size="lg"
-                className="font-bold h-12 px-8 rounded-xl transition-all duration-200 hover:translate-y-[-1px] hover:shadow-xl"
+                className="font-bold h-12 px-7 rounded-full transition-all duration-200 hover:translate-y-[-2px] hover:shadow-2xl group"
                 style={{
-                  background: "linear-gradient(135deg, #2E86C1, #5AADE0)",
+                  background: "linear-gradient(135deg, #2563EB, #4F46E5)",
                   color: "#FFFFFF",
-                  boxShadow: "0 6px 24px rgba(46,134,193,0.2)",
+                  boxShadow: "0 8px 32px rgba(37,99,235,0.25)",
                 }}
               >
                 <Link to="/apply" className="flex items-center gap-2">
-                  Apply for MDAC Now
-                  <ArrowRight className="w-4 h-4" />
+                  Start My Application
+                  <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
                 </Link>
               </Button>
 
               <div
-                className="flex items-center gap-2.5 px-4 py-2.5 rounded-xl"
+                className="flex items-center gap-2 px-4 py-2.5 rounded-full"
                 style={{
                   background: "#FFFFFF",
-                  border: "1px solid #D6E8F5",
-                  boxShadow: "0 1px 4px rgba(26,58,82,0.04)",
+                  border: "1px solid #E2E8F0",
+                  boxShadow: "0 1px 4px rgba(15,23,42,0.04)",
                 }}
               >
-                <Clock className="w-3.5 h-3.5" style={{ color: "#2E86C1" }} />
-                <p className="text-xs font-medium" style={{ color: "#6B8EA6" }}>
-                  Apply <span style={{ color: "#1A3A52" }}>3 days</span> before travel.
+                <div
+                  className="w-5 h-5 rounded-full flex items-center justify-center"
+                  style={{ background: "#FEF3C7" }}
+                >
+                  <Sparkles className="w-3 h-3" style={{ color: "#F59E0B" }} />
+                </div>
+                <p className="text-xs font-medium" style={{ color: "#64748B" }}>
+                  Takes only{" "}
+                  <span className="font-bold" style={{ color: "#0F172A" }}>
+                    5 minutes
+                  </span>
                 </p>
               </div>
             </div>
 
-            {/* Trust strip */}
-            <div className="hidden lg:flex items-center gap-6">
-              {[
-                { val: "50K+", label: "Applications" },
-                { val: "98%", label: "Approval rate" },
-                { val: "24/7", label: "Support" },
-              ].map((stat, i) => (
-                <div key={i} className="flex items-center gap-3">
-                  <div>
-                    <p className="font-extrabold text-sm tracking-tight" style={{ color: "#1A3A52" }}>
-                      {stat.val}
-                    </p>
-                    <p className="text-[10px] uppercase tracking-widest" style={{ color: "#93B0C5" }}>
-                      {stat.label}
-                    </p>
-                  </div>
-                  {i < 2 && <div className="w-px h-6 ml-3" style={{ background: "#D6E8F5" }} />}
+            {/* Trust indicators */}
+            <div className="flex items-center gap-2 flex-wrap">
+              {["256-bit SSL", "Instant delivery", "24/7 support"].map((item, i) => (
+                <div
+                  key={i}
+                  className="flex items-center gap-1.5 px-3 py-1.5 rounded-full"
+                  style={{
+                    background: "#F8FAFC",
+                    border: "1px solid #F1F5F9",
+                  }}
+                >
+                  <CheckCircle2 className="w-3 h-3" style={{ color: "#10B981" }} />
+                  <span className="text-[11px] font-medium" style={{ color: "#64748B" }}>
+                    {item}
+                  </span>
                 </div>
               ))}
             </div>
           </div>
 
-          {/* ——— Processing Card ——— */}
-          <div className="relative group w-full order-2 lg:order-none mb-2">
+          {/* ——— Right column: Steps reimagined ——— */}
+          <div className="relative w-full order-2 lg:order-none">
+            {/* Main card */}
             <div
-              className="relative rounded-2xl p-5 lg:p-7"
+              className="relative rounded-3xl p-6 lg:p-8"
               style={{
                 background: "#FFFFFF",
-                border: "1px solid #D6E8F5",
-                boxShadow: "0 4px 24px rgba(46,134,193,0.06), 0 1px 4px rgba(26,58,82,0.04)",
+                border: "1px solid #E2E8F0",
+                boxShadow: "0 8px 40px rgba(15,23,42,0.06), 0 1px 3px rgba(15,23,42,0.04)",
               }}
             >
               {/* Card header */}
-              <div className="flex items-center justify-between mb-6">
-                <div className="flex items-center gap-2.5">
-                  <div className="w-1.5 h-1.5 rounded-full" style={{ background: "#2E86C1" }} />
-                  <h3 className="font-bold tracking-[0.12em] uppercase text-[10px]" style={{ color: "#1A3A52" }}>
-                    Processing Journey
+              <div className="flex items-center justify-between mb-7">
+                <div>
+                  <h3 className="font-bold text-[15px] mb-0.5" style={{ color: "#0F172A" }}>
+                    How it works
                   </h3>
+                  <p className="text-[12px]" style={{ color: "#94A3B8" }}>
+                    Three steps to your MDAC
+                  </p>
                 </div>
-                <span
-                  className="text-[9px] px-2.5 py-1 rounded-full font-bold"
+                <div
+                  className="px-3 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-wider"
                   style={{
-                    background: "#EBF5FF",
-                    color: "#2E86C1",
-                    border: "1px solid #C8E2F5",
+                    background: "linear-gradient(135deg, #EFF6FF, #F5F3FF)",
+                    color: "#4F46E5",
+                    border: "1px solid #E0E7FF",
                   }}
                 >
-                  FAST-TRACK
-                </span>
+                  ~ 24h turnaround
+                </div>
               </div>
 
-              {/* Steps */}
-              <div className="space-y-1.5">
+              {/* Steps — vertical timeline */}
+              <div className="relative">
                 {steps.map((step, index) => (
-                  <div key={index} className="flex gap-4 p-3 rounded-xl transition-all duration-200 hover:bg-[#F5F9FF]">
-                    <div className="flex-shrink-0 relative">
+                  <div key={index} className="relative flex gap-5 mb-2 last:mb-0">
+                    {/* Timeline rail */}
+                    <div className="flex flex-col items-center">
                       <div
-                        className="w-10 h-10 rounded-xl flex items-center justify-center"
+                        className="w-12 h-12 rounded-2xl flex items-center justify-center flex-shrink-0 transition-transform duration-200 hover:scale-105"
                         style={{
-                          background: "#EBF5FF",
-                          border: "1px solid #D6E8F5",
-                          color: "#2E86C1",
+                          background: step.bg,
+                          color: step.color,
+                          boxShadow: `0 4px 12px ${step.color}12`,
                         }}
                       >
                         {step.icon}
                       </div>
                       {index < steps.length - 1 && (
                         <div
-                          className="absolute top-10 left-1/2 -translate-x-1/2 w-px h-4"
-                          style={{ background: "#D6E8F5" }}
+                          className="w-0.5 flex-1 my-1.5 rounded-full min-h-[20px]"
+                          style={{
+                            background: `linear-gradient(to bottom, ${step.color}20, ${steps[index + 1].color}20)`,
+                          }}
                         />
                       )}
                     </div>
-                    <div className="pt-0.5">
-                      <div className="flex items-center gap-2 mb-0.5">
-                        <span className="text-[9px] font-bold tracking-widest" style={{ color: "#2E86C1" }}>
-                          {step.num}
+
+                    {/* Content */}
+                    <div
+                      className="flex-1 rounded-2xl p-4 mb-2 transition-all duration-200 hover:shadow-sm cursor-default"
+                      style={{
+                        background: step.bg + "66",
+                        border: `1px solid ${step.color}10`,
+                      }}
+                    >
+                      <div className="flex items-center gap-2.5 mb-1">
+                        <span className="text-[10px] font-extrabold tracking-widest" style={{ color: step.color }}>
+                          STEP {index + 1}
                         </span>
-                        <h4 className="font-bold text-[13px]" style={{ color: "#1A3A52" }}>
-                          {step.title}
-                        </h4>
                       </div>
-                      <p className="text-[11px] leading-relaxed" style={{ color: "#8BABBE" }}>
+                      <h4 className="font-bold text-[14px] mb-0.5" style={{ color: "#0F172A" }}>
+                        {step.title}
+                      </h4>
+                      <p className="text-[12px] leading-relaxed" style={{ color: "#64748B" }}>
                         {step.desc}
                       </p>
                     </div>
@@ -224,33 +270,68 @@ const HeroSection = () => {
                 ))}
               </div>
 
-              {/* Card footer */}
-              <div className="mt-5 pt-4 flex items-center justify-between" style={{ borderTop: "1px solid #E8F1F8" }}>
-                <p className="text-[10px] font-medium" style={{ color: "#93B0C5" }}>
-                  Average processing: <span style={{ color: "#1A3A52" }}>~24 hrs</span>
-                </p>
-                <div className="flex gap-1">
-                  {[1, 2, 3].map((i) => (
-                    <div
-                      key={i}
-                      className="w-1 h-1 rounded-full"
-                      style={{
-                        background: i === 1 ? "#2E86C1" : "#D6E8F5",
-                      }}
-                    />
+              {/* Bottom stats bar */}
+              <div className="mt-6 pt-5 flex items-center justify-between" style={{ borderTop: "1px solid #F1F5F9" }}>
+                <div className="flex items-center gap-4">
+                  {[
+                    { val: "98%", label: "Approved" },
+                    { val: "50K+", label: "Filed" },
+                  ].map((s, i) => (
+                    <div key={i} className="flex items-center gap-2">
+                      <p className="text-[18px] font-black" style={{ color: "#0F172A" }}>
+                        {s.val}
+                      </p>
+                      <p className="text-[10px] uppercase tracking-wider font-medium" style={{ color: "#94A3B8" }}>
+                        {s.label}
+                      </p>
+                    </div>
                   ))}
                 </div>
+                <div
+                  className="flex items-center gap-1.5 px-3 py-1.5 rounded-full"
+                  style={{
+                    background: "#ECFDF5",
+                    border: "1px solid #D1FAE5",
+                  }}
+                >
+                  <div className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ background: "#10B981" }} />
+                  <span className="text-[10px] font-bold" style={{ color: "#059669" }}>
+                    LIVE
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            {/* Floating mini-card accent */}
+            <div
+              className="absolute -bottom-4 -left-4 px-4 py-3 rounded-2xl hidden lg:flex items-center gap-3"
+              style={{
+                background: "#FFFFFF",
+                border: "1px solid #E2E8F0",
+                boxShadow: "0 8px 24px rgba(15,23,42,0.08)",
+              }}
+            >
+              <div className="w-9 h-9 rounded-xl flex items-center justify-center" style={{ background: "#FEF3C7" }}>
+                <span className="text-base">🇲🇾</span>
+              </div>
+              <div>
+                <p className="text-[11px] font-bold" style={{ color: "#0F172A" }}>
+                  Malaysia MDAC
+                </p>
+                <p className="text-[10px]" style={{ color: "#94A3B8" }}>
+                  Required since Jan 2024
+                </p>
               </div>
             </div>
           </div>
 
           {/* ——— Disclaimer ——— */}
-          <div className="order-3 lg:col-start-1 lg:mt-[-1rem]">
+          <div className="order-3 lg:col-span-2 lg:mt-2">
             <p
               className="text-[9px] md:text-[10px] leading-relaxed max-w-md pl-3"
               style={{
-                color: "#93B0C5",
-                borderLeft: "1px solid #C8E2F5",
+                color: "#94A3B8",
+                borderLeft: "2px solid #E0E7FF",
               }}
             >
               Independent service provider. Not affiliated with government agencies.
