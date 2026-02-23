@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { FileText, CreditCard, ShieldCheck, Info } from "lucide-react";
+import batikPattern from "@/assets/batik-pattern.jpg";
 
 const HeroSection = () => {
   const steps = [
@@ -25,9 +26,11 @@ const HeroSection = () => {
     <section className="relative bg-[#0a192f] overflow-hidden min-h-[80vh] flex items-center pt-8 md:pt-0">
       {/* Batik-Inspired Pattern Overlay */}
       <div
-        className="absolute inset-0 z-0 opacity-[0.07]"
+        className="absolute inset-0 z-0 opacity-[0.06]"
         style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0l15 15-15 15-15-15zM0 30l15 15-15 15-15-15zM60 30l15 15-15 15-15-15zM30 60l15 15-15 15-15-15z' fill='%2364ffda' fill-opacity='1' fill-rule='evenodd'/%3E%3C/svg%3E")`,
+          backgroundImage: `url(${batikPattern})`,
+          backgroundSize: '600px',
+          backgroundRepeat: 'repeat',
         }}
       />
       <div className="absolute inset-0 bg-gradient-to-b from-[#0a192f] via-transparent to-[#0a192f] z-0" />
