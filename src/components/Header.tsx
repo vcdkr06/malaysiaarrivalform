@@ -20,8 +20,8 @@ const Header = () => {
               <Button
                 className="text-white font-bold h-9 px-5 rounded-full border-0 transition-all duration-300 hover:translate-y-[-1px] text-base"
                 style={{
-                  background: "linear-gradient(135deg, #4338CA, #6366F1, #818CF8)",
-                  boxShadow: "0 4px 15px rgba(99,102,241,0.3), 0 1px 4px rgba(67,56,202,0.2)"
+                  background: "linear-gradient(135deg, #1D4ED8, #3B82F6, #60A5FA)",
+                  boxShadow: "0 4px 15px rgba(59,130,246,0.3), 0 1px 4px rgba(29,78,216,0.2)"
                 }}>
 
                 Apply Now

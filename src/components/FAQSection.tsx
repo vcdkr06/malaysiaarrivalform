@@ -72,7 +72,7 @@ const FAQSection = () => {
               <span
                 className="bg-clip-text text-transparent"
                 style={{
-                  backgroundImage: "linear-gradient(135deg, #4338CA, #6366F1, #818CF8)",
+                  backgroundImage: "linear-gradient(135deg, #1D4ED8, #3B82F6, #60A5FA)",
                 }}
               >
                 Questions

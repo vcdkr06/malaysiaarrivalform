@@ -73,7 +73,7 @@ const CountryFlagsSection = () => {
             <span
               className="bg-clip-text text-transparent"
               style={{
-                backgroundImage: "linear-gradient(135deg, #4338CA, #6366F1, #818CF8)",
+                backgroundImage: "linear-gradient(135deg, #1D4ED8, #3B82F6, #60A5FA)",
               }}
             >
               MDAC
@@ -128,10 +128,10 @@ const CountryFlagsSection = () => {
               variant="outline"
               className="rounded-full text-xs font-bold px-6 h-9 gap-1.5 transition-all duration-200 hover:translate-y-[-1px]"
               style={{
-                background: showAll ? "#FFFFFF" : "linear-gradient(135deg, #4338CA, #6366F1)",
-                color: showAll ? "#4B7BE5" : "#FFFFFF",
-                border: showAll ? "1px solid #DBEAFE" : "none",
-                boxShadow: showAll ? "0 1px 4px rgba(45,74,111,0.06)" : "0 4px 16px rgba(99,102,241,0.25)",
+                background: showAll ? "#FFFFFF" : "linear-gradient(135deg, #1D4ED8, #3B82F6)",
+                color: showAll ? "#3B82F6" : "#FFFFFF",
+                border: showAll ? "1px solid #BFDBFE" : "none",
+                boxShadow: showAll ? "0 1px 4px rgba(45,74,111,0.06)" : "0 4px 16px rgba(59,130,246,0.25)",
               }}
             >
               {showAll ? (

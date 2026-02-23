@@ -61,7 +61,7 @@ const HeroSection = () => {
         <div
           className="absolute -top-32 right-[0%] w-[600px] h-[600px] rounded-full blur-3xl"
           style={{
-            background: "radial-gradient(circle, rgba(75,123,229,0.07) 0%, rgba(139,92,246,0.03) 50%, transparent 70%)",
+            background: "radial-gradient(circle, rgba(59,130,246,0.07) 0%, rgba(37,99,235,0.03) 50%, transparent 70%)",
           }}
         />
         <div
@@ -95,8 +95,8 @@ const HeroSection = () => {
               <br className="hidden lg:block" /> into{" "}
               <span
                 className="bg-clip-text text-transparent"
-                style={{
-                  backgroundImage: "linear-gradient(135deg, #4338CA, #6366F1, #818CF8)",
+                 style={{
+                  backgroundImage: "linear-gradient(135deg, #1D4ED8, #3B82F6, #60A5FA)",
                 }}
               >
                 Malaysia
@@ -120,8 +120,8 @@ const HeroSection = () => {
                 size="lg"
                 className="font-bold h-12 lg:h-13 px-6 lg:px-8 rounded-full transition-all duration-300 hover:translate-y-[-2px] group text-[14px] lg:text-[15px] w-full md:w-auto text-white border-0"
                 style={{
-                  background: "linear-gradient(135deg, #4338CA, #6366F1, #818CF8)",
-                  boxShadow: "0 8px 30px rgba(99,102,241,0.3), 0 2px 8px rgba(67,56,202,0.2)",
+                  background: "linear-gradient(135deg, #1D4ED8, #3B82F6, #60A5FA)",
+                  boxShadow: "0 8px 30px rgba(59,130,246,0.3), 0 2px 8px rgba(29,78,216,0.2)",
                 }}
               >
                 <Link to="/apply" className="flex items-center justify-center gap-2 h-12">

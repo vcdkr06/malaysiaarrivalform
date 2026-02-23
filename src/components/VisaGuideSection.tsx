@@ -13,9 +13,9 @@ const VisaGuideSection = () => {
     {
       text: "Professional data verification",
       icon: <ShieldCheck className="w-3 h-3" />,
-      color: "#8B5CF6",
-      bg: "#F3F0FF",
-      border: "#EDE9FE",
+      color: "#2563EB",
+      bg: "#EFF6FF",
+      border: "#BFDBFE",
     },
     {
       text: "Format & document optimization",
@@ -64,7 +64,7 @@ const VisaGuideSection = () => {
               <div
                 className="absolute inset-0"
                 style={{
-                  background: "linear-gradient(to top, rgba(67,56,202,0.12) 0%, transparent 50%)",
+                  background: "linear-gradient(to top, rgba(29,78,216,0.12) 0%, transparent 50%)",
                 }}
               />
             </div>
@@ -81,8 +81,8 @@ const VisaGuideSection = () => {
               <div
                 className="w-9 h-9 rounded-xl flex items-center justify-center"
                 style={{
-                  background: "linear-gradient(135deg, #4338CA, #6366F1)",
-                  boxShadow: "0 4px 12px rgba(99,102,241,0.25)",
+                  background: "linear-gradient(135deg, #1D4ED8, #3B82F6)",
+                  boxShadow: "0 4px 12px rgba(59,130,246,0.25)",
                 }}
               >
                 <Check className="w-4 h-4 text-white" strokeWidth={3} />
@@ -123,8 +123,8 @@ const VisaGuideSection = () => {
                 <br />
                 <span
                   className="bg-clip-text text-transparent"
-                  style={{
-                    backgroundImage: "linear-gradient(135deg, #4338CA, #6366F1, #818CF8)",
+                   style={{
+                    backgroundImage: "linear-gradient(135deg, #1D4ED8, #3B82F6, #60A5FA)",
                   }}
                 >
                   You Enjoy the Trip.
