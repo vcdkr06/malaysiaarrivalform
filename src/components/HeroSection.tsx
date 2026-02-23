@@ -27,33 +27,31 @@ const HeroSection = () => {
   return (
     <section
       className="relative overflow-hidden min-h-[80vh] flex items-center pt-8 md:pt-0"
-      style={{ background: "linear-gradient(165deg, #061B2E 0%, #0B2A45 40%, #0E3358 80%, #0A2540 100%)" }}
+      style={{
+        background: "linear-gradient(175deg, #FFFFFF 0%, #F0F7FF 35%, #E4F0FB 70%, #F5F9FF 100%)",
+      }}
     >
-      {/* Geometric accents */}
+      {/* Soft decorative blobs */}
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
-        {/* Top-right circle */}
         <div
-          className="absolute -top-32 -right-32 w-[500px] h-[500px] rounded-full"
-          style={{ background: "radial-gradient(circle, rgba(56,163,209,0.06) 0%, transparent 65%)" }}
-        />
-        {/* Bottom-left glow */}
-        <div
-          className="absolute -bottom-40 -left-20 w-[400px] h-[400px] rounded-full"
-          style={{ background: "radial-gradient(circle, rgba(232,185,72,0.04) 0%, transparent 60%)" }}
-        />
-        {/* Fine grid */}
-        <div
-          className="absolute inset-0 opacity-[0.03]"
+          className="absolute -top-40 -right-40 w-[600px] h-[600px] rounded-full"
           style={{
-            backgroundImage:
-              "linear-gradient(rgba(255,255,255,0.4) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.4) 1px, transparent 1px)",
-            backgroundSize: "80px 80px",
+            background: "radial-gradient(circle, rgba(125,197,236,0.12) 0%, transparent 60%)",
           }}
         />
-        {/* Diagonal accent line */}
         <div
-          className="absolute top-0 right-[30%] w-px h-full opacity-[0.04]"
-          style={{ background: "linear-gradient(to bottom, transparent, rgba(56,163,209,0.6), transparent)" }}
+          className="absolute -bottom-32 -left-32 w-[450px] h-[450px] rounded-full"
+          style={{
+            background: "radial-gradient(circle, rgba(96,175,227,0.08) 0%, transparent 55%)",
+          }}
+        />
+        {/* Dot grid */}
+        <div
+          className="absolute inset-0 opacity-[0.35]"
+          style={{
+            backgroundImage: "radial-gradient(circle, #B8D6EC 0.6px, transparent 0.6px)",
+            backgroundSize: "32px 32px",
+          }}
         />
       </div>
 
@@ -65,35 +63,38 @@ const HeroSection = () => {
             <div
               className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-[0.18em] mb-5 w-fit"
               style={{
-                background: "rgba(56,163,209,0.08)",
-                border: "1px solid rgba(56,163,209,0.15)",
-                color: "#38A3D1",
+                background: "#EBF5FF",
+                border: "1px solid #C8E2F5",
+                color: "#2E86C1",
               }}
             >
-              <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ background: "#38A3D1" }} />
+              <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ background: "#2E86C1" }} />
               Official Entry Concierge
             </div>
 
             {/* Headline */}
             <h1
-              className="text-3xl md:text-5xl lg:text-[4.25rem] font-black text-white leading-[1.08] mb-3 md:mb-5 tracking-[-0.03em]"
-              style={{ fontFamily: "'Outfit', system-ui, sans-serif" }}
+              className="text-3xl md:text-5xl lg:text-[4.25rem] font-black leading-[1.08] mb-3 md:mb-5 tracking-[-0.03em]"
+              style={{
+                color: "#1A3A52",
+                fontFamily: "'Outfit', system-ui, sans-serif",
+              }}
             >
               <span className="md:hidden uppercase">
                 Malaysia Digital
                 <br />
-                <span style={{ color: "#38A3D1" }}>Arrival Card</span>
+                <span style={{ color: "#2E86C1" }}>Arrival Card</span>
               </span>
               <span className="hidden md:inline">
                 Fast-Track Your
                 <br />
-                <span style={{ color: "#38A3D1" }}>Malaysia</span> Entry.
+                <span style={{ color: "#2E86C1" }}>Malaysia</span> Entry.
               </span>
             </h1>
 
             {/* Subtitle */}
-            <p className="text-sm md:text-[17px] mb-5 md:mb-9 max-w-lg leading-relaxed" style={{ color: "#7A9AB5" }}>
-              <span className="font-semibold" style={{ color: "#C8D8E8" }}>
+            <p className="text-sm md:text-[17px] mb-5 md:mb-9 max-w-lg leading-relaxed" style={{ color: "#6B8EA6" }}>
+              <span className="font-semibold" style={{ color: "#1A3A52" }}>
                 Required for all foreign visitors
               </span>{" "}
               — submit an MDAC 72 hours before arrival. We handle the filing to ensure your entry is seamless.
@@ -104,11 +105,11 @@ const HeroSection = () => {
               <Button
                 asChild
                 size="lg"
-                className="font-bold h-12 px-8 rounded-lg shadow-xl transition-all duration-200 hover:translate-y-[-1px]"
+                className="font-bold h-12 px-8 rounded-xl transition-all duration-200 hover:translate-y-[-1px] hover:shadow-xl"
                 style={{
-                  background: "linear-gradient(135deg, #2B8FBF, #38A3D1)",
-                  color: "#fff",
-                  boxShadow: "0 8px 28px rgba(56,163,209,0.25)",
+                  background: "linear-gradient(135deg, #2E86C1, #5AADE0)",
+                  color: "#FFFFFF",
+                  boxShadow: "0 6px 24px rgba(46,134,193,0.2)",
                 }}
               >
                 <Link to="/apply" className="flex items-center gap-2">
@@ -118,12 +119,16 @@ const HeroSection = () => {
               </Button>
 
               <div
-                className="flex items-center gap-2.5 px-4 py-2.5 rounded-lg"
-                style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.07)" }}
+                className="flex items-center gap-2.5 px-4 py-2.5 rounded-xl"
+                style={{
+                  background: "#FFFFFF",
+                  border: "1px solid #D6E8F5",
+                  boxShadow: "0 1px 4px rgba(26,58,82,0.04)",
+                }}
               >
-                <Clock className="w-3.5 h-3.5" style={{ color: "#38A3D1" }} />
-                <p className="text-xs font-medium" style={{ color: "#7A9AB5" }}>
-                  Apply <span style={{ color: "#C8D8E8" }}>3 days</span> before travel.
+                <Clock className="w-3.5 h-3.5" style={{ color: "#2E86C1" }} />
+                <p className="text-xs font-medium" style={{ color: "#6B8EA6" }}>
+                  Apply <span style={{ color: "#1A3A52" }}>3 days</span> before travel.
                 </p>
               </div>
             </div>
@@ -137,12 +142,14 @@ const HeroSection = () => {
               ].map((stat, i) => (
                 <div key={i} className="flex items-center gap-3">
                   <div>
-                    <p className="text-white font-extrabold text-sm tracking-tight">{stat.val}</p>
-                    <p className="text-[10px] uppercase tracking-widest" style={{ color: "#506A80" }}>
+                    <p className="font-extrabold text-sm tracking-tight" style={{ color: "#1A3A52" }}>
+                      {stat.val}
+                    </p>
+                    <p className="text-[10px] uppercase tracking-widest" style={{ color: "#93B0C5" }}>
                       {stat.label}
                     </p>
                   </div>
-                  {i < 2 && <div className="w-px h-6 ml-3" style={{ background: "rgba(255,255,255,0.06)" }} />}
+                  {i < 2 && <div className="w-px h-6 ml-3" style={{ background: "#D6E8F5" }} />}
                 </div>
               ))}
             </div>
@@ -150,32 +157,28 @@ const HeroSection = () => {
 
           {/* ——— Processing Card ——— */}
           <div className="relative group w-full order-2 lg:order-none mb-2">
-            {/* Glow */}
             <div
-              className="absolute -inset-3 rounded-3xl opacity-20 blur-2xl"
-              style={{ background: "radial-gradient(circle, rgba(56,163,209,0.15), transparent)" }}
-            />
-
-            <div
-              className="relative rounded-2xl p-5 lg:p-7 shadow-2xl"
+              className="relative rounded-2xl p-5 lg:p-7"
               style={{
-                background: "linear-gradient(170deg, rgba(14,51,88,0.85) 0%, rgba(8,34,60,0.95) 100%)",
-                backdropFilter: "blur(24px)",
-                border: "1px solid rgba(255,255,255,0.06)",
+                background: "#FFFFFF",
+                border: "1px solid #D6E8F5",
+                boxShadow: "0 4px 24px rgba(46,134,193,0.06), 0 1px 4px rgba(26,58,82,0.04)",
               }}
             >
               {/* Card header */}
               <div className="flex items-center justify-between mb-6">
                 <div className="flex items-center gap-2.5">
-                  <div className="w-1.5 h-1.5 rounded-full" style={{ background: "#38A3D1" }} />
-                  <h3 className="text-white font-bold tracking-[0.12em] uppercase text-[10px]">Processing Journey</h3>
+                  <div className="w-1.5 h-1.5 rounded-full" style={{ background: "#2E86C1" }} />
+                  <h3 className="font-bold tracking-[0.12em] uppercase text-[10px]" style={{ color: "#1A3A52" }}>
+                    Processing Journey
+                  </h3>
                 </div>
                 <span
                   className="text-[9px] px-2.5 py-1 rounded-full font-bold"
                   style={{
-                    background: "rgba(56,163,209,0.08)",
-                    color: "#38A3D1",
-                    border: "1px solid rgba(56,163,209,0.15)",
+                    background: "#EBF5FF",
+                    color: "#2E86C1",
+                    border: "1px solid #C8E2F5",
                   }}
                 >
                   FAST-TRACK
@@ -183,41 +186,37 @@ const HeroSection = () => {
               </div>
 
               {/* Steps */}
-              <div className="space-y-2">
+              <div className="space-y-1.5">
                 {steps.map((step, index) => (
-                  <div
-                    key={index}
-                    className="flex gap-4 p-3 rounded-xl transition-all duration-200 hover:bg-white/[0.02] group/step"
-                    style={{ border: "1px solid transparent" }}
-                  >
-                    {/* Number + icon */}
+                  <div key={index} className="flex gap-4 p-3 rounded-xl transition-all duration-200 hover:bg-[#F5F9FF]">
                     <div className="flex-shrink-0 relative">
                       <div
-                        className="w-10 h-10 rounded-xl flex items-center justify-center transition-colors duration-200"
+                        className="w-10 h-10 rounded-xl flex items-center justify-center"
                         style={{
-                          background: "rgba(56,163,209,0.06)",
-                          border: "1px solid rgba(56,163,209,0.1)",
-                          color: "#38A3D1",
+                          background: "#EBF5FF",
+                          border: "1px solid #D6E8F5",
+                          color: "#2E86C1",
                         }}
                       >
                         {step.icon}
                       </div>
-                      {/* Connector line */}
                       {index < steps.length - 1 && (
                         <div
                           className="absolute top-10 left-1/2 -translate-x-1/2 w-px h-4"
-                          style={{ background: "rgba(56,163,209,0.12)" }}
+                          style={{ background: "#D6E8F5" }}
                         />
                       )}
                     </div>
                     <div className="pt-0.5">
                       <div className="flex items-center gap-2 mb-0.5">
-                        <span className="text-[9px] font-bold tracking-widest" style={{ color: "#38A3D1" }}>
+                        <span className="text-[9px] font-bold tracking-widest" style={{ color: "#2E86C1" }}>
                           {step.num}
                         </span>
-                        <h4 className="text-white font-bold text-[13px]">{step.title}</h4>
+                        <h4 className="font-bold text-[13px]" style={{ color: "#1A3A52" }}>
+                          {step.title}
+                        </h4>
                       </div>
-                      <p className="text-[11px] leading-relaxed" style={{ color: "#6B8BA3" }}>
+                      <p className="text-[11px] leading-relaxed" style={{ color: "#8BABBE" }}>
                         {step.desc}
                       </p>
                     </div>
@@ -226,19 +225,18 @@ const HeroSection = () => {
               </div>
 
               {/* Card footer */}
-              <div
-                className="mt-5 pt-4 flex items-center justify-between"
-                style={{ borderTop: "1px solid rgba(255,255,255,0.04)" }}
-              >
-                <p className="text-[10px] font-medium" style={{ color: "#506A80" }}>
-                  Average processing: <span style={{ color: "#C8D8E8" }}>~24 hrs</span>
+              <div className="mt-5 pt-4 flex items-center justify-between" style={{ borderTop: "1px solid #E8F1F8" }}>
+                <p className="text-[10px] font-medium" style={{ color: "#93B0C5" }}>
+                  Average processing: <span style={{ color: "#1A3A52" }}>~24 hrs</span>
                 </p>
                 <div className="flex gap-1">
                   {[1, 2, 3].map((i) => (
                     <div
                       key={i}
                       className="w-1 h-1 rounded-full"
-                      style={{ background: i === 1 ? "#38A3D1" : "rgba(56,163,209,0.2)" }}
+                      style={{
+                        background: i === 1 ? "#2E86C1" : "#D6E8F5",
+                      }}
                     />
                   ))}
                 </div>
@@ -250,7 +248,10 @@ const HeroSection = () => {
           <div className="order-3 lg:col-start-1 lg:mt-[-1rem]">
             <p
               className="text-[9px] md:text-[10px] leading-relaxed max-w-md pl-3"
-              style={{ color: "#3D566C", borderLeft: "1px solid rgba(56,163,209,0.15)" }}
+              style={{
+                color: "#93B0C5",
+                borderLeft: "1px solid #C8E2F5",
+              }}
             >
               Independent service provider. Not affiliated with government agencies.
             </p>
