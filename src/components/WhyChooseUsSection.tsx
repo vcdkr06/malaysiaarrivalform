@@ -16,9 +16,9 @@ const WhyChooseUsSection = () => {
       title: "Bank-Level Security",
       desc: "Every byte of your data travels through 256-bit SSL encryption.",
       stat: "256-bit",
-      color: "#8B5CF6",
-      bg: "linear-gradient(135deg, #F3F0FF, #EDE8FF)",
-      border: "#EDE9FE",
+      color: "#2563EB",
+      bg: "linear-gradient(135deg, #EFF6FF, #DBEAFE)",
+      border: "#BFDBFE",
     },
     {
       icon: Headphones,
@@ -51,7 +51,7 @@ const WhyChooseUsSection = () => {
       icon: Search,
       title: "Specialist Review",
       desc: "A trained agent double-checks your data for compliance.",
-      color: "#8B5CF6",
+      color: "#2563EB",
     },
     {
       icon: FolderCheck,
@@ -85,7 +85,7 @@ const WhyChooseUsSection = () => {
         <div
           className="absolute bottom-[-8%] right-[5%] w-[350px] h-[350px] rounded-full blur-3xl"
           style={{
-            background: "radial-gradient(circle, rgba(139,92,246,0.04) 0%, transparent 60%)",
+            background: "radial-gradient(circle, rgba(59,130,246,0.04) 0%, transparent 60%)",
           }}
         />
       </div>
@@ -114,7 +114,7 @@ const WhyChooseUsSection = () => {
             <span
               className="bg-clip-text text-transparent"
               style={{
-                backgroundImage: "linear-gradient(135deg, #4B7BE5, #7C5CE5)",
+                backgroundImage: "linear-gradient(135deg, #1D4ED8, #3B82F6)",
               }}
             >
               Value Their Time

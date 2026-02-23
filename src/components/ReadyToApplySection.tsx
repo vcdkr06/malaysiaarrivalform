@@ -4,7 +4,7 @@ import { ArrowRight } from "lucide-react";
 
 const ReadyToApplySection = () => {
   return (
-    <section className="py-20 relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #1e1b4b, #312e81, #3730a3)' }}>
+    <section className="py-20 relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #0F172A, #1E3A5F, #1D4ED8)' }}>
       <div className="absolute inset-0 opacity-[0.05] pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, hsl(0 0% 100%) 1px, transparent 1px)', backgroundSize: '24px 24px' }} />
       <div className="container mx-auto px-4 text-center relative z-10">
         <h2 className="text-3xl md:text-4xl font-bold text-primary-foreground mb-4">
@@ -17,9 +17,9 @@ const ReadyToApplySection = () => {
           asChild
           size="lg"
           className="font-bold h-12 px-8 rounded-full transition-all duration-300 hover:translate-y-[-2px] group text-[15px] text-white border-0"
-          style={{
-            background: "linear-gradient(135deg, #4338CA, #6366F1, #818CF8)",
-            boxShadow: "0 8px 30px rgba(99,102,241,0.3), 0 2px 8px rgba(67,56,202,0.2)",
+           style={{
+             background: "linear-gradient(135deg, #1D4ED8, #3B82F6, #60A5FA)",
+             boxShadow: "0 8px 30px rgba(59,130,246,0.3), 0 2px 8px rgba(29,78,216,0.2)",
           }}
         >
           <Link to="/apply" className="inline-flex items-center gap-2">

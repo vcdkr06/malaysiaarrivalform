@@ -16,9 +16,9 @@ const InfoCardsSection = () => {
       icon: Users,
       title: "Who needs one?",
       text: "Every foreign national arriving by air, land, or sea — regardless of visa status. Very few exemptions apply.",
-      color: "#8B5CF6",
-      bg: "linear-gradient(135deg, #F3F0FF, #EDE8FF)",
-      border: "#EDE9FE",
+      color: "#2563EB",
+      bg: "linear-gradient(135deg, #EFF6FF, #DBEAFE)",
+      border: "#BFDBFE",
     },
     {
       icon: AlertTriangle,
@@ -56,7 +56,7 @@ const InfoCardsSection = () => {
             <span
               className="bg-clip-text text-transparent"
               style={{
-                backgroundImage: "linear-gradient(135deg, #4B7BE5, #7C5CE5)",
+                backgroundImage: "linear-gradient(135deg, #1D4ED8, #3B82F6)",
               }}
             >
               Entry Information
@@ -112,8 +112,8 @@ const InfoCardsSection = () => {
         <div
           className="relative overflow-hidden rounded-[20px] p-7 md:p-10"
           style={{
-            background: "linear-gradient(135deg, #4B7BE5, #6366F1)",
-            boxShadow: "0 8px 40px rgba(75,123,229,0.18)",
+            background: "linear-gradient(135deg, #1D4ED8, #3B82F6)",
+            boxShadow: "0 8px 40px rgba(59,130,246,0.18)",
           }}
         >
           {/* Background glow */}
@@ -123,7 +123,7 @@ const InfoCardsSection = () => {
           />
           <div
             className="absolute -bottom-10 -left-10 w-40 h-40 rounded-full blur-3xl"
-            style={{ background: "rgba(99,102,241,0.3)" }}
+            style={{ background: "rgba(59,130,246,0.3)" }}
           />
 
           <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-6 md:gap-8">

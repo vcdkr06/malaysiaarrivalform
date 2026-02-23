@@ -2,7 +2,7 @@
 
 const Footer = () => {
   return (
-    <footer className="py-12" style={{ background: "linear-gradient(135deg, #1e1b4b, #312e81, #3730a3)" }}>
+    <footer className="py-12" style={{ background: "linear-gradient(135deg, #0F172A, #1E3A5F, #1D4ED8)" }}>
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-3 gap-8">
           <div>
