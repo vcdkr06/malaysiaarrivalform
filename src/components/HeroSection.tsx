@@ -5,99 +5,112 @@ import { FileText, CreditCard, ShieldCheck, Info } from "lucide-react";
 const HeroSection = () => {
   const steps = [
     {
-      icon: <FileText className="w-4 h-4" />,
-      title: "1. Apply",
-      desc: "Fill in travel details.",
+      icon: <FileText className="w-5 h-5" />,
+      title: "1. Complete Application",
+      desc: "Provide your travel and personal details through our simplified, user-friendly digital form.",
     },
     {
-      icon: <CreditCard className="w-4 h-4" />,
-      title: "2. Pay",
-      desc: "Secure fee payment.",
+      icon: <CreditCard className="w-5 h-5" />,
+      title: "2. Secure Settlement",
+      desc: "Process your application fee through our bank-grade encrypted portal using any major card.",
     },
     {
-      icon: <ShieldCheck className="w-4 h-4" />,
-      title: "3. Receive",
-      desc: "Get PIN via email.",
+      icon: <ShieldCheck className="w-5 h-5" />,
+      title: "3. Review & Delivery",
+      desc: "Our specialists audit your data for 100% accuracy before emailing your MDAC PIN for entry.",
     },
   ];
 
   return (
-    <section className="relative bg-[#0a192f] overflow-hidden min-h-screen lg:min-h-[85vh] flex items-center border-b border-white/5">
-      {/* Background Pattern */}
+    <section className="relative bg-[#0a192f] overflow-hidden min-h-[85vh] flex items-center">
+      {/* High-Visibility Grid Pattern */}
       <div className="absolute inset-0 z-0">
         <div
           className="absolute inset-0 opacity-[0.12]"
           style={{
-            backgroundImage: `radial-gradient(circle at 1px 1px, #64ffda 1.5px, transparent 0)`,
-            backgroundSize: "30px 30px",
+            backgroundImage: `radial-gradient(circle at 1.5px 1.5px, #64ffda 1.5px, transparent 0)`,
+            backgroundSize: "40px 40px",
           }}
         />
+        <div className="absolute inset-0 bg-gradient-to-tr from-[#0a192f] via-transparent to-accent/5" />
       </div>
 
-      <div className="container mx-auto px-5 py-4 lg:py-8 relative z-10">
-        <div className="grid lg:grid-cols-[1fr_380px] gap-6 lg:gap-12 items-start max-w-7xl mx-auto">
-          {/* Main Hook */}
-          <div className="flex flex-col pt-2">
-            <div className="inline-flex items-center gap-2 bg-accent/10 border border-accent/20 text-accent px-2 py-0.5 rounded-full text-[9px] font-bold uppercase tracking-widest mb-3 w-fit">
-              <span className="w-1.5 h-1.5 bg-accent rounded-full animate-pulse" />
-              MDAC 2026 Guide
+      <div className="container mx-auto px-6 py-4 md:py-8 relative z-10">
+        <div className="grid lg:grid-cols-[1fr_420px] gap-8 lg:gap-16 items-start max-w-7xl mx-auto">
+          {/* Left Side: Headline & CTAs */}
+          <div className="flex flex-col justify-center pt-2 md:pt-6">
+            <div className="inline-flex items-center gap-2 bg-accent/10 border border-accent/20 text-accent px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest mb-4 w-fit">
+              <span className="w-2 h-2 bg-accent rounded-full animate-pulse" />
+              Official Entry Concierge
             </div>
 
-            <h1 className="text-3xl md:text-5xl lg:text-7xl font-black text-white leading-[1.05] mb-4 tracking-tight">
-              Malaysia Entry <br />
-              <span className="text-accent">Made Simple.</span>
+            <h1 className="text-4xl md:text-5xl lg:text-7xl font-black text-white leading-[1.02] mb-6 tracking-tight">
+              Fast-Track Your <br />
+              <span className="text-accent">Malaysia</span> Entry.
             </h1>
 
-            <p className="text-sm md:text-lg text-slate-400 mb-6 max-w-lg leading-snug">
-              Every visitor must submit a Digital Arrival Card (MDAC) 72h before arrival. Our experts handle the filing
-              for a fast, error-free entry.
+            <p className="text-base md:text-lg text-slate-400 mb-8 max-w-xl leading-snug">
+              Every foreign visitor must submit a Malaysia Digital Arrival Card (MDAC) 72 hours before arrival. We
+              handle the filing to ensure your entry is seamless and error-free.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-3 items-start sm:items-center mb-6">
+            <div className="flex flex-wrap gap-4 items-center mb-6">
               <Button
                 asChild
-                className="bg-accent text-accent-foreground hover:bg-accent/90 font-bold h-11 px-6 rounded-lg w-full sm:w-auto"
+                size="lg"
+                className="bg-accent text-accent-foreground hover:bg-accent/90 font-bold h-12 px-8 rounded-lg shadow-xl shadow-accent/10"
               >
-                <Link to="/apply">Start Application</Link>
+                <Link to="/apply">Apply for MDAC Now</Link>
               </Button>
-              <div className="flex items-center gap-2 text-[11px] text-slate-300">
-                <Info className="w-3.5 h-3.5 text-accent" />
-                <span>Apply 3 days before travel.</span>
+              <div className="flex items-center gap-2 bg-white/5 border border-white/10 px-4 py-2 rounded-lg">
+                <Info className="w-4 h-4 text-accent" />
+                <p className="text-xs text-slate-300 font-medium italic underline underline-offset-4 decoration-accent/30">
+                  Apply 3 days before travel.
+                </p>
               </div>
             </div>
 
-            {/* Regulatory Disclaimer - Desktop Only or subtle on mobile */}
-            <p className="text-[9px] leading-tight text-slate-500 max-w-sm opacity-60">
-              Private, independent service provider. Not affiliated with any government agency or immigration authority.
+            {/* Regulatory Disclaimer */}
+            <p className="text-[10px] leading-relaxed text-slate-500 max-w-md border-l border-slate-800 pl-4">
+              This website is a private, independent service provider and is not affiliated with, endorsed by, or
+              operated by any government agency. We are not part of or connected to any official immigration or border
+              authority.
             </p>
           </div>
 
-          {/* Process Card - Optimized for Mobile Visibility */}
-          <div className="relative mt-2 lg:mt-0">
-            <div className="relative bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-4 lg:p-6 shadow-2xl">
-              <h3 className="text-white font-bold text-[10px] uppercase tracking-widest mb-4 opacity-50">
-                Process Flow
-              </h3>
+          {/* Right Side: Rephrased 3-Step Card */}
+          <div className="relative group mt-6 lg:mt-0">
+            <div className="absolute -inset-2 bg-accent/20 blur-2xl rounded-full opacity-20 transition duration-1000 group-hover:opacity-40" />
 
-              {/* Mobile: Horizontal-ish Grid | Desktop: Vertical Stack */}
-              <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-1 gap-4">
+            <div className="relative bg-[#112240]/80 backdrop-blur-xl border border-white/10 rounded-3xl p-6 lg:p-8 shadow-2xl">
+              <div className="flex items-center justify-between mb-8">
+                <h3 className="text-white font-bold text-base tracking-tight uppercase text-xs">Processing Journey</h3>
+                <span className="text-[10px] bg-accent/10 text-accent px-2 py-0.5 rounded border border-accent/20 font-bold uppercase">
+                  Fast-Track
+                </span>
+              </div>
+
+              <div className="space-y-7">
                 {steps.map((step, index) => (
-                  <div key={index} className="flex lg:flex-row gap-3 items-center lg:items-start">
-                    <div className="flex-shrink-0 w-8 h-8 rounded-lg bg-accent/10 border border-accent/20 flex items-center justify-center text-accent">
+                  <div key={index} className="flex gap-5">
+                    <div className="flex-shrink-0 w-11 h-11 rounded-xl bg-accent/5 border border-accent/15 flex items-center justify-center text-accent shadow-inner">
                       {step.icon}
                     </div>
-                    <div className="flex flex-col">
-                      <h4 className="text-white font-bold text-xs">{step.title}</h4>
-                      <p className="text-[10px] text-slate-400 leading-tight">{step.desc}</p>
+                    <div>
+                      <h4 className="text-white font-bold text-[14px] mb-1">{step.title}</h4>
+                      <p className="text-[12px] text-slate-400 leading-normal">{step.desc}</p>
                     </div>
                   </div>
                 ))}
               </div>
 
-              <div className="mt-4 pt-3 border-t border-white/5 flex justify-center">
-                <span className="text-[9px] bg-accent/5 text-accent px-2 py-0.5 rounded border border-accent/10 font-bold">
-                  AVG PROCESSING: &lt; 24H
-                </span>
+              <div className="mt-8 pt-5 border-t border-white/5 flex items-center justify-between">
+                <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Global Access</span>
+                <div className="flex gap-1.5 opacity-40 grayscale group-hover:grayscale-0 transition-all duration-500">
+                  <div className="w-6 h-4 bg-white/20 rounded-sm" />
+                  <div className="w-6 h-4 bg-white/20 rounded-sm" />
+                  <div className="w-6 h-4 bg-white/20 rounded-sm" />
+                </div>
               </div>
             </div>
           </div>
