@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { ChevronDown, ChevronUp, Globe } from "lucide-react";
+import { ChevronDown, ChevronUp } from "lucide-react"; // Kept only utility icons for UI state
 
 interface Country {
   country: string;
@@ -42,59 +42,53 @@ const CountryFlagsSection = () => {
   if (loading) return null;
 
   return (
-    <section className="py-14 md:py-18 bg-white border-t border-slate-200">
-      <div className="container mx-auto px-6 max-w-5xl">
-        {/* HEADER */}
-        <div className="text-center mb-10">
-          <div className="inline-flex items-center gap-2 text-[11px] uppercase tracking-wide font-semibold px-4 py-2 bg-blue-50 border border-blue-200 text-blue-800">
-            <Globe className="w-4 h-4" />
-            Eligible Nationalities
-          </div>
-
-          <h2 className="mt-5 text-2xl md:text-3xl font-bold text-slate-900 tracking-tight">
-            Who Needs an <span className="text-blue-700">MDAC</span>?
-          </h2>
-
-          <p className="text-sm text-slate-600 mt-3 max-w-md mx-auto leading-relaxed">
-            Passport holders from the following countries are required to submit the Malaysia Digital Arrival Card prior
-            to entry.
+    <section className="py-16 bg-white border-b border-slate-300">
+      <div className="container mx-auto px-6 max-w-6xl">
+        {/* HEADER - Standardized Formal Style */}
+        <div className="mb-10">
+          <h2 className="text-2xl md:text-3xl font-semibold text-slate-800 mb-3">Eligible Nationalities</h2>
+          <div className="w-16 h-1 bg-blue-700 mb-4"></div>
+          <p className="text-slate-700 mt-3 text-base max-w-2xl leading-relaxed">
+            Passport holders from the following jurisdictions are required to submit the digital registration prior to
+            their arrival at any Malaysian port of entry.
           </p>
         </div>
 
-        {/* FLAGS GRID */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-5 gap-3 max-w-4xl mx-auto">
+        {/* FLAGS GRID - Strict rectangular boxes */}
+        <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-5 gap-3 w-full">
           {shown.map((c, i) => (
-            <div key={i} className="flex items-center gap-3 px-3 py-2 border border-slate-200 bg-white">
-              {/* Larger + Cleaner Flag */}
-              <div className="w-8 h-5 flex-shrink-0 border border-slate-200">
-                <img src={c.flag_url} alt={c.country} className="w-full h-full object-cover" loading="lazy" />
+            <div key={i} className="flex items-center gap-3 px-3 py-2.5 border border-slate-300 bg-slate-50 rounded">
+              {/* Flag Container - Sharp borders */}
+              <div className="w-8 h-5 flex-shrink-0 border border-slate-300 bg-white">
+                <img
+                  src={c.flag_url}
+                  alt={`${c.country} flag`}
+                  className="w-full h-full object-cover block"
+                  loading="lazy"
+                />
               </div>
 
-              <span className="text-xs font-medium text-slate-800 truncate">{c.country}</span>
+              <span className="text-sm font-medium text-slate-800 truncate">{c.country}</span>
             </div>
           ))}
         </div>
 
-        {/* Subtle Fade when collapsed */}
-        {!showAll && countries.length > INITIAL && (
-          <div className="relative h-10 -mt-10 pointer-events-none bg-gradient-to-t from-white to-transparent" />
-        )}
-
-        {/* TOGGLE BUTTON — MATCH HERO STYLE */}
+        {/* TOGGLE BUTTON — Formal Secondary Action */}
         {countries.length > INITIAL && (
-          <div className="text-center mt-8">
+          <div className="mt-8 border-t border-slate-200 pt-8 flex justify-center md:justify-start">
             <Button
               onClick={() => setShowAll(!showAll)}
+              variant="outline"
               size="lg"
-              className="h-11 px-8 font-semibold bg-blue-600 hover:bg-blue-700 text-white rounded-md transition"
+              className="h-12 px-8 rounded font-medium border-slate-300 bg-white text-slate-700 hover:bg-slate-100 hover:text-slate-900 shadow-none transition-none text-sm flex items-center gap-2"
             >
               {showAll ? (
                 <>
-                  Show Less <ChevronUp className="w-4 h-4 ml-1" />
+                  Collapse List <ChevronUp className="w-4 h-4" />
                 </>
               ) : (
                 <>
-                  View All {countries.length} Countries <ChevronDown className="w-4 h-4 ml-1" />
+                  View All Required Nationalities ({countries.length}) <ChevronDown className="w-4 h-4" />
                 </>
               )}
             </Button>
