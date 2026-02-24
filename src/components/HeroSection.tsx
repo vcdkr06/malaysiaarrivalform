@@ -7,147 +7,152 @@ import {
   UserCheck,
   MailCheck,
   ShieldCheck,
-  Plane,
-  Sparkles,
   Globe,
-  Lightbulb,
+  Clock,
+  Check,
 } from "lucide-react";
 
 const HeroSection = () => {
   const steps = [
     {
       icon: <ClipboardList className="w-4 h-4" />,
-      title: "Fill Details",
-      desc: "Quick digital entry form.",
-      color: "text-blue-600",
-      bg: "bg-blue-50",
+      title: "Data Entry",
+      desc: "Secure digital form.",
+      color: "text-sky-600",
+      bg: "bg-sky-50",
     },
     {
       icon: <CreditCard className="w-4 h-4" />,
-      title: "Secure Payment",
-      desc: "Safe processing fee.",
-      color: "text-indigo-600",
-      bg: "bg-indigo-50",
+      title: "Processing",
+      desc: "Encrypted service fee.",
+      color: "text-sky-600",
+      bg: "bg-sky-50",
     },
     {
       icon: <UserCheck className="w-4 h-4" />,
-      title: "Expert Review",
-      desc: "Accuracy verification.",
-      color: "text-amber-600",
-      bg: "bg-amber-50",
+      title: "Verification",
+      desc: "Expert data audit.",
+      color: "text-sky-600",
+      bg: "bg-sky-50",
     },
     {
       icon: <MailCheck className="w-4 h-4" />,
-      title: "Instant Approval",
-      desc: "Direct email delivery.",
+      title: "Approval",
+      desc: "PDF sent to email.",
       color: "text-emerald-600",
       bg: "bg-emerald-50",
     },
   ];
 
   return (
-    <section className="relative min-h-[75vh] flex items-center justify-center overflow-hidden bg-white py-8 lg:py-0">
-      {/* ——— BACKGROUND ——— */}
+    <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden bg-white">
+      {/* ——— BACKGROUND IMAGE ——— */}
       <div className="absolute inset-0 z-0">
         <img
           src="https://images.unsplash.com/photo-1596422846543-75c6fc18a5ce?q=80&w=2070&auto=format&fit=crop"
           alt="Malaysia Skyline"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-white via-white/95 to-white/40 lg:to-transparent" />
+        {/* Soft Premium Wash */}
+        <div className="absolute inset-0 bg-white/95 lg:bg-gradient-to-r lg:from-white lg:via-white/98 lg:to-transparent" />
       </div>
 
       <div className="container mx-auto px-6 relative z-10 max-w-6xl">
-        <div className="grid lg:grid-cols-[1fr_0.8fr] gap-8 lg:gap-12 items-center">
-          {/* ——— LEFT SIDE ——— */}
-          <div className="flex flex-col space-y-4 lg:space-y-6">
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-600 text-white text-[11px] font-bold w-fit shadow-md uppercase tracking-wider">
-              <Globe className="w-3.5 h-3.5" />
-              Official MDAC Assistance
+        <div className="grid lg:grid-cols-12 gap-12 items-center">
+          {/* ——— LEFT COLUMN ——— */}
+          <div className="lg:col-span-7 flex flex-col space-y-6">
+            <div className="flex items-center gap-2">
+              <div className="px-3 py-1 rounded-full bg-sky-600 text-white text-[10px] font-black uppercase tracking-widest shadow-lg shadow-sky-200">
+                Official Assistance
+              </div>
+              <div className="flex items-center gap-1 text-slate-400 text-[10px] font-bold uppercase tracking-widest">
+                <ShieldCheck className="w-3 h-3" />
+                Secure Portal
+              </div>
             </div>
 
-            <div className="space-y-2 lg:space-y-3">
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-black tracking-tight text-slate-900 leading-tight">
-                Streamline Your Entry <br />
-                Into <span className="text-blue-600">Malaysia</span>
+            <div className="space-y-4">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-[900] tracking-tight text-slate-900 leading-[1.1]">
+                Entry into <span className="text-sky-500">Malaysia</span>, <br />
+                Simplified.
               </h1>
 
-              <p className="text-sm md:text-base text-slate-600 max-w-lg leading-relaxed font-medium">
-                The <span className="text-slate-900">MDAC</span> is Malaysia's new mandatory digital entry system. We
-                provide a premium concierge service for a fast, secure online arrival process.
+              <p className="text-base text-slate-500 max-w-lg leading-relaxed font-medium">
+                The <span className="text-slate-900">MDAC</span> is Malaysia’s mandatory digital arrival system. We
+                provide a premium concierge service to ensure your application is processed{" "}
+                <span className="text-sky-600 font-semibold">fast and error-free</span>.
               </p>
             </div>
 
-            <div className="flex flex-col sm:flex-row items-center gap-4">
+            <div className="flex flex-col sm:flex-row items-center gap-4 pt-2">
               <Button
                 asChild
                 size="lg"
-                className="w-full sm:w-auto h-12 px-8 rounded-xl text-base font-bold bg-blue-600 hover:bg-blue-700 text-white shadow-lg shadow-blue-100 transition-all active:scale-95 border-0"
+                className="w-full sm:w-auto h-14 px-10 rounded-2xl bg-sky-600 hover:bg-sky-700 text-white font-bold text-lg shadow-xl shadow-sky-200 border-0 transition-transform active:scale-95"
               >
                 <Link to="/apply" className="flex items-center justify-center gap-2">
                   Apply Now
-                  <ArrowRight className="w-4 h-4" />
+                  <ArrowRight className="w-5 h-5" />
                 </Link>
               </Button>
 
-              <div className="flex items-center gap-1.5 text-slate-500 font-bold text-xs">
-                <ShieldCheck className="w-4 h-4 text-emerald-600" />
-                SECURE PROCESSING
+              <div className="flex items-center gap-4">
+                <div className="h-10 w-[1px] bg-slate-200 hidden sm:block" />
+                <div className="flex flex-col">
+                  <span className="text-slate-900 font-bold text-sm tracking-tight">2 Minute Completion</span>
+                  <span className="text-slate-400 text-[11px] font-medium uppercase tracking-tighter">
+                    Average completion time
+                  </span>
+                </div>
               </div>
             </div>
 
-            <div className="flex gap-6 pt-2 opacity-80">
-              <div className="flex items-center gap-1.5 text-slate-600 text-[10px] font-bold uppercase tracking-widest">
-                <Plane className="w-3.5 h-3.5 text-blue-500" /> All Borders
-              </div>
-              <div className="flex items-center gap-1.5 text-slate-600 text-[10px] font-bold uppercase tracking-widest">
-                <Sparkles className="w-3.5 h-3.5 text-amber-500" /> 24/7 Support
-              </div>
-            </div>
+            <p className="text-[10px] text-slate-400 max-w-xs leading-tight font-medium uppercase tracking-tighter opacity-60">
+              Independent agency assisting with MDAC filings. Not affiliated with the Malaysian government.
+            </p>
           </div>
 
-          {/* ——— RIGHT SIDE ——— */}
-          <div className="relative">
-            <div className="relative bg-white/80 backdrop-blur-xl border border-white rounded-[1.5rem] p-6 lg:p-8 shadow-xl">
-              <div className="flex items-center justify-between mb-6">
-                <h3 className="text-base font-bold text-slate-900">How to Apply</h3>
-                <span className="text-[9px] font-black uppercase bg-slate-100 text-slate-500 px-2 py-1 rounded border border-slate-200">
-                  Quick Guide
-                </span>
+          {/* ——— RIGHT COLUMN: Glass Stepper ——— */}
+          <div className="lg:col-span-5 relative">
+            {/* Soft Ambient Glow under card */}
+            <div className="absolute -inset-4 bg-sky-400/5 rounded-[3rem] blur-3xl" />
+
+            <div className="relative bg-white border border-slate-100 rounded-[2.5rem] p-8 shadow-[0_30px_70px_-20px_rgba(0,0,0,0.1)]">
+              <div className="flex items-center justify-between mb-8">
+                <h3 className="text-sm font-black text-slate-900 uppercase tracking-widest">Process Path</h3>
+                <Clock className="w-4 h-4 text-slate-300" />
               </div>
 
-              <div className="space-y-4">
-                {steps.map((step, idx) => (
-                  <div key={idx} className="flex gap-4 items-center">
+              <div className="space-y-6">
+                {steps.map((step, i) => (
+                  <div key={i} className="flex gap-4 items-center group">
                     <div
-                      className={`w-9 h-9 rounded-lg ${step.bg} border border-white flex items-center justify-center shadow-sm flex-shrink-0 ${step.color}`}
+                      className={`w-10 h-10 rounded-xl ${step.bg} flex items-center justify-center border border-white shadow-sm flex-shrink-0 transition-colors group-hover:bg-white group-hover:border-sky-100 ${step.color}`}
                     >
                       {step.icon}
                     </div>
-                    <div>
-                      <h4 className="text-slate-900 font-bold text-xs tracking-tight uppercase">{step.title}</h4>
-                      <p className="text-slate-500 text-[11px] leading-tight">{step.desc}</p>
+                    <div className="flex flex-col">
+                      <h4 className="text-[13px] font-bold text-slate-900 leading-none mb-1">{step.title}</h4>
+                      <p className="text-[11px] text-slate-400 font-medium">{step.desc}</p>
                     </div>
+                    {i === 3 && <Check className="ml-auto w-4 h-4 text-emerald-500" />}
                   </div>
                 ))}
               </div>
 
-              <div className="mt-6 p-3 rounded-xl bg-blue-50/50 border border-blue-100 flex items-start gap-2.5">
-                <Lightbulb className="w-4 h-4 text-blue-600 mt-0.5 flex-shrink-0" />
-                <p className="text-[10px] text-slate-600 leading-normal font-medium">
-                  <strong>Traveler Note:</strong> Submit your MDAC application within <strong>3 days</strong> of your
-                  arrival date.
-                </p>
+              {/* Minimal Notice */}
+              <div className="mt-8 pt-6 border-t border-slate-50">
+                <div className="flex items-start gap-3">
+                  <div className="w-1.5 h-1.5 rounded-full bg-sky-500 mt-1" />
+                  <p className="text-[11px] text-slate-500 leading-relaxed">
+                    <strong className="text-slate-900">Note:</strong> Submissions are required within{" "}
+                    <span className="text-sky-600 font-bold">3 days</span> of your arrival.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-
-      <div className="absolute bottom-4 left-0 right-0 text-center opacity-40">
-        <p className="text-[8px] text-slate-600 tracking-[0.2em] font-bold uppercase">
-          Independent Concierge Agency • Not Affiliated With Government
-        </p>
       </div>
     </section>
   );
