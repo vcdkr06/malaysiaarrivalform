@@ -34,8 +34,15 @@ const HeroSection = () => {
         {/* Soft blue radial accent */}
         <div className="absolute -top-40 -right-40 w-[600px] h-[600px] bg-blue-200/40 rounded-full blur-3xl" />
 
-        {/* Subtle Petronas image */}
-        <img src={petronasBg} alt="" className="absolute inset-0 w-full h-full object-cover opacity-[0.04]" />
+        {/* More visible Petronas image */}
+        <img
+          src={petronasBg}
+          alt=""
+          className="absolute inset-0 w-full h-full object-cover object-center opacity-[0.10]"
+        />
+
+        {/* Soft white overlay for readability */}
+        <div className="absolute inset-0 bg-white/60" />
       </div>
 
       <div className="container mx-auto px-6 relative z-10 max-w-6xl">
@@ -73,7 +80,6 @@ const HeroSection = () => {
               <h3 className="font-semibold text-sm text-gray-900 mb-6">4-Step Application Process</h3>
 
               <div className="relative">
-                {/* Horizontal line */}
                 <div className="hidden lg:block absolute top-5 left-0 right-0 h-px bg-gray-200" />
 
                 <div className="flex flex-col lg:flex-row lg:justify-between gap-6">
