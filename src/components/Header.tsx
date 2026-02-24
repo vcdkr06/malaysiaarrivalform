@@ -9,20 +9,24 @@ const Header = () => {
     <header className="w-full sticky top-0 z-50 bg-white border-b border-slate-200 shadow-sm">
       <NoticeBanner />
 
-      {/* container aligned with Hero/Info content */}
-      <div className="container mx-auto px-6 max-w-6xl relative">
-        {/* Slim height for the bar: h-16 (mobile) to h-20 (desktop) */}
-        <div className="flex items-center justify-between h-16 md:h-20">
-          {/* Logo - Large size, but h-full + py ensures it never touches the border */}
+      {/* container mx-auto px-6 max-w-6xl keeps it aligned with Hero/InfoSection */}
+      <div className="container mx-auto px-6 max-w-6xl">
+        {/* h-16 (mobile) and h-24 (desktop) is slim but allows a big logo */}
+        <div className="flex items-center justify-between h-16 md:h-24">
+          {/* Logo - Scaled up. py-2 ensures it gets close to the edge but NEVER touches */}
           <Link to="/" className="flex items-center h-full py-2">
-            <img alt="MDAC Logo" className="h-12 md:h-16 w-auto object-contain" src={logo} />
+            <img
+              alt="MDAC Logo"
+              className="h-full w-auto object-contain transition-transform duration-300"
+              src={logo}
+            />
           </Link>
 
-          {/* CTA - Vertically centered by flex items-center */}
+          {/* CTA - Perfectly centered vertically */}
           <Link to="/apply">
             <Button
               size="lg"
-              className="font-bold h-10 md:h-11 px-5 md:px-8 rounded-sm bg-blue-700 hover:bg-blue-800 text-white transition-all duration-300 shadow-md text-xs md:text-sm"
+              className="font-bold h-10 md:h-12 px-5 md:px-8 rounded-sm bg-blue-700 hover:bg-blue-800 text-white transition-all duration-300 shadow-md text-xs md:text-base"
             >
               {/* Desktop Text */}
               <span className="hidden md:inline">Apply for Malaysia Digital Arrival Card</span>
