@@ -48,40 +48,43 @@ const WhyChooseUsSection = () => {
   ];
 
   return (
-    <section className="py-16 bg-blue-700 border-b border-blue-800">
+    <section className="py-16 bg-blue-50 border-y border-slate-300">
       <div className="container mx-auto px-6 max-w-6xl">
         {/* HEADER */}
         <div className="mb-12">
-          <h2 className="text-2xl md:text-3xl font-semibold text-white mb-3">Service Commitments & Assurances</h2>
-          <div className="w-16 h-1 bg-blue-300 mb-4"></div>
-          <p className="text-blue-100 mt-3 text-base max-w-2xl leading-relaxed">
+          <h2 className="text-2xl md:text-3xl font-semibold text-slate-800 mb-3">Service Commitments & Assurances</h2>
+          <div className="w-16 h-1 bg-blue-700 mb-4"></div>
+          <p className="text-slate-700 mt-3 text-base max-w-2xl leading-relaxed">
             We provide a secure, streamlined, and fully supported registration process to ensure your travel
             documentation is processed accurately and without delay.
           </p>
         </div>
 
-        {/* TOP TIER: Core Guarantees (Tonal Blue Cards) */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+        {/* TOP TIER: Core Guarantees (Strict White Cards) */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
           {guarantees.map((item, i) => {
             const Icon = item.icon;
             return (
-              <div key={i} className="p-6 border border-blue-500/50 bg-blue-800/30 rounded flex flex-col items-start">
-                <div className="w-10 h-10 border border-blue-500/50 bg-blue-800/50 flex items-center justify-center rounded mb-4">
-                  <Icon className="w-5 h-5 text-blue-100" />
+              <div
+                key={i}
+                className="p-6 border border-slate-300 bg-white rounded border-t-4 border-t-blue-700 shadow-sm flex flex-col items-start"
+              >
+                <div className="w-10 h-10 border border-slate-200 bg-slate-50 flex items-center justify-center rounded mb-4">
+                  <Icon className="w-5 h-5 text-blue-700" />
                 </div>
-                <h3 className="text-base font-semibold text-white mb-2">{item.title}</h3>
-                <p className="text-sm text-blue-100/90 leading-relaxed">{item.desc}</p>
+                <h3 className="text-base font-semibold text-slate-900 mb-2">{item.title}</h3>
+                <p className="text-sm text-slate-600 leading-relaxed">{item.desc}</p>
               </div>
             );
           })}
         </div>
 
         {/* BOTTOM TIER: Application Features (Strict White Grid) */}
-        <div className="mt-8 pt-8 border-t border-blue-500/40">
-          <h3 className="text-lg font-semibold text-white mb-6">Application Processing Features</h3>
+        <div className="pt-8 border-t border-slate-300">
+          <h3 className="text-lg font-semibold text-slate-800 mb-6">Application Processing Features</h3>
 
           {/* Using a 1px gap grid to create perfect internal borders */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-px bg-slate-300 border border-slate-300 rounded overflow-hidden">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-px bg-slate-300 border border-slate-300 rounded overflow-hidden shadow-sm">
             {features.map((item, i) => {
               const Icon = item.icon;
               return (
