@@ -9,34 +9,33 @@ const Header = () => {
     <header className="w-full sticky top-0 z-50 bg-white border-b border-slate-200 shadow-sm">
       <NoticeBanner />
 
-      {/* Aligned with Hero/InfoSection content */}
+      {/* container mx-auto px-6 max-w-6xl maintains consistent site-wide alignment */}
       <div className="container mx-auto px-6 max-w-6xl">
-        {/* Header bar remains slim at h-16 (mobile) and h-22 (desktop) */}
-        <div className="flex items-center justify-between h-16 md:h-22">
-          {/* Logo Container - Scaled up and moved up with negative margin */}
-          <Link to="/" className="flex items-center h-full pt-1">
+        {/* Flex container: items-center keeps CTA perfectly centered. 
+            Height is now dynamic based on the logo's padding. */}
+        <div className="flex items-center justify-between py-4 md:py-6">
+          {/* LOGO - Scaled up with specific top/bottom margins */}
+          <Link to="/" className="flex items-center">
             <img
               alt="MDAC Logo"
-              /* -mt-2 moves it up. 
-                 h-14/h-20 makes it bigger than the previous slim version. 
-                 object-top ensures it prioritizes the top space.
-              */
-              className="h-14 md:h-20 w-auto object-contain object-top -mt-2 md:-mt-3 transition-all"
+              /* h-20 on mobile, h-28 on desktop for a truly large presence.
+                 The margins (my-1) ensure it never touches the header borders. */
+              className="h-20 md:h-28 w-auto object-contain my-1 transition-all duration-300"
               src={logo}
             />
           </Link>
 
-          {/* CTA - Vertically centered to the header container */}
+          {/* CTA - Vertically centered relative to the tall header */}
           <Link to="/apply">
             <Button
               size="lg"
-              className="font-bold h-10 md:h-11 px-5 md:px-8 rounded-sm bg-blue-700 hover:bg-blue-800 text-white transition-all duration-300 shadow-md text-xs md:text-sm"
+              className="font-bold h-11 md:h-12 px-6 md:px-10 rounded-sm bg-blue-700 hover:bg-blue-800 text-white transition-all duration-300 shadow-md text-sm md:text-base"
             >
               {/* Desktop Text */}
-              <span className="hidden md:inline">Apply for Malaysia Digital Arrival Card</span>
+              <span className="hidden lg:inline">Apply for Malaysia Digital Arrival Card</span>
 
               {/* Mobile Text */}
-              <span className="md:hidden">Apply Now</span>
+              <span className="lg:hidden">Apply Now</span>
 
               <ArrowRight className="w-4 h-4 ml-2" />
             </Button>
