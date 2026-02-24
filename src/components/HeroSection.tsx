@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, ClipboardList, CreditCard, UserCheck, MailCheck, Lightbulb, Zap } from "lucide-react";
+import petronasBg from "@/assets/kuala-lumpur-petronas.png";
 
 const HeroSection = () => {
   const steps = [
@@ -31,7 +32,7 @@ const HeroSection = () => {
       {/* Background Image */}
       <div className="absolute inset-0 z-0 pointer-events-none">
         <img
-          src="/lovable-uploads/7ffc8df9-1ead-4010-8952-1080ea277005.jpg"
+          src={petronasBg}
           alt=""
           className="absolute inset-0 w-full h-full object-cover opacity-40"
         />
