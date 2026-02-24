@@ -28,16 +28,14 @@ const HeroSection = () => {
 
   return (
     <section className="relative overflow-hidden min-h-[88vh] bg-slate-50 pt-6 md:pt-12 pb-10">
-      {/* Background Grid */}
+      {/* Background Image */}
       <div className="absolute inset-0 z-0 pointer-events-none">
-        <div
-          className="absolute inset-0 opacity-[0.1]"
-          style={{
-            backgroundImage:
-              "linear-gradient(#1E3A8A 1px, transparent 1px), linear-gradient(to right, #1E3A8A 1px, transparent 1px)",
-            backgroundSize: "90px 90px",
-          }}
+        <img
+          src="/lovable-uploads/7ffc8df9-1ead-4010-8952-1080ea277005.jpg"
+          alt=""
+          className="absolute inset-0 w-full h-full object-cover opacity-40"
         />
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-50/80 via-white/70 to-slate-50/80" />
       </div>
 
       <div className="container mx-auto px-5 md:px-6 relative z-10 max-w-6xl">
