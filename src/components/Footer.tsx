@@ -8,7 +8,7 @@ const Footer = () => {
       <div className="container mx-auto px-6 max-w-6xl">
         <div className="grid md:grid-cols-3 gap-12">
           {/* Column 1: Logo & Security Row */}
-          <div className="flex flex-col items-start col-span-1 md:col-span-1">
+          <div className="flex flex-col items-start col-span-1">
             <div className="mb-6 flex items-center gap-4">
               {/* Logo in White Circle */}
               <div className="w-14 h-14 bg-white rounded-full flex items-center justify-center shadow-xl overflow-hidden p-2">
@@ -24,26 +24,26 @@ const Footer = () => {
               </span>
             </div>
 
-            {/* Side-by-Side Security Badges */}
+            {/* Side-by-Side Security Badges with Icon on the side */}
             <div className="flex flex-row gap-3 w-full">
               {/* SSL Box */}
-              <div className="flex flex-col items-start gap-2 bg-white/5 px-4 py-3 rounded-sm border border-white/10 flex-1">
-                <Lock className="w-4 h-4 text-green-500" />
-                <div className="flex flex-col gap-0.5">
-                  <span className="text-[10px] font-bold uppercase text-slate-400">SSL Secure</span>
-                  <span className="text-[11px] text-slate-200 font-medium leading-tight text-nowrap">
-                    256-bit Secure
+              <div className="flex items-center gap-3 bg-white/5 px-3 py-3 rounded-sm border border-white/10 flex-1">
+                <Lock className="w-4 h-4 text-green-500 shrink-0" />
+                <div className="flex flex-col">
+                  <span className="text-[9px] font-bold uppercase text-slate-400 leading-none mb-1">SSL Secure</span>
+                  <span className="text-[11px] text-slate-200 font-medium leading-tight whitespace-nowrap">
+                    256-bit
                   </span>
                 </div>
               </div>
 
               {/* Safety Box */}
-              <div className="flex flex-col items-start gap-2 bg-white/5 px-4 py-3 rounded-sm border border-white/10 flex-1">
-                <ShieldCheck className="w-4 h-4 text-blue-400" />
-                <div className="flex flex-col gap-0.5">
-                  <span className="text-[10px] font-bold uppercase text-slate-400">Safety</span>
-                  <span className="text-[11px] text-slate-200 font-medium leading-tight text-nowrap">
-                    Verified Site
+              <div className="flex items-center gap-3 bg-white/5 px-3 py-3 rounded-sm border border-white/10 flex-1">
+                <ShieldCheck className="w-4 h-4 text-blue-400 shrink-0" />
+                <div className="flex flex-col">
+                  <span className="text-[9px] font-bold uppercase text-slate-400 leading-none mb-1">Safety</span>
+                  <span className="text-[11px] text-slate-200 font-medium leading-tight whitespace-nowrap">
+                    Verified
                   </span>
                 </div>
               </div>
