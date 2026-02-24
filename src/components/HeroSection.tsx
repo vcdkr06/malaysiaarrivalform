@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, ClipboardList, CreditCard, UserCheck, MailCheck, Lightbulb, Zap } from "lucide-react";
-import heroBg from "@/assets/hero-bg-malaysia.png";
 
 const HeroSection = () => {
   const steps = [
@@ -29,14 +28,16 @@ const HeroSection = () => {
 
   return (
     <section className="relative overflow-hidden min-h-[88vh] bg-slate-50 pt-6 md:pt-12 pb-10">
-      {/* Background Image */}
+      {/* Background Grid */}
       <div className="absolute inset-0 z-0 pointer-events-none">
-        <img
-          src={heroBg}
-          alt=""
-          className="absolute inset-0 w-full h-full object-cover opacity-20"
+        <div
+          className="absolute inset-0 opacity-[0.1]"
+          style={{
+            backgroundImage:
+              "linear-gradient(#1E3A8A 1px, transparent 1px), linear-gradient(to right, #1E3A8A 1px, transparent 1px)",
+            backgroundSize: "90px 90px",
+          }}
         />
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-50/80 via-white/70 to-slate-50/80" />
       </div>
 
       <div className="container mx-auto px-5 md:px-6 relative z-10 max-w-6xl">
