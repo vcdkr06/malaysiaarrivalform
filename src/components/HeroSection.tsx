@@ -31,25 +31,26 @@ const HeroSection = () => {
     <section className="relative overflow-hidden bg-gradient-to-b from-blue-50 via-white to-blue-50 pt-10 pb-12">
       {/* Background Layers */}
       <div className="absolute inset-0 z-0">
-        {/* Soft blue radial accent */}
+        {/* Blue radial accent */}
         <div className="absolute -top-40 -right-40 w-[600px] h-[600px] bg-blue-200/40 rounded-full blur-3xl" />
 
-        {/* More visible Petronas image */}
+        {/* Petronas image */}
         <img
           src={petronasBg}
           alt=""
-          className="absolute inset-0 w-full h-full object-cover object-center opacity-[0.18]"
+          className="absolute inset-0 w-full h-full object-cover object-center opacity-[0.14]"
         />
 
-        {/* Soft white overlay for readability */}
-        <div className="absolute inset-0 bg-white/60" />
+        {/* LEFT fade overlay */}
+        <div className="absolute inset-0 bg-gradient-to-r from-white via-white/80 to-transparent" />
       </div>
 
       <div className="container mx-auto px-6 relative z-10 max-w-6xl">
         <div className="grid lg:grid-cols-2 gap-10 items-center">
           {/* LEFT COLUMN */}
           <div>
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold mb-4 bg-primary/5 border border-primary/10 text-primary">
+            {/* Yellow Mandatory Badge */}
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold mb-4 bg-yellow-100 border border-yellow-300 text-yellow-800">
               <Zap className="w-3.5 h-3.5" />
               Mandatory Travel Requirement
             </div>
