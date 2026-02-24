@@ -76,13 +76,25 @@ const HeroSection = () => {
               <div className="relative">
                 <div className="hidden lg:block absolute top-5 left-0 right-0 h-px bg-gray-200" />
 
+                {/* Stepper */}
                 <div className="flex flex-col lg:flex-row lg:justify-between gap-6">
                   {steps.map((step, index) => (
                     <div
                       key={index}
                       className="relative flex flex-col items-start lg:items-center text-left lg:text-center lg:w-1/4"
                     >
-                      <div className="text-[10px] font-semibold text-blue-600 tracking-wide mb-1">STEP {index + 1}</div>
+                      {/* Blue Circle for Step 1 & 2 */}
+                      {index === 0 || index === 1 ? (
+                        <div className="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center font-semibold mb-1">
+                          {index + 1}
+                        </div>
+                      ) : (
+                        <div className="text-[10px] font-semibold text-blue-600 tracking-wide mb-1">
+                          STEP {index + 1}
+                        </div>
+                      )}
+
+                      {/* Step Title */}
                       <h4 className="font-semibold text-sm text-gray-900 mb-0.5">{step.title}</h4>
                       <p className="text-xs text-gray-600 leading-snug">{step.desc}</p>
                     </div>
