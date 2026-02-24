@@ -9,20 +9,16 @@ const Header = () => {
     <header className="w-full sticky top-0 z-50 bg-white border-b border-slate-200 shadow-sm">
       <NoticeBanner />
 
-      {/* Aligned with Hero/InfoSection content */}
-      <div className="container mx-auto px-6 max-w-6xl">
-        {/* Height reduced to h-20 (mobile) and h-24 (desktop) for a slimmer profile */}
-        <div className="flex items-end justify-between h-20 md:h-24 pb-3 md:pb-4">
-          {/* Logo - Adjusted to be large but fit the slimmer header */}
-          <Link to="/" className="flex items-center">
-            <img
-              alt="MDAC Logo"
-              className="h-12 md:h-16 w-auto object-contain transition-all duration-300"
-              src={logo}
-            />
+      {/* container aligned with Hero/Info content */}
+      <div className="container mx-auto px-6 max-w-6xl relative">
+        {/* Slim height for the bar: h-16 (mobile) to h-20 (desktop) */}
+        <div className="flex items-center justify-between h-16 md:h-20">
+          {/* Logo - Large size, but h-full + py ensures it never touches the border */}
+          <Link to="/" className="flex items-center h-full py-2">
+            <img alt="MDAC Logo" className="h-12 md:h-16 w-auto object-contain" src={logo} />
           </Link>
 
-          {/* CTA Button - 4px rounded-sm corners */}
+          {/* CTA - Vertically centered by flex items-center */}
           <Link to="/apply">
             <Button
               size="lg"
