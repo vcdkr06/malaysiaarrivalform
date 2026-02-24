@@ -30,15 +30,17 @@ const HeroSection = () => {
         <img
           src={globeBg}
           alt="Globe and Airplane"
-          className="absolute inset-0 w-full h-full object-cover object-center opacity-80 -scale-x-100"
+          /* Added saturate-150 to make colors more vivid */
+          className="absolute inset-0 w-full h-full object-cover object-center opacity-80 -scale-x-100 saturate-150"
         />
       </div>
 
       <div className="container mx-auto px-6 relative z-20 max-w-6xl">
-        <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-center text-left">
-          {/* LEFT COLUMN - Messaging */}
-          <div className="lg:w-5/12 flex flex-col gap-5 lg:mt-2 text-left items-start">
-            <div className="md:block border border-yellow-200 bg-yellow-100/90 px-3 py-1 rounded w-fit shadow-sm">
+        <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-start text-left">
+          {/* LEFT COLUMN */}
+          <div className="lg:w-1/2 flex flex-col gap-5 lg:mt-2 text-left items-start">
+            {/* Soft Yellow Notice - 4px rounded (rounded-sm) */}
+            <div className="md:block border border-yellow-200 bg-yellow-100/90 px-3 py-1 rounded-sm shadow-sm">
               <p className="text-[10px] md:text-xs font-bold text-yellow-800 uppercase tracking-widest">
                 Mandatory Travel Requirement
               </p>
@@ -57,12 +59,14 @@ const HeroSection = () => {
               <Button
                 asChild
                 size="lg"
-                className="h-12 px-8 rounded-full font-bold bg-blue-700 hover:bg-blue-800 text-white shadow-xl transition-all text-base w-fit"
+                /* Reverted to 4px rounded-sm */
+                className="h-12 px-8 rounded-sm font-bold bg-blue-700 hover:bg-blue-800 text-white shadow-md transition-all text-base w-fit"
               >
                 <Link to="/apply">Begin Application</Link>
               </Button>
 
-              <div className="bg-orange-50 border border-orange-100 px-4 py-1.5 rounded-md shadow-sm">
+              {/* Disclaimer - 4px rounded-sm */}
+              <div className="bg-orange-50 border border-orange-100 px-4 py-1.5 rounded-sm shadow-sm">
                 <p className="text-[10px] md:text-[11px] text-orange-900 font-bold whitespace-nowrap">
                   Independent documentation assistance service. Not affiliated with the Malaysian government.
                 </p>
@@ -70,27 +74,29 @@ const HeroSection = () => {
             </div>
           </div>
 
-          {/* RIGHT COLUMN - Compact Grid Layout */}
-          <div className="lg:w-7/12 w-full">
-            <div className="bg-white/75 backdrop-blur-xl border border-white/40 border-t-4 border-t-blue-700 shadow-2xl p-5 md:p-6 w-full rounded-2xl text-left">
+          {/* RIGHT COLUMN - Vertical Compact with Dotted Connectors */}
+          <div className="lg:w-1/2 w-full">
+            {/* Main Card - 4px rounded-sm */}
+            <div className="bg-white/75 backdrop-blur-xl border border-white/40 border-t-4 border-t-blue-700 shadow-2xl p-6 w-full rounded-sm text-left">
               <div className="mb-6">
-                <h2 className="font-bold text-lg text-slate-900">Application Process</h2>
-                <p className="text-xs text-slate-700 mt-1 font-semibold italic">
-                  Complete these 4 steps for your travel authorization
-                </p>
+                <h2 className="font-bold text-lg text-slate-900 uppercase tracking-tight">Application Process</h2>
+                <p className="text-xs text-slate-700 mt-1 font-semibold italic">Complete these 4 steps</p>
               </div>
 
-              {/* Grid Layout for Compactness */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-6">
+              {/* Vertical Steps with Dotted Line */}
+              <div className="relative space-y-5">
+                {/* Dotted Connecting Line */}
+                <div className="absolute left-[13px] top-2 bottom-2 w-0 border-l-2 border-dotted border-slate-300 z-0" />
+
                 {steps.map((step, index) => (
-                  <div key={index} className="flex items-start gap-3 group">
-                    {/* Number Circle */}
-                    <div className="flex-shrink-0 w-7 h-7 bg-blue-700 text-white flex items-center justify-center font-bold text-xs rounded-full shadow-md">
+                  <div key={index} className="relative z-10 flex items-start gap-4">
+                    {/* Number Circle - Compact size */}
+                    <div className="flex-shrink-0 w-7 h-7 bg-blue-700 text-white flex items-center justify-center font-bold text-xs rounded-sm shadow-md">
                       {index + 1}
                     </div>
 
                     <div className="flex flex-col">
-                      <h3 className="font-bold text-slate-900 text-sm">{step.title}</h3>
+                      <h3 className="font-bold text-slate-900 text-[14px] leading-tight">{step.title}</h3>
                       <p className="text-[12px] text-slate-700 leading-snug font-medium mt-1">{step.desc}</p>
                     </div>
                   </div>
@@ -99,12 +105,12 @@ const HeroSection = () => {
 
               {/* Mobile CTA */}
               <div className="lg:hidden mt-8 flex flex-col gap-3">
-                <Button asChild className="h-11 w-full rounded-xl font-bold bg-blue-700 text-white">
+                <Button asChild className="h-11 w-full rounded-sm font-bold bg-blue-700 text-white shadow-md">
                   <Link to="/apply" className="flex justify-center w-full">
                     Begin Application
                   </Link>
                 </Button>
-                <div className="bg-orange-50 border border-orange-100 py-2 rounded-md text-center text-[10px] text-orange-900 font-bold">
+                <div className="bg-orange-50 border border-orange-100 py-2 rounded-sm text-center text-[10px] text-orange-900 font-bold">
                   Independent service. Not affiliated with government.
                 </div>
               </div>
