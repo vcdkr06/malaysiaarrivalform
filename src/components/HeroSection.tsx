@@ -14,11 +14,8 @@ const HeroSection = () => {
     <section className="relative pt-10 pb-16 border-b border-slate-300 bg-white overflow-hidden">
       {/* Background Container */}
       <div className="absolute inset-0 z-0">
-        {/* Gradient Overlay: 
-           Prevents the 80% opacity image from clashing with the text.
-           Fades from solid white on the left to transparent on the right.
-        */}
-        <div className="absolute inset-0 bg-gradient-to-r from-white via-white/60 to-transparent z-10" />
+        {/* Made this gradient more transparent (white/30) as requested */}
+        <div className="absolute inset-0 bg-gradient-to-r from-white/30 via-white/10 to-transparent z-10" />
 
         <img
           src={globeBg}
@@ -28,20 +25,21 @@ const HeroSection = () => {
       </div>
 
       <div className="container mx-auto px-6 relative z-20 max-w-6xl">
-        <div className="flex flex-col lg:flex-row gap-10 lg:gap-12 items-center">
+        <div className="flex flex-col lg:flex-row gap-10 lg:gap-12 items-start text-left">
           {/* LEFT COLUMN - Heading & Text */}
-          <div className="lg:w-1/2 flex flex-col gap-6 lg:mt-2">
+          <div className="lg:w-1/2 flex flex-col gap-6 lg:mt-2 text-left items-start">
             {/* Mandatory Notice */}
-            <div className="hidden md:block border-l-4 border-yellow-500 bg-white/90 backdrop-blur-sm p-3 rounded w-fit shadow-sm">
+            <div className="hidden md:block border-l-4 border-yellow-500 bg-white/60 backdrop-blur-sm p-3 rounded w-fit shadow-sm">
               <p className="text-sm font-bold text-yellow-900 uppercase tracking-wide">Mandatory Travel Requirement</p>
             </div>
 
             <div className="space-y-4">
-              <h1 className="text-3xl md:text-5xl font-extrabold text-slate-900 leading-tight drop-shadow-sm">
+              {/* Text is bold slate-900 (dark navy/grey) rather than pure black */}
+              <h1 className="text-4xl md:text-5xl font-bold text-slate-900 leading-tight">
                 Digital Arrival Registration for <span className="text-blue-700">Malaysia</span>
               </h1>
 
-              <p className="text-base md:text-lg text-slate-800 max-w-md leading-relaxed font-medium bg-white/40 backdrop-blur-[2px] rounded-lg p-1">
+              <p className="text-base md:text-lg text-slate-800 max-w-md leading-relaxed font-bold">
                 Foreign visitors must submit their arrival information prior to entry to ensure smooth border clearance
                 and immigration processing.
               </p>
@@ -57,19 +55,19 @@ const HeroSection = () => {
                 <Link to="/apply">Begin Application</Link>
               </Button>
 
-              <p className="mt-4 text-xs text-slate-600 max-w-sm leading-relaxed font-semibold">
+              <p className="mt-4 text-xs text-slate-700 max-w-sm leading-relaxed font-bold">
                 Independent documentation assistance service. <br /> Not affiliated with the Malaysian government.
               </p>
             </div>
           </div>
 
           {/* RIGHT COLUMN - Application Process Card */}
-          <div className="lg:w-1/2 w-full flex flex-col">
-            {/* Added backdrop-blur-md to make the card "pop" against the 80% opacity background */}
-            <div className="bg-white/90 backdrop-blur-md border border-slate-200 border-t-4 border-t-blue-700 shadow-2xl p-6 md:p-8 w-full rounded-2xl">
-              <div className="border-b border-slate-200 pb-4 mb-6">
-                <h2 className="font-bold text-xl text-slate-800">Application Process</h2>
-                <p className="text-sm text-slate-600 mt-1 italic">
+          <div className="lg:w-1/2 w-full flex flex-col items-start">
+            {/* Card is now more transparent (bg-white/70) with a stronger blur */}
+            <div className="bg-white/70 backdrop-blur-lg border border-white/40 border-t-4 border-t-blue-700 shadow-2xl p-6 md:p-8 w-full rounded-2xl text-left">
+              <div className="border-b border-slate-300/50 pb-4 mb-6">
+                <h2 className="font-bold text-xl text-slate-900">Application Process</h2>
+                <p className="text-sm text-slate-700 mt-1 font-bold italic">
                   Complete these steps to finalize your registration.
                 </p>
               </div>
@@ -82,9 +80,9 @@ const HeroSection = () => {
                       {index + 1}
                     </div>
 
-                    <div>
-                      <h3 className="font-bold text-slate-800 text-base">{step.title}</h3>
-                      <p className="text-sm text-slate-600 mt-0.5 leading-snug">{step.desc}</p>
+                    <div className="text-left">
+                      <h3 className="font-bold text-slate-900 text-base">{step.title}</h3>
+                      <p className="text-sm text-slate-800 mt-0.5 leading-snug font-bold">{step.desc}</p>
                     </div>
                   </div>
                 ))}
