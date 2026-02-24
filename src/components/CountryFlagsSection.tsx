@@ -1,107 +1,108 @@
-import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { FileText, Users, AlertTriangle, ArrowRight, ShieldCheck } from "lucide-react";
+import { ChevronDown, ChevronUp, Globe } from "lucide-react";
 
-const InfoCardsSection = () => {
-  const cards = [
-    {
-      icon: FileText,
-      title: "What is MDAC?",
-      text: "The Malaysia Digital Arrival Card (MDAC) is a mandatory digital entry form required for foreign nationals entering Malaysia.",
-      accent: "bg-blue-50",
-      iconColor: "text-blue-600",
-    },
-    {
-      icon: Users,
-      title: "Who Needs to Register?",
-      text: "All foreign visitors arriving by air, land, or sea must complete the MDAC prior to arrival unless officially exempted.",
-      accent: "bg-blue-50",
-      iconColor: "text-blue-600",
-    },
-    {
-      icon: AlertTriangle,
-      title: "When to Submit?",
-      text: "The form must be submitted within 3 days before arrival. Failure to comply may result in entry delays.",
-      accent: "bg-yellow-50",
-      iconColor: "text-yellow-600",
-      isAlert: true,
-    },
-  ];
+interface Country {
+  country: string;
+  iso_code: string;
+  flag_url: string;
+}
+
+const CountryFlagsSection = () => {
+  const [countries, setCountries] = useState<Country[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [showAll, setShowAll] = useState(false);
+  const INITIAL = 20;
+
+  useEffect(() => {
+    fetch("/data/country_flag_mapping.csv")
+      .then((r) => r.text())
+      .then((csv) => {
+        const lines = csv.split("\n");
+        const parsed: Country[] = [];
+        for (let i = 1; i < lines.length; i++) {
+          const line = lines[i].trim();
+          if (!line) continue;
+          const vals = line.split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/);
+          if (vals.length >= 3)
+            parsed.push({
+              country: vals[0].replace(/"/g, ""),
+              iso_code: vals[1].replace(/"/g, ""),
+              flag_url: vals[2].replace(/"/g, ""),
+            });
+        }
+        setCountries(parsed);
+        setLoading(false);
+      })
+      .catch(() => setLoading(false));
+  }, []);
+
+  const shown = showAll ? countries : countries.slice(0, INITIAL);
+
+  if (loading) return null;
 
   return (
-    <section className="py-16 md:py-20 bg-white">
-      <div className="container mx-auto px-6 max-w-6xl">
-        {/* HEADER */}
-        <div className="mb-12 text-center md:text-left">
-          <div className="inline-flex items-center gap-3 px-4 py-2 bg-blue-50 text-blue-700 text-xs font-semibold uppercase tracking-wide mb-5 border border-blue-100">
-            <ShieldCheck className="w-4 h-4" />
-            {/* Slightly Larger Flag */}
-            <img src="/malaysia-flag.png" alt="Malaysia Flag" className="w-6 h-4 object-cover" />
-            Entry Requirements
+    <section className="py-14 md:py-20 bg-secondary">
+      <div className="container mx-auto px-5 md:px-6 max-w-5xl">
+        {/* Header */}
+        <div className="text-center mb-10 md:mb-12">
+          <div className="inline-flex items-center gap-1.5 text-[10px] uppercase tracking-[0.2em] font-bold px-3.5 py-1.5 rounded-full mb-3 bg-card border border-border text-primary">
+            <Globe className="w-3 h-3" />
+            Eligible Nationalities
           </div>
-
-          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight">
-            Important <span className="text-blue-600">Travel Information</span>
+          <h2 className="text-2xl md:text-3xl font-extrabold tracking-[-0.02em] mb-2 text-heading-strong">
+            Who Needs an <span className="text-primary">MDAC</span>?
           </h2>
-
-          <p className="text-slate-600 mt-3 text-sm md:text-base max-w-2xl">
-            Please review the following guidelines before submitting your Malaysia Digital Arrival Card.
+          <p className="text-sm max-w-md mx-auto leading-relaxed text-muted-foreground">
+            Travelers holding passports from these countries must complete the Digital Arrival Card before entering Malaysia.
           </p>
         </div>
 
-        {/* INFO CARDS */}
-        <div className="grid md:grid-cols-3 gap-6 mb-14">
-          {cards.map((card, i) => {
-            const Icon = card.icon;
-            return (
-              <div
-                key={i}
-                className={`p-7 bg-white border border-slate-200 transition-all duration-200 hover:shadow-sm ${card.isAlert ? "border-yellow-300" : ""}`}
-              >
-                <div className={`w-12 h-12 ${card.accent} flex items-center justify-center mb-5`}>
-                  <Icon className={`w-6 h-6 ${card.iconColor}`} />
-                </div>
-
-                <h3 className="text-lg font-semibold text-slate-900 mb-3">{card.title}</h3>
-
-                <p className="text-sm text-slate-600 leading-relaxed">{card.text}</p>
-              </div>
-            );
-          })}
-        </div>
-
-        {/* CONSISTENT CTA (Matches Hero Style) */}
-        <div className="border border-blue-200 bg-blue-50 px-8 md:px-10 py-8 md:py-10 flex flex-col md:flex-row items-center justify-between gap-8">
-          {/* Left */}
-          <div className="max-w-lg">
-            <h4 className="text-xl md:text-2xl font-bold text-blue-800 tracking-tight">
-              Complete Your Digital Arrival Registration
-            </h4>
-
-            <p className="text-sm md:text-base text-slate-700 mt-3 leading-relaxed">
-              Submit your Malaysia Digital Arrival Card securely before travel. Filing takes approximately 2 minutes.
-            </p>
-          </div>
-
-          {/* Right */}
-          <div className="flex flex-col items-center md:items-end gap-3">
-            <Button
-              asChild
-              size="lg"
-              className="h-12 px-10 font-semibold bg-blue-600 hover:bg-blue-700 text-white shadow-sm transition rounded-md"
+        {/* Flags grid */}
+        <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-5 gap-2.5 md:gap-3 max-w-4xl mx-auto">
+          {shown.map((c, i) => (
+            <div
+              key={i}
+              className="group flex items-center gap-2.5 rounded-xl px-3 py-2.5 transition-all duration-200 cursor-default hover:translate-y-[-2px] hover:shadow-md bg-card border border-border"
             >
-              <Link to="/apply" className="flex items-center gap-2">
-                Start Registration
-                <ArrowRight className="w-4 h-4" />
-              </Link>
-            </Button>
-
-            <span className="text-[11px] text-slate-600 uppercase tracking-wide">Mandatory for Foreign Travelers</span>
-          </div>
+              <div className="w-7 h-5 rounded overflow-hidden flex-shrink-0 shadow-sm border border-border">
+                <img src={c.flag_url} alt={c.country} className="w-full h-full object-cover" loading="lazy" />
+              </div>
+              <span className="text-[11px] md:text-xs font-semibold truncate text-heading-strong">
+                {c.country}
+              </span>
+            </div>
+          ))}
         </div>
+
+        {/* Fade overlay when collapsed */}
+        {!showAll && countries.length > INITIAL && (
+          <div className="relative h-8 -mt-8 pointer-events-none bg-gradient-to-t from-secondary to-transparent" />
+        )}
+
+        {/* Toggle button */}
+        {countries.length > INITIAL && (
+          <div className="text-center mt-6">
+            <Button
+              onClick={() => setShowAll(!showAll)}
+              variant={showAll ? "outline" : "default"}
+              className={`rounded-md text-xs font-bold px-6 h-9 gap-1.5 transition-all duration-200 hover:translate-y-[-1px] ${
+                showAll
+                  ? "bg-card text-primary border border-border shadow-soft"
+                  : "bg-primary text-primary-foreground shadow-cta"
+              }`}
+            >
+              {showAll ? (
+                <>Show Less <ChevronUp className="w-3.5 h-3.5" /></>
+              ) : (
+                <>View All {countries.length} Countries <ChevronDown className="w-3.5 h-3.5" /></>
+              )}
+            </Button>
+          </div>
+        )}
       </div>
     </section>
   );
 };
 
-export default InfoCardsSection;
+export default CountryFlagsSection;
