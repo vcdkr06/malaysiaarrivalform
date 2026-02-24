@@ -9,24 +9,24 @@ const Header = () => {
     <header className="w-full sticky top-0 z-50 bg-white border-b border-slate-200 shadow-sm">
       <NoticeBanner />
 
-      {/* container mx-auto px-6 max-w-6xl keeps it aligned with Hero/Info content */}
+      {/* Aligned with Hero/InfoSection content */}
       <div className="container mx-auto px-6 max-w-6xl">
-        {/* Added items-end and pb-4/pb-6 to give the logo and button that bottom margin feel */}
-        <div className="flex items-end justify-between h-28 md:h-36 pb-4 md:pb-6">
-          {/* Bigger Logo with bottom margin alignment */}
-          <Link to="/" className="flex items-center mb-1">
+        {/* Height reduced to h-20 (mobile) and h-24 (desktop) for a slimmer profile */}
+        <div className="flex items-end justify-between h-20 md:h-24 pb-3 md:pb-4">
+          {/* Logo - Adjusted to be large but fit the slimmer header */}
+          <Link to="/" className="flex items-center">
             <img
               alt="MDAC Logo"
-              className="h-16 md:h-24 w-auto object-contain transition-all duration-300"
+              className="h-12 md:h-16 w-auto object-contain transition-all duration-300"
               src={logo}
             />
           </Link>
 
-          {/* CTA Button with responsive text and 4px corners */}
+          {/* CTA Button - 4px rounded-sm corners */}
           <Link to="/apply">
             <Button
               size="lg"
-              className="font-bold h-12 px-6 md:px-10 rounded-sm bg-blue-700 hover:bg-blue-800 text-white transition-all duration-300 shadow-md text-sm md:text-base"
+              className="font-bold h-10 md:h-11 px-5 md:px-8 rounded-sm bg-blue-700 hover:bg-blue-800 text-white transition-all duration-300 shadow-md text-xs md:text-sm"
             >
               {/* Desktop Text */}
               <span className="hidden md:inline">Apply for Malaysia Digital Arrival Card</span>
