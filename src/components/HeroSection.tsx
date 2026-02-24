@@ -38,7 +38,7 @@ const HeroSection = () => {
         <img
           src={petronasBg}
           alt=""
-          className="absolute inset-0 w-full h-full object-cover object-center opacity-[0.10]"
+          className="absolute inset-0 w-full h-full object-cover object-center opacity-[0.18]"
         />
 
         {/* Soft white overlay for readability */}
