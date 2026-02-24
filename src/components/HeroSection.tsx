@@ -4,24 +4,24 @@ import petronasBg from "@/assets/kuala-lumpur-petronas.png";
 
 const HeroSection = () => {
   const steps = [
-    { title: "Enter Details", desc: "Provide required travel information." },
+    { title: "Enter Details", desc: "Provide your travel information." },
     { title: "Payment", desc: "Secure online transaction." },
-    { title: "Review", desc: "Application verification process." },
+    { title: "Review", desc: "We verify your application." },
     { title: "Confirmation", desc: "Receive digital approval via email." },
   ];
 
   return (
     <section className="relative bg-blue-50 pt-10 pb-12">
-      {/* Subtle Background */}
+      {/* Background */}
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-gradient-to-b from-blue-50 via-white to-blue-50" />
         <img src={petronasBg} alt="" className="absolute inset-0 w-full h-full object-cover object-top opacity-10" />
       </div>
 
       <div className="container mx-auto px-6 relative z-10 max-w-6xl">
-        <div className="grid lg:grid-cols-2 gap-10 items-start">
+        <div className="flex flex-col lg:flex-row gap-10 items-start">
           {/* LEFT COLUMN */}
-          <div>
+          <div className="lg:w-1/2">
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-sm text-xs font-semibold mb-4 bg-yellow-100 border border-yellow-300 text-yellow-800">
               Mandatory Travel Requirement
             </div>
@@ -30,8 +30,9 @@ const HeroSection = () => {
               Digital Arrival Registration for <span className="text-blue-600">Malaysia</span>
             </h1>
 
+            {/* Shortened subheadline */}
             <p className="text-sm md:text-base text-gray-700 max-w-md mb-6 leading-relaxed">
-              Foreign visitors must submit their arrival information prior to entry to ensure smooth border clearance.
+              Submit your arrival info for smooth border clearance.
             </p>
 
             <Button
@@ -49,36 +50,41 @@ const HeroSection = () => {
             </p>
           </div>
 
-          {/* RIGHT COLUMN */}
-          <div className="flex flex-col lg:flex-row lg:items-start gap-6">
-            {/* Stepper Line for all screens */}
-            <div className="hidden lg:block absolute top-24 left-[calc(50%+150px)] h-full border-l-2 border-dashed border-gray-300 z-0" />
+          {/* RIGHT COLUMN - Horizontal Stepper */}
+          <div className="lg:w-1/2">
+            <div className="bg-white border border-gray-300 rounded-sm p-6">
+              <h3 className="font-semibold text-sm text-gray-900 mb-6">4-Step Application Process</h3>
 
-            {/* Stepper */}
-            <div className="flex flex-col lg:flex-col lg:justify-between gap-6 relative z-10 lg:ml-16">
-              {steps.map((step, index) => (
-                <div
-                  key={index}
-                  className="flex flex-col lg:flex-row lg:items-center lg:gap-4 items-start text-left lg:text-left"
-                >
-                  <div className="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center font-semibold mb-2 lg:mb-0">
-                    {index + 1}
-                  </div>
-                  <div className="">
-                    <h4 className="font-semibold text-sm text-gray-900 mb-0.5">{step.title}</h4>
-                    <p className="text-xs text-gray-600 leading-snug hidden sm:block lg:block">{step.desc}</p>
-                  </div>
+              <div className="relative flex items-center justify-between">
+                {/* Dashed line behind circles */}
+                <div className="absolute top-4 left-4 right-4 h-px border-t-2 border-dashed border-gray-300 z-0" />
+
+                {/* Steps */}
+                <div className="flex justify-between w-full relative z-10">
+                  {steps.map((step, index) => (
+                    <div key={index} className="flex flex-col items-center text-center lg:w-1/4">
+                      {/* Blue circle with number */}
+                      <div className="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center font-semibold mb-2">
+                        {index + 1}
+                      </div>
+
+                      {/* Step title */}
+                      <h4 className="font-semibold text-sm text-gray-900 mb-1">{step.title}</h4>
+
+                      {/* Step description visible on all screens */}
+                      <p className="text-xs text-gray-600 leading-snug">{step.desc}</p>
+                    </div>
+                  ))}
                 </div>
-              ))}
+              </div>
+
+              <div className="mt-6 pt-4 border-t border-gray-200">
+                <p className="text-xs text-gray-600">
+                  Submit at least <span className="font-semibold text-blue-600">3 days before arrival</span>.
+                </p>
+              </div>
             </div>
           </div>
-        </div>
-
-        {/* Bottom Note */}
-        <div className="mt-6 pt-4 border-t border-gray-200 max-w-md">
-          <p className="text-xs text-gray-600">
-            Submit at least <span className="font-semibold text-blue-600">3 days before arrival</span>.
-          </p>
         </div>
       </div>
     </section>
