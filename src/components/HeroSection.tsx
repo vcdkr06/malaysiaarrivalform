@@ -12,7 +12,7 @@ const HeroSection = () => {
 
   return (
     <section className="relative bg-blue-50 pt-10 pb-12">
-      {/* Subtle Background Image */}
+      {/* Subtle Background */}
       <div className="absolute inset-0 z-0">
         <img src={petronasBg} alt="" className="absolute inset-0 w-full h-full object-cover object-top opacity-10" />
       </div>
@@ -55,8 +55,8 @@ const HeroSection = () => {
 
               {/* Stepper */}
               <div className="relative">
-                {/* Horizontal line connecting steps */}
-                <div className="hidden lg:block absolute top-5 left-4 right-4 h-px bg-gray-300 z-0" />
+                {/* Horizontal line on desktop */}
+                <div className="hidden lg:block absolute top-4 left-0 right-0 h-px bg-gray-300 z-0" />
 
                 <div className="flex flex-col lg:flex-row lg:justify-between gap-6 relative z-10">
                   {steps.map((step, index) => (
@@ -64,11 +64,16 @@ const HeroSection = () => {
                       key={index}
                       className="flex flex-col items-start lg:items-center text-left lg:text-center lg:w-1/4"
                     >
+                      {/* Blue Circle */}
                       <div className="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center font-semibold mb-1">
                         {index + 1}
                       </div>
+
+                      {/* Step Title */}
                       <h4 className="font-semibold text-sm text-gray-900 mb-0.5">{step.title}</h4>
-                      <p className="text-xs text-gray-600 leading-snug">{step.desc}</p>
+
+                      {/* Step Description: hidden on mobile */}
+                      <p className="text-xs text-gray-600 leading-snug hidden sm:block">{step.desc}</p>
                     </div>
                   ))}
                 </div>
