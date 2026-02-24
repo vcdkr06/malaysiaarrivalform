@@ -30,9 +30,14 @@ const HeroSection = () => {
               Digital Arrival Registration for <span className="text-blue-600">Malaysia</span>
             </h1>
 
-            {/* Shortened subheadline */}
+            {/* Subheadline responsive */}
             <p className="text-sm md:text-base text-gray-700 max-w-md mb-6 leading-relaxed">
-              Submit your arrival info for smooth border clearance.
+              {/* Desktop & tablet */}
+              <span className="hidden sm:inline">
+                Foreign visitors must submit their arrival information prior to entry to ensure smooth border clearance.
+              </span>
+              {/* Mobile */}
+              <span className="inline sm:hidden">Submit your arrival info for smooth border clearance.</span>
             </p>
 
             <Button
@@ -71,7 +76,7 @@ const HeroSection = () => {
                       {/* Step title */}
                       <h4 className="font-semibold text-sm text-gray-900 mb-1">{step.title}</h4>
 
-                      {/* Step description visible on all screens */}
+                      {/* Step description always visible */}
                       <p className="text-xs text-gray-600 leading-snug">{step.desc}</p>
                     </div>
                   ))}
