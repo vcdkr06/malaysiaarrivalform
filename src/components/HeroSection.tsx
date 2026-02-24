@@ -1,180 +1,148 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, ClipboardList, CreditCard, UserCheck, MailCheck, Lightbulb, Zap } from "lucide-react";
+import { ArrowRight, ClipboardList, CreditCard, UserCheck, MailCheck, Info, ShieldCheck, Globe } from "lucide-react";
 
 const HeroSection = () => {
   const steps = [
     {
-      icon: <ClipboardList className="w-4 h-4" />,
-      title: "Submit Details",
-      desc: "Provide your basic personal info and travel itinerary.",
-      color: "#4B7BE5",
-      bg: "#EEF4FF",
-      border: "#DBEAFE",
+      icon: <ClipboardList className="w-5 h-5" />,
+      title: "Digital Entry Form",
+      desc: "Quickly input your passport and travel details.",
+      color: "text-blue-600",
+      bg: "bg-blue-50",
     },
     {
-      icon: <CreditCard className="w-4 h-4" />,
-      title: "Settle Payment",
-      desc: "Complete your transaction through our reliable checkout.",
-      color: "#2563EB",
-      bg: "#EFF6FF",
-      border: "#BFDBFE",
+      icon: <CreditCard className="w-5 h-5" />,
+      title: "Secure Verification",
+      desc: "Process the service fee via encrypted checkout.",
+      color: "text-indigo-600",
+      bg: "bg-indigo-50",
     },
     {
-      icon: <UserCheck className="w-4 h-4" />,
-      title: "Expert Review",
-      desc: "Our specialists double-check everything to prevent errors.",
-      color: "#E8883C",
-      bg: "#FFF6ED",
-      border: "#FEEFC3",
+      icon: <UserCheck className="w-5 h-5" />,
+      title: "Specialist Audit",
+      desc: "Our team reviews your data for 100% accuracy.",
+      color: "text-amber-600",
+      bg: "bg-amber-50",
     },
     {
-      icon: <MailCheck className="w-4 h-4" />,
-      title: "Get Confirmation",
-      desc: "Check your inbox for your approved digital arrival pass.",
-      color: "#10B981",
-      bg: "#ECFDF5",
-      border: "#D1FAE5",
+      icon: <MailCheck className="w-5 h-5" />,
+      title: "Instant Delivery",
+      desc: "Receive your MDAC PDF via email within hours.",
+      color: "text-emerald-600",
+      bg: "bg-emerald-50",
     },
   ];
 
   return (
-    <section
-      className="relative overflow-hidden min-h-[92vh] flex items-center py-6 md:py-10 lg:py-0 bg-background"
-    >
-      {/* Decorative Background Elements */}
-      <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
-        <div
-          className="absolute -top-32 right-[0%] w-[600px] h-[600px] rounded-full blur-3xl"
-          style={{
-            background: "radial-gradient(circle, rgba(59,130,246,0.07) 0%, rgba(37,99,235,0.03) 50%, transparent 70%)",
-          }}
-        />
-        <div
-          className="absolute bottom-[-10%] left-[-5%] w-[450px] h-[450px] rounded-full blur-3xl"
-          style={{
-            background: "radial-gradient(circle, rgba(16,185,129,0.04) 0%, transparent 60%)",
-          }}
-        />
+    <section className="relative min-h-[90vh] flex items-center bg-[#FDFDFF] overflow-hidden pt-16 pb-12 lg:py-0">
+      {/* Soft Ambient Background */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full z-0 pointer-events-none">
+        <div className="absolute top-[-10%] right-[-5%] w-[500px] h-[500px] bg-blue-100/40 rounded-full blur-[120px]" />
+        <div className="absolute bottom-[10%] left-[-5%] w-[400px] h-[400px] bg-indigo-100/30 rounded-full blur-[100px]" />
       </div>
 
-      <div className="container mx-auto px-6 relative z-10 max-w-6xl">
-        <div className="flex flex-col md:grid md:grid-cols-2 lg:grid-cols-[1.15fr_1fr] gap-5 md:gap-10 lg:gap-16 items-center">
-          {/* ——— LEFT COLUMN: Copy & CTA ——— */}
-          <div className="flex flex-col w-full">
-            {/* Badge - Desktop Only */}
-            <div className="hidden md:inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-[11px] font-semibold mb-6 w-fit bg-secondary border border-border text-primary">
-              <Zap className="w-3.5 h-3.5 text-warning" />
-              Mandatory Travel Requirement
+      <div className="container mx-auto px-6 relative z-10">
+        <div className="grid lg:grid-cols-12 gap-12 items-center">
+          {/* --- Left Column: Content --- */}
+          <div className="lg:col-span-7 flex flex-col space-y-8">
+            <div className="space-y-4">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 text-blue-700 text-xs font-bold tracking-wide uppercase">
+                <Globe className="w-3 h-3" />
+                Official MDAC Assistance
+              </div>
+
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight text-slate-900 leading-[1.1]">
+                Your Gateway to <br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">
+                  Malaysia
+                </span>{" "}
+                Made Simple.
+              </h1>
+
+              <p className="text-lg text-slate-600 max-w-xl leading-relaxed">
+                Skip the stress of arrival paperwork. We provide a premium concierge service to handle your
+                <strong> Malaysia Digital Arrival Card (MDAC)</strong> with expert review and guaranteed delivery.
+              </p>
             </div>
 
-            {/* Desktop Only Pre-heading */}
-            <p className="hidden md:block text-xs lg:text-sm font-bold uppercase tracking-[0.15em] mb-2 text-primary-light">
-              MDAC Registration Portal
-            </p>
-
-            <h1
-              className="text-3xl md:text-[2.25rem] lg:text-[3rem] font-extrabold leading-[1.12] mb-3 md:mb-5 tracking-[-0.02em] text-foreground"
-              style={{ fontFamily: "'Outfit', system-ui, sans-serif" }}
-            >
-              Streamline Your Arrival
-              <br className="hidden lg:block" /> into{" "}
-              <span className="text-primary">
-                Malaysia
-              </span>
-            </h1>
-
-            {/* Desktop Description */}
-            <p className="hidden md:block text-[13px] lg:text-[15px] leading-[1.7] mb-8 max-w-lg text-muted-foreground">
-              Skip the paperwork at immigration. All foreign visitors are now required to submit their digital arrival
-              profile prior to reaching the border to ensure a smooth, hassle-free entry.
-            </p>
-
-            {/* Mobile Description */}
-            <p className="block md:hidden text-[14px] leading-[1.5] mb-5 max-w-lg text-muted-foreground">
-              Submit your digital arrival profile before reaching the border to ensure a smooth, hassle-free entry.
-            </p>
-
-            <div className="mb-0 md:mb-8">
+            <div className="flex flex-col sm:flex-row items-center gap-4">
               <Button
                 asChild
                 size="lg"
-                className="font-bold h-12 lg:h-13 px-6 lg:px-8 rounded-full transition-all duration-300 hover:translate-y-[-2px] group text-[14px] lg:text-[15px] w-full md:w-auto text-primary-foreground bg-primary hover:bg-primary-dark border-0"
-                style={{
-                  boxShadow: "0 8px 30px rgba(59,130,246,0.3), 0 2px 8px rgba(29,78,216,0.2)",
-                }}
+                className="w-full sm:w-auto px-10 h-14 rounded-2xl bg-slate-900 hover:bg-slate-800 text-white shadow-xl shadow-blue-900/10 transition-all hover:scale-[1.02] active:scale-[0.98] group"
               >
-                <Link to="/apply" className="flex items-center justify-center gap-2 h-12">
-                  Start Application
-                  <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                <Link to="/apply" className="flex items-center gap-3 text-base font-semibold">
+                  Get Started Now
+                  <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
                 </Link>
               </Button>
+
+              <div className="flex items-center gap-2 text-slate-500 font-medium text-sm">
+                <ShieldCheck className="w-5 h-5 text-emerald-500" />
+                Trusted by 50k+ Travelers
+              </div>
             </div>
 
-            {/* Disclaimer - Desktop Only */}
-            <p className="hidden md:block text-[9px] lg:text-[10px] leading-relaxed max-w-md pl-3 text-muted-foreground/60 border-l-2 border-border">
-              Disclaimer: We are an independent agency assisting travelers with their documentation. We are not legally
-              affiliated with the Malaysian government.
-            </p>
+            <div className="pt-4 border-t border-slate-100 flex items-start gap-4 max-w-md">
+              <div className="w-1 h-12 bg-slate-200 rounded-full hidden sm:block" />
+              <p className="text-[11px] text-slate-400 italic leading-relaxed">
+                Note: This is a commercial service provider assisting with MDAC filings. We charge a service fee for
+                expert review and processing. We are not affiliated with the Immigration Department of Malaysia.
+              </p>
+            </div>
           </div>
 
-          {/* ——— RIGHT COLUMN: Stepper ——— */}
-          <div className="w-full py-2 md:py-6 lg:py-10">
-            <div className="rounded-[1.5rem] md:rounded-[2rem] p-4 md:p-5 lg:p-7 bg-card/80 backdrop-blur-xl border border-border shadow-soft">
-              <div className="flex items-center justify-between mb-4 md:mb-5 lg:mb-6">
-                <h3 className="font-bold text-[14px] lg:text-[16px] text-foreground">How It Works</h3>
-                <span className="text-[9px] lg:text-[10px] px-2.5 py-1 md:px-3 md:py-1.5 rounded-full font-bold tracking-widest uppercase bg-secondary text-muted-foreground border border-border">
-                  Quick Guide
-                </span>
+          {/* --- Right Column: Step UI --- */}
+          <div className="lg:col-span-5 relative">
+            {/* The "Glass" Card */}
+            <div className="relative bg-white/70 backdrop-blur-2xl border border-white rounded-[2.5rem] p-8 shadow-[0_20px_50px_rgba(0,0,0,0.05)]">
+              <div className="flex items-center justify-between mb-8">
+                <div>
+                  <h3 className="text-xl font-bold text-slate-900">Application Path</h3>
+                  <p className="text-xs text-slate-500 font-medium">Average completion: 3 minutes</p>
+                </div>
+                <div className="h-10 w-10 rounded-full bg-slate-50 flex items-center justify-center border border-slate-100">
+                  <Info className="w-5 h-5 text-slate-400" />
+                </div>
               </div>
 
-              {/* Stepper */}
-              <div className="relative space-y-3 md:space-y-4 lg:space-y-5 pl-1">
-                <div
-                  className="absolute top-2 bottom-2 left-[19px] md:left-[21px] border-l-[1.5px] border-dashed"
-                  style={{ borderColor: "#DCE6F2" }}
-                />
-
-                {steps.map((step, index) => (
-                  <div
-                    key={index}
-                    className="relative z-10 flex gap-3 md:gap-4 lg:gap-5 items-center group cursor-default"
-                  >
+              <div className="space-y-6">
+                {steps.map((step, i) => (
+                  <div key={i} className="flex gap-4 group cursor-default">
                     <div
-                      className="w-9 h-9 md:w-10 md:h-10 rounded-xl md:rounded-2xl flex-shrink-0 flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:rotate-3"
-                      style={{
-                        background: step.bg,
-                        color: step.color,
-                        border: `1px solid ${step.border}`,
-                      }}
+                      className={`flex-shrink-0 w-12 h-12 rounded-2xl ${step.bg} ${step.color} flex items-center justify-center transition-all group-hover:shadow-lg group-hover:-translate-y-1`}
                     >
                       {step.icon}
                     </div>
-                    <div className="flex-1 min-w-0">
-                      <h4 className="font-bold text-[13px] lg:text-[14px] mb-0.5 text-foreground">{step.title}</h4>
-                      <p className="text-[11px] lg:text-[12px] leading-tight md:leading-snug text-muted-foreground">
-                        {step.desc}
-                      </p>
+                    <div className="flex flex-col justify-center">
+                      <h4 className="text-sm font-bold text-slate-900">{step.title}</h4>
+                      <p className="text-xs text-slate-500 leading-snug">{step.desc}</p>
                     </div>
                   </div>
                 ))}
               </div>
 
-              {/* Alert / Notice */}
-              <div className="flex items-start gap-2.5 md:gap-3 mt-4 md:mt-5 lg:mt-6 px-3 py-2.5 md:px-4 md:py-3 rounded-xl md:rounded-2xl bg-secondary border border-border">
-                <Lightbulb className="w-3.5 h-3.5 md:w-4 md:h-4 flex-shrink-0 mt-0.5 text-primary" />
-                <p className="text-[10.5px] md:text-[11px] lg:text-[12px] leading-relaxed text-muted-foreground">
-                  <span className="text-foreground font-bold">Important Note:</span> Travelers must submit this form
-                  within <span className="text-primary font-bold">3 days prior</span> to their scheduled arrival date.
-                </p>
+              {/* Deadline Indicator */}
+              <div className="mt-8 p-4 rounded-2xl bg-gradient-to-br from-blue-600 to-indigo-700 text-white relative overflow-hidden group">
+                <div className="relative z-10">
+                  <p className="text-[10px] uppercase tracking-widest font-bold opacity-80 mb-1">Timing Window</p>
+                  <p className="text-sm leading-snug font-medium">
+                    Submit your application within{" "}
+                    <span className="underline decoration-2 underline-offset-4 font-bold text-white">72 hours</span> of
+                    your arrival date.
+                  </p>
+                </div>
+                {/* Subtle pulse background */}
+                <div className="absolute -right-4 -bottom-4 w-24 h-24 bg-white/10 rounded-full group-hover:scale-150 transition-transform duration-700" />
               </div>
             </div>
 
-            {/* Disclaimer - Mobile Only */}
-            <p className="block md:hidden mt-3 text-[9.5px] leading-relaxed text-center px-2 text-muted-foreground/60">
-              Disclaimer: We are an independent agency assisting travelers with their documentation. We are not legally
-              affiliated with the Malaysian government.
-            </p>
+            {/* Floating Decorative Badge */}
+            <div className="absolute -bottom-6 -right-6 hidden xl:flex flex-col items-center bg-white p-4 rounded-2xl shadow-xl border border-slate-50 animate-bounce-slow">
+              <div className="text-2xl font-bold text-slate-900">24/7</div>
+              <div className="text-[10px] font-bold text-slate-400 uppercase tracking-tighter">Support</div>
+            </div>
           </div>
         </div>
       </div>
