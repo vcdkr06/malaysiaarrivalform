@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { ShieldCheck, Lock } from "lucide-react"; // Professional safety icons
 import logo from "@/assets/mdac-icon-logo.png";
 
 const Footer = () => {
@@ -8,18 +9,38 @@ const Footer = () => {
         <div className="grid md:grid-cols-3 gap-12">
           {/* Column 1: Logo & Security */}
           <div className="flex flex-col items-start">
-            <div className="mb-6 flex items-center gap-3">
-              {/* Logo in White Circle */}
-              <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center p-1 shadow-lg overflow-hidden">
-                <img src={logo} alt="MDAC Logo" className="w-full h-full object-contain" />
+            <div className="mb-6 flex items-center gap-4">
+              {/* Logo in White Circle - Perfect Visual Centering */}
+              <div className="w-14 h-14 bg-white rounded-full flex items-center justify-center shadow-xl overflow-hidden p-2">
+                <img
+                  src={logo}
+                  alt="MDAC Logo"
+                  className="w-full h-full object-contain"
+                  style={{ transform: "translateY(-1px)" }} // Micro-adjustment for visual optical centering
+                />
               </div>
-              <span className="font-bold text-sm uppercase tracking-wider text-slate-100">
+              <span className="font-bold text-sm uppercase tracking-wider text-slate-100 leading-tight">
                 Malaysia Digital <br /> Arrival Card
               </span>
             </div>
-            <div className="flex items-center gap-2 text-slate-400">
-              <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-              <p className="text-xs font-medium leading-relaxed">Secure 256-bit SSL Encrypted Connection</p>
+
+            {/* Security Badges */}
+            <div className="space-y-3">
+              <div className="flex items-center gap-3 bg-white/5 px-3 py-2 rounded-sm border border-white/10 w-fit">
+                <Lock className="w-4 h-4 text-green-500" />
+                <div className="flex flex-col">
+                  <span className="text-[10px] font-bold uppercase text-slate-400 leading-none">SSL Encryption</span>
+                  <span className="text-[11px] text-slate-200 font-medium">256-bit Secure Site</span>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-3 bg-white/5 px-3 py-2 rounded-sm border border-white/10 w-fit">
+                <ShieldCheck className="w-4 h-4 text-blue-400" />
+                <div className="flex flex-col">
+                  <span className="text-[10px] font-bold uppercase text-slate-400 leading-none">Safety Verified</span>
+                  <span className="text-[11px] text-slate-200 font-medium">Data Privacy Guaranteed</span>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -86,9 +107,14 @@ const Footer = () => {
 
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-[11px] text-slate-500 font-medium">© 2026 malaysia.earrivalform.com</p>
-            <div className="flex gap-6">
-              <span className="text-[10px] text-slate-600 font-bold uppercase">SSL Secured</span>
-              <span className="text-[10px] text-slate-600 font-bold uppercase">Data Protected</span>
+            <div className="flex items-center gap-6">
+              <div className="flex items-center gap-1.5 grayscale opacity-50">
+                <div className="w-1.5 h-1.5 bg-green-500 rounded-full"></div>
+                <span className="text-[10px] text-slate-400 font-bold uppercase">System Status: Online</span>
+              </div>
+              <span className="text-[10px] text-slate-600 font-bold uppercase tracking-widest">
+                Global Entry Support
+              </span>
             </div>
           </div>
         </div>
