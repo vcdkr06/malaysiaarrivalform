@@ -7,85 +7,95 @@ const InfoCardsSection = () => {
     {
       icon: FileText,
       title: "What is MDAC?",
-      text: "The Malaysia Digital Arrival Card is the mandatory digital form replacing old paper cards for all foreign arrivals.",
-      accent: "bg-blue-100",
+      text: "The Malaysia Digital Arrival Card (MDAC) is a mandatory digital entry form required for foreign nationals entering Malaysia.",
+      accent: "bg-blue-50",
       iconColor: "text-blue-600",
     },
     {
       icon: Users,
-      title: "Who needs one?",
-      text: "Every foreign national arriving by air, land, or sea. Very few exemptions apply regardless of visa status.",
-      accent: "bg-blue-100",
+      title: "Who Needs to Register?",
+      text: "All foreign visitors arriving by air, land, or sea must complete the MDAC prior to arrival unless officially exempted.",
+      accent: "bg-blue-50",
       iconColor: "text-blue-600",
     },
     {
       icon: AlertTriangle,
-      title: "When to submit?",
-      text: "Must be filed within 3 days of arrival. Late submissions can lead to delays at the border.",
-      accent: "bg-yellow-100",
-      iconColor: "text-yellow-700",
+      title: "When to Submit?",
+      text: "The form must be submitted within 3 days before arrival. Failure to comply may result in entry delays.",
+      accent: "bg-yellow-50",
+      iconColor: "text-yellow-600",
       isAlert: true,
     },
   ];
 
   return (
-    <section className="py-12 md:py-16 bg-gradient-to-b from-white to-blue-50">
+    <section className="py-16 md:py-20 bg-[#F4F8FC]">
       <div className="container mx-auto px-6 max-w-6xl">
         {/* HEADER */}
-        <div className="mb-10">
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-100 text-blue-700 text-[10px] font-semibold tracking-wider uppercase mb-4">
-            <ShieldCheck className="w-3.5 h-3.5" />
-            Official Guidelines
+        <div className="mb-12 text-center md:text-left">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-100 text-blue-700 text-[11px] font-semibold uppercase tracking-wider mb-4">
+            <ShieldCheck className="w-4 h-4" />
+            Entry Requirements
           </div>
 
-          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 tracking-tight">
-            Essential <span className="text-primary">Entry Information</span>
+          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight">
+            Important <span className="text-blue-600">Travel Information</span>
           </h2>
 
-          <p className="text-gray-600 mt-2 text-sm md:text-base max-w-lg">
-            Important requirements for your visit to Malaysia.
+          <p className="text-slate-600 mt-3 text-sm md:text-base max-w-2xl">
+            Please review the following guidelines before submitting your Malaysia Digital Arrival Card.
           </p>
         </div>
 
-        {/* CARDS */}
-        <div className="grid md:grid-cols-3 gap-6 mb-12">
+        {/* INFO CARDS */}
+        <div className="grid md:grid-cols-3 gap-6 mb-14">
           {cards.map((card, i) => {
             const Icon = card.icon;
             return (
               <div
                 key={i}
-                className={`p-6 rounded-xl bg-white border border-gray-200 transition hover:shadow-sm ${
-                  card.isAlert ? "border-yellow-300 bg-yellow-50/40" : ""
-                }`}
+                className={`p-7 rounded-xl bg-white border border-slate-200 transition-all duration-300 hover:shadow-md ${card.isAlert ? "border-yellow-200" : ""}`}
               >
-                <div className={`w-11 h-11 rounded-lg ${card.accent} flex items-center justify-center mb-5`}>
-                  <Icon className={`w-5 h-5 ${card.iconColor}`} />
+                <div className={`w-12 h-12 rounded-lg ${card.accent} flex items-center justify-center mb-5`}>
+                  <Icon className={`w-6 h-6 ${card.iconColor}`} />
                 </div>
 
-                <h3 className="text-base font-semibold text-gray-900 mb-2">{card.title}</h3>
+                <h3 className="text-lg font-semibold text-slate-900 mb-3">{card.title}</h3>
 
-                <p className="text-sm text-gray-600 leading-relaxed">{card.text}</p>
+                <p className="text-sm text-slate-600 leading-relaxed">{card.text}</p>
               </div>
             );
           })}
         </div>
 
-        {/* CLEAN CTA (Matches Hero Style) */}
-        <div className="bg-white border border-gray-200 rounded-xl p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-6">
-          <div>
-            <h4 className="text-lg md:text-xl font-semibold text-gray-900">Ready to complete your registration?</h4>
-            <p className="text-sm text-gray-600 mt-1">Submit your Digital Arrival Card in just a few minutes.</p>
+        {/* PROFESSIONAL CTA */}
+        <div className="bg-white border border-blue-100 rounded-xl p-8 md:p-10 flex flex-col md:flex-row items-center justify-between gap-8">
+          {/* Left */}
+          <div className="max-w-lg">
+            <h4 className="text-xl md:text-2xl font-bold text-blue-700 tracking-tight">
+              Complete Your Digital Arrival Registration
+            </h4>
+
+            <p className="text-sm md:text-base text-slate-600 mt-3 leading-relaxed">
+              Submit your Malaysia Digital Arrival Card securely online before travel. The registration process takes
+              approximately 2 minutes.
+            </p>
           </div>
 
+          {/* Right */}
           <div className="flex flex-col items-center md:items-end gap-3">
-            <Button asChild size="lg" className="h-12 px-8 rounded-md font-semibold shadow-sm hover:shadow transition">
+            <Button
+              asChild
+              size="lg"
+              className="h-12 px-10 rounded-md font-semibold bg-blue-600 hover:bg-blue-700 text-white shadow-sm transition"
+            >
               <Link to="/apply" className="flex items-center gap-2">
-                Start Application
+                Start Registration
                 <ArrowRight className="w-4 h-4" />
               </Link>
             </Button>
 
-            <span className="text-[10px] text-gray-500 uppercase tracking-wide">Average filing time: 2 minutes</span>
+            <span className="text-[11px] text-slate-500 uppercase tracking-wide">Mandatory for Foreign Travelers</span>
           </div>
         </div>
       </div>
