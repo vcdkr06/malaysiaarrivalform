@@ -11,18 +11,23 @@ const HeroSection = () => {
   ];
 
   return (
-    <section className="relative bg-slate-50 pt-10 pb-16 border-b border-slate-300">
+    <section className="relative pt-10 pb-16 border-b border-slate-300 bg-white">
       {/* Background */}
       <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-gradient-to-b from-blue-50/50 via-slate-50 to-slate-100" />
-        <img src={petronasBg} alt="" className="absolute inset-0 w-full h-full object-cover object-top opacity-15" />
+        {/* Responsive Gradient: Top->Bottom on mobile, Left->Right on desktop */}
+        <div className="absolute inset-0 bg-gradient-to-b lg:bg-gradient-to-r from-white via-white to-blue-100/80" />
+        <img
+          src={petronasBg}
+          alt=""
+          className="absolute inset-0 w-full h-full object-cover object-top opacity-[0.08]"
+        />
       </div>
 
       <div className="container mx-auto px-6 relative z-10 max-w-6xl">
         <div className="flex flex-col lg:flex-row gap-10 lg:gap-12 items-start">
-          {/* LEFT COLUMN - Heading & Text */}
+          {/* LEFT COLUMN - Heading & Text (White Side) */}
           <div className="lg:w-1/2 flex flex-col gap-6 lg:mt-2">
-            {/* Formal Notice Box - Standard 4px rounding */}
+            {/* Formal Notice Box */}
             <div className="hidden md:block border-l-4 border-yellow-500 bg-yellow-50 p-3 rounded w-fit">
               <p className="text-sm font-medium text-yellow-800 uppercase tracking-wide">
                 Mandatory Travel Requirement
@@ -65,9 +70,8 @@ const HeroSection = () => {
             </div>
           </div>
 
-          {/* RIGHT COLUMN - Application Process Card */}
+          {/* RIGHT COLUMN - Application Process Card (Blue Side) */}
           <div className="lg:w-1/2 w-full flex flex-col">
-            {/* Standard 4px rounding on the main card */}
             <div className="bg-white border border-slate-300 border-t-4 border-t-blue-700 shadow-sm p-6 w-full rounded">
               <div className="border-b border-slate-200 pb-3 mb-4">
                 <h2 className="font-semibold text-lg text-slate-800">Application Process</h2>
@@ -80,7 +84,6 @@ const HeroSection = () => {
               <div className="flex flex-col gap-4">
                 {steps.map((step, index) => (
                   <div key={index} className="flex items-start gap-3">
-                    {/* Standard 4px rounding on the number boxes */}
                     <div className="flex-shrink-0 w-7 h-7 bg-slate-100 border border-slate-300 flex items-center justify-center text-blue-700 font-semibold text-sm mt-0.5 rounded">
                       {index + 1}
                     </div>
