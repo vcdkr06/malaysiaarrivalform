@@ -9,33 +9,30 @@ const Header = () => {
     <header className="w-full sticky top-0 z-50 bg-white border-b border-slate-200 shadow-sm">
       <NoticeBanner />
 
-      {/* container mx-auto px-6 max-w-6xl maintains consistent site-wide alignment */}
+      {/* container mx-auto px-6 max-w-6xl keeps it aligned with Hero/InfoSection */}
       <div className="container mx-auto px-6 max-w-6xl">
-        {/* Flex container: items-center keeps CTA perfectly centered. 
-            Height is now dynamic based on the logo's padding. */}
-        <div className="flex items-center justify-between py-4 md:py-6">
-          {/* LOGO - Scaled up with specific top/bottom margins */}
+        {/* items-center for vertical centering; py-2 (mobile) and py-3 (desktop) for a slim profile */}
+        <div className="flex items-center justify-between py-2 md:py-3">
+          {/* LOGO - Scaled to h-14 (mobile) and h-20 (desktop) */}
           <Link to="/" className="flex items-center">
             <img
               alt="MDAC Logo"
-              /* h-20 on mobile, h-28 on desktop for a truly large presence.
-                 The margins (my-1) ensure it never touches the header borders. */
-              className="h-20 md:h-28 w-auto object-contain my-1 transition-all duration-300"
+              className="h-14 md:h-20 w-auto object-contain transition-all duration-300"
               src={logo}
             />
           </Link>
 
-          {/* CTA - Vertically centered relative to the tall header */}
+          {/* CTA - Vertically centered with 4px rounded-sm corners */}
           <Link to="/apply">
             <Button
               size="lg"
-              className="font-bold h-11 md:h-12 px-6 md:px-10 rounded-sm bg-blue-700 hover:bg-blue-800 text-white transition-all duration-300 shadow-md text-sm md:text-base"
+              className="font-bold h-10 md:h-11 px-5 md:px-8 rounded-sm bg-blue-700 hover:bg-blue-800 text-white transition-all duration-300 shadow-md text-xs md:text-sm"
             >
               {/* Desktop Text */}
-              <span className="hidden lg:inline">Apply for Malaysia Digital Arrival Card</span>
+              <span className="hidden md:inline">Apply for Malaysia Digital Arrival Card</span>
 
               {/* Mobile Text */}
-              <span className="lg:hidden">Apply Now</span>
+              <span className="md:hidden">Apply Now</span>
 
               <ArrowRight className="w-4 h-4 ml-2" />
             </Button>
