@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import { ArrowRight } from "lucide-react";
 import logo from "@/assets/mdac-icon-logo.png";
 import NoticeBanner from "./NoticeBanner";
 
@@ -10,28 +11,23 @@ const Header = () => {
       <div className="container mx-auto px-4 sm:px-6">
         <div className="flex items-center justify-between h-20 sm:h-20">
           <div className="flex items-center gap-3">
-            <img src={logo} alt="MDAC Logo" className="h-16 sm:hue-rotate-1object-contain" />
-            
-
-
+            <img src={logo} alt="MDAC Logo" className="h-20 sm:h-20 object-contain" />
           </div>
           <div className="flex items-center gap-3">
             <Link to="/apply">
               <Button
-                className="text-white font-bold h-9 px-5 rounded-full border-0 transition-all duration-300 hover:translate-y-[-1px] text-base"
-                style={{
-                  background: "#2563EB",
-                  boxShadow: "0 4px 15px rgba(59,130,246,0.3), 0 1px 4px rgba(29,78,216,0.2)"
-                }}>
-
+                size="lg"
+                className="font-semibold h-11 px-7 rounded-md bg-primary hover:bg-primary-dark text-primary-foreground transition-all duration-300 shadow-sm text-sm"
+              >
                 Apply Now
+                <ArrowRight className="w-4 h-4 ml-1.5" />
               </Button>
             </Link>
           </div>
         </div>
       </div>
-    </header>);
-
+    </header>
+  );
 };
 
 export default Header;
