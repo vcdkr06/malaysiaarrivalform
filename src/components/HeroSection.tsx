@@ -34,9 +34,9 @@ const HeroSection = () => {
         <img
           src={heroBg}
           alt=""
-          className="w-full h-full object-cover opacity-15"
+          className="w-full h-full object-cover opacity-30"
         />
-        <div className="absolute inset-0 bg-background/60" />
+        <div className="absolute inset-0 bg-background/40" />
       </div>
 
       <div className="container mx-auto px-6 relative z-10 max-w-6xl">
