@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import petronasBg from "@/assets/kuala-lumpur-petronas.png";
+import heroBg from "@/assets/hero-bg-globe.jpg";
 
 const HeroSection = () => {
   const steps = [
@@ -17,7 +17,7 @@ const HeroSection = () => {
         {/* Responsive Gradient: Top->Bottom on mobile, Left->Right on desktop */}
         <div className="absolute inset-0 bg-gradient-to-b lg:bg-gradient-to-r from-white via-white to-blue-100/80" />
         <img
-          src={petronasBg}
+          src={heroBg}
           alt=""
           className="absolute inset-0 w-full h-full object-cover object-top opacity-[0.08]"
         />
