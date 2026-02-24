@@ -33,9 +33,7 @@ const HeroSection = () => {
 
             {/* Subheadline responsive */}
             <p className="text-sm md:text-base text-gray-700 max-w-md leading-relaxed">
-              <span className="inline sm:hidden font-semibold">
-                Submit your arrival info for smooth border clearance.
-              </span>
+              <span className="sm:hidden font-semibold">Submit your arrival info for smooth border clearance.</span>
               <span className="hidden sm:inline">
                 Foreign visitors must submit their arrival information prior to entry to ensure smooth border clearance.
               </span>
@@ -60,65 +58,69 @@ const HeroSection = () => {
 
           {/* RIGHT COLUMN - Stepper */}
           <div className="lg:w-1/2 flex lg:flex-row gap-6">
-            {/* Desktop: horizontal stepper */}
-            <div className="hidden lg:flex relative items-center justify-between flex-1">
-              <div className="absolute top-4 left-4 right-4 h-px border-t-2 border-dashed border-gray-300 z-0" />
-              <div className="flex justify-between w-full relative z-10">
-                {steps.map((step, index) => (
-                  <div key={index} className="flex flex-col items-center text-center lg:w-1/4">
-                    <div className="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center font-semibold mb-2">
-                      {index + 1}
+            <div className="bg-white border border-gray-300 rounded-sm p-6 flex-1">
+              <h3 className="font-semibold text-sm text-gray-900 mb-6">4-Step Application Process</h3>
+
+              {/* Desktop horizontal stepper */}
+              <div className="hidden lg:flex relative items-center justify-between">
+                <div className="absolute top-4 left-4 right-4 h-px border-t-2 border-dashed border-gray-300 z-0" />
+                <div className="flex justify-between w-full relative z-10">
+                  {steps.map((step, index) => (
+                    <div key={index} className="flex flex-col items-center text-center lg:w-1/4">
+                      <div className="w-10 h-10 rounded-full bg-blue-600 text-white flex items-center justify-center font-semibold mb-2 shadow-sm">
+                        {index + 1}
+                      </div>
+                      <h4 className="font-semibold text-sm text-gray-900 mb-1">{step.title}</h4>
+                      <p className="text-xs text-gray-600 leading-snug">{step.desc}</p>
                     </div>
-                    <h4 className="font-semibold text-sm text-gray-900 mb-1">{step.title}</h4>
-                    <p className="text-xs text-gray-600 leading-snug">{step.desc}</p>
+                  ))}
+                </div>
+              </div>
+
+              {/* Tablet vertical stepper beside text */}
+              <div className="hidden md:flex lg:hidden flex-col relative z-10">
+                {steps.map((step, index) => (
+                  <div key={index} className="flex items-start gap-4 mb-6">
+                    <div className="flex flex-col items-center">
+                      <div className="w-10 h-10 rounded-full bg-blue-600 text-white flex items-center justify-center font-semibold shadow-sm">
+                        {index + 1}
+                      </div>
+                      {index < steps.length - 1 && (
+                        <div className="flex-1 w-px border-l-2 border-dashed border-gray-300 mt-1" />
+                      )}
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-sm text-gray-900 mb-1">{step.title}</h4>
+                      <p className="text-xs text-gray-600 leading-snug">{step.desc}</p>
+                    </div>
                   </div>
                 ))}
               </div>
-            </div>
 
-            {/* Tablet: vertical stepper beside text */}
-            <div className="hidden md:flex lg:hidden flex-col relative z-10">
-              {steps.map((step, index) => (
-                <div key={index} className="flex items-start gap-4 mb-6">
-                  <div className="flex flex-col items-center">
-                    <div className="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center font-semibold">
-                      {index + 1}
+              {/* Mobile vertical stepper */}
+              <div className="flex flex-col md:hidden relative z-10">
+                {steps.map((step, index) => (
+                  <div key={index} className="flex items-start gap-4 mb-6">
+                    <div className="flex flex-col items-center">
+                      <div className="w-10 h-10 rounded-full bg-blue-600 text-white flex items-center justify-center font-semibold shadow-sm">
+                        {index + 1}
+                      </div>
+                      {index < steps.length - 1 && (
+                        <div className="flex-1 w-px border-l-2 border-dashed border-gray-300 mt-1" />
+                      )}
                     </div>
-                    {index < steps.length - 1 && (
-                      <div className="flex-1 w-px border-l-2 border-dashed border-gray-300 mt-1" />
-                    )}
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-sm text-gray-900 mb-1">{step.title}</h4>
-                    <p className="text-xs text-gray-600 leading-snug">{step.desc}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            {/* Mobile: vertical stepper below text */}
-            <div className="flex flex-col md:hidden relative z-10">
-              {steps.map((step, index) => (
-                <div key={index} className="flex items-start gap-4 mb-6">
-                  <div className="flex flex-col items-center">
-                    <div className="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center font-semibold">
-                      {index + 1}
+                    <div>
+                      <h4 className="font-semibold text-sm text-gray-900 mb-1">{step.title}</h4>
+                      <p className="text-xs text-gray-600 leading-snug">{step.desc}</p>
                     </div>
-                    {index < steps.length - 1 && (
-                      <div className="flex-1 w-px border-l-2 border-dashed border-gray-300 mt-1" />
-                    )}
                   </div>
-                  <div>
-                    <h4 className="font-semibold text-sm text-gray-900 mb-1">{step.title}</h4>
-                    <p className="text-xs text-gray-600 leading-snug">{step.desc}</p>
-                  </div>
-                </div>
-              ))}
+                ))}
 
-              {/* Mobile disclaimer below stepper */}
-              <p className="mt-2 text-[11px] text-gray-500">
-                Independent documentation assistance service. Not affiliated with the Malaysian government.
-              </p>
+                {/* Mobile disclaimer */}
+                <p className="mt-2 text-[11px] text-gray-500">
+                  Independent documentation assistance service. Not affiliated with the Malaysian government.
+                </p>
+              </div>
             </div>
           </div>
         </div>
