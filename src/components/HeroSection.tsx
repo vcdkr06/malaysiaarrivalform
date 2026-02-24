@@ -28,72 +28,75 @@ const HeroSection = () => {
   ];
 
   return (
-    <section className="relative overflow-hidden bg-white pt-16 pb-20">
-      {/* Soft Background Image */}
+    <section className="relative overflow-hidden bg-white pt-10 pb-12">
+      {/* Soft Background */}
       <div className="absolute inset-0 z-0">
-        <img src={petronasBg} alt="" className="absolute inset-0 w-full h-full object-cover opacity-[0.06]" />
+        <img src={petronasBg} alt="" className="absolute inset-0 w-full h-full object-cover opacity-[0.05]" />
       </div>
 
-      <div className="container mx-auto px-6 relative z-10 max-w-7xl">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
-          {/* LEFT COLUMN */}
+      <div className="container mx-auto px-6 relative z-10 max-w-6xl">
+        <div className="grid lg:grid-cols-2 gap-10 items-center">
+          {/* LEFT */}
           <div>
-            {/* Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold mb-6 bg-primary/5 border border-primary/10 text-primary">
-              <Zap className="w-4 h-4" />
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold mb-4 bg-primary/5 border border-primary/10 text-primary">
+              <Zap className="w-3.5 h-3.5" />
               Mandatory Travel Requirement
             </div>
 
-            <h1 className="text-3xl md:text-5xl font-extrabold leading-tight text-gray-900 mb-6">
+            <h1 className="text-2xl md:text-4xl font-bold leading-tight text-gray-900 mb-4">
               Digital Arrival Registration for <span className="text-primary">Malaysia</span>
             </h1>
 
-            <p className="text-lg text-gray-600 max-w-xl mb-8 leading-relaxed">
-              Foreign visitors must submit their arrival information prior to entry to ensure smooth border clearance
-              and faster immigration processing.
+            <p className="text-sm md:text-base text-gray-600 max-w-md mb-6 leading-relaxed">
+              Foreign visitors must submit their arrival information prior to entry to ensure smooth border clearance.
             </p>
 
-            <Button
-              asChild
-              size="lg"
-              className="h-14 px-10 rounded-lg font-semibold shadow-sm hover:shadow-md transition-all"
-            >
+            <Button asChild size="lg" className="h-12 px-8 rounded-md font-semibold shadow-sm hover:shadow transition">
               <Link to="/apply" className="flex items-center gap-2">
                 Begin Application
                 <ArrowRight className="w-4 h-4" />
               </Link>
             </Button>
 
-            <p className="mt-6 text-xs text-gray-500 max-w-md">
-              We are an independent agency assisting travelers with documentation processing. We are not affiliated with
-              the Malaysian government.
+            <p className="mt-4 text-[11px] text-gray-500 max-w-sm">
+              Independent documentation assistance service. Not affiliated with the Malaysian government.
             </p>
           </div>
 
-          {/* RIGHT COLUMN */}
+          {/* RIGHT */}
           <div>
-            <div className="bg-white border border-gray-200 rounded-2xl p-8 shadow-sm">
-              <h3 className="font-semibold text-lg text-gray-900 mb-8">4-Step Application Process</h3>
+            <div className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm">
+              <h3 className="font-semibold text-sm text-gray-900 mb-6">4-Step Application Process</h3>
 
-              <div className="grid sm:grid-cols-2 gap-8">
-                {steps.map((step, index) => (
-                  <div key={index} className="flex gap-4 items-start">
-                    <div className="w-11 h-11 rounded-lg bg-primary/10 text-primary flex items-center justify-center">
-                      {step.icon}
-                    </div>
+              <div className="relative">
+                {/* Horizontal line */}
+                <div className="hidden lg:block absolute top-5 left-0 right-0 h-px bg-gray-200" />
 
-                    <div>
-                      <div className="text-xs font-semibold text-primary tracking-wide mb-1">STEP {index + 1}</div>
-                      <h4 className="font-semibold text-sm text-gray-900 mb-1">{step.title}</h4>
-                      <p className="text-sm text-gray-600 leading-relaxed">{step.desc}</p>
+                <div className="flex flex-col lg:flex-row lg:justify-between gap-6">
+                  {steps.map((step, index) => (
+                    <div
+                      key={index}
+                      className="relative flex lg:flex-col items-start lg:items-center text-left lg:text-center lg:w-1/4"
+                    >
+                      <div className="relative z-10 w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center text-sm shadow-sm">
+                        {step.icon}
+                      </div>
+
+                      <div className="ml-3 lg:ml-0 lg:mt-3">
+                        <div className="text-[10px] font-semibold text-primary tracking-wide mb-0.5">
+                          STEP {index + 1}
+                        </div>
+                        <h4 className="font-semibold text-sm text-gray-900 mb-0.5">{step.title}</h4>
+                        <p className="text-xs text-gray-600 leading-snug">{step.desc}</p>
+                      </div>
                     </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
 
-              <div className="mt-10 pt-6 border-t border-gray-200 flex gap-3">
-                <Lightbulb className="w-5 h-5 text-primary mt-0.5" />
-                <p className="text-sm text-gray-600">
+              <div className="mt-6 pt-4 border-t border-gray-200 flex gap-2">
+                <Lightbulb className="w-4 h-4 text-primary mt-0.5" />
+                <p className="text-xs text-gray-600">
                   Submit at least <span className="font-semibold text-primary">3 days before arrival</span>.
                 </p>
               </div>
