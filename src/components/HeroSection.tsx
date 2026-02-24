@@ -10,149 +10,132 @@ import {
   Plane,
   Sparkles,
   Globe,
+  Lightbulb,
 } from "lucide-react";
 
 const HeroSection = () => {
   const steps = [
     {
-      icon: <ClipboardList className="w-5 h-5" />,
-      title: "Fill Information",
-      desc: "Complete our simplified digital form.",
+      icon: <ClipboardList className="w-4 h-4" />,
+      title: "Fill Details",
+      desc: "Quick digital entry form.",
       color: "text-blue-600",
       bg: "bg-blue-50",
     },
     {
-      icon: <CreditCard className="w-5 h-5" />,
-      title: "Secure Checkout",
-      desc: "Safe processing for your service fee.",
+      icon: <CreditCard className="w-4 h-4" />,
+      title: "Secure Payment",
+      desc: "Safe processing fee.",
       color: "text-indigo-600",
       bg: "bg-indigo-50",
     },
     {
-      icon: <UserCheck className="w-5 h-5" />,
-      title: "Expert Verification",
-      desc: "We review every detail for accuracy.",
-      color: "#b45309", // Amber-700
+      icon: <UserCheck className="w-4 h-4" />,
+      title: "Expert Review",
+      desc: "Accuracy verification.",
+      color: "text-amber-600",
       bg: "bg-amber-50",
     },
     {
-      icon: <MailCheck className="w-5 h-5" />,
+      icon: <MailCheck className="w-4 h-4" />,
       title: "Instant Approval",
-      desc: "Your MDAC arrives directly via email.",
+      desc: "Direct email delivery.",
       color: "text-emerald-600",
       bg: "bg-emerald-50",
     },
   ];
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-slate-50">
-      {/* ——— BACKGROUND IMAGE LAYER ——— */}
+    <section className="relative min-h-[75vh] flex items-center justify-center overflow-hidden bg-white py-8 lg:py-0">
+      {/* ——— BACKGROUND ——— */}
       <div className="absolute inset-0 z-0">
         <img
           src="https://images.unsplash.com/photo-1596422846543-75c6fc18a5ce?q=80&w=2070&auto=format&fit=crop"
-          alt="Kuala Lumpur Malaysia Skyline"
+          alt="Malaysia Skyline"
           className="w-full h-full object-cover"
         />
-        {/* Light Mode Overlay: White to Transparent Gradient */}
-        <div className="absolute inset-0 bg-gradient-to-r from-white via-white/90 to-white/20 lg:to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-white via-white/95 to-white/40 lg:to-transparent" />
       </div>
 
-      <div className="container mx-auto px-6 relative z-10 max-w-7xl pt-20 pb-12">
-        <div className="grid lg:grid-cols-[1.2fr_1fr] gap-12 lg:gap-16 items-center">
-          {/* ——— LEFT SIDE: Content ——— */}
-          <div className="flex flex-col space-y-8 animate-in fade-in slide-in-from-left duration-1000">
-            <div className="space-y-6">
-              {/* Light Badge */}
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-600 text-white text-sm font-bold w-fit shadow-xl shadow-blue-200">
-                <Globe className="w-4 h-4" />
-                Official MDAC Assistance
-              </div>
+      <div className="container mx-auto px-6 relative z-10 max-w-6xl">
+        <div className="grid lg:grid-cols-[1fr_0.8fr] gap-8 lg:gap-12 items-center">
+          {/* ——— LEFT SIDE ——— */}
+          <div className="flex flex-col space-y-4 lg:space-y-6">
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-600 text-white text-[11px] font-bold w-fit shadow-md uppercase tracking-wider">
+              <Globe className="w-3.5 h-3.5" />
+              Official MDAC Assistance
+            </div>
 
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-black tracking-tight text-slate-900 leading-[1.1]">
-                Your Gateway to <br />
-                <span className="text-blue-600 italic font-serif">Malaysia</span> <br />
-                Made Simple.
+            <div className="space-y-2 lg:space-y-3">
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-black tracking-tight text-slate-900 leading-tight">
+                Streamline Your Entry <br />
+                Into <span className="text-blue-600">Malaysia</span>
               </h1>
 
-              <p className="text-lg md:text-xl text-slate-600 max-w-xl leading-relaxed">
-                The <span className="text-slate-900 font-semibold">Malaysia Digital Arrival Card (MDAC)</span> is the
-                new mandatory entry system. We provide a premium concierge service to ensure your application is
-                processed quickly and without errors.
+              <p className="text-sm md:text-base text-slate-600 max-w-lg leading-relaxed font-medium">
+                The <span className="text-slate-900">MDAC</span> is Malaysia's new mandatory digital entry system. We
+                provide a premium concierge service for a fast, secure online arrival process.
               </p>
             </div>
 
-            {/* CTA Group */}
-            <div className="flex flex-col sm:flex-row items-center gap-6">
+            <div className="flex flex-col sm:flex-row items-center gap-4">
               <Button
                 asChild
                 size="lg"
-                className="w-full sm:w-auto h-16 px-12 rounded-2xl text-lg font-bold bg-blue-600 hover:bg-blue-700 text-white shadow-2xl shadow-blue-200 transition-all hover:scale-[1.02] active:scale-95 group border-0"
+                className="w-full sm:w-auto h-12 px-8 rounded-xl text-base font-bold bg-blue-600 hover:bg-blue-700 text-white shadow-lg shadow-blue-100 transition-all active:scale-95 border-0"
               >
-                <Link to="/apply" className="flex items-center justify-center gap-3">
+                <Link to="/apply" className="flex items-center justify-center gap-2">
                   Apply Now
-                  <ArrowRight className="w-6 h-6 transition-transform group-hover:translate-x-1" />
+                  <ArrowRight className="w-4 h-4" />
                 </Link>
               </Button>
 
-              <div className="flex items-center gap-2 text-slate-500 font-semibold text-sm">
-                <ShieldCheck className="w-5 h-5 text-emerald-500" />
-                Secure Processing
+              <div className="flex items-center gap-1.5 text-slate-500 font-bold text-xs">
+                <ShieldCheck className="w-4 h-4 text-emerald-600" />
+                SECURE PROCESSING
               </div>
             </div>
 
-            {/* Trust Markers */}
-            <div className="flex flex-wrap items-center gap-x-8 gap-y-4 pt-6 opacity-80 border-t border-slate-200">
-              <div className="flex items-center gap-2 text-slate-600 text-xs font-bold uppercase tracking-widest">
-                <Plane className="w-4 h-4 text-blue-500" /> Land, Air, or Sea
+            <div className="flex gap-6 pt-2 opacity-80">
+              <div className="flex items-center gap-1.5 text-slate-600 text-[10px] font-bold uppercase tracking-widest">
+                <Plane className="w-3.5 h-3.5 text-blue-500" /> All Borders
               </div>
-              <div className="flex items-center gap-2 text-slate-600 text-xs font-bold uppercase tracking-widest">
-                <Sparkles className="w-4 h-4 text-amber-500" /> 24/7 Support
+              <div className="flex items-center gap-1.5 text-slate-600 text-[10px] font-bold uppercase tracking-widest">
+                <Sparkles className="w-3.5 h-3.5 text-amber-500" /> 24/7 Support
               </div>
             </div>
           </div>
 
-          {/* ——— RIGHT SIDE: Light Glass Card ——— */}
-          <div className="relative group animate-in fade-in slide-in-from-right duration-1000">
-            {/* Subtle Shadow Decoration */}
-            <div className="absolute -inset-1 bg-gradient-to-r from-blue-100 to-indigo-100 rounded-[2.5rem] blur opacity-50 transition duration-1000"></div>
-
-            <div className="relative bg-white/70 backdrop-blur-2xl border border-white rounded-[2.5rem] p-8 md:p-10 shadow-[0_20px_50px_rgba(0,0,0,0.05)]">
-              <div className="flex items-center justify-between mb-8">
-                <div>
-                  <h3 className="text-2xl font-bold text-slate-900 tracking-tight">How to Apply</h3>
-                  <p className="text-xs text-slate-500 font-medium">Avg. completion: 3 minutes</p>
-                </div>
-                <span className="text-[10px] font-black uppercase tracking-[0.2em] bg-slate-100 text-slate-500 px-3 py-1.5 rounded-lg border border-slate-200">
+          {/* ——— RIGHT SIDE ——— */}
+          <div className="relative">
+            <div className="relative bg-white/80 backdrop-blur-xl border border-white rounded-[1.5rem] p-6 lg:p-8 shadow-xl">
+              <div className="flex items-center justify-between mb-6">
+                <h3 className="text-base font-bold text-slate-900">How to Apply</h3>
+                <span className="text-[9px] font-black uppercase bg-slate-100 text-slate-500 px-2 py-1 rounded border border-slate-200">
                   Quick Guide
                 </span>
               </div>
 
-              <div className="space-y-6">
+              <div className="space-y-4">
                 {steps.map((step, idx) => (
-                  <div key={idx} className="flex gap-5 group/item">
-                    <div className="relative">
-                      <div
-                        className={`w-12 h-12 rounded-2xl ${step.bg} border border-white flex items-center justify-center transition-all duration-300 group-hover/item:scale-110 shadow-sm ${step.color}`}
-                      >
-                        {step.icon}
-                      </div>
-                      {idx !== steps.length - 1 && (
-                        <div className="absolute top-14 left-1/2 -translate-x-1/2 w-0.5 h-4 bg-slate-100" />
-                      )}
+                  <div key={idx} className="flex gap-4 items-center">
+                    <div
+                      className={`w-9 h-9 rounded-lg ${step.bg} border border-white flex items-center justify-center shadow-sm flex-shrink-0 ${step.color}`}
+                    >
+                      {step.icon}
                     </div>
-                    <div className="flex flex-col justify-center">
-                      <h4 className="text-slate-900 font-bold text-base">{step.title}</h4>
-                      <p className="text-slate-500 text-xs leading-relaxed">{step.desc}</p>
+                    <div>
+                      <h4 className="text-slate-900 font-bold text-xs tracking-tight uppercase">{step.title}</h4>
+                      <p className="text-slate-500 text-[11px] leading-tight">{step.desc}</p>
                     </div>
                   </div>
                 ))}
               </div>
 
-              {/* Requirement Info Box */}
-              <div className="mt-8 p-5 rounded-2xl bg-blue-50/50 border border-blue-100 flex items-start gap-4">
-                <Lightbulb className="w-5 h-5 text-blue-600 mt-0.5 flex-shrink-0" />
-                <p className="text-[11px] text-slate-600 leading-relaxed font-medium">
-                  <strong>Important:</strong> Travelers must submit their MDAC within <strong>3 days</strong> of their
+              <div className="mt-6 p-3 rounded-xl bg-blue-50/50 border border-blue-100 flex items-start gap-2.5">
+                <Lightbulb className="w-4 h-4 text-blue-600 mt-0.5 flex-shrink-0" />
+                <p className="text-[10px] text-slate-600 leading-normal font-medium">
+                  <strong>Traveler Note:</strong> Submit your MDAC application within <strong>3 days</strong> of your
                   arrival date.
                 </p>
               </div>
@@ -161,10 +144,9 @@ const HeroSection = () => {
         </div>
       </div>
 
-      {/* Subtle Bottom Disclaimer */}
-      <div className="absolute bottom-6 left-0 right-0 text-center opacity-40 px-6">
-        <p className="text-[9px] text-slate-600 tracking-[0.15em] font-bold uppercase">
-          Independent Concierge Agency • Secure Data • Not Affiliated With Government
+      <div className="absolute bottom-4 left-0 right-0 text-center opacity-40">
+        <p className="text-[8px] text-slate-600 tracking-[0.2em] font-bold uppercase">
+          Independent Concierge Agency • Not Affiliated With Government
         </p>
       </div>
     </section>
@@ -172,23 +154,3 @@ const HeroSection = () => {
 };
 
 export default HeroSection;
-
-// Helper Icon if missing from lucide
-const Lightbulb = (props) => (
-  <svg
-    {...props}
-    xmlns="http://www.w3.org/2000/svg"
-    width="24"
-    height="24"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-  >
-    <path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A5 5 0 0 0 8 8c0 1.3.5 2.6 1.5 3.5.8.8 1.3 1.5 1.5 2.5" />
-    <path d="M9 18h6" />
-    <path d="M10 22h4" />
-  </svg>
-);
