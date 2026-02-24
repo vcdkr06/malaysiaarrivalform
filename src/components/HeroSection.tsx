@@ -26,8 +26,8 @@ const HeroSection = () => {
     <section className="relative pt-10 pb-16 border-b border-slate-300 bg-white overflow-hidden">
       {/* Background Container */}
       <div className="absolute inset-0 z-0">
-        {/* Minimal Gradient: Fades from only 15% white to transparent to keep the image sharp */}
-        <div className="absolute inset-0 bg-gradient-to-r from-white/15 via-white/5 to-transparent z-10" />
+        {/* White gradient made significantly more visible (from-white/60) to lift text */}
+        <div className="absolute inset-0 bg-gradient-to-r from-white/60 via-white/30 to-transparent z-10" />
 
         <img
           src={globeBg}
@@ -40,14 +40,13 @@ const HeroSection = () => {
         <div className="flex flex-col lg:flex-row gap-10 lg:gap-12 items-start text-left">
           {/* LEFT COLUMN - Messaging */}
           <div className="lg:w-1/2 flex flex-col gap-6 lg:mt-2 text-left items-start">
-            {/* Mandatory Notice - Solid BG (Not Transparent) */}
-            <div className="md:block border-l-4 border-blue-600 bg-slate-100 p-3 rounded w-fit shadow-md">
-              <p className="text-sm font-bold text-slate-900 uppercase tracking-wide">Mandatory Travel Requirement</p>
+            {/* Mandatory Notice - SOLID YELLOW BG */}
+            <div className="md:block border-l-4 border-yellow-600 bg-yellow-400 p-3 rounded w-fit shadow-md">
+              <p className="text-sm font-bold text-yellow-950 uppercase tracking-wide">Mandatory Travel Requirement</p>
             </div>
 
             <div className="space-y-4 text-left">
-              {/* Headline: Uses a tiny white glow effect to stay readable without a heavy gradient */}
-              <h1 className="text-4xl md:text-5xl font-bold text-slate-900 leading-tight [text-shadow:_0_1px_10px_rgb(255_255_255_/_80%)]">
+              <h1 className="text-4xl md:text-5xl font-bold text-slate-900 leading-tight">
                 Digital Arrival Registration for <span className="text-blue-700">Malaysia</span>
               </h1>
 
@@ -79,7 +78,7 @@ const HeroSection = () => {
 
           {/* RIGHT COLUMN - Application Process Card */}
           <div className="lg:w-1/2 w-full flex flex-col items-start">
-            {/* Reduced transparency (bg-white/75) so the globe is visible but the detailed text is sharp */}
+            {/* Opaque enough to maintain readability against 80% bg */}
             <div className="bg-white/75 backdrop-blur-xl border border-white/40 border-t-4 border-t-blue-700 shadow-2xl p-6 md:p-8 w-full rounded-2xl text-left">
               <div className="border-b border-slate-900/10 pb-4 mb-6">
                 <h2 className="font-bold text-xl text-slate-900">Application Process</h2>
