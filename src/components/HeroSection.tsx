@@ -5,25 +5,21 @@ import { ArrowRight, ClipboardList, CreditCard, UserCheck, MailCheck, Lightbulb,
 const HeroSection = () => {
   const steps = [
     {
-      number: "01",
       icon: <ClipboardList className="w-4 h-4" />,
       title: "Submit Details",
       desc: "Provide your basic personal info and travel itinerary.",
     },
     {
-      number: "02",
       icon: <CreditCard className="w-4 h-4" />,
       title: "Settle Payment",
       desc: "Complete your transaction through our secure checkout.",
     },
     {
-      number: "03",
       icon: <UserCheck className="w-4 h-4" />,
       title: "Expert Review",
       desc: "Our specialists verify your submission for accuracy.",
     },
     {
-      number: "04",
       icon: <MailCheck className="w-4 h-4" />,
       title: "Receive Confirmation",
       desc: "Your approved digital arrival pass is sent via email.",
@@ -32,19 +28,19 @@ const HeroSection = () => {
 
   return (
     <section className="relative overflow-hidden min-h-[88vh] flex items-start bg-slate-50 pt-12 pb-8">
-      {/* Enhanced Official Background */}
+      {/* Enhanced Background */}
       <div className="absolute inset-0 z-0 pointer-events-none">
         {/* Grid */}
         <div
-          className="absolute inset-0 opacity-[0.06]"
+          className="absolute inset-0 opacity-[0.07]"
           style={{
             backgroundImage:
               "linear-gradient(#1E3A8A 1px, transparent 1px), linear-gradient(to right, #1E3A8A 1px, transparent 1px)",
             backgroundSize: "80px 80px",
           }}
         />
-        {/* Soft blue radial glow */}
-        <div className="absolute -top-32 -right-32 w-[500px] h-[500px] bg-blue-500/10 rounded-full blur-3xl" />
+        {/* Soft blue radial accent */}
+        <div className="absolute -top-40 -right-40 w-[600px] h-[600px] bg-blue-500/15 rounded-full blur-3xl" />
       </div>
 
       <div className="container mx-auto px-6 relative z-10 max-w-6xl">
@@ -89,38 +85,38 @@ const HeroSection = () => {
 
           {/* RIGHT COLUMN */}
           <div>
-            <div className="relative backdrop-blur-xl bg-white/70 border border-white/40 shadow-xl rounded-2xl p-6">
-              {/* Glass shine overlay */}
-              <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-white/40 to-transparent pointer-events-none" />
+            <div className="relative backdrop-blur-xl bg-white/60 border border-white/40 shadow-xl rounded-2xl p-6">
+              {/* Glass overlay */}
+              <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-white/30 to-transparent pointer-events-none" />
 
-              <h3 className="relative font-semibold text-[16px] mb-6 text-slate-900">Apply in 4 Simple Steps</h3>
+              <h3 className="relative font-semibold text-[16px] mb-6 text-slate-900">Complete in 4 Simple Steps</h3>
 
-              {/* Stylized Step Grid */}
-              <div className="relative grid grid-cols-2 gap-5">
+              {/* Stylized Process Layout */}
+              <div className="relative grid grid-cols-2 gap-y-8 gap-x-6">
                 {steps.map((step, index) => (
-                  <div
-                    key={index}
-                    className="relative p-5 rounded-xl bg-white/60 border border-white/40 backdrop-blur-md shadow-sm hover:shadow-md transition-all"
-                  >
-                    {/* Step Number */}
-                    <div className="absolute top-3 right-3 text-[10px] font-bold text-blue-600 bg-blue-100 px-2 py-0.5 rounded-full">
-                      {step.number}
+                  <div key={index} className="flex gap-4">
+                    {/* Icon Column */}
+                    <div className="flex flex-col items-center">
+                      <div className="w-10 h-10 rounded-full bg-blue-700 text-white flex items-center justify-center shadow-md">
+                        {step.icon}
+                      </div>
+                      <span className="mt-2 text-[10px] font-bold tracking-wider text-blue-600">STEP {index + 1}</span>
                     </div>
 
-                    {/* Icon */}
-                    <div className="w-10 h-10 rounded-lg bg-blue-700/90 text-white flex items-center justify-center mb-3 shadow-sm">
-                      {step.icon}
+                    {/* Text Content */}
+                    <div>
+                      <h4 className="font-semibold text-[14px] text-slate-900 mb-1">{step.title}</h4>
+                      <p className="text-[12px] text-slate-600 leading-relaxed">{step.desc}</p>
                     </div>
-
-                    <h4 className="font-semibold text-[13.5px] text-slate-900 mb-1">{step.title}</h4>
-
-                    <p className="text-[12px] text-slate-600 leading-relaxed">{step.desc}</p>
                   </div>
                 ))}
               </div>
 
-              {/* Notice */}
-              <div className="relative mt-6 p-4 bg-blue-50/80 border border-blue-200 rounded-lg flex gap-3 backdrop-blur-sm">
+              {/* Divider */}
+              <div className="mt-8 border-t border-white/40 pt-5" />
+
+              {/* Important Notice */}
+              <div className="flex gap-3">
                 <Lightbulb className="w-4 h-4 text-blue-700 mt-0.5 flex-shrink-0" />
                 <p className="text-[12px] text-slate-700 leading-relaxed">
                   <span className="font-semibold text-blue-700">Important:</span> Submit your form within{" "}
