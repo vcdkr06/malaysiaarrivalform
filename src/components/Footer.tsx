@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ShieldCheck, Lock } from "lucide-react"; // Professional safety icons
+import { ShieldCheck, Lock } from "lucide-react";
 import logo from "@/assets/mdac-icon-logo.png";
 
 const Footer = () => {
@@ -7,16 +7,16 @@ const Footer = () => {
     <footer className="py-16 bg-[#0B1221] text-white">
       <div className="container mx-auto px-6 max-w-6xl">
         <div className="grid md:grid-cols-3 gap-12">
-          {/* Column 1: Logo & Security */}
-          <div className="flex flex-col items-start">
+          {/* Column 1: Logo & Security Row */}
+          <div className="flex flex-col items-start col-span-1 md:col-span-1">
             <div className="mb-6 flex items-center gap-4">
-              {/* Logo in White Circle - Perfect Visual Centering */}
+              {/* Logo in White Circle */}
               <div className="w-14 h-14 bg-white rounded-full flex items-center justify-center shadow-xl overflow-hidden p-2">
                 <img
                   src={logo}
                   alt="MDAC Logo"
                   className="w-full h-full object-contain"
-                  style={{ transform: "translateY(-1px)" }} // Micro-adjustment for visual optical centering
+                  style={{ transform: "translateY(-1px)" }}
                 />
               </div>
               <span className="font-bold text-sm uppercase tracking-wider text-slate-100 leading-tight">
@@ -24,21 +24,27 @@ const Footer = () => {
               </span>
             </div>
 
-            {/* Security Badges */}
-            <div className="space-y-3">
-              <div className="flex items-center gap-3 bg-white/5 px-3 py-2 rounded-sm border border-white/10 w-fit">
+            {/* Side-by-Side Security Badges */}
+            <div className="flex flex-row gap-3 w-full">
+              {/* SSL Box */}
+              <div className="flex flex-col items-start gap-2 bg-white/5 px-4 py-3 rounded-sm border border-white/10 flex-1">
                 <Lock className="w-4 h-4 text-green-500" />
-                <div className="flex flex-col">
-                  <span className="text-[10px] font-bold uppercase text-slate-400 leading-none">SSL Encryption</span>
-                  <span className="text-[11px] text-slate-200 font-medium">256-bit Secure Site</span>
+                <div className="flex flex-col gap-0.5">
+                  <span className="text-[10px] font-bold uppercase text-slate-400">SSL Secure</span>
+                  <span className="text-[11px] text-slate-200 font-medium leading-tight text-nowrap">
+                    256-bit Secure
+                  </span>
                 </div>
               </div>
 
-              <div className="flex items-center gap-3 bg-white/5 px-3 py-2 rounded-sm border border-white/10 w-fit">
+              {/* Safety Box */}
+              <div className="flex flex-col items-start gap-2 bg-white/5 px-4 py-3 rounded-sm border border-white/10 flex-1">
                 <ShieldCheck className="w-4 h-4 text-blue-400" />
-                <div className="flex flex-col">
-                  <span className="text-[10px] font-bold uppercase text-slate-400 leading-none">Safety Verified</span>
-                  <span className="text-[11px] text-slate-200 font-medium">Data Privacy Guaranteed</span>
+                <div className="flex flex-col gap-0.5">
+                  <span className="text-[10px] font-bold uppercase text-slate-400">Safety</span>
+                  <span className="text-[11px] text-slate-200 font-medium leading-tight text-nowrap">
+                    Verified Site
+                  </span>
                 </div>
               </div>
             </div>
@@ -89,7 +95,7 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Official Notice - 4px Rounded-sm */}
+        {/* Official Notice */}
         <div className="mt-16 pt-8 border-t border-slate-800">
           <div className="bg-white/5 border border-slate-700/50 rounded-sm p-6 mb-8">
             <div className="flex items-center gap-2 mb-3">
