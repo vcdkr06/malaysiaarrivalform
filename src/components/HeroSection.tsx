@@ -27,8 +27,8 @@ const HeroSection = () => {
   ];
 
   return (
-    <section className="relative overflow-hidden min-h-[88vh] flex items-start bg-slate-50 pt-8 md:pt-12 pb-10">
-      {/* Subtle Background Grid */}
+    <section className="relative overflow-hidden min-h-[88vh] bg-slate-50 pt-8 md:pt-12 pb-12">
+      {/* Background Grid */}
       <div className="absolute inset-0 z-0 pointer-events-none">
         <div
           className="absolute inset-0 opacity-[0.05]"
@@ -41,7 +41,7 @@ const HeroSection = () => {
       </div>
 
       <div className="container mx-auto px-6 relative z-10 max-w-6xl">
-        <div className="grid md:grid-cols-2 gap-12 items-start">
+        <div className="flex flex-col lg:grid lg:grid-cols-2 gap-12">
           {/* LEFT COLUMN */}
           <div className="flex flex-col">
             <div className="hidden md:inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-[11px] font-semibold mb-5 w-fit bg-blue-50 border border-blue-200 text-blue-800">
@@ -53,52 +53,53 @@ const HeroSection = () => {
               MDAC Registration Portal
             </p>
 
-            {/* Headline */}
             <h1 className="text-2xl md:text-[2.6rem] font-extrabold leading-[1.15] mb-4 text-slate-900">
               Digital Arrival Registration for <span className="text-blue-700">Malaysia</span>
             </h1>
 
-            {/* Subheadline */}
             <p className="text-[14px] md:text-[15px] leading-[1.7] mb-6 max-w-lg text-slate-600">
               Foreign visitors must submit their arrival information prior to entry to ensure smooth border clearance.
             </p>
 
             {/* CTA */}
-            <div className="order-4 md:order-none">
-              <Button
-                asChild
-                size="lg"
-                className="font-semibold h-12 px-8 rounded-md bg-blue-700 hover:bg-blue-800 text-white transition-all duration-300 shadow-sm w-full md:w-auto"
-              >
-                <Link to="/apply" className="flex items-center justify-center gap-2 h-12">
-                  Begin Application
-                  <ArrowRight className="w-4 h-4" />
-                </Link>
-              </Button>
-            </div>
+            <Button
+              asChild
+              size="lg"
+              className="font-semibold h-12 px-8 rounded-md bg-blue-700 hover:bg-blue-800 text-white transition-all duration-300 shadow-sm w-full md:w-auto mb-6"
+            >
+              <Link to="/apply" className="flex items-center justify-center gap-2 h-12">
+                Begin Application
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+            </Button>
+
+            {/* Disclaimer (Desktop + Tablet) */}
+            <p className="hidden md:block text-[10px] leading-relaxed text-slate-400 max-w-md">
+              Disclaimer: We are an independent agency assisting travelers with documentation processing. We are not
+              affiliated with the Malaysian government.
+            </p>
           </div>
 
-          {/* RIGHT COLUMN */}
+          {/* RIGHT COLUMN / BELOW TEXT ON TABLET */}
           <div className="flex flex-col">
             {/* Stepper */}
-            <div className="order-3 md:order-none bg-white/70 backdrop-blur-lg border border-slate-200 rounded-xl p-5 md:p-6">
+            <div className="bg-white/70 backdrop-blur-lg border border-slate-200 rounded-xl p-5 md:p-6 mt-8 lg:mt-0">
               <h3 className="font-semibold text-[15px] mb-6 text-slate-900">4-Step Application Process</h3>
 
               <div className="relative">
-                {/* Desktop connector */}
-                <div className="hidden md:block absolute top-6 left-0 right-0 h-px bg-slate-300" />
+                <div className="hidden lg:block absolute top-6 left-0 right-0 h-px bg-slate-300" />
 
-                <div className="flex flex-col md:flex-row md:justify-between gap-8 md:gap-4">
+                <div className="flex flex-col lg:flex-row lg:justify-between gap-8 lg:gap-4">
                   {steps.map((step, index) => (
                     <div
                       key={index}
-                      className="relative flex md:flex-col items-start md:items-center text-left md:text-center md:w-1/4"
+                      className="relative flex lg:flex-col items-start lg:items-center text-left lg:text-center lg:w-1/4"
                     >
                       <div className="relative z-10 w-11 h-11 rounded-full bg-blue-700 text-white flex items-center justify-center shadow-sm">
                         {step.icon}
                       </div>
 
-                      <div className="ml-4 md:ml-0 md:mt-4">
+                      <div className="ml-4 lg:ml-0 lg:mt-4">
                         <div className="text-[11px] font-semibold text-blue-700 tracking-wide mb-1">
                           STEP {index + 1}
                         </div>
@@ -118,8 +119,8 @@ const HeroSection = () => {
               </div>
             </div>
 
-            {/* Disclaimer – Always Bottom on Mobile */}
-            <p className="mt-8 text-[10px] leading-relaxed text-slate-400 text-left md:text-left">
+            {/* Disclaimer (Mobile Only — Very Bottom) */}
+            <p className="block md:hidden mt-8 text-[10px] leading-relaxed text-slate-400">
               Disclaimer: We are an independent agency assisting travelers with documentation processing. We are not
               affiliated with the Malaysian government.
             </p>
