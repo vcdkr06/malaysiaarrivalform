@@ -33,16 +33,15 @@ const VisaGuideSection = () => {
               <div className="w-16 h-1 bg-blue-700 mb-6"></div>
             </div>
 
-            <div className="space-y-5 text-slate-700 text-base leading-relaxed">
+            {/* SHORTENED TEXT */}
+            <div className="space-y-4 text-slate-700 text-base leading-relaxed">
               <p>
-                Our structured digital system guides applicants through the mandatory information requirements. Upon
-                submission, compliance specialists thoroughly review each entry to ensure strict adherence to accuracy,
-                formatting, and completeness standards.
+                Our digital system guides applicants through all mandatory requirements. Upon submission, compliance
+                specialists manually review each entry for accuracy, formatting, and completeness.
               </p>
               <p>
-                Every application undergoes manual verification prior to official processing to confirm it meets all
-                necessary entry requirements. Following successful approval, the required confirmation and reference
-                documentation is delivered securely to the applicant's registered email address.
+                This verification ensures all data meets official entry standards prior to processing. Once approved,
+                the confirmation document is securely delivered to the applicant's registered email.
               </p>
             </div>
 
