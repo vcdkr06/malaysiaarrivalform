@@ -1,6 +1,6 @@
 const Footer = () => {
   return (
-    <footer className="py-12 bg-[#0F172A]">
+    <footer className="py-12 bg-heading-strong">
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-3 gap-8">
           <div>
@@ -18,21 +18,9 @@ const Footer = () => {
               Resources
             </h3>
             <ul className="space-y-2 text-primary-foreground/50 text-sm">
-              <li>
-                <a href="/#faq" className="hover:text-primary-foreground transition-colors">
-                  FAQs
-                </a>
-              </li>
-              <li>
-                <a href="/contact" className="hover:text-primary-foreground transition-colors">
-                  Contact
-                </a>
-              </li>
-              <li>
-                <a href="/about" className="hover:text-primary-foreground transition-colors">
-                  About
-                </a>
-              </li>
+              <li><a href="/#faq" className="hover:text-primary-foreground transition-colors">FAQs</a></li>
+              <li><a href="/contact" className="hover:text-primary-foreground transition-colors">Contact</a></li>
+              <li><a href="/about" className="hover:text-primary-foreground transition-colors">About</a></li>
             </ul>
           </div>
           <div>
@@ -40,21 +28,9 @@ const Footer = () => {
               Legal
             </h3>
             <ul className="space-y-2 text-primary-foreground/50 text-sm">
-              <li>
-                <a href="/legal#terms" className="hover:text-primary-foreground transition-colors">
-                  Terms of Use
-                </a>
-              </li>
-              <li>
-                <a href="/legal#privacy" className="hover:text-primary-foreground transition-colors">
-                  Privacy Policy
-                </a>
-              </li>
-              <li>
-                <a href="/legal#cookies" className="hover:text-primary-foreground transition-colors">
-                  Cookie Policy
-                </a>
-              </li>
+              <li><a href="/legal#terms" className="hover:text-primary-foreground transition-colors">Terms of Use</a></li>
+              <li><a href="/legal#privacy" className="hover:text-primary-foreground transition-colors">Privacy Policy</a></li>
+              <li><a href="/legal#cookies" className="hover:text-primary-foreground transition-colors">Cookie Policy</a></li>
             </ul>
           </div>
         </div>

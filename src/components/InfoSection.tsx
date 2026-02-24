@@ -8,7 +8,7 @@ const InfoSection = () => {
   ];
 
   return (
-    <section className="py-20 bg-accent/10">
+    <section className="py-20 bg-secondary">
       <div className="container mx-auto px-4 max-w-6xl">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-extrabold text-primary mb-3">
@@ -17,7 +17,6 @@ const InfoSection = () => {
         </div>
 
         <div className="grid md:grid-cols-2 gap-8 items-center">
-          {/* Left: Text content */}
           <div className="space-y-6">
             <p className="text-foreground text-lg leading-relaxed">
               The MDAC replaces the old paper form starting January 2024. 
@@ -29,29 +28,21 @@ const InfoSection = () => {
             </p>
           </div>
 
-          {/* Right: Comparison table */}
-          <div className="bg-card rounded-xl shadow-soft overflow-hidden">
+          <div className="bg-card rounded-xl shadow-soft overflow-hidden border border-border">
             <table className="w-full border-collapse">
-              <thead className="bg-muted/30">
+              <thead className="bg-secondary">
                 <tr>
-                  <th className="p-5 font-bold text-foreground text-center">Feature</th>
-                  <th className="p-5 font-bold text-foreground text-center">Before (Paper)</th>
-                  <th className="p-5 font-bold text-foreground text-center">Now (Digital)</th>
+                  <th className="p-5 font-bold text-heading-strong text-center">Feature</th>
+                  <th className="p-5 font-bold text-heading-strong text-center">Before (Paper)</th>
+                  <th className="p-5 font-bold text-heading-strong text-center">Now (Digital)</th>
                 </tr>
               </thead>
               <tbody>
                 {comparisonData.map((row, index) => (
-                  <tr 
-                    key={index} 
-                    className={index % 2 === 0 ? "bg-card" : "bg-muted/10"}
-                  >
-                    <td className="p-4 text-center border-t border-border">{row.feature}</td>
-                    <td className="p-4 text-center border-t border-border">
-                      {row.tm6 ? "✅" : "❌"}
-                    </td>
-                    <td className="p-4 text-center border-t border-border">
-                      {row.tdac ? "✅" : "❌"}
-                    </td>
+                  <tr key={index} className={index % 2 === 0 ? "bg-card" : "bg-secondary/50"}>
+                    <td className="p-4 text-center border-t border-border text-foreground">{row.feature}</td>
+                    <td className="p-4 text-center border-t border-border">{row.tm6 ? "✅" : "❌"}</td>
+                    <td className="p-4 text-center border-t border-border">{row.tdac ? "✅" : "❌"}</td>
                   </tr>
                 ))}
               </tbody>
