@@ -28,15 +28,19 @@ const HeroSection = () => {
   ];
 
   return (
-    <section className="relative overflow-hidden bg-white pt-10 pb-12">
-      {/* Soft Background */}
+    <section className="relative overflow-hidden bg-gradient-to-b from-blue-50 via-white to-blue-50 pt-10 pb-12">
+      {/* Background Layers */}
       <div className="absolute inset-0 z-0">
-        <img src={petronasBg} alt="" className="absolute inset-0 w-full h-full object-cover opacity-[0.05]" />
+        {/* Soft blue radial accent */}
+        <div className="absolute -top-40 -right-40 w-[600px] h-[600px] bg-blue-200/40 rounded-full blur-3xl" />
+
+        {/* Subtle Petronas image */}
+        <img src={petronasBg} alt="" className="absolute inset-0 w-full h-full object-cover opacity-[0.04]" />
       </div>
 
       <div className="container mx-auto px-6 relative z-10 max-w-6xl">
         <div className="grid lg:grid-cols-2 gap-10 items-center">
-          {/* LEFT */}
+          {/* LEFT COLUMN */}
           <div>
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold mb-4 bg-primary/5 border border-primary/10 text-primary">
               <Zap className="w-3.5 h-3.5" />
@@ -63,7 +67,7 @@ const HeroSection = () => {
             </p>
           </div>
 
-          {/* RIGHT */}
+          {/* RIGHT COLUMN */}
           <div>
             <div className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm">
               <h3 className="font-semibold text-sm text-gray-900 mb-6">4-Step Application Process</h3>
@@ -78,7 +82,7 @@ const HeroSection = () => {
                       key={index}
                       className="relative flex lg:flex-col items-start lg:items-center text-left lg:text-center lg:w-1/4"
                     >
-                      <div className="relative z-10 w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center text-sm shadow-sm">
+                      <div className="relative z-10 w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center shadow-sm">
                         {step.icon}
                       </div>
 
