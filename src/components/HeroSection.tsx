@@ -12,13 +12,14 @@ const HeroSection = () => {
 
   return (
     <section className="relative bg-blue-50 pt-10 pb-12">
-      {/* Subtle Background Image */}
+      {/* Subtle Background */}
       <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 bg-gradient-to-b from-blue-50 via-white to-blue-50" />
         <img src={petronasBg} alt="" className="absolute inset-0 w-full h-full object-cover object-top opacity-10" />
       </div>
 
       <div className="container mx-auto px-6 relative z-10 max-w-6xl">
-        <div className="grid lg:grid-cols-2 gap-10 items-center">
+        <div className="grid lg:grid-cols-2 gap-10 items-start">
           {/* LEFT COLUMN */}
           <div>
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-sm text-xs font-semibold mb-4 bg-yellow-100 border border-yellow-300 text-yellow-800">
@@ -49,38 +50,35 @@ const HeroSection = () => {
           </div>
 
           {/* RIGHT COLUMN */}
-          <div>
-            <div className="bg-white border border-gray-300 rounded-sm p-6">
-              <h3 className="font-semibold text-sm text-gray-900 mb-6">4-Step Application Process</h3>
+          <div className="flex flex-col lg:flex-row lg:items-start gap-6">
+            {/* Stepper Line for all screens */}
+            <div className="hidden lg:block absolute top-24 left-[calc(50%+150px)] h-full border-l-2 border-dashed border-gray-300 z-0" />
 
-              {/* Stepper */}
-              <div className="relative">
-                {/* Horizontal line connecting steps */}
-                <div className="hidden lg:block absolute top-5 left-4 right-4 h-px bg-gray-300 z-0" />
-
-                <div className="flex flex-col lg:flex-row lg:justify-between gap-6 relative z-10">
-                  {steps.map((step, index) => (
-                    <div
-                      key={index}
-                      className="flex flex-col items-start lg:items-center text-left lg:text-center lg:w-1/4"
-                    >
-                      <div className="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center font-semibold mb-1">
-                        {index + 1}
-                      </div>
-                      <h4 className="font-semibold text-sm text-gray-900 mb-0.5">{step.title}</h4>
-                      <p className="text-xs text-gray-600 leading-snug">{step.desc}</p>
-                    </div>
-                  ))}
+            {/* Stepper */}
+            <div className="flex flex-col lg:flex-col lg:justify-between gap-6 relative z-10 lg:ml-16">
+              {steps.map((step, index) => (
+                <div
+                  key={index}
+                  className="flex flex-col lg:flex-row lg:items-center lg:gap-4 items-start text-left lg:text-left"
+                >
+                  <div className="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center font-semibold mb-2 lg:mb-0">
+                    {index + 1}
+                  </div>
+                  <div className="">
+                    <h4 className="font-semibold text-sm text-gray-900 mb-0.5">{step.title}</h4>
+                    <p className="text-xs text-gray-600 leading-snug hidden sm:block lg:block">{step.desc}</p>
+                  </div>
                 </div>
-              </div>
-
-              <div className="mt-6 pt-4 border-t border-gray-200">
-                <p className="text-xs text-gray-600">
-                  Submit at least <span className="font-semibold text-blue-600">3 days before arrival</span>.
-                </p>
-              </div>
+              ))}
             </div>
           </div>
+        </div>
+
+        {/* Bottom Note */}
+        <div className="mt-6 pt-4 border-t border-gray-200 max-w-md">
+          <p className="text-xs text-gray-600">
+            Submit at least <span className="font-semibold text-blue-600">3 days before arrival</span>.
+          </p>
         </div>
       </div>
     </section>
