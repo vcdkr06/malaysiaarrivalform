@@ -4,37 +4,17 @@ import petronasBg from "@/assets/kuala-lumpur-petronas.png";
 
 const HeroSection = () => {
   const steps = [
-    {
-      title: "Enter Details",
-      desc: "Provide required travel information.",
-    },
-    {
-      title: "Payment",
-      desc: "Secure online transaction.",
-    },
-    {
-      title: "Review",
-      desc: "Application verification process.",
-    },
-    {
-      title: "Confirmation",
-      desc: "Receive digital approval via email.",
-    },
+    { title: "Enter Details", desc: "Provide required travel information." },
+    { title: "Payment", desc: "Secure online transaction." },
+    { title: "Review", desc: "Application verification process." },
+    { title: "Confirmation", desc: "Receive digital approval via email." },
   ];
 
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-blue-50 via-white to-blue-50 pt-10 pb-12">
-      {/* Background Layers */}
+    <section className="relative bg-blue-50 pt-10 pb-12">
+      {/* Subtle Background Image */}
       <div className="absolute inset-0 z-0">
-        <div className="absolute -top-40 -right-40 w-[600px] h-[600px] bg-blue-200/40 rounded-full blur-3xl" />
-
-        <img
-          src={petronasBg}
-          alt=""
-          className="absolute inset-0 w-full h-full object-cover object-top lg:object-[center_20%] opacity-[0.16]"
-        />
-
-        <div className="absolute inset-0 bg-gradient-to-r from-white/50 via-white/30 to-transparent" />
+        <img src={petronasBg} alt="" className="absolute inset-0 w-full h-full object-cover object-top opacity-10" />
       </div>
 
       <div className="container mx-auto px-6 relative z-10 max-w-6xl">
@@ -45,7 +25,7 @@ const HeroSection = () => {
               Mandatory Travel Requirement
             </div>
 
-            <h1 className="text-2xl md:text-4xl font-bold leading-tight text-gray-900 mb-4">
+            <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
               Digital Arrival Registration for <span className="text-blue-600">Malaysia</span>
             </h1>
 
@@ -56,9 +36,9 @@ const HeroSection = () => {
             <Button
               asChild
               size="lg"
-              className="h-12 px-8 rounded-sm font-semibold shadow-none bg-blue-600 hover:bg-blue-700 text-white transition"
+              className="h-12 px-8 rounded-sm font-semibold bg-blue-600 hover:bg-blue-700 text-white transition"
             >
-              <Link to="/apply" className="flex items-center gap-2">
+              <Link to="/apply" className="flex items-center justify-center">
                 Begin Application
               </Link>
             </Button>
@@ -73,28 +53,20 @@ const HeroSection = () => {
             <div className="bg-white border border-gray-300 rounded-sm p-6">
               <h3 className="font-semibold text-sm text-gray-900 mb-6">4-Step Application Process</h3>
 
+              {/* Stepper */}
               <div className="relative">
-                <div className="hidden lg:block absolute top-5 left-0 right-0 h-px bg-gray-200" />
+                {/* Horizontal line connecting steps */}
+                <div className="hidden lg:block absolute top-5 left-4 right-4 h-px bg-gray-300 z-0" />
 
-                {/* Stepper */}
-                <div className="flex flex-col lg:flex-row lg:justify-between gap-6">
+                <div className="flex flex-col lg:flex-row lg:justify-between gap-6 relative z-10">
                   {steps.map((step, index) => (
                     <div
                       key={index}
-                      className="relative flex flex-col items-start lg:items-center text-left lg:text-center lg:w-1/4"
+                      className="flex flex-col items-start lg:items-center text-left lg:text-center lg:w-1/4"
                     >
-                      {/* Blue Circle for Step 1 & 2 */}
-                      {index === 0 || index === 1 ? (
-                        <div className="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center font-semibold mb-1">
-                          {index + 1}
-                        </div>
-                      ) : (
-                        <div className="text-[10px] font-semibold text-blue-600 tracking-wide mb-1">
-                          STEP {index + 1}
-                        </div>
-                      )}
-
-                      {/* Step Title */}
+                      <div className="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center font-semibold mb-1">
+                        {index + 1}
+                      </div>
                       <h4 className="font-semibold text-sm text-gray-900 mb-0.5">{step.title}</h4>
                       <p className="text-xs text-gray-600 leading-snug">{step.desc}</p>
                     </div>
