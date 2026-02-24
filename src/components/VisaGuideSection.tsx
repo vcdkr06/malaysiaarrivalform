@@ -1,25 +1,25 @@
-import { ShieldCheck, FileCheck, Sparkles, Mail } from "lucide-react";
+import { ShieldCheck, FileCheck, Search, MailCheck } from "lucide-react";
 import malaysiaCoupleNew from "@/assets/malaysia-couple-petronas.jpg";
 
 const VisaGuideSection = () => {
   const highlights = [
-    { text: "Guided Digital Filing System", icon: Sparkles },
+    { text: "Guided Digital Application", icon: FileCheck },
     { text: "Professional Data Verification", icon: ShieldCheck },
-    { text: "Document Optimization", icon: FileCheck },
-    { text: "Direct Delivery to Your Inbox", icon: Mail },
+    { text: "Document Formatting Review", icon: Search },
+    { text: "Secure Digital Delivery", icon: MailCheck },
   ];
 
   return (
-    <section className="py-16 md:py-24 bg-white">
+    <section className="py-16 md:py-24 bg-white border-b border-slate-300">
       <div className="container mx-auto px-6 max-w-6xl">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          {/* IMAGE */}
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+          {/* IMAGE - Framed like an official photograph */}
           <div className="relative">
-            <div className="overflow-hidden rounded-xl border border-slate-200 shadow-sm">
+            <div className="p-2 border border-slate-300 bg-slate-50 rounded">
               <img
                 src={malaysiaCoupleNew}
                 alt="Travelers exploring Malaysia"
-                className="w-full h-full object-cover aspect-[4/3]"
+                className="w-full h-full object-cover aspect-[4/3] border border-slate-200 rounded-sm"
               />
             </div>
           </div>
@@ -27,37 +27,35 @@ const VisaGuideSection = () => {
           {/* CONTENT */}
           <div>
             <div className="mb-6">
-              <p className="text-xs uppercase tracking-widest text-blue-600 font-semibold">The Experience</p>
-
-              <h2 className="mt-4 text-3xl md:text-4xl font-bold leading-tight text-slate-900">
-                We Manage the Filing Process.
-                <br />
-                <span className="text-blue-600">You Focus on Your Journey.</span>
+              <h2 className="text-2xl md:text-3xl font-semibold text-slate-800 mb-3">
+                Application Processing Protocol
               </h2>
+              <div className="w-16 h-1 bg-blue-700 mb-6"></div>
             </div>
 
-            <div className="space-y-4 text-slate-600 leading-relaxed">
+            <div className="space-y-5 text-slate-700 text-base leading-relaxed">
               <p>
-                Our structured digital system guides you step-by-step through the required information. Once submitted,
-                our compliance specialists review each entry for accuracy, formatting, and completeness.
+                Our structured digital system guides applicants through the mandatory information requirements. Upon
+                submission, compliance specialists thoroughly review each entry to ensure strict adherence to accuracy,
+                formatting, and completeness standards.
               </p>
               <p>
-                Every application undergoes manual verification before processing to ensure it meets official entry
-                requirements. Upon approval, your confirmation and reference details are delivered directly to your
-                email.
+                Every application undergoes manual verification prior to official processing to confirm it meets all
+                necessary entry requirements. Following successful approval, the required confirmation and reference
+                documentation is delivered securely to the applicant's registered email address.
               </p>
             </div>
 
-            {/* FEATURES LIST */}
-            <div className="mt-8 grid sm:grid-cols-2 gap-4">
+            {/* FEATURES LIST - Strict Grid */}
+            <div className="mt-8 pt-8 border-t border-slate-200 grid sm:grid-cols-2 gap-4">
               {highlights.map((item, i) => {
                 const Icon = item.icon;
                 return (
-                  <div key={i} className="flex items-start gap-3 border border-slate-200 p-4 bg-slate-50 rounded-md">
-                    <div className="mt-1">
-                      <Icon className="w-4 h-4 text-blue-600" strokeWidth={2.5} />
+                  <div key={i} className="flex items-center gap-3 border border-slate-300 p-4 bg-slate-50 rounded">
+                    <div className="flex-shrink-0 w-8 h-8 bg-white border border-slate-200 flex items-center justify-center rounded-sm">
+                      <Icon className="w-4 h-4 text-blue-700" strokeWidth={2} />
                     </div>
-                    <span className="text-sm font-semibold text-slate-800">{item.text}</span>
+                    <span className="text-sm font-medium text-slate-800">{item.text}</span>
                   </div>
                 );
               })}
