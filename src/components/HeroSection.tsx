@@ -26,34 +26,35 @@ const HeroSection = () => {
     <section className="relative pt-10 pb-16 border-b border-slate-300 bg-white overflow-hidden">
       {/* Background Container */}
       <div className="absolute inset-0 z-0">
-        {/* Subtle white gradient for text contrast while keeping background visible */}
+        {/* Subtle white gradient overlay */}
         <div className="absolute inset-0 bg-gradient-to-r from-white/30 via-transparent to-transparent z-10" />
 
         <img
           src={globeBg}
           alt="Globe and Airplane Travel Background"
-          /* -scale-x-100 flips the image horizontally; opacity set to 80% */
           className="absolute inset-0 w-full h-full object-cover object-center opacity-80 -scale-x-100"
         />
       </div>
 
       <div className="container mx-auto px-6 relative z-20 max-w-6xl">
+        {/* Radial Gradient Glow placed behind the left column text */}
+        <div className="absolute -left-20 top-20 w-[500px] h-[400px] bg-blue-100/30 rounded-full blur-[100px] -z-10 pointer-events-none" />
+
         <div className="flex flex-col lg:flex-row gap-10 lg:gap-12 items-start text-left">
           {/* LEFT COLUMN - Messaging */}
           <div className="lg:w-1/2 flex flex-col gap-6 lg:mt-2 text-left items-start">
-            {/* Mandatory Notice Badge */}
-            <div className="hidden md:block border-l-4 border-blue-600 bg-white/40 backdrop-blur-sm p-3 rounded w-fit shadow-sm">
+            {/* Mandatory Notice - Non-transparent BG */}
+            <div className="hidden md:block border-l-4 border-blue-600 bg-slate-100 p-3 rounded w-fit shadow-md">
               <p className="text-sm font-bold text-slate-900 uppercase tracking-wide">Mandatory Travel Requirement</p>
             </div>
 
-            <div className="space-y-4 text-left">
-              {/* Headline: Bold Slate (not pure black) */}
+            <div className="space-y-4 text-left relative">
               <h1 className="text-4xl md:text-5xl font-bold text-slate-900 leading-tight">
                 Digital Arrival Registration for <span className="text-blue-700">Malaysia</span>
               </h1>
 
-              {/* Subheadline: Less bold (font-medium) */}
-              <p className="text-base md:text-lg text-slate-800 max-w-md leading-relaxed font-medium bg-white/10 backdrop-blur-[1px] rounded-lg">
+              {/* Subheadline - font-medium */}
+              <p className="text-base md:text-lg text-slate-800 max-w-md leading-relaxed font-medium">
                 Foreign visitors must submit their arrival information prior to entry to ensure smooth border clearance
                 and immigration processing.
               </p>
@@ -70,7 +71,7 @@ const HeroSection = () => {
               </Button>
 
               {/* Yellowish-Orange Disclaimer Box */}
-              <div className="bg-orange-100/90 border border-orange-200 backdrop-blur-sm px-4 py-2 rounded-md shadow-sm">
+              <div className="bg-orange-100 border border-orange-200 px-4 py-2 rounded-md shadow-sm">
                 <p className="text-[11px] md:text-xs text-orange-900 font-bold whitespace-nowrap">
                   Independent documentation assistance service. Not affiliated with the Malaysian government.
                 </p>
@@ -78,9 +79,10 @@ const HeroSection = () => {
             </div>
           </div>
 
-          {/* RIGHT COLUMN - Glassmorphism Application Process Card */}
+          {/* RIGHT COLUMN - Application Process Card */}
           <div className="lg:w-1/2 w-full flex flex-col items-start">
-            <div className="bg-white/40 backdrop-blur-xl border border-white/30 border-t-4 border-t-blue-700 shadow-2xl p-6 md:p-8 w-full rounded-2xl text-left">
+            {/* Slightly less transparent (bg-white/60) to keep long text readable */}
+            <div className="bg-white/60 backdrop-blur-xl border border-white/40 border-t-4 border-t-blue-700 shadow-2xl p-6 md:p-8 w-full rounded-2xl text-left">
               <div className="border-b border-slate-900/10 pb-4 mb-6">
                 <h2 className="font-bold text-xl text-slate-900">Application Process</h2>
                 <p className="text-sm text-slate-800 mt-1 font-semibold italic">
@@ -116,7 +118,7 @@ const HeroSection = () => {
                   </Link>
                 </Button>
 
-                <div className="bg-orange-100/90 border border-orange-200 px-3 py-2 rounded-md text-center">
+                <div className="bg-orange-100 border border-orange-200 px-3 py-2 rounded-md text-center">
                   <p className="text-[10px] text-orange-900 font-bold leading-tight">
                     Independent service. Not affiliated with the Malaysian government.
                   </p>
