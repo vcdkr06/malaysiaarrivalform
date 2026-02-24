@@ -26,7 +26,7 @@ const HeroSection = () => {
     <section className="relative pt-10 pb-16 border-b border-slate-300 bg-white overflow-hidden">
       {/* Background Container */}
       <div className="absolute inset-0 z-0">
-        {/* White gradient made significantly more visible (from-white/60) to lift text */}
+        {/* Visible white gradient to ensure text contrast */}
         <div className="absolute inset-0 bg-gradient-to-r from-white/60 via-white/30 to-transparent z-10" />
 
         <img
@@ -40,9 +40,11 @@ const HeroSection = () => {
         <div className="flex flex-col lg:flex-row gap-10 lg:gap-12 items-start text-left">
           {/* LEFT COLUMN - Messaging */}
           <div className="lg:w-1/2 flex flex-col gap-6 lg:mt-2 text-left items-start">
-            {/* Mandatory Notice - SOLID YELLOW BG */}
-            <div className="md:block border-l-4 border-yellow-600 bg-yellow-400 p-3 rounded w-fit shadow-md">
-              <p className="text-sm font-bold text-yellow-950 uppercase tracking-wide">Mandatory Travel Requirement</p>
+            {/* Soft Yellow Notice - Made smaller with py-1 and text-xs */}
+            <div className="md:block border border-yellow-200 bg-yellow-100/90 px-3 py-1 rounded w-fit shadow-sm">
+              <p className="text-[10px] md:text-xs font-bold text-yellow-800 uppercase tracking-widest">
+                Mandatory Travel Requirement
+              </p>
             </div>
 
             <div className="space-y-4 text-left">
@@ -50,7 +52,7 @@ const HeroSection = () => {
                 Digital Arrival Registration for <span className="text-blue-700">Malaysia</span>
               </h1>
 
-              {/* Subheadline - Less bold (font-medium) */}
+              {/* Subheadline - font-medium */}
               <p className="text-base md:text-lg text-slate-800 max-w-md leading-relaxed font-medium">
                 Foreign visitors must submit their arrival information prior to entry to ensure smooth border clearance
                 and immigration processing.
@@ -67,8 +69,8 @@ const HeroSection = () => {
                 <Link to="/apply">Begin Application</Link>
               </Button>
 
-              {/* Yellowish-Orange Solid Disclaimer Box */}
-              <div className="bg-[#FFF8E7] border border-orange-200 px-4 py-2 rounded-md shadow-sm">
+              {/* Solid Soft Orange Disclaimer Box */}
+              <div className="bg-orange-50 border border-orange-100 px-4 py-2 rounded-md shadow-sm">
                 <p className="text-[11px] md:text-xs text-orange-900 font-bold whitespace-nowrap">
                   Independent documentation assistance service. Not affiliated with the Malaysian government.
                 </p>
@@ -78,7 +80,6 @@ const HeroSection = () => {
 
           {/* RIGHT COLUMN - Application Process Card */}
           <div className="lg:w-1/2 w-full flex flex-col items-start">
-            {/* Opaque enough to maintain readability against 80% bg */}
             <div className="bg-white/75 backdrop-blur-xl border border-white/40 border-t-4 border-t-blue-700 shadow-2xl p-6 md:p-8 w-full rounded-2xl text-left">
               <div className="border-b border-slate-900/10 pb-4 mb-6">
                 <h2 className="font-bold text-xl text-slate-900">Application Process</h2>
@@ -87,7 +88,7 @@ const HeroSection = () => {
                 </p>
               </div>
 
-              {/* Step-by-Step List */}
+              {/* Detailed Step-by-Step List */}
               <div className="flex flex-col gap-5">
                 {steps.map((step, index) => (
                   <div key={index} className="flex items-start gap-4">
@@ -115,7 +116,7 @@ const HeroSection = () => {
                   </Link>
                 </Button>
 
-                <div className="bg-[#FFF8E7] border border-orange-200 px-3 py-2 rounded-md text-center">
+                <div className="bg-orange-50 border border-orange-100 px-3 py-2 rounded-md text-center">
                   <p className="text-[10px] text-orange-900 font-bold leading-tight">
                     Independent service. Not affiliated with the Malaysian government.
                   </p>
