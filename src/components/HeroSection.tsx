@@ -34,9 +34,9 @@ const HeroSection = () => {
         <img
           src={heroBg}
           alt=""
-          className="absolute inset-0 w-full h-full object-cover opacity-40"
+          className="absolute inset-0 w-full h-full object-cover opacity-20"
         />
-        <div className="absolute inset-0 bg-white/50" />
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-50/80 via-white/70 to-slate-50/80" />
       </div>
 
       <div className="container mx-auto px-5 md:px-6 relative z-10 max-w-6xl">
