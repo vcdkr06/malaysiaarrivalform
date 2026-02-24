@@ -22,8 +22,8 @@ const HeroSection = () => {
         <div className="flex flex-col lg:flex-row gap-10 lg:gap-12 items-start">
           {/* LEFT COLUMN - Heading & Text */}
           <div className="lg:w-1/2 flex flex-col gap-6 lg:mt-2">
-            {/* Formal Notice Box - Subtle rounding */}
-            <div className="hidden md:block border-l-4 border-yellow-500 bg-yellow-50 p-3 rounded-sm w-fit">
+            {/* Formal Notice Box - Standard 4px rounding */}
+            <div className="hidden md:block border-l-4 border-yellow-500 bg-yellow-50 p-3 rounded w-fit">
               <p className="text-sm font-medium text-yellow-800 uppercase tracking-wide">
                 Mandatory Travel Requirement
               </p>
@@ -54,7 +54,7 @@ const HeroSection = () => {
               <Button
                 asChild
                 size="lg"
-                className="h-12 px-8 rounded-sm font-medium bg-blue-700 hover:bg-blue-800 text-white shadow-none transition-none text-base"
+                className="h-12 px-8 rounded font-medium bg-blue-700 hover:bg-blue-800 text-white shadow-none transition-none text-base"
               >
                 <Link to="/apply">Begin Application</Link>
               </Button>
@@ -67,8 +67,8 @@ const HeroSection = () => {
 
           {/* RIGHT COLUMN - Application Process Card */}
           <div className="lg:w-1/2 w-full flex flex-col">
-            {/* Subtle rounding on the main card */}
-            <div className="bg-white border border-slate-300 border-t-4 border-t-blue-700 shadow-sm p-6 w-full rounded-sm">
+            {/* Standard 4px rounding on the main card */}
+            <div className="bg-white border border-slate-300 border-t-4 border-t-blue-700 shadow-sm p-6 w-full rounded">
               <div className="border-b border-slate-200 pb-3 mb-4">
                 <h2 className="font-semibold text-lg text-slate-800">Application Process</h2>
                 <p className="text-sm text-slate-600 mt-1">
@@ -80,8 +80,8 @@ const HeroSection = () => {
               <div className="flex flex-col gap-4">
                 {steps.map((step, index) => (
                   <div key={index} className="flex items-start gap-3">
-                    {/* Subtle rounding on the number boxes */}
-                    <div className="flex-shrink-0 w-7 h-7 bg-slate-100 border border-slate-300 flex items-center justify-center text-blue-700 font-semibold text-sm mt-0.5 rounded-sm">
+                    {/* Standard 4px rounding on the number boxes */}
+                    <div className="flex-shrink-0 w-7 h-7 bg-slate-100 border border-slate-300 flex items-center justify-center text-blue-700 font-semibold text-sm mt-0.5 rounded">
                       {index + 1}
                     </div>
 
@@ -99,7 +99,7 @@ const HeroSection = () => {
               <Button
                 asChild
                 size="lg"
-                className="h-12 w-full md:w-auto md:self-start md:px-10 rounded-sm font-medium bg-blue-700 hover:bg-blue-800 text-white shadow-none transition-none text-base"
+                className="h-12 w-full md:w-auto md:self-start md:px-10 rounded font-medium bg-blue-700 hover:bg-blue-800 text-white shadow-none transition-none text-base"
               >
                 <Link to="/apply" className="flex justify-center w-full">
                   Begin Application
