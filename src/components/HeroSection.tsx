@@ -26,16 +26,8 @@ const HeroSection = () => {
     <section className="relative pt-10 pb-16 border-b border-slate-300 bg-white overflow-hidden">
       {/* Background Container */}
       <div className="absolute inset-0 z-0">
-        {/* PRIMARY GRADIENT: Fades from 80% white to 0% to protect text area */}
-        <div className="absolute inset-0 bg-gradient-to-r from-white via-white/50 to-transparent z-10" />
-
-        {/* SECONDARY RADIAL GRADIENT: Specifically placed behind the text for extra clarity */}
-        <div
-          className="absolute top-0 left-0 w-full h-full z-10 opacity-60"
-          style={{
-            background: "radial-gradient(circle at 20% 40%, white 0%, transparent 20%)",
-          }}
-        />
+        {/* Minimal Gradient: Fades from only 15% white to transparent to keep the image sharp */}
+        <div className="absolute inset-0 bg-gradient-to-r from-white/15 via-white/5 to-transparent z-10" />
 
         <img
           src={globeBg}
@@ -48,14 +40,14 @@ const HeroSection = () => {
         <div className="flex flex-col lg:flex-row gap-10 lg:gap-12 items-start text-left">
           {/* LEFT COLUMN - Messaging */}
           <div className="lg:w-1/2 flex flex-col gap-6 lg:mt-2 text-left items-start">
-            {/* Mandatory Notice - SOLID BG */}
+            {/* Mandatory Notice - Solid BG (Not Transparent) */}
             <div className="md:block border-l-4 border-blue-600 bg-slate-100 p-3 rounded w-fit shadow-md">
               <p className="text-sm font-bold text-slate-900 uppercase tracking-wide">Mandatory Travel Requirement</p>
             </div>
 
             <div className="space-y-4 text-left">
-              {/* Subtle text-shadow added for crispness against the globe */}
-              <h1 className="text-4xl md:text-5xl font-bold text-slate-900 leading-tight drop-shadow-[0_1.2px_1.2px_rgba(255,255,255,0.8)]">
+              {/* Headline: Uses a tiny white glow effect to stay readable without a heavy gradient */}
+              <h1 className="text-4xl md:text-5xl font-bold text-slate-900 leading-tight [text-shadow:_0_1px_10px_rgb(255_255_255_/_80%)]">
                 Digital Arrival Registration for <span className="text-blue-700">Malaysia</span>
               </h1>
 
@@ -76,8 +68,8 @@ const HeroSection = () => {
                 <Link to="/apply">Begin Application</Link>
               </Button>
 
-              {/* Solid Yellowish-Orange Disclaimer Box */}
-              <div className="bg-[#FFF9EB] border border-orange-200 px-4 py-2 rounded-md shadow-sm">
+              {/* Yellowish-Orange Solid Disclaimer Box */}
+              <div className="bg-[#FFF8E7] border border-orange-200 px-4 py-2 rounded-md shadow-sm">
                 <p className="text-[11px] md:text-xs text-orange-900 font-bold whitespace-nowrap">
                   Independent documentation assistance service. Not affiliated with the Malaysian government.
                 </p>
@@ -87,8 +79,8 @@ const HeroSection = () => {
 
           {/* RIGHT COLUMN - Application Process Card */}
           <div className="lg:w-1/2 w-full flex flex-col items-start">
-            {/* Slightly more opaque (bg-white/70) to ensure readability of the steps list */}
-            <div className="bg-white/70 backdrop-blur-xl border border-white/40 border-t-4 border-t-blue-700 shadow-2xl p-6 md:p-8 w-full rounded-2xl text-left">
+            {/* Reduced transparency (bg-white/75) so the globe is visible but the detailed text is sharp */}
+            <div className="bg-white/75 backdrop-blur-xl border border-white/40 border-t-4 border-t-blue-700 shadow-2xl p-6 md:p-8 w-full rounded-2xl text-left">
               <div className="border-b border-slate-900/10 pb-4 mb-6">
                 <h2 className="font-bold text-xl text-slate-900">Application Process</h2>
                 <p className="text-sm text-slate-800 mt-1 font-semibold italic">
@@ -124,7 +116,7 @@ const HeroSection = () => {
                   </Link>
                 </Button>
 
-                <div className="bg-[#FFF9EB] border border-orange-200 px-3 py-2 rounded-md text-center">
+                <div className="bg-[#FFF8E7] border border-orange-200 px-3 py-2 rounded-md text-center">
                   <p className="text-[10px] text-orange-900 font-bold leading-tight">
                     Independent service. Not affiliated with the Malaysian government.
                   </p>
