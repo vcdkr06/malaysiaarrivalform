@@ -34,15 +34,15 @@ const HeroSection = () => {
         {/* Blue radial accent */}
         <div className="absolute -top-40 -right-40 w-[600px] h-[600px] bg-blue-200/40 rounded-full blur-3xl" />
 
-        {/* Petronas image */}
+        {/* Background image */}
         <img
           src={petronasBg}
           alt=""
-          className="absolute inset-0 w-full h-full object-cover object-center opacity-[0.14]"
+          className="absolute inset-0 w-full h-full object-cover object-center opacity-[0.16]"
         />
 
-        {/* LEFT fade overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-white via-white/80 to-transparent" />
+        {/* Medium left fade */}
+        <div className="absolute inset-0 bg-gradient-to-r from-white/50 via-white/30 to-transparent" />
       </div>
 
       <div className="container mx-auto px-6 relative z-10 max-w-6xl">
