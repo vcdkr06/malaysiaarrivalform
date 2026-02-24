@@ -26,34 +26,41 @@ const HeroSection = () => {
     <section className="relative pt-10 pb-16 border-b border-slate-300 bg-white overflow-hidden">
       {/* Background Container */}
       <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-gradient-to-r from-white/20 via-transparent to-transparent z-10" />
+        {/* Subtle white gradient for text contrast while keeping background visible */}
+        <div className="absolute inset-0 bg-gradient-to-r from-white/30 via-transparent to-transparent z-10" />
+
         <img
           src={globeBg}
           alt="Globe and Airplane Travel Background"
-          className="absolute inset-0 w-full h-full object-cover object-center opacity-80"
+          /* -scale-x-100 flips the image horizontally; opacity set to 80% */
+          className="absolute inset-0 w-full h-full object-cover object-center opacity-80 -scale-x-100"
         />
       </div>
 
       <div className="container mx-auto px-6 relative z-20 max-w-6xl">
         <div className="flex flex-col lg:flex-row gap-10 lg:gap-12 items-start text-left">
-          {/* LEFT COLUMN */}
+          {/* LEFT COLUMN - Messaging */}
           <div className="lg:w-1/2 flex flex-col gap-6 lg:mt-2 text-left items-start">
+            {/* Mandatory Notice Badge */}
             <div className="hidden md:block border-l-4 border-blue-600 bg-white/40 backdrop-blur-sm p-3 rounded w-fit shadow-sm">
               <p className="text-sm font-bold text-slate-900 uppercase tracking-wide">Mandatory Travel Requirement</p>
             </div>
 
-            <div className="space-y-4">
+            <div className="space-y-4 text-left">
+              {/* Headline: Bold Slate (not pure black) */}
               <h1 className="text-4xl md:text-5xl font-bold text-slate-900 leading-tight">
                 Digital Arrival Registration for <span className="text-blue-700">Malaysia</span>
               </h1>
 
-              <p className="text-base md:text-lg text-slate-800 max-w-md leading-relaxed font-medium bg-white/20 backdrop-blur-[2px] rounded-lg">
+              {/* Subheadline: Less bold (font-medium) */}
+              <p className="text-base md:text-lg text-slate-800 max-w-md leading-relaxed font-medium bg-white/10 backdrop-blur-[1px] rounded-lg">
                 Foreign visitors must submit their arrival information prior to entry to ensure smooth border clearance
                 and immigration processing.
               </p>
             </div>
 
-            <div className="hidden lg:flex flex-col gap-6 pt-4">
+            {/* Desktop CTA & One-Line Disclaimer */}
+            <div className="hidden lg:flex flex-col gap-6 pt-4 items-start">
               <Button
                 asChild
                 size="lg"
@@ -62,8 +69,8 @@ const HeroSection = () => {
                 <Link to="/apply">Begin Application</Link>
               </Button>
 
-              {/* Orange One-Line Disclaimer Box */}
-              <div className="bg-orange-100/90 border border-orange-200 backdrop-blur-sm px-4 py-2 rounded-md shadow-sm w-fit">
+              {/* Yellowish-Orange Disclaimer Box */}
+              <div className="bg-orange-100/90 border border-orange-200 backdrop-blur-sm px-4 py-2 rounded-md shadow-sm">
                 <p className="text-[11px] md:text-xs text-orange-900 font-bold whitespace-nowrap">
                   Independent documentation assistance service. Not affiliated with the Malaysian government.
                 </p>
@@ -71,7 +78,7 @@ const HeroSection = () => {
             </div>
           </div>
 
-          {/* RIGHT COLUMN - Application Process Card */}
+          {/* RIGHT COLUMN - Glassmorphism Application Process Card */}
           <div className="lg:w-1/2 w-full flex flex-col items-start">
             <div className="bg-white/40 backdrop-blur-xl border border-white/30 border-t-4 border-t-blue-700 shadow-2xl p-6 md:p-8 w-full rounded-2xl text-left">
               <div className="border-b border-slate-900/10 pb-4 mb-6">
@@ -81,6 +88,7 @@ const HeroSection = () => {
                 </p>
               </div>
 
+              {/* Step-by-Step List */}
               <div className="flex flex-col gap-5">
                 {steps.map((step, index) => (
                   <div key={index} className="flex items-start gap-4">
@@ -96,7 +104,7 @@ const HeroSection = () => {
                 ))}
               </div>
 
-              {/* Mobile CTA */}
+              {/* Mobile CTA & Disclaimer */}
               <div className="lg:hidden w-full mt-8 flex flex-col gap-4">
                 <Button
                   asChild
@@ -109,7 +117,7 @@ const HeroSection = () => {
                 </Button>
 
                 <div className="bg-orange-100/90 border border-orange-200 px-3 py-2 rounded-md text-center">
-                  <p className="text-[10px] text-orange-900 font-bold">
+                  <p className="text-[10px] text-orange-900 font-bold leading-tight">
                     Independent service. Not affiliated with the Malaysian government.
                   </p>
                 </div>
