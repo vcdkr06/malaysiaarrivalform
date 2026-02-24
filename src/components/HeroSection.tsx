@@ -30,7 +30,7 @@ const HeroSection = () => {
         <img
           src={globeBg}
           alt="Globe and Airplane"
-          className="absolute inset-0 w-full h-full object-cover object-center opacity-80 -scale-x-100 saturate-250"
+          className="absolute inset-0 w-full h-full object-cover object-center opacity-80 -scale-x-100 saturate-150"
         />
       </div>
 
