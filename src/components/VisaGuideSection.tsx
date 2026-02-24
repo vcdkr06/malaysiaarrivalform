@@ -5,7 +5,7 @@ const VisaGuideSection = () => {
   const highlights = [
     { text: "Guided Digital Filing System", icon: Sparkles },
     { text: "Professional Data Verification", icon: ShieldCheck },
-    { text: "Format & Document Optimization", icon: FileCheck },
+    { text: "Document Optimization", icon: FileCheck },
     { text: "Direct Delivery to Your Inbox", icon: Mail },
   ];
 
@@ -23,15 +23,17 @@ const VisaGuideSection = () => {
               />
             </div>
 
-            {/* Structured Stat Panel */}
-            <div className="absolute bottom-6 left-6 bg-white border border-slate-200 shadow-md px-6 py-4">
+            {/* Floating Stat Card */}
+            <div className="absolute -bottom-8 left-10 bg-white border border-slate-200 shadow-xl px-8 py-5 rounded-lg">
               <div className="flex items-center gap-4">
-                <div className="w-10 h-10 flex items-center justify-center bg-blue-600 text-white">
+                <div className="w-11 h-11 flex items-center justify-center bg-blue-600 text-white rounded-md shadow-md">
                   <CheckCircle className="w-5 h-5" strokeWidth={2.5} />
                 </div>
                 <div>
-                  <p className="text-2xl font-bold text-slate-900">50,000+</p>
-                  <p className="text-xs uppercase tracking-wide text-slate-500">Applications Successfully Filed</p>
+                  <p className="text-3xl font-bold text-slate-900 leading-none">50,000+</p>
+                  <p className="text-xs uppercase tracking-wider text-slate-500 mt-1">
+                    Applications Successfully Filed
+                  </p>
                 </div>
               </div>
             </div>
@@ -66,7 +68,7 @@ const VisaGuideSection = () => {
               {highlights.map((item, i) => {
                 const Icon = item.icon;
                 return (
-                  <div key={i} className="flex items-start gap-3 border border-slate-200 p-4 bg-slate-50">
+                  <div key={i} className="flex items-start gap-3 border border-slate-200 p-4 bg-slate-50 rounded-md">
                     <div className="mt-1">
                       <Icon className="w-4 h-4 text-blue-600" strokeWidth={2.5} />
                     </div>
