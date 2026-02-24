@@ -9,24 +9,28 @@ const Header = () => {
     <header className="w-full sticky top-0 z-50 bg-white border-b border-slate-200 shadow-sm">
       <NoticeBanner />
 
-      {/* container mx-auto px-6 max-w-6xl keeps it aligned with Hero/InfoSection */}
+      {/* Aligned with Hero/InfoSection content */}
       <div className="container mx-auto px-6 max-w-6xl">
-        {/* h-16 (mobile) and h-24 (desktop) is slim but allows a big logo */}
-        <div className="flex items-center justify-between h-16 md:h-24">
-          {/* Logo - Scaled up. py-2 ensures it gets close to the edge but NEVER touches */}
-          <Link to="/" className="flex items-center h-full py-2">
+        {/* Header bar remains slim at h-16 (mobile) and h-22 (desktop) */}
+        <div className="flex items-center justify-between h-16 md:h-22">
+          {/* Logo Container - Scaled up and moved up with negative margin */}
+          <Link to="/" className="flex items-center h-full pt-1">
             <img
               alt="MDAC Logo"
-              className="h-full w-auto object-contain transition-transform duration-300"
+              /* -mt-2 moves it up. 
+                 h-14/h-20 makes it bigger than the previous slim version. 
+                 object-top ensures it prioritizes the top space.
+              */
+              className="h-14 md:h-20 w-auto object-contain object-top -mt-2 md:-mt-3 transition-all"
               src={logo}
             />
           </Link>
 
-          {/* CTA - Perfectly centered vertically */}
+          {/* CTA - Vertically centered to the header container */}
           <Link to="/apply">
             <Button
               size="lg"
-              className="font-bold h-10 md:h-12 px-5 md:px-8 rounded-sm bg-blue-700 hover:bg-blue-800 text-white transition-all duration-300 shadow-md text-xs md:text-base"
+              className="font-bold h-10 md:h-11 px-5 md:px-8 rounded-sm bg-blue-700 hover:bg-blue-800 text-white transition-all duration-300 shadow-md text-xs md:text-sm"
             >
               {/* Desktop Text */}
               <span className="hidden md:inline">Apply for Malaysia Digital Arrival Card</span>
