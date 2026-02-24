@@ -1,148 +1,133 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import {
-  ArrowRight,
-  ClipboardList,
-  CreditCard,
-  UserCheck,
-  MailCheck,
-  ShieldCheck,
-  Globe,
-  Lightbulb,
-} from "lucide-react";
+import { ArrowRight, ClipboardList, CreditCard, UserCheck, MailCheck, Lightbulb, Zap } from "lucide-react";
 
 const HeroSection = () => {
   const steps = [
     {
-      icon: <ClipboardList className="w-5 h-5" />,
-      title: "Details",
-      desc: "Digital form",
-      color: "text-sky-600",
-      bg: "bg-sky-50",
+      icon: <ClipboardList className="w-4 h-4" />,
+      title: "Enter Details",
+      desc: "Provide required travel information.",
     },
     {
-      icon: <CreditCard className="w-5 h-5" />,
+      icon: <CreditCard className="w-4 h-4" />,
       title: "Payment",
-      desc: "Secure fee",
-      color: "text-sky-600",
-      bg: "bg-sky-50",
+      desc: "Secure online transaction.",
     },
     {
-      icon: <UserCheck className="w-5 h-5" />,
+      icon: <UserCheck className="w-4 h-4" />,
       title: "Review",
-      desc: "Data audit",
-      color: "text-sky-600",
-      bg: "bg-sky-50",
+      desc: "Application verification process.",
     },
     {
-      icon: <MailCheck className="w-5 h-5" />,
-      title: "Approval",
-      desc: "Email pass",
-      color: "text-emerald-600",
-      bg: "bg-emerald-50",
+      icon: <MailCheck className="w-4 h-4" />,
+      title: "Confirmation",
+      desc: "Receive digital approval via email.",
     },
   ];
 
   return (
-    <section className="relative min-h-[90vh] lg:min-h-[85vh] flex items-center justify-center overflow-hidden bg-white py-8 lg:py-0">
-      {/* ——— BACKGROUND IMAGE ——— */}
-      <div className="absolute inset-0 z-0">
-        <img
-          src="https://images.unsplash.com/photo-1596422846543-75c6fc18a5ce?q=80&w=2070&auto=format&fit=crop"
-          alt="Malaysia Skyline"
-          className="w-full h-full object-cover"
+    <section className="relative overflow-hidden min-h-[88vh] bg-slate-50 pt-6 md:pt-12 pb-10">
+      {/* Background Grid */}
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        <div
+          className="absolute inset-0 opacity-[0.05]"
+          style={{
+            backgroundImage:
+              "linear-gradient(#1E3A8A 1px, transparent 1px), linear-gradient(to right, #1E3A8A 1px, transparent 1px)",
+            backgroundSize: "90px 90px",
+          }}
         />
-        <div className="absolute inset-0 bg-white/95 lg:bg-gradient-to-r lg:from-white lg:via-white/95 lg:to-white/30" />
       </div>
 
-      <div className="container mx-auto px-6 relative z-10 max-w-6xl">
-        <div className="grid lg:grid-cols-[1fr_0.8fr] gap-6 lg:gap-12 items-center">
-          {/* ——— LEFT SIDE: Content ——— */}
-          <div className="flex flex-col space-y-3 lg:space-y-5">
-            <div className="flex items-center gap-2">
-              <span className="px-2 py-0.5 rounded bg-slate-900 text-white text-[8px] font-black uppercase tracking-widest">
-                MDAC Portal
-              </span>
-              <span className="flex items-center gap-1 text-slate-400 text-[9px] font-bold uppercase tracking-widest">
-                <ShieldCheck className="w-3 h-3 text-emerald-500" />
-                Verified
-              </span>
+      <div className="container mx-auto px-5 md:px-6 relative z-10 max-w-6xl">
+        <div className="flex flex-col lg:grid lg:grid-cols-2 gap-8 lg:gap-12">
+          {/* LEFT COLUMN */}
+          <div className="flex flex-col">
+            <div className="hidden md:inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-[11px] font-semibold mb-5 w-fit bg-blue-50 border border-blue-200 text-blue-800">
+              <Zap className="w-3.5 h-3.5 text-blue-600" />
+              Mandatory Travel Requirement
             </div>
 
-            <div className="space-y-1 lg:space-y-2">
-              <h1 className="text-2xl md:text-3xl lg:text-5xl font-black tracking-tight text-slate-900 leading-tight">
-                Entry to <span className="text-sky-600">Malaysia</span> <br className="hidden lg:block" /> Made Easy
-              </h1>
-              <p className="text-xs md:text-base text-slate-500 max-w-sm font-medium leading-relaxed">
-                Fast digital registration for the mandatory Malaysia Arrival Card (MDAC).
-              </p>
-            </div>
+            <p className="hidden md:block text-xs font-bold uppercase tracking-[0.15em] mb-2 text-slate-600">
+              MDAC Registration Portal
+            </p>
 
-            <div className="flex flex-col sm:flex-row items-center gap-3">
-              <Button
-                asChild
-                size="lg"
-                className="w-full sm:w-auto h-11 px-8 rounded-xl bg-sky-600 hover:bg-sky-700 text-white font-bold text-sm shadow-lg shadow-sky-100 border-0"
-              >
-                <Link to="/apply" className="flex items-center justify-center gap-2">
-                  Apply Now
-                  <ArrowRight className="w-4 h-4" />
-                </Link>
-              </Button>
-              <div className="flex lg:hidden items-center gap-1.5 text-[9px] font-bold text-slate-400 uppercase tracking-tight">
-                <Globe className="w-3.5 h-3.5 text-sky-300" />
-                Official Assistance
-              </div>
-            </div>
+            <h1 className="text-2xl md:text-[2.6rem] font-extrabold leading-[1.15] mb-3 md:mb-4 text-slate-900">
+              Digital Arrival Registration for <span className="text-blue-700">Malaysia</span>
+            </h1>
+
+            <p className="text-[14px] md:text-[15px] leading-[1.6] mb-4 md:mb-6 max-w-lg text-slate-600">
+              Foreign visitors must submit their arrival information prior to entry to ensure smooth border clearance.
+            </p>
+
+            {/* CTA */}
+            <Button
+              asChild
+              size="lg"
+              className="font-semibold h-12 px-8 rounded-md bg-blue-700 hover:bg-blue-800 text-white transition-all duration-300 shadow-sm w-full md:w-auto mb-5 md:mb-6"
+            >
+              <Link to="/apply" className="flex items-center justify-center gap-2 h-12">
+                Begin Application
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+            </Button>
+
+            {/* Disclaimer (Tablet + Desktop) */}
+            <p className="hidden md:block text-[10px] leading-relaxed text-slate-400 max-w-md">
+              Disclaimer: We are an independent agency assisting travelers with documentation processing. We are not
+              affiliated with the Malaysian government.
+            </p>
           </div>
 
-          {/* ——— RIGHT SIDE: Steps Card ——— */}
-          <div className="relative mt-2 lg:mt-0">
-            <div className="relative bg-white/70 backdrop-blur-xl border border-white rounded-[1.5rem] p-4 lg:p-7 shadow-xl shadow-slate-200/50">
-              <h3 className="text-[9px] font-black text-slate-900 uppercase tracking-[0.2em] mb-4 text-center lg:text-left">
-                Process Path
+          {/* RIGHT COLUMN */}
+          <div className="flex flex-col">
+            {/* Stepper */}
+            <div className="bg-white/70 backdrop-blur-lg border border-slate-200 rounded-xl p-4 md:p-6 mt-4 md:mt-8 lg:mt-0">
+              <h3 className="font-semibold text-[14px] md:text-[15px] mb-4 md:mb-6 text-slate-900">
+                4-Step Application Process
               </h3>
 
-              {/* Grid 2x2: Icon above Text */}
-              <div className="grid grid-cols-2 gap-2 lg:gap-4">
-                {steps.map((step, i) => (
-                  <div
-                    key={i}
-                    className="flex flex-col items-center text-center p-3 rounded-xl bg-white/50 border border-slate-50 shadow-sm"
-                  >
+              <div className="relative">
+                <div className="hidden lg:block absolute top-6 left-0 right-0 h-px bg-slate-300" />
+
+                <div className="flex flex-col lg:flex-row lg:justify-between gap-5 md:gap-8 lg:gap-4">
+                  {steps.map((step, index) => (
                     <div
-                      className={`w-9 h-9 rounded-lg ${step.bg} ${step.color} flex items-center justify-center mb-1.5 shadow-sm border border-white`}
+                      key={index}
+                      className="relative flex lg:flex-col items-start lg:items-center text-left lg:text-center lg:w-1/4"
                     >
-                      {step.icon}
+                      <div className="relative z-10 w-10 h-10 md:w-11 md:h-11 rounded-full bg-blue-700 text-white flex items-center justify-center shadow-sm">
+                        {step.icon}
+                      </div>
+
+                      <div className="ml-3 lg:ml-0 lg:mt-4">
+                        <div className="text-[10px] font-semibold text-blue-700 tracking-wide mb-0.5">
+                          STEP {index + 1}
+                        </div>
+                        <h4 className="font-semibold text-[13px] text-slate-900 mb-0.5">{step.title}</h4>
+                        <p className="text-[11.5px] text-slate-600 leading-snug">{step.desc}</p>
+                      </div>
                     </div>
-                    <h4 className="text-[11px] font-bold text-slate-900 leading-none mb-1">{step.title}</h4>
-                    <p className="text-[9px] text-slate-400 font-medium leading-none">{step.desc}</p>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
 
-              {/* Small Info Line */}
-              <div className="mt-4 pt-3 border-t border-slate-100">
-                <div className="flex items-center justify-center lg:justify-start gap-1.5 text-[9px] text-slate-500 font-bold uppercase tracking-tight">
-                  <Lightbulb className="w-3 h-3 text-sky-500" />
-                  <span>Apply 3 days before arrival</span>
-                </div>
+              <div className="mt-4 md:mt-6 pt-4 md:pt-5 border-t border-slate-200 flex gap-3">
+                <Lightbulb className="w-4 h-4 text-blue-700 mt-0.5 flex-shrink-0" />
+                <p className="text-[11.5px] md:text-[12px] text-slate-700 leading-relaxed">
+                  Submit at least <span className="font-semibold text-blue-700">3 days before arrival</span>.
+                </p>
               </div>
             </div>
 
-            {/* Mobile Disclaimer: Below the Card */}
-            <p className="block lg:hidden mt-3 text-[8px] text-center text-slate-400 leading-tight font-medium uppercase tracking-tighter opacity-60">
-              Independent agency assisting with MDAC filings. <br /> Not affiliated with the Malaysian government.
+            {/* Disclaimer (Mobile Only) */}
+            <p className="block md:hidden mt-6 text-[10px] leading-relaxed text-slate-400">
+              Disclaimer: We are an independent agency assisting travelers with documentation processing. We are not
+              affiliated with the Malaysian government.
             </p>
           </div>
         </div>
-      </div>
-
-      {/* Desktop Disclaimer */}
-      <div className="hidden lg:block absolute bottom-4 left-0 right-0 text-center opacity-40">
-        <p className="text-[8px] text-slate-600 tracking-[0.2em] font-bold uppercase">
-          Independent Concierge Agency • Secure Data • No Government Affiliation
-        </p>
       </div>
     </section>
   );
