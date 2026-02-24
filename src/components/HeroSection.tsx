@@ -34,11 +34,11 @@ const HeroSection = () => {
         {/* Blue radial accent */}
         <div className="absolute -top-40 -right-40 w-[600px] h-[600px] bg-blue-200/40 rounded-full blur-3xl" />
 
-        {/* Background image */}
+        {/* Background image (adjusted positioning) */}
         <img
           src={petronasBg}
           alt=""
-          className="absolute inset-0 w-full h-full object-cover object-center opacity-[0.16]"
+          className="absolute inset-0 w-full h-full object-cover object-top lg:object-[center_20%] opacity-[0.16]"
         />
 
         {/* Medium left fade */}
@@ -49,7 +49,6 @@ const HeroSection = () => {
         <div className="grid lg:grid-cols-2 gap-10 items-center">
           {/* LEFT COLUMN */}
           <div>
-            {/* Yellow Mandatory Badge */}
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold mb-4 bg-yellow-100 border border-yellow-300 text-yellow-800">
               <Zap className="w-3.5 h-3.5" />
               Mandatory Travel Requirement
