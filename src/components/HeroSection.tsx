@@ -33,7 +33,7 @@ const HeroSection = () => {
         <div
           className="absolute top-0 left-0 w-full h-full z-10 opacity-60"
           style={{
-            background: "radial-gradient(circle at 20% 40%, white 0%, transparent 50%)",
+            background: "radial-gradient(circle at 20% 40%, white 0%, transparent 20%)",
           }}
         />
 
