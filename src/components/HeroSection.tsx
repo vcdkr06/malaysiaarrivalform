@@ -22,8 +22,8 @@ const HeroSection = () => {
         <div className="flex flex-col lg:flex-row gap-10 items-start">
           {/* LEFT COLUMN */}
           <div className="lg:w-1/2 flex flex-col gap-4">
-            {/* Mandatory tag */}
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-sm text-xs font-semibold mb-2 bg-yellow-100 border border-yellow-300 text-yellow-800">
+            {/* Mandatory badge */}
+            <div className="inline-block px-3 py-1.5 rounded-md text-xs font-semibold bg-yellow-100 border border-yellow-300 text-yellow-800 mb-2">
               Mandatory Travel Requirement
             </div>
 
@@ -33,11 +33,9 @@ const HeroSection = () => {
 
             {/* Subheadline responsive */}
             <p className="text-sm md:text-base text-gray-700 max-w-md leading-relaxed">
-              {/* Mobile */}
               <span className="inline sm:hidden font-semibold">
                 Submit your arrival info for smooth border clearance.
               </span>
-              {/* Tablet & Desktop */}
               <span className="hidden sm:inline">
                 Foreign visitors must submit their arrival information prior to entry to ensure smooth border clearance.
               </span>
@@ -54,7 +52,7 @@ const HeroSection = () => {
               </Link>
             </Button>
 
-            {/* Disclaimer for Desktop & Tablet */}
+            {/* Disclaimer Desktop & Tablet */}
             <p className="hidden sm:block mt-2 text-[11px] text-gray-500 max-w-sm">
               Independent documentation assistance service. Not affiliated with the Malaysian government.
             </p>
@@ -64,11 +62,12 @@ const HeroSection = () => {
           <div className="lg:w-1/2 flex lg:flex-row gap-6">
             {/* Desktop: horizontal stepper */}
             <div className="hidden lg:flex relative items-center justify-between flex-1">
+              {/* Dashed line behind circles */}
               <div className="absolute top-4 left-4 right-4 h-px border-t-2 border-dashed border-gray-300 z-0" />
               <div className="flex justify-between w-full relative z-10">
                 {steps.map((step, index) => (
                   <div key={index} className="flex flex-col items-center text-center lg:w-1/4">
-                    <div className="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center font-semibold mb-2">
+                    <div className="w-10 h-10 rounded-full bg-blue-600 text-white flex items-center justify-center font-semibold mb-2 shadow-sm">
                       {index + 1}
                     </div>
                     <h4 className="font-semibold text-sm text-gray-900 mb-1">{step.title}</h4>
@@ -83,7 +82,7 @@ const HeroSection = () => {
               {steps.map((step, index) => (
                 <div key={index} className="flex items-start gap-4 mb-6">
                   <div className="flex flex-col items-center">
-                    <div className="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center font-semibold">
+                    <div className="w-10 h-10 rounded-full bg-blue-600 text-white flex items-center justify-center font-semibold shadow-sm">
                       {index + 1}
                     </div>
                     {index < steps.length - 1 && (
@@ -103,7 +102,7 @@ const HeroSection = () => {
               {steps.map((step, index) => (
                 <div key={index} className="flex items-start gap-4 mb-6">
                   <div className="flex flex-col items-center">
-                    <div className="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center font-semibold">
+                    <div className="w-10 h-10 rounded-full bg-blue-600 text-white flex items-center justify-center font-semibold shadow-sm">
                       {index + 1}
                     </div>
                     {index < steps.length - 1 && (
@@ -117,7 +116,7 @@ const HeroSection = () => {
                 </div>
               ))}
 
-              {/* Mobile disclaimer below stepper */}
+              {/* Disclaimer below stepper */}
               <p className="mt-2 text-[11px] text-gray-500">
                 Independent documentation assistance service. Not affiliated with the Malaysian government.
               </p>
