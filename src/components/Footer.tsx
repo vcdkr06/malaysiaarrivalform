@@ -45,16 +45,16 @@ const Footer = () => {
           </Link>
         </div>
 
-        {/* Legal Disclaimer Box */}
-        <div className="bg-blue-900/20 border border-white/10 rounded-xl p-5 mb-6">
-          <div className="flex items-center gap-2 mb-2 text-blue-300 uppercase font-black text-[9px] tracking-[0.2em]">
-            <Scale className="w-3 h-3" />
+        {/* Legal Disclaimer Box - Updated for maximum readability */}
+        <div className="bg-white rounded-xl p-6 mb-6 shadow-xl border-l-4 border-blue-400">
+          <div className="flex items-center gap-2 mb-3 text-[#173691] uppercase font-black text-[10px] tracking-[0.2em]">
+            <Scale className="w-4 h-4" />
             <span>Legal Disclaimer</span>
           </div>
-          <div className="space-y-3 text-[11px] leading-relaxed text-blue-50/90 font-medium">
+          <div className="space-y-4 text-[12px] leading-relaxed text-slate-700 font-medium">
             <p>
               This website is a private, independent service provider and is{" "}
-              <span className="text-white font-bold underline decoration-blue-300/50 underline-offset-4">
+              <span className="text-[#173691] font-bold underline decoration-blue-400/50 underline-offset-4">
                 not affiliated with, endorsed by, or operated by any government agency.
               </span>{" "}
               We are not part of or connected to any official immigration or border authority.
@@ -64,7 +64,7 @@ const Footer = () => {
               accurately and efficiently. You may choose to complete the official process directly through the relevant
               government website at no cost.
             </p>
-            <p className="text-blue-300/60 text-[10px] leading-snug">
+            <p className="text-slate-500 text-[11px] leading-snug border-t border-slate-100 pt-3">
               Use of our service is entirely voluntary, and all fees charged are for the convenience and support we
               provide in preparing and processing your application.
             </p>
