@@ -1,129 +1,144 @@
 import { Link } from "react-router-dom";
-import { ShieldCheck, Lock, ArrowRight, Mail, Info } from "lucide-react";
+import { ShieldCheck, Lock, ArrowRight, Mail, Globe, ArrowUpRight } from "lucide-react";
 import logo from "@/assets/mdac-icon-logo.png";
 
 const Footer = () => {
   return (
-    <footer className="bg-[#0F172A] text-slate-300 pt-12 pb-6">
-      <div className="container mx-auto px-6 max-w-6xl">
-        <div className="grid lg:grid-cols-12 gap-y-10 lg:gap-x-12 mb-10 items-start">
-          {/* Brand Section */}
-          <div className="lg:col-span-5 flex flex-col space-y-5">
-            <div className="flex items-center gap-4">
-              {/* Perfectly Centered White Logo Box */}
-              <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center p-2.5 shadow-xl shrink-0">
-                <img src={logo} alt="MDAC Logo" className="w-full h-full object-contain" />
-              </div>
-
-              <div className="flex flex-col">
-                <h2 className="text-xl font-bold leading-tight tracking-tight uppercase text-white">
-                  Malaysia <br />
-                  <span className="text-blue-400">Digital Arrival</span>
-                </h2>
-                <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-slate-500 mt-1">
-                  Independent Agency
-                </span>
-              </div>
+    <footer className="bg-[#F0F5FF] text-slate-700 pt-12 pb-8 px-6">
+      <div className="max-w-6xl mx-auto">
+        {/* Top Section: Brand Identity */}
+        <div className="flex flex-col md:flex-row items-center justify-between gap-8 mb-12 pb-12 border-b border-blue-200/50">
+          <div className="flex items-center gap-6">
+            <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center p-3 shadow-sm border border-blue-100 shrink-0">
+              <img src={logo} alt="MDAC Logo" className="w-full h-full object-contain" />
             </div>
-
-            {/* Security Badges - Subtle and Clean */}
-            <div className="flex gap-2">
-              <div className="flex items-center gap-2 px-3 py-1.5 bg-slate-800/50 rounded-lg border border-slate-700">
-                <Lock className="w-3.5 h-3.5 text-blue-400" />
-                <span className="text-[10px] font-bold uppercase tracking-wider text-slate-200">256-Bit SSL</span>
-              </div>
-              <div className="flex items-center gap-2 px-3 py-1.5 bg-slate-800/50 rounded-lg border border-slate-700">
-                <ShieldCheck className="w-3.5 h-3.5 text-blue-400" />
-                <span className="text-[10px] font-bold uppercase tracking-wider text-slate-200">Verified</span>
-              </div>
+            <div>
+              <h2 className="text-2xl font-bold text-[#1E3A8A] tracking-tight leading-none uppercase">
+                Malaysia <span className="text-blue-500 font-medium">Digital</span>
+              </h2>
+              <p className="text-slate-500 text-sm font-semibold tracking-widest uppercase mt-1">Arrival Card Portal</p>
             </div>
           </div>
 
-          {/* Navigation - Better Spacing for Readability */}
-          <div className="lg:col-span-4 grid grid-cols-2 gap-4">
-            <div>
-              <h3 className="text-white font-bold text-[11px] uppercase tracking-widest mb-4 border-b border-slate-800 pb-2">
-                Resources
+          <div className="flex gap-4">
+            <div className="flex flex-col items-end">
+              <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Global Status</span>
+              <div className="flex items-center gap-2 mt-1 px-3 py-1 bg-white rounded-full border border-blue-100 shadow-sm">
+                <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                <span className="text-xs font-bold text-slate-700 uppercase">System Online</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Middle Section: Original Asymmetric Layout */}
+        <div className="grid lg:grid-cols-12 gap-10 mb-12">
+          {/* Main Info Card */}
+          <div className="lg:col-span-5 bg-[#1E3A8A] rounded-[2rem] p-8 text-white shadow-xl shadow-blue-900/10 relative overflow-hidden">
+            <div className="relative z-10">
+              <h3 className="text-lg font-bold mb-4 flex items-center gap-2">
+                <Globe className="w-5 h-5 text-blue-300" /> Professional Assistance
               </h3>
-              <ul className="space-y-3 text-sm font-medium">
+              <p className="text-blue-100/80 text-sm leading-relaxed mb-6 font-medium">
+                We provide a comprehensive review and 24/7 support for your MDAC application, ensuring your entry into
+                Malaysia is seamless.
+              </p>
+              <Link
+                to="/contact"
+                className="inline-flex items-center gap-2 bg-white text-[#1E3A8A] px-6 py-3 rounded-xl font-bold text-sm hover:bg-blue-50 transition-all"
+              >
+                Contact Agent <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
+            {/* Decorative Background Icon */}
+            <ShieldCheck className="absolute -bottom-4 -right-4 w-32 h-32 text-white/5 rotate-12" />
+          </div>
+
+          {/* Links Clusters */}
+          <div className="lg:col-span-4 grid grid-cols-2 gap-6 py-4">
+            <div className="space-y-4">
+              <h4 className="text-[#1E3A8A] font-bold text-xs uppercase tracking-[0.2em]">Service</h4>
+              <ul className="space-y-3 text-sm font-semibold text-slate-500">
                 <li>
-                  <Link to="/#faq" className="hover:text-blue-400 transition-colors">
-                    FAQ
+                  <Link to="/#faq" className="hover:text-blue-600 flex items-center gap-1">
+                    FAQ <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100" />
                   </Link>
                 </li>
                 <li>
-                  <Link to="/contact" className="hover:text-blue-400 transition-colors">
+                  <Link to="/about" className="hover:text-blue-600">
+                    About Us
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/contact" className="hover:text-blue-600">
                     Support
                   </Link>
                 </li>
-                <li>
-                  <Link to="/about" className="hover:text-blue-400 transition-colors">
-                    About Service
-                  </Link>
-                </li>
               </ul>
             </div>
-            <div>
-              <h3 className="text-white font-bold text-[11px] uppercase tracking-widest mb-4 border-b border-slate-800 pb-2">
-                Legal
-              </h3>
-              <ul className="space-y-3 text-sm font-medium">
+            <div className="space-y-4">
+              <h4 className="text-[#1E3A8A] font-bold text-xs uppercase tracking-[0.2em]">Policy</h4>
+              <ul className="space-y-3 text-sm font-semibold text-slate-500">
                 <li>
-                  <Link to="/legal#terms" className="hover:text-blue-400 transition-colors">
-                    Terms of Service
+                  <Link to="/legal#terms" className="hover:text-blue-600">
+                    Terms
                   </Link>
                 </li>
                 <li>
-                  <Link to="/legal#privacy" className="hover:text-blue-400 transition-colors">
-                    Privacy Policy
+                  <Link to="/legal#privacy" className="hover:text-blue-600">
+                    Privacy
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/legal#cookies" className="hover:text-blue-600">
+                    Cookies
                   </Link>
                 </li>
               </ul>
             </div>
           </div>
 
-          {/* Contact Card - Refined Blue Accent */}
-          <div className="lg:col-span-3">
-            <Link
-              to="/contact"
-              className="group flex flex-col bg-slate-800/40 border border-slate-700 p-5 rounded-2xl hover:bg-slate-800/60 transition-all shadow-lg"
-            >
-              <div className="flex items-center justify-between mb-4">
-                <div className="p-2.5 bg-blue-600 rounded-xl text-white shadow-blue-900/20 shadow-lg">
-                  <Mail className="w-5 h-5" />
-                </div>
-                <ArrowRight className="w-4 h-4 text-slate-500 group-hover:text-blue-400 group-hover:translate-x-1 transition-all" />
+          {/* Trust Badges Column */}
+          <div className="lg:col-span-3 flex flex-col gap-3 justify-center">
+            <div className="p-4 bg-white rounded-2xl border border-blue-100 flex items-center gap-4 shadow-sm">
+              <div className="p-2 bg-blue-50 rounded-lg text-blue-600">
+                <Lock className="w-5 h-5" />
               </div>
-              <span className="text-sm font-bold text-white uppercase tracking-tight">Need assistance?</span>
-              <span className="text-xs text-slate-400 mt-1">Our support is online 24/7</span>
-            </Link>
+              <div className="flex flex-col">
+                <span className="text-[10px] font-bold text-slate-400 uppercase">Security</span>
+                <span className="text-xs font-bold text-slate-800">256-Bit SSL</span>
+              </div>
+            </div>
+            <div className="p-4 bg-white rounded-2xl border border-blue-100 flex items-center gap-4 shadow-sm">
+              <div className="p-2 bg-blue-50 rounded-lg text-blue-600">
+                <ShieldCheck className="w-5 h-5" />
+              </div>
+              <div className="flex flex-col">
+                <span className="text-[10px] font-bold text-slate-400 uppercase">Quality</span>
+                <span className="text-xs font-bold text-slate-800">Verified Service</span>
+              </div>
+            </div>
           </div>
         </div>
 
-        {/* Disclaimer Bar - Integrated Design */}
-        <div className="bg-slate-800/30 border border-slate-700/50 rounded-2xl p-5 flex gap-4 items-start mb-8">
-          <Info className="w-5 h-5 text-blue-500 shrink-0 mt-0.5" />
-          <p className="text-[11px] md:text-xs leading-relaxed text-slate-400 italic">
-            malaysia.earrivalform.com is a private agency that assists travelers with the MDAC process.
-            <span className="text-slate-200 font-semibold not-italic ml-1">
-              We are not affiliated with the Government of Malaysia.
+        {/* Disclaimer Bar */}
+        <div className="bg-slate-200/50 border border-slate-300/30 rounded-2xl p-6 text-center">
+          <p className="text-[11px] font-medium text-slate-500 leading-relaxed italic max-w-4xl mx-auto">
+            <span className="font-bold text-slate-700 not-italic mr-1 uppercase tracking-tighter bg-slate-300/50 px-1.5 py-0.5 rounded">
+              Disclaimer:
             </span>
-            Our service includes 24/7 assistance for a service fee. You can apply independently via the official
-            government portal at no cost.
+            malaysia.earrivalform.com is a private agency and{" "}
+            <span className="text-blue-700 font-bold">is not affiliated with the Malaysian Government</span>. We provide
+            professional application services for a fee. Travelers can apply for the MDAC for free at the official
+            government website.
           </p>
         </div>
 
-        {/* Final Bottom Bar */}
-        <div className="pt-6 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-[10px] text-slate-500 font-bold uppercase tracking-widest">
-            © 2026 malaysia.earrivalform.com
-          </p>
-
-          <div className="flex items-center gap-2.5 px-4 py-1.5 bg-slate-800 rounded-full border border-slate-700">
-            <div className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse"></div>
-            <span className="text-[10px] text-slate-300 font-bold uppercase tracking-widest">
-              Global Service Status: Online
-            </span>
+        {/* Bottom Bar */}
+        <div className="mt-8 pt-6 border-t border-blue-200/50 flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="text-xs text-slate-400 font-bold uppercase tracking-widest">© 2026 malaysia.earrivalform.com</p>
+          <div className="flex items-center gap-6">
+            <span className="text-[10px] text-slate-400 font-black uppercase">Global Entry Support</span>
           </div>
         </div>
       </div>
