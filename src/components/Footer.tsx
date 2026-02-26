@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ShieldCheck, Lock, Mail, Scale, Circle } from "lucide-center";
+import { ShieldCheck, Lock, Mail, Scale, Circle } from "lucide-react";
 import logo from "@/assets/mdac-icon-logo.png";
 
 const Footer = () => {
@@ -45,16 +45,16 @@ const Footer = () => {
           </Link>
         </div>
 
-        {/* Legal Disclaimer Box - Transparent White (Glassmorphism) */}
-        <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-6 mb-6">
-          <div className="flex items-center gap-2 mb-3 text-blue-200 uppercase font-black text-[10px] tracking-[0.2em]">
+        {/* Legal Disclaimer Box - Updated for maximum readability */}
+        <div className="bg-white rounded-xl p-6 mb-6 shadow-xl border-l-4 border-blue-400">
+          <div className="flex items-center gap-2 mb-3 text-[#173691] uppercase font-black text-[10px] tracking-[0.2em]">
             <Scale className="w-4 h-4" />
-            <span className="text-white">Legal Disclaimer</span>
+            <span>Legal Disclaimer</span>
           </div>
-          <div className="space-y-4 text-[12px] leading-relaxed text-blue-50 font-medium">
+          <div className="space-y-4 text-[12px] leading-relaxed text-slate-700 font-medium">
             <p>
               This website is a private, independent service provider and is{" "}
-              <span className="text-white font-bold underline decoration-blue-300/50 underline-offset-4">
+              <span className="text-[#173691] font-bold underline decoration-blue-400/50 underline-offset-4">
                 not affiliated with, endorsed by, or operated by any government agency.
               </span>{" "}
               We are not part of or connected to any official immigration or border authority.
@@ -64,7 +64,7 @@ const Footer = () => {
               accurately and efficiently. You may choose to complete the official process directly through the relevant
               government website at no cost.
             </p>
-            <p className="text-white/60 text-[11px] leading-snug border-t border-white/10 pt-3 italic">
+            <p className="text-slate-500 text-[11px] leading-snug border-t border-slate-100 pt-3">
               Use of our service is entirely voluntary, and all fees charged are for the convenience and support we
               provide in preparing and processing your application.
             </p>
