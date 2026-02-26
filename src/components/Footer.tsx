@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ShieldCheck, Lock, Mail, Scale, Circle } from "lucide-center";
+import { ShieldCheck, Lock, Mail, Scale, Circle } from "lucide-react";
 import logo from "@/assets/mdac-icon-logo.png";
 
 const Footer = () => {
@@ -9,15 +9,18 @@ const Footer = () => {
         {/* Top Row: Identity & Navigation */}
         <div className="flex flex-col lg:flex-row items-center justify-between gap-6 mb-6">
           <div className="flex items-center gap-4">
+            {/* Logo Box */}
             <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center p-2 shadow-lg shrink-0">
               <img src={logo} alt="MDAC Logo" className="w-full h-full object-contain" />
             </div>
+            {/* Branding with Color Split */}
             <h2 className="text-lg font-bold leading-tight uppercase tracking-tight">
               <span className="text-white">Malaysia</span> <br className="md:hidden" />
               <span className="text-blue-300">Digital Arrival</span>
             </h2>
           </div>
 
+          {/* Compact Nav */}
           <nav className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-[10px] font-bold uppercase tracking-widest text-blue-100/80">
             <Link to="/#faq" className="hover:text-white transition-colors">
               FAQ
@@ -36,6 +39,7 @@ const Footer = () => {
             </Link>
           </nav>
 
+          {/* Action Button */}
           <Link
             to="/contact"
             className="flex items-center gap-2 bg-white text-[#173691] px-5 py-2 rounded-full font-bold text-xs hover:bg-blue-50 transition-all shadow-md"
@@ -45,8 +49,8 @@ const Footer = () => {
           </Link>
         </div>
 
-        {/* Legal Disclaimer Box - Transparent White (Glassmorphism) */}
-        <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-6 mb-6">
+        {/* Legal Disclaimer Box - Transparent White / Glassmorphism */}
+        <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-6 mb-6">
           <div className="flex items-center gap-2 mb-3 text-blue-200 uppercase font-black text-[10px] tracking-[0.2em]">
             <Scale className="w-4 h-4" />
             <span className="text-white">Legal Disclaimer</span>
@@ -71,14 +75,14 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Bottom Tier: Copyright & Trust */}
+        {/* Bottom Tier: Copyright & Trust Badges */}
         <div className="flex flex-col md:flex-row justify-between items-center gap-4 pt-4 border-t border-white/5">
           <div className="flex items-center gap-4">
             <p className="text-[10px] text-blue-300/40 font-bold uppercase tracking-widest">
               © 2026 malaysia.earrivalform.com
             </p>
             <div className="flex items-center gap-1.5">
-              <Circle className="w-1.5 h-1.5 fill-green-400 text-green-400 animate-pulse" />
+              <Circle className="w-1.5 h-1.5 fill-green-400 text-green-400 animate-pulse border-none" />
               <span className="text-[9px] text-blue-200/50 font-bold uppercase tracking-tighter">Systems Online</span>
             </div>
           </div>
